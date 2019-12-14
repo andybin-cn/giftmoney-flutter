@@ -72,9 +72,7 @@ class _MainTabPageState extends BasePageState<MainTabPage> {
             ),
             Align(
               alignment: Alignment.bottomCenter,
-              child: Padding(
-                padding: const EdgeInsets.only(bottom: 20.0),
-                child: FlatButton(
+              child: FlatButton(
                   child: Image.asset('assets/images/icons8-add.png', width: 50, height: 50,),
                   onPressed: () {
                     Navigator.push(context,
@@ -82,8 +80,7 @@ class _MainTabPageState extends BasePageState<MainTabPage> {
                           return AddRecordPage();
                       }));
                   },
-                ),
-              )
+                )
             ),
           ]
         )]
