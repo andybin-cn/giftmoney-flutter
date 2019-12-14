@@ -1,0 +1,28 @@
+{
+  "app_name": "礼金小助手",
+  "tab_record": "记录",
+  "tab_chart": "统计",
+  "tab_accessibility": "辅助",
+  "tab_mine": "我的",
+
+  "bt_upload_success": "已上传",
+  "bt_upload_waiting": "未上传",
+  "bt_upload_waring": "上传失败",
+  "bt_upload_uploading": "正在上传",
+
+  "bt_save": "保存",
+
+  "form_person_name": "姓名",
+  "form_relation": "关系",
+  "form_event_name": "事件名称",
+  "form_event_time": "事件时间",
+  "form_amount": "金额",
+  "form_gift": "礼物",
+  "form_type": "类型",
+  "form_in_account": "收份子",
+  "form_out_account": "送份子",
+
+  "hud_saving": "正在保存",
+  "hud_loading": "正在加载",
+  "hud_save_success": "保存成功"
+}
