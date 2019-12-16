@@ -4,9 +4,11 @@ packages:
   advert_support:
     dependency: "direct main"
     description:
-      path: "../advert_support"
-      relative: true
-    source: path
+      path: "."
+      ref: master
+      resolved-ref: "796ecf4e9da23690db3f2c14e6218bcc6290bb8a"
+      url: "git@github.com:jim-binea/advert_support.git"
+    source: git
     version: "0.0.1"
   analyzer:
     dependency: transitive
