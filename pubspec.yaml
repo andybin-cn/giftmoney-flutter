@@ -29,7 +29,9 @@ dependencies:
   sqflite: ^1.1.7+1
   json_annotation: ^2.0.0
   advert_support:
-    path: ../advert_support
+    git:
+      ref: master
+      url: git@github.com:jim-binea/advert_support.git
 
 dev_dependencies:
   flutter_test:
