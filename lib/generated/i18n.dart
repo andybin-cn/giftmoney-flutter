@@ -188,6 +188,12 @@ class _I18n_zh_CN extends I18n {
   /// "请填写手机号"
   @override
   String get validationMobile => "请填写手机号";
+  /// "请填写关系"
+  @override
+  String get validationRelation => "请填写关系";
+  /// "请填写事件名称"
+  @override
+  String get validationEvent_name => "请填写事件名称";
 
   @override
   TextDirection get textDirection => TextDirection.ltr;
@@ -196,6 +202,194 @@ class _I18n_zh_CN extends I18n {
 class _I18n_zh_TW extends _I18n_zh_CN {
   const _I18n_zh_TW();
 
+  /// "禮金小助手"
+  @override
+  String get app_name => "禮金小助手";
+  /// "記錄"
+  @override
+  String get tab_record => "記錄";
+  /// "統計"
+  @override
+  String get tab_chart => "統計";
+  /// "輔助"
+  @override
+  String get tab_accessibility => "輔助";
+  /// "我的"
+  @override
+  String get tab_mine => "我的";
+  /// "已上傳"
+  @override
+  String get bt_upload_success => "已上傳";
+  /// "未上傳"
+  @override
+  String get bt_upload_waiting => "未上傳";
+  /// "上傳失敗"
+  @override
+  String get bt_upload_waring => "上傳失敗";
+  /// "正在上傳"
+  @override
+  String get bt_upload_uploading => "正在上傳";
+  /// "保存"
+  @override
+  String get bt_save => "保存";
+  /// "姓名"
+  @override
+  String get form_person_name => "姓名";
+  /// "關係"
+  @override
+  String get form_relation => "關係";
+  /// "事件名稱"
+  @override
+  String get form_event_name => "事件名稱";
+  /// "事件時間"
+  @override
+  String get form_event_time => "事件時間";
+  /// "金額"
+  @override
+  String get form_amount => "金額";
+  /// "禮物"
+  @override
+  String get form_gift => "禮物";
+  /// "類型"
+  @override
+  String get form_type => "類型";
+  /// "收份子"
+  @override
+  String get form_in_account => "收份子";
+  /// "送份子"
+  @override
+  String get form_out_account => "送份子";
+  /// "正在保存"
+  @override
+  String get hud_saving => "正在保存";
+  /// "正在加載"
+  @override
+  String get hud_loading => "正在加載";
+  /// "保存成功"
+  @override
+  String get hud_save_success => "保存成功";
+  /// "不能為空"
+  @override
+  String get validationNotEmpty => "不能為空";
+  /// "請填寫金額"
+  @override
+  String get validationAmount => "請填寫金額";
+  /// "請填寫數字"
+  @override
+  String get validationNumber => "請填寫數字";
+  /// "請選擇日期"
+  @override
+  String get validationDate_notEmpty => "請選擇日期";
+  /// "請填寫姓名"
+  @override
+  String get validationUserName => "請填寫姓名";
+  /// "請填寫手機號"
+  @override
+  String get validationMobile => "請填寫手機號";
+  /// "請填寫關係"
+  @override
+  String get validationRelation => "請填寫關係";
+  /// "請填寫事件名稱"
+  @override
+  String get validationEvent_name => "請填寫事件名稱";
+
+  @override
+  TextDirection get textDirection => TextDirection.ltr;
+}
+
+class _I18n_zh_HK extends _I18n_zh_CN {
+  const _I18n_zh_HK();
+
+  /// "禮金小助手"
+  @override
+  String get app_name => "禮金小助手";
+  /// "記錄"
+  @override
+  String get tab_record => "記錄";
+  /// "統計"
+  @override
+  String get tab_chart => "統計";
+  /// "輔助"
+  @override
+  String get tab_accessibility => "輔助";
+  /// "我的"
+  @override
+  String get tab_mine => "我的";
+  /// "已上傳"
+  @override
+  String get bt_upload_success => "已上傳";
+  /// "未上傳"
+  @override
+  String get bt_upload_waiting => "未上傳";
+  /// "上傳失敗"
+  @override
+  String get bt_upload_waring => "上傳失敗";
+  /// "正在上傳"
+  @override
+  String get bt_upload_uploading => "正在上傳";
+  /// "保存"
+  @override
+  String get bt_save => "保存";
+  /// "姓名"
+  @override
+  String get form_person_name => "姓名";
+  /// "關係"
+  @override
+  String get form_relation => "關係";
+  /// "事件名稱"
+  @override
+  String get form_event_name => "事件名稱";
+  /// "事件時間"
+  @override
+  String get form_event_time => "事件時間";
+  /// "金額"
+  @override
+  String get form_amount => "金額";
+  /// "禮物"
+  @override
+  String get form_gift => "禮物";
+  /// "類型"
+  @override
+  String get form_type => "類型";
+  /// "收份子"
+  @override
+  String get form_in_account => "收份子";
+  /// "送份子"
+  @override
+  String get form_out_account => "送份子";
+  /// "正在保存"
+  @override
+  String get hud_saving => "正在保存";
+  /// "正在加載"
+  @override
+  String get hud_loading => "正在加載";
+  /// "保存成功"
+  @override
+  String get hud_save_success => "保存成功";
+  /// "不能為空"
+  @override
+  String get validationNotEmpty => "不能為空";
+  /// "請填寫金額"
+  @override
+  String get validationAmount => "請填寫金額";
+  /// "請填寫數字"
+  @override
+  String get validationNumber => "請填寫數字";
+  /// "請選擇日期"
+  @override
+  String get validationDate_notEmpty => "請選擇日期";
+  /// "請填寫姓名"
+  @override
+  String get validationUserName => "請填寫姓名";
+  /// "請填寫手機號"
+  @override
+  String get validationMobile => "請填寫手機號";
+  /// "請填寫關係"
+  @override
+  String get validationRelation => "請填寫關係";
+  /// "請填寫事件名稱"
+  @override
+  String get validationEvent_name => "請填寫事件名稱";
 
   @override
   TextDirection get textDirection => TextDirection.ltr;
@@ -207,7 +401,8 @@ class GeneratedLocalizationsDelegate extends LocalizationsDelegate<WidgetsLocali
     return const <Locale>[
       Locale("en", "US"),
       Locale("zh", "CN"),
-      Locale("zh", "TW")
+      Locale("zh", "TW"),
+      Locale("zh", "HK")
     ];
   }
 
@@ -235,6 +430,9 @@ class GeneratedLocalizationsDelegate extends LocalizationsDelegate<WidgetsLocali
     }
     else if ("zh_TW" == lang) {
       return SynchronousFuture<WidgetsLocalizations>(const _I18n_zh_TW());
+    }
+    else if ("zh_HK" == lang) {
+      return SynchronousFuture<WidgetsLocalizations>(const _I18n_zh_HK());
     }
     else if ("en" == languageCode) {
       return SynchronousFuture<WidgetsLocalizations>(const _I18n_en_US());
