@@ -1,0 +1,39 @@
+{
+  "app_name": "GiftMoney",
+  "tab_record": "Record",
+  "tab_chart": "Chart",
+  "tab_accessibility": "Func",
+  "tab_mine": "Mine",
+
+  "bt_upload_success": "done",
+  "bt_upload_waiting": "waiting",
+  "bt_upload_waring": "waring",
+  "bt_upload_uploading": "doing",
+
+  "bt_save": "Save",
+
+  "form_person_name": "Name",
+  "form_relation": "Relation",
+  "form_event_name": "Thing",
+  "form_event_time": "When",
+  "form_amount": "Amount",
+  "form_gift": "Gift",
+  "form_type": "Money",
+  "form_in_account": "Income",
+  "form_out_account": "Give away",
+
+  "hud_saving": "Saving",
+  "hud_loading": "Loading",
+  "hud_save_success": "Success",
+
+  "validation": {
+    "notEmpty": "should not be empty",
+    "amount": "fill amount",
+    "number": "fill a number",
+    "date_notEmpty": "picker a Date",
+    "userName": "fill a Name",
+    "mobile": "fill a mobile",
+    "relation": "select the relation with the User",
+    "event_name": "fill the Thing"
+  }
+}

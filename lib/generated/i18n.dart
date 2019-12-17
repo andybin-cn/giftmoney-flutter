@@ -32,54 +32,162 @@ class I18n implements WidgetsLocalizations {
   @override
   TextDirection get textDirection => TextDirection.ltr;
 
-  /// "礼金小助手"
-  String get app_name => "礼金小助手";
-  /// "记录"
-  String get tab_record => "记录";
-  /// "统计"
-  String get tab_chart => "统计";
-  /// "辅助"
-  String get tab_accessibility => "辅助";
-  /// "我的"
-  String get tab_mine => "我的";
-  /// "已上传"
-  String get bt_upload_success => "已上传";
-  /// "未上传"
-  String get bt_upload_waiting => "未上传";
-  /// "上传失败"
-  String get bt_upload_waring => "上传失败";
-  /// "正在上传"
-  String get bt_upload_uploading => "正在上传";
-  /// "保存"
-  String get bt_save => "保存";
-  /// "姓名"
-  String get form_person_name => "姓名";
-  /// "关系"
-  String get form_relation => "关系";
-  /// "事件名称"
-  String get form_event_name => "事件名称";
-  /// "事件时间"
-  String get form_event_time => "事件时间";
-  /// "金额"
-  String get form_amount => "金额";
-  /// "礼物"
-  String get form_gift => "礼物";
-  /// "类型"
-  String get form_type => "类型";
-  /// "收份子"
-  String get form_in_account => "收份子";
-  /// "送份子"
-  String get form_out_account => "送份子";
-  /// "正在保存"
-  String get hud_saving => "正在保存";
-  /// "正在加载"
-  String get hud_loading => "正在加载";
-  /// "保存成功"
-  String get hud_save_success => "保存成功";
+  /// "GiftMoney"
+  String get app_name => "GiftMoney";
+  /// "Record"
+  String get tab_record => "Record";
+  /// "Chart"
+  String get tab_chart => "Chart";
+  /// "Func"
+  String get tab_accessibility => "Func";
+  /// "Mine"
+  String get tab_mine => "Mine";
+  /// "done"
+  String get bt_upload_success => "done";
+  /// "waiting"
+  String get bt_upload_waiting => "waiting";
+  /// "waring"
+  String get bt_upload_waring => "waring";
+  /// "doing"
+  String get bt_upload_uploading => "doing";
+  /// "Save"
+  String get bt_save => "Save";
+  /// "Name"
+  String get form_person_name => "Name";
+  /// "Relation"
+  String get form_relation => "Relation";
+  /// "Thing"
+  String get form_event_name => "Thing";
+  /// "When"
+  String get form_event_time => "When";
+  /// "Amount"
+  String get form_amount => "Amount";
+  /// "Gift"
+  String get form_gift => "Gift";
+  /// "Money"
+  String get form_type => "Money";
+  /// "Income"
+  String get form_in_account => "Income";
+  /// "Give away"
+  String get form_out_account => "Give away";
+  /// "Saving"
+  String get hud_saving => "Saving";
+  /// "Loading"
+  String get hud_loading => "Loading";
+  /// "Success"
+  String get hud_save_success => "Success";
+  /// "should not be empty"
+  String get validationNotEmpty => "should not be empty";
+  /// "fill amount"
+  String get validationAmount => "fill amount";
+  /// "fill a number"
+  String get validationNumber => "fill a number";
+  /// "picker a Date"
+  String get validationDate_notEmpty => "picker a Date";
+  /// "fill a Name"
+  String get validationUserName => "fill a Name";
+  /// "fill a mobile"
+  String get validationMobile => "fill a mobile";
+  /// "select the relation with the User"
+  String get validationRelation => "select the relation with the User";
+  /// "fill the Thing"
+  String get validationEvent_name => "fill the Thing";
+}
+
+class _I18n_en_US extends I18n {
+  const _I18n_en_US();
+
+  @override
+  TextDirection get textDirection => TextDirection.ltr;
 }
 
 class _I18n_zh_CN extends I18n {
   const _I18n_zh_CN();
+
+  /// "礼金小助手"
+  @override
+  String get app_name => "礼金小助手";
+  /// "记录"
+  @override
+  String get tab_record => "记录";
+  /// "统计"
+  @override
+  String get tab_chart => "统计";
+  /// "辅助"
+  @override
+  String get tab_accessibility => "辅助";
+  /// "我的"
+  @override
+  String get tab_mine => "我的";
+  /// "已上传"
+  @override
+  String get bt_upload_success => "已上传";
+  /// "未上传"
+  @override
+  String get bt_upload_waiting => "未上传";
+  /// "上传失败"
+  @override
+  String get bt_upload_waring => "上传失败";
+  /// "正在上传"
+  @override
+  String get bt_upload_uploading => "正在上传";
+  /// "保存"
+  @override
+  String get bt_save => "保存";
+  /// "姓名"
+  @override
+  String get form_person_name => "姓名";
+  /// "关系"
+  @override
+  String get form_relation => "关系";
+  /// "事件名称"
+  @override
+  String get form_event_name => "事件名称";
+  /// "事件时间"
+  @override
+  String get form_event_time => "事件时间";
+  /// "金额"
+  @override
+  String get form_amount => "金额";
+  /// "礼物"
+  @override
+  String get form_gift => "礼物";
+  /// "类型"
+  @override
+  String get form_type => "类型";
+  /// "收份子"
+  @override
+  String get form_in_account => "收份子";
+  /// "送份子"
+  @override
+  String get form_out_account => "送份子";
+  /// "正在保存"
+  @override
+  String get hud_saving => "正在保存";
+  /// "正在加载"
+  @override
+  String get hud_loading => "正在加载";
+  /// "保存成功"
+  @override
+  String get hud_save_success => "保存成功";
+  /// "不能为空"
+  @override
+  String get validationNotEmpty => "不能为空";
+  /// "请填写金额"
+  @override
+  String get validationAmount => "请填写金额";
+  /// "请填写数字"
+  @override
+  String get validationNumber => "请填写数字";
+  /// "请选择日期"
+  @override
+  String get validationDate_notEmpty => "请选择日期";
+  /// "请填写姓名"
+  @override
+  String get validationUserName => "请填写姓名";
+  /// "请填写手机号"
+  @override
+  String get validationMobile => "请填写手机号";
 
   @override
   TextDirection get textDirection => TextDirection.ltr;
@@ -97,6 +205,7 @@ class GeneratedLocalizationsDelegate extends LocalizationsDelegate<WidgetsLocali
   const GeneratedLocalizationsDelegate();
   List<Locale> get supportedLocales {
     return const <Locale>[
+      Locale("en", "US"),
       Locale("zh", "CN"),
       Locale("zh", "TW")
     ];
@@ -118,11 +227,17 @@ class GeneratedLocalizationsDelegate extends LocalizationsDelegate<WidgetsLocali
     I18n._shouldReload = false;
     final String lang = I18n._locale != null ? I18n._locale.toString() : "";
     final String languageCode = I18n._locale != null ? I18n._locale.languageCode : "";
-    if ("zh_CN" == lang) {
+    if ("en_US" == lang) {
+      return SynchronousFuture<WidgetsLocalizations>(const _I18n_en_US());
+    }
+    else if ("zh_CN" == lang) {
       return SynchronousFuture<WidgetsLocalizations>(const _I18n_zh_CN());
     }
     else if ("zh_TW" == lang) {
       return SynchronousFuture<WidgetsLocalizations>(const _I18n_zh_TW());
+    }
+    else if ("en" == languageCode) {
+      return SynchronousFuture<WidgetsLocalizations>(const _I18n_en_US());
     }
     else if ("zh" == languageCode) {
       return SynchronousFuture<WidgetsLocalizations>(const _I18n_zh_CN());

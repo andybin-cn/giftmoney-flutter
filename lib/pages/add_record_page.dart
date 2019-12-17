@@ -29,6 +29,7 @@ class _AddRecordPageState extends BasePageState<AddRecordPage> {
             children: <Widget>[
               SizedBox(width: ScreenUtil.screenWidthDp/2, child: FormPopupMenu<SQLTradeType>(
                 label: i18n.form_type,
+                validator: Validation.relation,
                 initValue: FormPopupMenuValue<SQLTradeType>(value: SQLTradeType.inAccount, title: i18n.form_in_account),
                 values: [
                   FormPopupMenuValue<SQLTradeType>(value: SQLTradeType.inAccount, title: i18n.form_in_account),
@@ -50,7 +51,7 @@ class _AddRecordPageState extends BasePageState<AddRecordPage> {
           Row(children: <Widget>[
             SizedBox(width: ScreenUtil.screenWidthDp/2, child: FormInput(
               label: i18n.form_event_name,
-              validator: Validation.notEmpty,
+              validator: Validation.eventName,
               onSaved: (String text) {
                 _formValues["eventName"] = text;
               },
@@ -66,14 +67,14 @@ class _AddRecordPageState extends BasePageState<AddRecordPage> {
           Row(children: <Widget>[
             SizedBox(width: ScreenUtil.screenWidthDp/2, child: FormInput(
               label: i18n.form_relation,
-              validator: Validation.notEmpty,
+              validator: Validation.relation,
               onSaved: (String text) {
                 _formValues["relationName"] = text;
               },
             )),
             SizedBox(width: ScreenUtil.screenWidthDp/2, child: FormInput(
               label: i18n.form_person_name,
-              validator: Validation.notEmpty,
+              validator: Validation.userName,
               onSaved: (String text) {
                 _formValues["personName"] = text;
               },

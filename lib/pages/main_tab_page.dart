@@ -6,6 +6,7 @@ import 'package:giftmoney/pages/add_record_page.dart';
 import 'package:giftmoney/pages/home_accessibility_page.dart';
 import 'package:giftmoney/pages/home_chart_page.dart';
 import 'package:giftmoney/pages/home_mine_page.dart';
+import 'package:giftmoney/utils/i18n_util.dart';
 import 'package:giftmoney/utils/screen_util.dart';
 
 import 'home_record_page.dart';
@@ -37,6 +38,7 @@ class _MainTabPageState extends BasePageState<MainTabPage> {
   @override
   Widget buildContainer(BuildContext context) {
     ScreenUtil.init(context, 750, 1334);
+    I18nUtil.setContext(context);
     int index = currentIndex == 2 ? oldIndex : (currentIndex > 2 ? currentIndex - 1 : currentIndex);
     return Scaffold(
       body: IndexedStack(index: currentIndex > 2 ? currentIndex - 1 : currentIndex, children: controllers),

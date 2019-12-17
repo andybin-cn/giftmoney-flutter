@@ -24,5 +24,16 @@
 
   "hud_saving": "正在保存",
   "hud_loading": "正在加载",
-  "hud_save_success": "保存成功"
+  "hud_save_success": "保存成功",
+
+  "validation": {
+    "notEmpty": "不能为空",
+    "amount": "请填写金额",
+    "number": "请填写数字",
+    "date_notEmpty": "请选择日期",
+    "userName": "请填写姓名",
+    "mobile": "请填写手机号",
+    "relation": "请填写关系",
+    "event_name": "请填写事件名称"
+  }
 }

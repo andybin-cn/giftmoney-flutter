@@ -1,3 +1,39 @@
 {
-  "appName": "禮金小助手"
+  "app_name": "禮金小助手",
+  "tab_record": "記錄",
+  "tab_chart": "統計",
+  "tab_accessibility": "輔助",
+  "tab_mine": "我的",
+
+  "bt_upload_success": "已上傳",
+  "bt_upload_waiting": "未上傳",
+  "bt_upload_waring": "上傳失敗",
+  "bt_upload_uploading": "正在上傳",
+
+  "bt_save": "保存",
+
+  "form_person_name": "姓名",
+  "form_relation": "關係",
+  "form_event_name": "事件名稱",
+  "form_event_time": "事件時間",
+  "form_amount": "金額",
+  "form_gift": "禮物",
+  "form_type": "類型",
+  "form_in_account": "收份子",
+  "form_out_account": "送份子",
+
+  "hud_saving": "正在保存",
+  "hud_loading": "正在加載",
+  "hud_save_success": "保存成功",
+
+  "validation": {
+    "notEmpty": "不能為空",
+    "amount": "請填寫金額",
+    "number": "請填寫數字",
+    "date_notEmpty": "請選擇日期",
+    "userName": "請填寫姓名",
+    "mobile": "請填寫手機號",
+    "relation": "請填寫關係",
+    "event_name": "請填寫事件名稱"
+  }
 }

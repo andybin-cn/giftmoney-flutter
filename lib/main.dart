@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:giftmoney/data_center/db_manager.dart';
 import 'package:giftmoney/generated/i18n.dart';
+import 'package:giftmoney/utils/i18n_util.dart';
 import 'package:giftmoney/pages/main_tab_page.dart';
 
 
