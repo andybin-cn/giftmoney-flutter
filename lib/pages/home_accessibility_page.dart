@@ -16,7 +16,7 @@ class _State extends State<HomeAccessibilityPage> {
       FloatingActionButton(
         onPressed: () async {
           try {
-            var loadResult = await AdvertSupport.initRewardVideoAD(appID: "1110008890", posID: "4030391482552740");
+            var loadResult = await AdvertSupport.preLoadRewardVideo(adUnitId: "ca-app-pub-3156075797045250/8254562602");
             var showResult = await AdvertSupport.showRewardVideoAD();
             print("AdvertSupport.loadResult:$loadResult, showResult:$showResult");
           } catch (error) {
