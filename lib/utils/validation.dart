@@ -61,4 +61,7 @@ class Validation {
   static FormFieldValidator<String> get password {
     return Validation.validator(rule: "password", errorMsg: "Silahkan masukkan kata sandi atau PIN (6 Digit)");
   }
+  static FormFieldValidator<String> get amount {
+    return Validation.validator(rule: "number", errorMsg: "金额不能为空");
+  }
 }

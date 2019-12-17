@@ -40,7 +40,7 @@ class _AddRecordPageState extends BasePageState<AddRecordPage> {
               )),
               SizedBox(width: ScreenUtil.screenWidthDp/2, child: FormInput(
                 label: i18n.form_amount,
-                validator: Validation.notEmpty,
+                validator: Validation.amount,
                 onSaved: (String text) {
                   _formValues["value"] = text;
                 },
