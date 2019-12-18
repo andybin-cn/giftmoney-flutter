@@ -30,6 +30,7 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
+    // WidgetsBinding.instance.window.locales
     if(isLoadingDB) {
       return CircularProgressIndicator();
     }
