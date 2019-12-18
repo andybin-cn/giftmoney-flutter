@@ -1,4 +1,5 @@
 import 'package:advert_support/advert_support.dart';
+import 'package:device_info/device_info.dart';
 import 'package:flutter/material.dart';
 import 'package:giftmoney/base/base_stateful_page.dart';
 
@@ -13,20 +14,24 @@ class _State extends State<HomeAccessibilityPage> {
   @override
   Widget build(BuildContext context) {
     return Column(children: <Widget>[
-      FloatingActionButton(
-        onPressed: () async {
-          try {
-            var showResult = await AdvertSupport.showRewardVideoAD(adUnitId: "ca-app-pub-3940256099942544/5224354917");
-            print("AdvertSupport.showResult:$showResult");
-          } catch (error) {
-            print("error:$error");
-          }
-          
-        },
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
-
+      Padding(
+        padding: EdgeInsets.only(top: 50, left: 50),
+        child: FloatingActionButton(
+          onPressed: () async {
+            try {
+              //iOS ca-app-pub-3940256099942544/1712485313
+              //android ca-app-pub-3940256099942544/5224354917
+              var showResult = await AdvertSupport.showRewardVideoAD(adUnitId: "ca-app-pub-3940256099942544/1712485313");
+              print("AdvertSupport.showResult:$showResult");
+            } catch (error) {
+              print("error:$error");
+            }
+            
+          },
+          tooltip: 'Increment',
+          child: Icon(Icons.add),
+        )
       )
-    ],);
+    ]);
   }
 }
