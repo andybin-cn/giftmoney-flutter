@@ -46,7 +46,7 @@ class _MainTabPageState extends BasePageState<MainTabPage> {
         direction: Axis.vertical,
         mainAxisSize: MainAxisSize.min,
         children: [Stack(
-          alignment: Alignment.bottomCenter,
+          alignment: Alignment.topCenter,
           overflow: Overflow.visible,
           children:[
             Align(
@@ -73,7 +73,7 @@ class _MainTabPageState extends BasePageState<MainTabPage> {
               )
             ),
             Align(
-              alignment: Alignment.bottomCenter,
+              alignment: Alignment.topCenter,
               child: FlatButton(
                   child: Image.asset('assets/images/icons8-add.png', width: 50, height: 50,),
                   onPressed: () {
