@@ -58,15 +58,18 @@ class _FormDateInputState extends FormFieldState<DateTime> {
   FormDateInput get widget => super.widget;
 
   Widget buildBody() {
-    return FormInput(
-      focusNode: FocusNode(canRequestFocus: false),
-      controller: _fieldController,
-      label: widget.label,
-      validator: Validation.notEmpty,
-      onTap: () {
+    return FlatButton(
+      padding: EdgeInsets.zero,
+      onPressed: () {
         print("FormDateInput onTaped");
         _showDataPicker();
       },
+      child: FormInput(
+        controller: _fieldController,
+        label: widget.label,
+        validator: Validation.notEmpty,
+        enabled: false,
+      )
     );
   }
 }

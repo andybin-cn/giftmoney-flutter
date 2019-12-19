@@ -20,6 +20,9 @@ class _HomeRecordPageState extends BasePageState<HomeRecordPage> {
   void initState() {
     super.initState();
     _onRefresh();
+    TradeService.instance.tradeStream.stream.listen((event) {
+      _refreshKey.currentState.show();
+    });
   }
 
   @override

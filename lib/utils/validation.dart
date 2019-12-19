@@ -53,7 +53,7 @@ class Validation {
     return (input) => validatorString(input.toString());
   }
   static FormFieldValidator<String> get userName {
-    return Validation.validator(rule: "name", errorMsg: I18nUtil.shared.validationUserName);
+    return Validation.validator(rule: "not_empty", errorMsg: I18nUtil.shared.validationUserName);
   }
   static FormFieldValidator<String> get mobile {
     return Validation.validator(rule: "mobile", errorMsg: I18nUtil.shared.validationMobile);

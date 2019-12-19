@@ -10,7 +10,8 @@ import 'package:giftmoney/utils/screen_util.dart';
 import 'package:giftmoney/utils/validation.dart';
 
 class AddRecordPage extends BaseStatefulPage {
-  AddRecordPage({Key key}) : super(key: key);
+  final SQLTrade trade;
+  AddRecordPage({Key key, this.trade}) : super(key: key);
 
   _AddRecordPageState createState() => _AddRecordPageState();
 }
@@ -18,9 +19,17 @@ class AddRecordPage extends BaseStatefulPage {
 class _AddRecordPageState extends BasePageState<AddRecordPage> {
   Map<String, dynamic> _formValues = {};
   final _formKey = GlobalKey<FormState>();
+  SQLTrade trade;
+
+  @override
+  void initState() { 
+    super.initState();
+    trade = widget.trade;
+  }
 
   @override
   Widget buildBody(BuildContext context) {
+    SQLTradeType initTradeType = trade.type ?? SQLTradeType.inAccount;
     return Form(
       key: _formKey,
       child: Column(
@@ -30,7 +39,7 @@ class _AddRecordPageState extends BasePageState<AddRecordPage> {
               SizedBox(width: ScreenUtil.screenWidthDp/2, child: FormPopupMenu<SQLTradeType>(
                 label: i18n.form_type,
                 validator: Validation.relation,
-                initValue: FormPopupMenuValue<SQLTradeType>(value: SQLTradeType.inAccount, title: i18n.form_in_account),
+                initValue: FormPopupMenuValue<SQLTradeType>(value: initTradeType, title: initTradeType == SQLTradeType.inAccount ? i18n.form_in_account : i18n.form_out_account),
                 values: [
                   FormPopupMenuValue<SQLTradeType>(value: SQLTradeType.inAccount, title: i18n.form_in_account),
                   FormPopupMenuValue<SQLTradeType>(value: SQLTradeType.outAccount, title: i18n.form_out_account),
@@ -40,8 +49,10 @@ class _AddRecordPageState extends BasePageState<AddRecordPage> {
                 },
               )),
               SizedBox(width: ScreenUtil.screenWidthDp/2, child: FormInput(
+                initialValue: widget.trade.value,
                 label: i18n.form_amount,
                 validator: Validation.amount,
+                keyboardType: TextInputType.number,
                 onSaved: (String text) {
                   _formValues["value"] = text;
                 },

@@ -3,6 +3,15 @@ import 'package:giftmoney/model/sql_trade.dart';
 import 'package:sqflite/sqflite.dart';
 import 'dart:core';
 
+enum ObjectEventType { add, modify, delete }
+class ObjectEvent<T> {
+  T object;
+  ObjectEventType event;
+  ObjectEvent({this.object, this.event}) {
+
+  }
+}
+
 class DBManager {
   // 工厂模式
   factory DBManager() =>_getInstance();
@@ -58,6 +67,9 @@ class DBManager {
     int id = await database.insert("SQLTrade", trade.toJson());
     trade.id = id;
     return trade;
+  }
+  Future<int> deleteTrade(SQLTrade trade) async {
+    return await database.delete("SQLTrade", where: "id = ?", whereArgs: [trade.id]);
   }
   Future<SQLTrade> updateTrade(SQLTrade trade) async {
     await database.update("SQLTrade", trade.toJson());
