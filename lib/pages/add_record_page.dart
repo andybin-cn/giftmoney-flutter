@@ -62,6 +62,7 @@ class _AddRecordPageState extends BasePageState<AddRecordPage> {
           Row(children: <Widget>[
             SizedBox(width: ScreenUtil.screenWidthDp/2, child: FormInput(
               label: i18n.form_event_name,
+              initialValue: widget.trade.eventName,
               validator: Validation.eventName,
               onSaved: (String text) {
                 _formValues["eventName"] = text;
@@ -69,6 +70,7 @@ class _AddRecordPageState extends BasePageState<AddRecordPage> {
             )),
             SizedBox(width: ScreenUtil.screenWidthDp/2, child: FormDateInput(
               label: i18n.form_event_time,
+              initialValue: widget.trade.eventTime,
               validator: Validation.date_notEmpty,
               onSaved: (DateTime date) {
                 _formValues["eventTime"] = date.toString();
@@ -78,6 +80,7 @@ class _AddRecordPageState extends BasePageState<AddRecordPage> {
           Row(children: <Widget>[
             SizedBox(width: ScreenUtil.screenWidthDp/2, child: FormInput(
               label: i18n.form_relation,
+              initialValue: widget.trade.relationName,
               validator: Validation.relation,
               onSaved: (String text) {
                 _formValues["relationName"] = text;
@@ -85,6 +88,7 @@ class _AddRecordPageState extends BasePageState<AddRecordPage> {
             )),
             SizedBox(width: ScreenUtil.screenWidthDp/2, child: FormInput(
               label: i18n.form_person_name,
+              initialValue: widget.trade.personName,
               validator: Validation.userName,
               onSaved: (String text) {
                 _formValues["personName"] = text;
@@ -114,6 +118,9 @@ class _AddRecordPageState extends BasePageState<AddRecordPage> {
     }
     _formKey.currentState.save();
     SQLTrade trade = SQLTrade.fromJson(_formValues);
+    if(widget.trade?.id != null) {
+      trade.id = widget.trade.id;
+    }
     trade = await TradeService.instance.saveTrade(trade);
     return trade;
   }
