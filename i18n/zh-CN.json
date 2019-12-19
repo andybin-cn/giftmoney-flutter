@@ -26,6 +26,13 @@
   "hud_loading": "正在加载",
   "hud_save_success": "保存成功",
 
+  "statistics": {
+    "title": "分组统计",
+    "event_group": "事件",
+    "relation_group": "关系",
+    "contact_group": "联系人"
+  },
+
   "validation": {
     "notEmpty": "不能为空",
     "amount": "请填写金额",

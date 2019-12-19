@@ -1,5 +1,7 @@
 
 
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:giftmoney/base/base_stateful_page.dart';
 import 'package:giftmoney/components/cells/trade_cell.dart';
@@ -21,11 +23,12 @@ class _HomeRecordPageState extends BasePageState<HomeRecordPage> {
   @override
   void initState() {
     super.initState();
-    _onRefresh();
     TradeService.instance.tradeStream.stream.listen((event) {
       _refreshKey.currentState.show();
     });
+    Timer(Duration(milliseconds: 100), () => _refreshKey.currentState.show());
   }
+
 
   @override
   Widget buildSelfScrollBody(BuildContext context) {

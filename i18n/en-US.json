@@ -26,6 +26,12 @@
   "hud_loading": "Loading",
   "hud_save_success": "Success",
 
+  "statistics": {
+    "event_group": "Things",
+    "relation_group": "Relations",
+    "contact_group": "Contacts"
+  },
+
   "validation": {
     "notEmpty": "should not be empty",
     "amount": "fill amount",

@@ -32,7 +32,7 @@ class BasePageState<T extends BaseStatefulPage> extends BaseState<T> with RatioH
       appBar: AppBar(
         title: Text(""),
       ),
-      body: InkWell(
+      body: GestureDetector(
         onTap: () {
           FocusScope.of(context).requestFocus(FocusNode());
         },
