@@ -2,7 +2,9 @@
 import 'dart:async';
 
 import 'package:giftmoney/data_center/db_manager.dart';
+import 'package:giftmoney/model/sql_event.dart';
 import 'package:giftmoney/model/sql_trade.dart';
+import 'package:giftmoney/utils/format_helper.dart';
 
 class TradeService {
   // 工厂模式
@@ -45,8 +47,15 @@ class TradeService {
     return result;
   }
 
-  Future<List<SQLTrade>> queryAllTrades() {
+  Future<List<SQLTrade>> queryAllTrades({SQLEvent event}) {
+    if (event != null) {
+      return DBManager.instance.queryTrade(where: "eventName = ? AND date(eventTime) = ?", whereArgs: [event.eventName, FormatHelper.dateToString(event.eventTime)], orderBy: "updateAt desc");
+    }
     return DBManager.instance.queryTrade(orderBy: "updateAt desc");
+  }
+
+  Future<List<SQLEvent>> queryTradeGroupByEvent() {
+    return DBManager.instance.queryTradeGroupByEvent();
   }
   
 

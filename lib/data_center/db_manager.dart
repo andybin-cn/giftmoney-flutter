@@ -1,4 +1,5 @@
 
+import 'package:giftmoney/model/sql_event.dart';
 import 'package:giftmoney/model/sql_trade.dart';
 import 'package:sqflite/sqflite.dart';
 import 'dart:core';
@@ -46,10 +47,10 @@ class DBManager {
           createAt DateTime,
           updateAt DateTime,
           eventName TEXT,
-          eventTime DateTime,
+          eventTime Date,
           relationName TEXT,
           personName TEXT,
-          type INTEGER,
+          type TEXT,
           valueType INTEGER,
           value TEXT,
           giftName TEXT,
@@ -72,7 +73,7 @@ class DBManager {
     return await database.delete("SQLTrade", where: "id = ?", whereArgs: [trade.id]);
   }
   Future<SQLTrade> updateTrade(SQLTrade trade) async {
-    await database.update("SQLTrade", trade.toJson());
+    await database.update("SQLTrade", trade.toJson(), where: "id = ?", whereArgs: [trade.id]);
     return trade;
   }
   Future<List<SQLTrade>> queryTrade({bool distinct = false,
@@ -84,8 +85,32 @@ class DBManager {
       String orderBy,
       int limit = 100,
       int offset = 0}) async {
-      var tradeRows = await database.query("SQLTrade",distinct: distinct, columns: columns, where: where, groupBy: groupBy, having: having, orderBy: orderBy, limit: limit, offset: offset);    return tradeRows.map((row) {
+    var tradeRows = await database.query("SQLTrade",distinct: distinct, columns: columns, where: where, whereArgs: whereArgs, groupBy: groupBy, having: having, orderBy: orderBy, limit: limit, offset: offset);
+    return tradeRows.map((row) {
       return SQLTrade.fromJson(row);
+    }).toList();
+  }
+
+  Future<List<SQLEvent>> queryTradeGroupByEvent({bool distinct = false,
+      List<String> columns,
+      String where,
+      List<dynamic> whereArgs,
+      String groupBy,
+      String having,
+      String orderBy,
+      int limit = 100,
+      int offset = 0}) async {
+    var rows = await database.query("SQLTrade",
+      distinct: distinct,
+      columns: ["eventName", "eventTime","date(eventTime) as eventDate", "count(eventName) as 'count'", "sum(value * (10 - LENGTH(type))) incomeAmount", "sum(value * (LENGTH(type) - 9)) expendAmount", "max(updateAt) updateAt"],
+      where: where,
+      whereArgs: whereArgs,
+      groupBy: "eventName, eventDate", having: having, orderBy: orderBy, limit: limit, offset: offset);
+    return rows.map((row) {
+      var newRow = Map<String, dynamic>.from(row);
+      newRow["incomeAmount"] = row["incomeAmount"].toString();
+      newRow["expendAmount"] = row["expendAmount"].toString();
+      return SQLEvent.fromJson(newRow);
     }).toList();
   }
 }
