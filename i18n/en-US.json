@@ -21,15 +21,18 @@
   "form_type": "Money",
   "form_in_account": "Income",
   "form_out_account": "Give away",
+  "form_error": "The form was not filled out correctly",
 
   "hud_saving": "Saving",
   "hud_loading": "Loading",
   "hud_save_success": "Success",
 
   "statistics": {
+    "title": "Grouping statistics",
     "event_group": "Things",
     "relation_group": "Relations",
-    "contact_group": "Contacts"
+    "contact_group": "Contacts",
+    "recordCount": "{count} Records"
   },
 
   "validation": {

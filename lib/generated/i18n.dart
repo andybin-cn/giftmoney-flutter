@@ -86,6 +86,8 @@ class I18n implements WidgetsLocalizations {
   String get statisticsRelation_group => "关系";
   /// "联系人"
   String get statisticsContact_group => "联系人";
+  /// "${count}条记录"
+  String statisticsRecordCount(String count) => "${count}条记录";
   /// "不能为空"
   String get validationNotEmpty => "不能为空";
   /// "请填写金额"
@@ -182,6 +184,9 @@ class _I18n_en_US extends I18n {
   /// "Contacts"
   @override
   String get statisticsContact_group => "Contacts";
+  /// "${count} Records"
+  @override
+  String statisticsRecordCount(String count) => "${count} Records";
   /// "should not be empty"
   @override
   String get validationNotEmpty => "should not be empty";
