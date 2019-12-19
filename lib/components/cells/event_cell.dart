@@ -14,6 +14,7 @@ class EventCell extends StatefulWidget {
 class _EventCellState extends State<EventCell> {
   @override
   Widget build(BuildContext context) {
+    
     return Padding(
       padding: EdgeInsets.only(left: 15, right: 0),
       child: Row(
@@ -35,8 +36,8 @@ class _EventCellState extends State<EventCell> {
               crossAxisAlignment: CrossAxisAlignment.end,
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                Text("+ ${widget.event.incomeAmount} 元", style: TextStyle(fontSize: 16, color: AppColor.secondaryAppColor)),
-                Text("- ${widget.event.expendAmount} 元", style: TextStyle(fontSize: 16, color: AppColor.mainAppColor)),
+                Text("+ ${FormatHelper.formatCurrency(widget.event.incomeAmount)}", style: TextStyle(fontSize: 16, color: AppColor.secondaryAppColor)),
+                Text("- ${FormatHelper.formatCurrency(widget.event.expendAmount)}", style: TextStyle(fontSize: 16, color: AppColor.mainAppColor)),
               ],
           ))),
           Icon(Icons.keyboard_arrow_right),

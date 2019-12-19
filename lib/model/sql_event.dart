@@ -8,8 +8,8 @@ class SQLEvent {
   String eventName;
   DateTime eventTime;
   int count;
-  String incomeAmount;
-  String expendAmount;
+  num incomeAmount;
+  num expendAmount;
   DateTime updateAt;
 
   SQLEvent(this.eventName, this.eventTime, this.count, this.expendAmount, this.incomeAmount, this.updateAt);

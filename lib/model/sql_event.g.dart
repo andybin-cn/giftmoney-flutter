@@ -13,8 +13,8 @@ SQLEvent _$SQLEventFromJson(Map<String, dynamic> json) {
           ? null
           : DateTime.parse(json['eventTime'] as String),
       json['count'] as int,
-      json['expendAmount'] as String,
-      json['incomeAmount'] as String,
+      json['expendAmount'] as num,
+      json['incomeAmount'] as num,
       json['updateAt'] == null
           ? null
           : DateTime.parse(json['updateAt'] as String));

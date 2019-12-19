@@ -6,6 +6,7 @@ import 'package:giftmoney/components/form/form_input.dart';
 import 'package:giftmoney/components/form/form_popup_menu.dart';
 import 'package:giftmoney/model/sql_trade.dart';
 import 'package:giftmoney/service/trade_service.dart';
+import 'package:giftmoney/utils/CommonError.dart';
 import 'package:giftmoney/utils/screen_util.dart';
 import 'package:giftmoney/utils/validation.dart';
 
@@ -49,12 +50,12 @@ class _AddRecordPageState extends BasePageState<AddRecordPage> {
                 },
               )),
               SizedBox(width: ScreenUtil.screenWidthDp/2, child: FormInput(
-                initialValue: widget.trade?.value,
+                initialValue: widget.trade?.value?.toString(),
                 label: i18n.form_amount,
                 validator: Validation.amount,
                 keyboardType: TextInputType.number,
                 onSaved: (String text) {
-                  _formValues["value"] = text;
+                  _formValues["value"] = num.parse(text);
                 },
               )),
             ],
@@ -114,7 +115,7 @@ class _AddRecordPageState extends BasePageState<AddRecordPage> {
 
   Future<SQLTrade> saveForm() async {
     if (!_formKey.currentState.validate()) {
-      throw Error();
+      throw CommonError(i18n.form_error);
     }
     _formKey.currentState.save();
     SQLTrade trade = SQLTrade.fromJson(_formValues);

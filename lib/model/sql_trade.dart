@@ -1,3 +1,4 @@
+import 'package:giftmoney/utils/format_helper.dart';
 import 'package:json_annotation/json_annotation.dart';
 // user.g.dart 将在我们运行生成命令后自动生成
 part 'sql_trade.g.dart';
@@ -36,7 +37,7 @@ class SQLTrade {
 
   SQLTradeType type;
   SQLTradeValueType valueType;
-  String value;
+  num value;
   String giftName;
   String unit;
   String remark;
@@ -49,15 +50,16 @@ class SQLTrade {
 
   String get formatValue {
     String flag = type == SQLTradeType.inAccount ? "+" : "-";
+    
     switch (valueType) {
       case SQLTradeValueType.money:
-        return "$flag $value 元";
+        return "$flag ${FormatHelper.formatCurrency(value)}";
         break;
       case SQLTradeValueType.gift:
         return "$giftName $flag $value $unit";
         break;
       default:
-        return "$flag $value 元";
+        return "$flag ${FormatHelper.formatCurrency(value)}";
     }
   }
 }

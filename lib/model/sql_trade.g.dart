@@ -26,7 +26,7 @@ SQLTrade _$SQLTradeFromJson(Map<String, dynamic> json) {
       json['personName'] as String,
       _$enumDecodeNullable(_$SQLTradeTypeEnumMap, json['type']),
       _$enumDecodeNullable(_$SQLTradeValueTypeEnumMap, json['valueType']),
-      json['value'] as String,
+      json['value'] as num,
       json['unit'] as String,
       json['remark'] as String,
       json['giftName'] as String);

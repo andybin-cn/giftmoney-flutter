@@ -21,6 +21,7 @@
   "form_type": "类型",
   "form_in_account": "收份子",
   "form_out_account": "送份子",
+  "form_error": "表单填写不正确",
 
   "hud_saving": "正在保存",
   "hud_loading": "正在加载",

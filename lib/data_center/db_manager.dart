@@ -52,7 +52,7 @@ class DBManager {
           personName TEXT,
           type TEXT,
           valueType INTEGER,
-          value TEXT,
+          value NUMBER,
           giftName TEXT,
           unit TEXT,
           remark TEXT
@@ -107,10 +107,10 @@ class DBManager {
       whereArgs: whereArgs,
       groupBy: "eventName, eventDate", having: having, orderBy: orderBy, limit: limit, offset: offset);
     return rows.map((row) {
-      var newRow = Map<String, dynamic>.from(row);
-      newRow["incomeAmount"] = row["incomeAmount"].toString();
-      newRow["expendAmount"] = row["expendAmount"].toString();
-      return SQLEvent.fromJson(newRow);
+      // var newRow = Map<String, dynamic>.from(row);
+      // newRow["incomeAmount"] = row["incomeAmount"].toString();
+      // newRow["expendAmount"] = row["expendAmount"].toString();
+      return SQLEvent.fromJson(row);
     }).toList();
   }
 }

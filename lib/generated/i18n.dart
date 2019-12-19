@@ -70,6 +70,8 @@ class I18n implements WidgetsLocalizations {
   String get form_in_account => "收份子";
   /// "送份子"
   String get form_out_account => "送份子";
+  /// "表单填写不正确"
+  String get form_error => "表单填写不正确";
   /// "正在保存"
   String get hud_saving => "正在保存";
   /// "正在加载"
