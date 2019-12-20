@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:giftmoney/base/base_stateful_page.dart';
+import 'package:giftmoney/pages/contacts_statistics_page.dart';
 import 'package:giftmoney/pages/events_statistics_page.dart';
 import 'package:giftmoney/pages/home_record_page.dart';
 import 'package:giftmoney/pages/relations_statistics_page.dart';
@@ -48,7 +49,7 @@ class _HomeChartPageState extends BasePageState<HomeChartPage> with SingleTicker
         children: <Widget>[
           EventsStatisticsPage(),
           RelationsStatisticsPage(),
-          Text("3"),
+          ContactsStatisticsPage(),
         ],
       ),
     );

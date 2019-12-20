@@ -2,6 +2,7 @@
 import 'dart:async';
 
 import 'package:giftmoney/data_center/db_manager.dart';
+import 'package:giftmoney/model/sql_contact.dart';
 import 'package:giftmoney/model/sql_event.dart';
 import 'package:giftmoney/model/sql_relation.dart';
 import 'package:giftmoney/model/sql_trade.dart';
@@ -48,12 +49,19 @@ class TradeService {
     return result;
   }
 
-  Future<List<SQLTrade>> queryAllTrades({SQLEvent event, SQLRelation relation}) {
+  Future<List<SQLTrade>> queryAllTrades({SQLEvent event, SQLRelation relation, SQLContact contact}) {
     var where = "";
     var whereArgs = [];
     if (relation != null) {
       where += "relationName = ?";
       whereArgs.addAll([relation.relationName]);
+    }
+    if (contact != null) {
+      if (where.length > 0) {
+        where += " AND ";
+      }
+      where += "personName = ?";
+      whereArgs.addAll([contact.contactName]);
     }
     if (event != null) {
       if (where.length > 0) {
@@ -93,6 +101,10 @@ class TradeService {
     var result = relationMap.values.toList();
     result.sort((a, b) => b.expendAmount + b.incomeAmount - a.expendAmount - a.incomeAmount );
     return result;
+  }
+
+  Future<List<SQLContact>> queryTradeGroupByContact() {
+    return DBManager.instance.queryTradeGroupByContact();
   }
   
 

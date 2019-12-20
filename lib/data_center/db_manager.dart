@@ -1,4 +1,5 @@
 
+import 'package:giftmoney/model/sql_contact.dart';
 import 'package:giftmoney/model/sql_event.dart';
 import 'package:giftmoney/model/sql_trade.dart';
 import 'package:sqflite/sqflite.dart';
@@ -108,6 +109,15 @@ class DBManager {
       groupBy: "eventName, eventDate", having: having, orderBy: orderBy, limit: limit, offset: offset);
     return rows.map((row) {
       return SQLEvent.fromJSON(row);
+    }).toList();
+  }
+
+  Future<List<SQLContact>> queryTradeGroupByContact() async {
+    var rows = await database.query("SQLTrade",
+      columns: ["personName as contactName", "count(eventName) as 'recordsCount'", "sum(value * (10 - LENGTH(type))) incomeAmount", "sum(value * (LENGTH(type) - 9)) expendAmount"],
+      groupBy: "personName", orderBy: "personName ASC");
+    return rows.map((row) {
+      return SQLContact.fromJSON(row);
     }).toList();
   }
 }
