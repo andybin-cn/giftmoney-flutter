@@ -7,10 +7,16 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:giftmoney/json_mapper/mappable.dart';
 
 import 'package:giftmoney/main.dart';
 
 void main() {
+  test("description", () {
+    var trade = Trade.fromJSON(null);
+    print("object");
+  });
+
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
     // Build our app and trigger a frame.
     await tester.pumpWidget(MyApp());

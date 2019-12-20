@@ -1,10 +1,7 @@
 
-import 'package:json_annotation/json_annotation.dart';
-// user.g.dart 将在我们运行生成命令后自动生成
-part 'sql_event.g.dart';
+import 'package:giftmoney/json_mapper/mappable.dart';
 
-@JsonSerializable()
-class SQLEvent {
+class SQLEvent extends Mappable {
   String eventName;
   DateTime eventTime;
   int count;
@@ -12,8 +9,24 @@ class SQLEvent {
   num expendAmount;
   DateTime updateAt;
 
-  SQLEvent(this.eventName, this.eventTime, this.count, this.expendAmount, this.incomeAmount, this.updateAt);
-  //不同的类使用不同的mixin即可
-  factory SQLEvent.fromJson(Map<String, dynamic> json) => _$SQLEventFromJson(json);
-  Map<String, dynamic> toJson() => _$SQLEventToJson(this);
+  SQLEvent.fromJSON(Map<String, dynamic> map) : super.fromJSON(map) {
+    eventName = transformBasic(map["eventName"]);
+    eventTime = transformBasic(map["eventTime"]);
+    count = transformBasic(map["count"]);
+    incomeAmount = transformBasic(map["incomeAmount"]);
+    expendAmount = transformBasic(map["expendAmount"]);
+    updateAt = transformBasic(map["updateAt"]);
+  }
+
+  @override
+  Map<String, dynamic> toJSON() {
+    return <String, dynamic> {
+      "eventName": eventName,
+      "eventTime": eventTime?.toIso8601String(),
+      "count": count,
+      "incomeAmount": incomeAmount,
+      "expendAmount": expendAmount,
+      "updateAt": updateAt?.toIso8601String(),
+    };
+  }
 }

@@ -118,7 +118,7 @@ class _AddRecordPageState extends BasePageState<AddRecordPage> {
       throw CommonError(i18n.form_error);
     }
     _formKey.currentState.save();
-    SQLTrade trade = SQLTrade.fromJson(_formValues);
+    SQLTrade trade = SQLTrade.fromJSON(_formValues);
     if(widget.trade?.id != null) {
       trade.id = widget.trade?.id;
     }

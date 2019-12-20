@@ -65,7 +65,7 @@ class DBManager {
   }
 
   Future<SQLTrade> inserTrade(SQLTrade trade) async {
-    int id = await database.insert("SQLTrade", trade.toJson());
+    int id = await database.insert("SQLTrade", trade.toJSON());
     trade.id = id;
     return trade;
   }
@@ -73,7 +73,7 @@ class DBManager {
     return await database.delete("SQLTrade", where: "id = ?", whereArgs: [trade.id]);
   }
   Future<SQLTrade> updateTrade(SQLTrade trade) async {
-    await database.update("SQLTrade", trade.toJson(), where: "id = ?", whereArgs: [trade.id]);
+    await database.update("SQLTrade", trade.toJSON(), where: "id = ?", whereArgs: [trade.id]);
     return trade;
   }
   Future<List<SQLTrade>> queryTrade({bool distinct = false,
@@ -87,7 +87,7 @@ class DBManager {
       int offset = 0}) async {
     var tradeRows = await database.query("SQLTrade",distinct: distinct, columns: columns, where: where, whereArgs: whereArgs, groupBy: groupBy, having: having, orderBy: orderBy, limit: limit, offset: offset);
     return tradeRows.map((row) {
-      return SQLTrade.fromJson(row);
+      return SQLTrade.fromJSON(row);
     }).toList();
   }
 
@@ -107,10 +107,7 @@ class DBManager {
       whereArgs: whereArgs,
       groupBy: "eventName, eventDate", having: having, orderBy: orderBy, limit: limit, offset: offset);
     return rows.map((row) {
-      // var newRow = Map<String, dynamic>.from(row);
-      // newRow["incomeAmount"] = row["incomeAmount"].toString();
-      // newRow["expendAmount"] = row["expendAmount"].toString();
-      return SQLEvent.fromJson(row);
+      return SQLEvent.fromJSON(row);
     }).toList();
   }
 }

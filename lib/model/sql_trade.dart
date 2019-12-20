@@ -1,7 +1,5 @@
+import 'package:giftmoney/json_mapper/mappable.dart';
 import 'package:giftmoney/utils/format_helper.dart';
-import 'package:json_annotation/json_annotation.dart';
-// user.g.dart 将在我们运行生成命令后自动生成
-part 'sql_trade.g.dart';
 
 enum SQLTradeType {
   inAccount,
@@ -21,32 +19,80 @@ enum TradeUploadState {
   warning
 }
 
-@JsonSerializable()
-class SQLTrade {
+class SQLTrade extends Mappable {
   int id;
   int eventID;
   int relationID;
   int personID;
   DateTime createAt;
   DateTime updateAt;
-
   String eventName;
   DateTime eventTime;
   String relationName;
   String personName;
-
-  SQLTradeType type;
-  SQLTradeValueType valueType;
   num value;
   String giftName;
   String unit;
   String remark;
 
-  SQLTrade(this.id, this.eventID, this.relationID, this.personID, this.createAt, this.updateAt, this.eventName, this.eventTime, this.relationName, this.personName, this.type, this.valueType, this.value, this.unit, this.remark, this.giftName);
+  SQLTradeType type;
+  SQLTradeValueType valueType;
 
-  //不同的类使用不同的mixin即可
-  factory SQLTrade.fromJson(Map<String, dynamic> json) => _$SQLTradeFromJson(json);
-  Map<String, dynamic> toJson() => _$SQLTradeToJson(this);
+  SQLTrade.fromJSON(Map<String, dynamic> map) : super.fromJSON(null) {
+    id = transformBasic(map["id"]);
+    eventID = transformBasic(map["eventID"]);
+    relationID = transformBasic(map["relationID"]);
+    personID = transformBasic(map["personID"]);
+    createAt = transformBasic(map["createAt"]);
+    updateAt = transformBasic(map["updateAt"]);
+    eventName = transformBasic(map["eventName"]);
+    eventTime = transformBasic(map["eventTime"]);
+    relationName = transformBasic(map["relationName"]);
+    personName = transformBasic(map["personName"]);
+    value = transformBasic(map["value"]);
+    giftName = transformBasic(map["giftName"]);
+    unit = transformBasic(map["unit"]);
+    remark = transformBasic(map["remark"]);
+
+    type = transformEnum(map["type"], {
+      'inAccount': SQLTradeType.inAccount,
+      'outAccount': SQLTradeType.outAccount,
+    });
+    valueType = transformEnum(map["type"], {
+      'gift': SQLTradeValueType.gift,
+      'money': SQLTradeValueType.money,
+      'other': SQLTradeValueType.other,
+    });
+  }
+
+  @override
+  Map<String, dynamic> toJSON() {
+    return <String, dynamic>{
+      'id': id,
+      'eventID': eventID,
+      'relationID': relationID,
+      'personID': personID,
+      'createAt': createAt?.toIso8601String(),
+      'updateAt': updateAt?.toIso8601String(),
+      'eventName': eventName,
+      'eventTime': eventTime?.toIso8601String(),
+      'relationName': relationName,
+      'personName': personName,
+      'type': serializeEnum(type, {
+        'inAccount': SQLTradeType.inAccount,
+        'outAccount': SQLTradeType.outAccount,
+      }),
+      'valueType': transformEnum(valueType, {
+        'gift': SQLTradeValueType.gift,
+        'money': SQLTradeValueType.money,
+        'other': SQLTradeValueType.other,
+      }),
+      'value': value,
+      'giftName': giftName,
+      'unit': unit,
+      'remark': remark
+    };
+  }
 
   String get formatValue {
     String flag = type == SQLTradeType.inAccount ? "+" : "-";
