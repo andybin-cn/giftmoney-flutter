@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:giftmoney/base/base_stateful_page.dart';
 import 'package:giftmoney/pages/events_statistics_page.dart';
 import 'package:giftmoney/pages/home_record_page.dart';
+import 'package:giftmoney/pages/relations_statistics_page.dart';
 
 class HomeChartPage extends BaseStatefulPage {
   HomeChartPage({Key key}) : super(key: key);
@@ -46,7 +47,7 @@ class _HomeChartPageState extends BasePageState<HomeChartPage> with SingleTicker
         controller: _tabController,
         children: <Widget>[
           EventsStatisticsPage(),
-          HomeRecordPage(),
+          RelationsStatisticsPage(),
           Text("3"),
         ],
       ),

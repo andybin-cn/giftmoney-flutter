@@ -32,7 +32,8 @@
     "event_group": "Things",
     "relation_group": "Relations",
     "contact_group": "Contacts",
-    "recordCount": "{count} Records"
+    "recordCount": "{count} Records",
+    "contactsCount": "{count} Contacts"
   },
 
   "validation": {

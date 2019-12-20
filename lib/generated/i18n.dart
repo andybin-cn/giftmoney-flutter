@@ -88,6 +88,8 @@ class I18n implements WidgetsLocalizations {
   String get statisticsContact_group => "联系人";
   /// "${count}条记录"
   String statisticsRecordCount(String count) => "${count}条记录";
+  /// "${count}个联系人"
+  String statisticsContactsCount(String count) => "${count}个联系人";
   /// "不能为空"
   String get validationNotEmpty => "不能为空";
   /// "请填写金额"
@@ -166,6 +168,9 @@ class _I18n_en_US extends I18n {
   /// "Give away"
   @override
   String get form_out_account => "Give away";
+  /// "The form was not filled out correctly"
+  @override
+  String get form_error => "The form was not filled out correctly";
   /// "Saving"
   @override
   String get hud_saving => "Saving";
@@ -175,6 +180,9 @@ class _I18n_en_US extends I18n {
   /// "Success"
   @override
   String get hud_save_success => "Success";
+  /// "Grouping statistics"
+  @override
+  String get statisticsTitle => "Grouping statistics";
   /// "Things"
   @override
   String get statisticsEvent_group => "Things";
@@ -187,6 +195,9 @@ class _I18n_en_US extends I18n {
   /// "${count} Records"
   @override
   String statisticsRecordCount(String count) => "${count} Records";
+  /// "${count} Contacts"
+  @override
+  String statisticsContactsCount(String count) => "${count} Contacts";
   /// "should not be empty"
   @override
   String get validationNotEmpty => "should not be empty";

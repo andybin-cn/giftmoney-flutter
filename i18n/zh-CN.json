@@ -32,7 +32,8 @@
     "event_group": "事件",
     "relation_group": "关系",
     "contact_group": "联系人",
-    "recordCount": "{count}条记录"
+    "recordCount": "{count}条记录",
+    "contactsCount": "{count}个联系人"
   },
 
   "validation": {

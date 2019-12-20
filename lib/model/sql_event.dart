@@ -2,11 +2,11 @@
 import 'package:giftmoney/json_mapper/mappable.dart';
 
 class SQLEvent extends Mappable {
-  String eventName;
+  String eventName = "";
   DateTime eventTime;
-  int count;
-  num incomeAmount;
-  num expendAmount;
+  int count = 0;
+  num incomeAmount = 0;
+  num expendAmount = 0;
   DateTime updateAt;
 
   SQLEvent.fromJSON(Map<String, dynamic> map) : super.fromJSON(map) {

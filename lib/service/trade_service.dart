@@ -3,6 +3,7 @@ import 'dart:async';
 
 import 'package:giftmoney/data_center/db_manager.dart';
 import 'package:giftmoney/model/sql_event.dart';
+import 'package:giftmoney/model/sql_relation.dart';
 import 'package:giftmoney/model/sql_trade.dart';
 import 'package:giftmoney/utils/format_helper.dart';
 
@@ -56,6 +57,28 @@ class TradeService {
 
   Future<List<SQLEvent>> queryTradeGroupByEvent() {
     return DBManager.instance.queryTradeGroupByEvent();
+  }
+
+  Future<List<SQLRelation>> queryTradeGroupByRelation() async {
+    Map<String, SQLRelation> relationMap = Map<String, SQLRelation>();
+    var trades = await DBManager.instance.queryTrade(limit: 1000000);
+    trades.forEach((trade) {
+      var relation = relationMap[trade.relationName];
+      if(relation == null) {
+        relation = SQLRelation(trade.relationName);
+        relationMap[trade.relationName] = relation;
+      }
+      if(trade.type == SQLTradeType.inAccount) {
+        relation.incomeAmount += trade.value;
+      } else {
+        relation.expendAmount += trade.value;
+      }
+      relation.recordsCount += 1;
+      relation.contacts.add(trade.personName);
+    });
+    var result = relationMap.values.toList();
+    result.sort((a, b) => b.expendAmount + b.incomeAmount - a.expendAmount - a.incomeAmount );
+    return result;
   }
   
 
