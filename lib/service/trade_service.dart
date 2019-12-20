@@ -48,11 +48,25 @@ class TradeService {
     return result;
   }
 
-  Future<List<SQLTrade>> queryAllTrades({SQLEvent event}) {
-    if (event != null) {
-      return DBManager.instance.queryTrade(where: "eventName = ? AND date(eventTime) = ?", whereArgs: [event.eventName, FormatHelper.dateToString(event.eventTime)], orderBy: "updateAt desc");
+  Future<List<SQLTrade>> queryAllTrades({SQLEvent event, SQLRelation relation}) {
+    var where = "";
+    var whereArgs = [];
+    if (relation != null) {
+      where += "relationName = ?";
+      whereArgs.addAll([relation.relationName]);
     }
-    return DBManager.instance.queryTrade(orderBy: "updateAt desc");
+    if (event != null) {
+      if (where.length > 0) {
+        where += " AND ";
+      }
+      where != "eventName = ? AND date(eventTime) = ?";
+      whereArgs.addAll([event.eventName, FormatHelper.dateToString(event.eventTime)]);
+    }
+    if(where.length == 0) {
+      where = null;
+      whereArgs = null;
+    }
+    return DBManager.instance.queryTrade(where: where, whereArgs: whereArgs, orderBy: "updateAt desc");
   }
 
   Future<List<SQLEvent>> queryTradeGroupByEvent() {

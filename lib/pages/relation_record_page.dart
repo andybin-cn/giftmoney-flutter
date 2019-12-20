@@ -1,22 +1,25 @@
+
+
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:giftmoney/base/base_stateful_page.dart';
-import 'package:giftmoney/components/cells/relation_cell.dart';
+import 'package:giftmoney/components/cells/trade_cell.dart';
 import 'package:giftmoney/model/sql_relation.dart';
-import 'package:giftmoney/pages/relation_record_page.dart';
+import 'package:giftmoney/model/sql_trade.dart';
 import 'package:giftmoney/service/trade_service.dart';
 
-class RelationsStatisticsPage extends BaseStatefulPage {
-  RelationsStatisticsPage({Key key}) : super(key: key);
+import 'add_record_page.dart';
 
-  @override
-  _RelationsStatisticsPageState createState() => _RelationsStatisticsPageState();
+class RelationRecordPage extends BaseStatefulPage {
+  final SQLRelation relation;
+  RelationRecordPage({Key key, @required this.relation}) : super(key: key);
+
+  _RelationRecordPageState createState() => _RelationRecordPageState();
 }
 
-class _RelationsStatisticsPageState extends BasePageState<RelationsStatisticsPage> with AutomaticKeepAliveClientMixin {
-  List<SQLRelation> relations = List<SQLRelation>();
+class _RelationRecordPageState extends BasePageState<RelationRecordPage> {
+  List<SQLTrade> trades = List<SQLTrade>();
   final _refreshKey = GlobalKey<RefreshIndicatorState>();
 
   @override
@@ -27,9 +30,9 @@ class _RelationsStatisticsPageState extends BasePageState<RelationsStatisticsPag
     });
     Timer(Duration(milliseconds: 100), () => _refreshKey.currentState.show());
   }
-
+  
   @override
-  Widget build(BuildContext context) {
+  Widget buildSelfScrollBody(BuildContext context) {
     return RefreshIndicator(
       key: _refreshKey,
       onRefresh: _onRefresh,
@@ -37,28 +40,25 @@ class _RelationsStatisticsPageState extends BasePageState<RelationsStatisticsPag
         // physics: const AlwaysScrollableScrollPhysics(),
         separatorBuilder: (BuildContext context, int index) => Divider(),
         itemBuilder: _renderRow,
-        itemCount: relations.length,
+        itemCount: trades.length,
       ),
     );
   }
 
   Widget _renderRow(BuildContext context, int index) {
-    return ListTile(title: RelationCell(relation: relations[index]), onTap: () {
+    return ListTile(title: TradeCell(trade: trades[index]), onTap: () {
       Navigator.push(context,
         MaterialPageRoute(builder: (context) {
-            return RelationRecordPage(relation: relations[index]);
+            return AddRecordPage(trade: trades[index]);
         })
       );
     });
   }
 
   Future<Null> _onRefresh() async {
-    var relations = await TradeService.instance.queryTradeGroupByRelation();
+    var trades = await TradeService.instance.queryAllTrades(relation: widget.relation);
     setState(() {
-      this.relations = relations;
+      this.trades = trades;
     });
   }
-
-  @override
-  bool get wantKeepAlive => true;
 }

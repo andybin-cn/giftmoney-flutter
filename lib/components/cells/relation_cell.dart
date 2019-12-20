@@ -23,10 +23,10 @@ class _RelationCellState extends State<RelationCell> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(widget.relation.relationName, style: AppTextStyle.mainText(13)),
-            Padding(padding: EdgeInsets.only(top: 4)),
-            Text("   (${I18n.of(context).statisticsContactsCount(widget.relation.contactsCount.toString())})", style: AppTextStyle.reminderText(9)),
             Padding(padding: EdgeInsets.only(top: 2)),
-            Text("   (${I18n.of(context).statisticsRecordCount(widget.relation.recordsCount.toString())})", style: AppTextStyle.reminderText(9)),
+            Text("👥  ${I18n.of(context).statisticsContactsCount(widget.relation.contactsCount.toString())}", style: AppTextStyle.reminderText(10)),
+            Padding(padding: EdgeInsets.only(top: 2)),
+            Text("📝  ${I18n.of(context).statisticsRecordCount(widget.relation.recordsCount.toString())}", style: AppTextStyle.reminderText(10)),
           ],
         ),
         Expanded(child: Container(
