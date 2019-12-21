@@ -117,12 +117,12 @@ class _I18n_en_US extends I18n {
   /// "Record"
   @override
   String get tab_record => "Record";
-  /// "Chart"
+  /// "Statistics"
   @override
-  String get tab_chart => "Chart";
-  /// "Func"
+  String get tab_chart => "Statistics";
+  /// "Assist"
   @override
-  String get tab_accessibility => "Func";
+  String get tab_accessibility => "Assist";
   /// "Mine"
   @override
   String get tab_mine => "Mine";

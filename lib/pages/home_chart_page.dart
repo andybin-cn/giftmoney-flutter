@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:giftmoney/base/base_stateful_page.dart';
 import 'package:giftmoney/pages/contacts_statistics_page.dart';
 import 'package:giftmoney/pages/events_statistics_page.dart';
-import 'package:giftmoney/pages/home_record_page.dart';
 import 'package:giftmoney/pages/relations_statistics_page.dart';
 
 class HomeChartPage extends BaseStatefulPage {
@@ -34,7 +33,7 @@ class _HomeChartPageState extends BasePageState<HomeChartPage> with SingleTicker
       extendBody: true,
       appBar: AppBar(
         title: Text(i18n.statisticsTitle),
-        bottom: TabBar(
+        bottom: MyTabBar(
           isScrollable: false,
           controller: _tabController,
           tabs: <Widget>[
@@ -54,4 +53,20 @@ class _HomeChartPageState extends BasePageState<HomeChartPage> with SingleTicker
       ),
     );
   }
+}
+
+class MyTabBar extends StatelessWidget implements PreferredSizeWidget {
+  final bool isScrollable;
+  final TabController controller;
+  final List<Widget> tabs;
+
+  MyTabBar({Key key, this.controller, this.isScrollable, this.tabs}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return TabBar(isScrollable: isScrollable, controller: controller, tabs: tabs);
+  }
+
+  @override
+  Size get preferredSize => Size.fromHeight(20);
 }
