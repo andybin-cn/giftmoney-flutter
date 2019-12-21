@@ -21,10 +21,20 @@
   "form_type": "類型",
   "form_in_account": "收份子",
   "form_out_account": "送份子",
+  "form_error": "表單填寫不正確",
 
   "hud_saving": "正在保存",
   "hud_loading": "正在加載",
   "hud_save_success": "保存成功",
+
+  "statistics": {
+    "title": "分組統計",
+    "event_group": "事件",
+    "relation_group": "關係",
+    "contact_group": "聯繫人",
+    "recordCount": "{count}條記錄",
+    "contactsCount": "{count}個聯繫人"
+  },
 
   "validation": {
     "notEmpty": "不能為空",

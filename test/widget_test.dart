@@ -7,10 +7,17 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:giftmoney/data_center/db_manager.dart';
 
 import 'package:giftmoney/main.dart';
 
 void main() {
+  test('keyValue table test', () async {
+    // await DBManager.instance.initDB();
+    // await DBManager.instance.keyValue.save(key: "test", value: "123");
+    // var value = await DBManager.instance.keyValue.valueForKey("test");
+    // assert(value == "123");
+  });
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
     // Build our app and trigger a frame.
     await tester.pumpWidget(MyApp());

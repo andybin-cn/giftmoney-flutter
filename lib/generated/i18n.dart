@@ -294,6 +294,9 @@ class _I18n_zh_TW extends _I18n_zh_CN {
   /// "送份子"
   @override
   String get form_out_account => "送份子";
+  /// "表單填寫不正確"
+  @override
+  String get form_error => "表單填寫不正確";
   /// "正在保存"
   @override
   String get hud_saving => "正在保存";
@@ -303,6 +306,24 @@ class _I18n_zh_TW extends _I18n_zh_CN {
   /// "保存成功"
   @override
   String get hud_save_success => "保存成功";
+  /// "分組統計"
+  @override
+  String get statisticsTitle => "分組統計";
+  /// "事件"
+  @override
+  String get statisticsEvent_group => "事件";
+  /// "關係"
+  @override
+  String get statisticsRelation_group => "關係";
+  /// "聯繫人"
+  @override
+  String get statisticsContact_group => "聯繫人";
+  /// "${count}條記錄"
+  @override
+  String statisticsRecordCount(String count) => "${count}條記錄";
+  /// "${count}個聯繫人"
+  @override
+  String statisticsContactsCount(String count) => "${count}個聯繫人";
   /// "不能為空"
   @override
   String get validationNotEmpty => "不能為空";
@@ -392,6 +413,9 @@ class _I18n_zh_HK extends _I18n_zh_CN {
   /// "送份子"
   @override
   String get form_out_account => "送份子";
+  /// "表單填寫不正確"
+  @override
+  String get form_error => "表單填寫不正確";
   /// "正在保存"
   @override
   String get hud_saving => "正在保存";
@@ -401,6 +425,24 @@ class _I18n_zh_HK extends _I18n_zh_CN {
   /// "保存成功"
   @override
   String get hud_save_success => "保存成功";
+  /// "分組統計"
+  @override
+  String get statisticsTitle => "分組統計";
+  /// "事件"
+  @override
+  String get statisticsEvent_group => "事件";
+  /// "關係"
+  @override
+  String get statisticsRelation_group => "關係";
+  /// "聯繫人"
+  @override
+  String get statisticsContact_group => "聯繫人";
+  /// "${count}條記錄"
+  @override
+  String statisticsRecordCount(String count) => "${count}條記錄";
+  /// "${count}個聯繫人"
+  @override
+  String statisticsContactsCount(String count) => "${count}個聯繫人";
   /// "不能為空"
   @override
   String get validationNotEmpty => "不能為空";

@@ -29,20 +29,20 @@ class TradeService {
   Future<SQLTrade> saveTrade(SQLTrade trade) async {
     if(trade.id != null && trade.id > 0) {
       trade.updateAt = DateTime.now();
-      var result = await DBManager.instance.updateTrade(trade);
+      var result = await DBManager.instance.tradeTable.updateTrade(trade);
       tradeStream.add(ObjectEvent<SQLTrade>(object: result, event: ObjectEventType.modify));
       return result;
     } else {
       trade.createAt = DateTime.now();
       trade.updateAt = DateTime.now();
-      var result = await DBManager.instance.inserTrade(trade);
+      var result = await DBManager.instance.tradeTable.inserTrade(trade);
       tradeStream.add(ObjectEvent<SQLTrade>(object: result, event: ObjectEventType.add));
       return result;
     }
   }
 
   Future<int> deleteTrade(SQLTrade trade) async {
-    var result = await DBManager.instance.deleteTrade(trade);
+    var result = await DBManager.instance.tradeTable.deleteTrade(trade);
     if(result > 0) {
       tradeStream.add(ObjectEvent<SQLTrade>(object: trade, event: ObjectEventType.delete));
     }
@@ -74,16 +74,16 @@ class TradeService {
       where = null;
       whereArgs = null;
     }
-    return DBManager.instance.queryTrade(where: where, whereArgs: whereArgs, orderBy: "updateAt desc");
+    return DBManager.instance.tradeTable.queryTrade(where: where, whereArgs: whereArgs, orderBy: "updateAt desc");
   }
 
   Future<List<SQLEvent>> queryTradeGroupByEvent() {
-    return DBManager.instance.queryTradeGroupByEvent();
+    return DBManager.instance.tradeTable.queryTradeGroupByEvent();
   }
 
   Future<List<SQLRelation>> queryTradeGroupByRelation() async {
     Map<String, SQLRelation> relationMap = Map<String, SQLRelation>();
-    var trades = await DBManager.instance.queryTrade(limit: 1000000);
+    var trades = await DBManager.instance.tradeTable.queryTrade(limit: 1000000);
     trades.forEach((trade) {
       var relation = relationMap[trade.relationName];
       if(relation == null) {
@@ -104,7 +104,7 @@ class TradeService {
   }
 
   Future<List<SQLContact>> queryTradeGroupByContact() {
-    return DBManager.instance.queryTradeGroupByContact();
+    return DBManager.instance.tradeTable.queryTradeGroupByContact();
   }
   
 
