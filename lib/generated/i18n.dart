@@ -36,6 +36,8 @@ class I18n implements WidgetsLocalizations {
   String get app_name => "礼金小助手";
   /// "记录"
   String get tab_record => "记录";
+  /// "所有记录"
+  String get tab_record_title => "所有记录";
   /// "统计"
   String get tab_chart => "统计";
   /// "辅助"
@@ -117,6 +119,9 @@ class _I18n_en_US extends I18n {
   /// "Record"
   @override
   String get tab_record => "Record";
+  /// "All Record"
+  @override
+  String get tab_record_title => "All Record";
   /// "Statistics"
   @override
   String get tab_chart => "Statistics";

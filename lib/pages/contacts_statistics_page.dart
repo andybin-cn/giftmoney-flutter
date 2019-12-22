@@ -5,9 +5,8 @@ import 'package:flutter/widgets.dart';
 import 'package:giftmoney/base/base_stateful_page.dart';
 import 'package:giftmoney/components/cells/contact_cell.dart';
 import 'package:giftmoney/model/sql_contact.dart';
+import 'package:giftmoney/pages/contact_record_page.dart';
 import 'package:giftmoney/service/trade_service.dart';
-
-import 'contact_record_page.dart';
 
 class ContactsStatisticsPage extends BaseStatefulPage {
   ContactsStatisticsPage({Key key}) : super(key: key);

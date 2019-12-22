@@ -7,9 +7,8 @@ import 'package:giftmoney/base/base_stateful_page.dart';
 import 'package:giftmoney/components/cells/trade_cell.dart';
 import 'package:giftmoney/model/sql_relation.dart';
 import 'package:giftmoney/model/sql_trade.dart';
+import 'package:giftmoney/pages/add_record_page.dart';
 import 'package:giftmoney/service/trade_service.dart';
-
-import 'add_record_page.dart';
 
 class RelationRecordPage extends BaseStatefulPage {
   final SQLRelation relation;

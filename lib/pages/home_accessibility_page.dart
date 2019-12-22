@@ -1,10 +1,6 @@
-import 'dart:io';
 
-import 'package:advert_support/advert_support.dart';
-import 'package:device_info/device_info.dart';
 import 'package:flutter/material.dart';
 import 'package:giftmoney/base/base_stateful_page.dart';
-import 'package:giftmoney/data_center/db_manager.dart';
 
 class HomeAccessibilityPage extends BaseStatefulPage {
   HomeAccessibilityPage({Key key}) : super(key: key);

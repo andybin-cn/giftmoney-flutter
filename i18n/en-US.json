@@ -1,6 +1,7 @@
 {
   "app_name": "GiftMoney",
   "tab_record": "Record",
+  "tab_record_title": "All Record",
   "tab_chart": "Statistics",
   "tab_accessibility": "Assist",
   "tab_mine": "Mine",

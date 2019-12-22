@@ -6,9 +6,8 @@ import 'package:flutter/material.dart';
 import 'package:giftmoney/base/base_stateful_page.dart';
 import 'package:giftmoney/components/cells/trade_cell.dart';
 import 'package:giftmoney/model/sql_trade.dart';
+import 'package:giftmoney/pages/add_record_page.dart';
 import 'package:giftmoney/service/trade_service.dart';
-
-import 'add_record_page.dart';
 
 class HomeRecordPage extends BaseStatefulPage {
   HomeRecordPage({Key key}) : super(key: key);
@@ -23,6 +22,7 @@ class _HomeRecordPageState extends BasePageState<HomeRecordPage> {
   @override
   void initState() {
     super.initState();
+    title = i18n.tab_record_title;
     TradeService.instance.tradeStream.stream.listen((event) {
       _refreshKey.currentState.show();
     });

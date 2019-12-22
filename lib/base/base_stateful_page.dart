@@ -14,6 +14,7 @@ abstract class BaseStatefulPage extends StatefulWidget with RatioHelper {
 
 class BasePageState<T extends BaseStatefulPage> extends BaseState<T> with RatioHelper {
   I18n i18n;
+  String title = "";
   @override
   void initState() {
     super.initState();

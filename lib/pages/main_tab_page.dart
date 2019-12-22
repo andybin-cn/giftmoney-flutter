@@ -6,10 +6,9 @@ import 'package:giftmoney/pages/add_record_page.dart';
 import 'package:giftmoney/pages/home_accessibility_page.dart';
 import 'package:giftmoney/pages/home_chart_page.dart';
 import 'package:giftmoney/pages/home_mine_page.dart';
+import 'package:giftmoney/pages/home_record_page.dart';
 import 'package:giftmoney/utils/i18n_util.dart';
 import 'package:giftmoney/utils/screen_util.dart';
-
-import 'home_record_page.dart';
 
 
 class MainTabPage extends BaseStatefulPage {
