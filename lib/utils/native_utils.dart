@@ -1,0 +1,10 @@
+
+
+import 'package:flutter/services.dart';
+
+class NativeUtils {
+  static const platform = const MethodChannel('giftmoney_flutter/utils');
+  static exportToExcel(String destinationPath, List<List<String>> data) async {
+    return await platform.invokeMethod('exportExcel', { "destinationPath": destinationPath, "data": data });
+  }
+}

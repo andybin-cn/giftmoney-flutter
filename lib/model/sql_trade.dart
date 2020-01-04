@@ -5,12 +5,22 @@ enum SQLTradeType {
   inAccount,
   outAccount
 }
-
 enum SQLTradeValueType {
   money,
   gift,
   other
 }
+
+const SQLTradeTypeMap = {
+  'inAccount': SQLTradeType.inAccount,
+  'outAccount': SQLTradeType.outAccount,
+};
+
+const SQLTradeValueTypeMap = {
+  'gift': SQLTradeValueType.gift,
+  'money': SQLTradeValueType.money,
+  'other': SQLTradeValueType.other,
+};
 
 enum TradeUploadState {
   notUpload,
@@ -54,15 +64,8 @@ class SQLTrade extends Mappable {
     unit = transformBasic(map["unit"]);
     remark = transformBasic(map["remark"]);
 
-    type = transformEnum(map["type"], {
-      'inAccount': SQLTradeType.inAccount,
-      'outAccount': SQLTradeType.outAccount,
-    });
-    valueType = transformEnum(map["type"], {
-      'gift': SQLTradeValueType.gift,
-      'money': SQLTradeValueType.money,
-      'other': SQLTradeValueType.other,
-    });
+    type = transformEnum(map["type"], SQLTradeTypeMap);
+    valueType = transformEnum(map["valueType"], SQLTradeValueTypeMap);
   }
 
   @override
@@ -78,15 +81,8 @@ class SQLTrade extends Mappable {
       'eventTime': eventTime?.toIso8601String(),
       'relationName': relationName,
       'personName': personName,
-      'type': serializeEnum(type, {
-        'inAccount': SQLTradeType.inAccount,
-        'outAccount': SQLTradeType.outAccount,
-      }),
-      'valueType': transformEnum(valueType, {
-        'gift': SQLTradeValueType.gift,
-        'money': SQLTradeValueType.money,
-        'other': SQLTradeValueType.other,
-      }),
+      'type': serializeEnum(type, SQLTradeTypeMap),
+      'valueType': serializeEnum(valueType, SQLTradeValueTypeMap),
       'value': value,
       'giftName': giftName,
       'unit': unit,

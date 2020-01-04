@@ -2,11 +2,14 @@
 import 'dart:async';
 
 import 'package:giftmoney/data_center/db_manager.dart';
+import 'package:giftmoney/json_mapper/mappable.dart';
 import 'package:giftmoney/model/sql_contact.dart';
 import 'package:giftmoney/model/sql_event.dart';
 import 'package:giftmoney/model/sql_relation.dart';
 import 'package:giftmoney/model/sql_trade.dart';
 import 'package:giftmoney/utils/format_helper.dart';
+import 'package:giftmoney/utils/native_utils.dart';
+import 'package:path_provider/path_provider.dart';
 
 class TradeService {
   // 工厂模式
@@ -74,7 +77,7 @@ class TradeService {
       where = null;
       whereArgs = null;
     }
-    return DBManager.instance.tradeTable.queryTrade(where: where, whereArgs: whereArgs, orderBy: "updateAt desc");
+    return DBManager.instance.tradeTable.queryTrade(where: where, whereArgs: whereArgs, orderBy: "createAt desc");
   }
 
   Future<List<SQLEvent>> queryTradeGroupByEvent() {
@@ -105,6 +108,31 @@ class TradeService {
 
   Future<List<SQLContact>> queryTradeGroupByContact() {
     return DBManager.instance.tradeTable.queryTradeGroupByContact();
+  }
+
+  Future<String> exportTradesToExcel() async {
+    var trades = await queryAllTrades();
+    var headers = ["id", "姓名", "关系", "事件名称", "事件时间", "类型", "金额", "图片", "创建时间", "修改时间"];
+    var excelBody = trades.map((trade) {
+      return [
+        trade.id.toString(),
+        trade.personName,
+        trade.relationName,
+        trade.eventName,
+        FormatHelper.dateToString(trade.eventTime),
+        EnumMappableUtil.serializeEnum(trade.type, SQLTradeTypeMap),
+        trade.value.toString(),
+        "",
+        FormatHelper.dateToString(trade.createAt),
+        FormatHelper.dateToString(trade.updateAt),
+      ];
+    });
+    var excelData = [headers] + excelBody;
+    var tempDir =  await getTemporaryDirectory();
+    var destinationPath = tempDir.path + "/records_${DateTime.now().toIso8601String()}.xls";
+    print("exportTradesToExcel destinationPath:${destinationPath}");
+    await NativeUtils.exportToExcel(destinationPath, excelData);
+    return destinationPath;
   }
   
 

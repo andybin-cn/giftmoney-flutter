@@ -1,8 +1,6 @@
 package com.example.giftmoney_flutter
 
-import android.os.Bundle
 import androidx.annotation.NonNull;
-import io.flutter.app.FlutterApplication
 import io.flutter.embedding.android.FlutterActivity
 import io.flutter.embedding.engine.FlutterEngine
 import io.flutter.plugin.common.MethodChannel
@@ -21,15 +19,21 @@ class MainActivity: FlutterActivity() {
 
         MethodChannel(flutterEngine.dartExecutor.binaryMessenger, CHANNEL).setMethodCallHandler { call, result ->
             if (call.method == "exportExcel") {
-                GlobalScope.async {
-                    try {
-                        var filePath = ExcelReaderWriter.exportExcel()
-                        withContext(Dispatchers.Main) {
-                            result.success(filePath)
+                val filePath = call.argument<String>("destinationPath")
+                val data = call.argument<List<List<String>>>("data")
+                if (filePath != null && data != null) {
+                    GlobalScope.async {
+                        try {
+                            var filePath = ExcelReaderWriter.exportExcel(filePath, data)
+                            withContext(Dispatchers.Main) {
+                                result.success(filePath)
+                            }
+                        } catch (e: Exception) {
+                            result.error("-1", "导出失败", null)
                         }
-                    } catch (e: Exception) {
-                        result.error("-1", "导出失败", null)
                     }
+                } else {
+                    result.error("-2", "参数 destinationPath 和 data 不能为空", null)
                 }
             }
         }

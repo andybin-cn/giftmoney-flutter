@@ -38,3 +38,13 @@ abstract class Mappable {
     return maps.entries.singleWhere((e) => e.value == jsonValue).key;
   }
 }
+
+class EnumMappableUtil {
+  static T transformEnum<T>(dynamic jsonValue, Map<String, T> maps) {
+    return maps[jsonValue.toString()];
+  }
+
+  static String serializeEnum<T>(dynamic jsonValue, Map<String, T> maps) {
+    return maps.entries.singleWhere((e) => e.value == jsonValue).key;
+  }
+}
