@@ -1,6 +1,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:giftmoney/base/base_stateful_page.dart';
+import 'package:giftmoney/service/trade_service.dart';
+import 'package:giftmoney/utils/native_utils.dart';
 
 class HomeAccessibilityPage extends BaseStatefulPage {
   HomeAccessibilityPage({Key key}) : super(key: key);
@@ -17,6 +19,8 @@ class _State extends State<HomeAccessibilityPage> {
         padding: EdgeInsets.only(top: 50, left: 50),
         child: FloatingActionButton(
           onPressed: () async {
+            var path = await TradeService.instance.exportTradesToExcel();
+            NativeUtils.shareFile(filePath: path, subject: "");
             // await DBManager.instance.keyValue.save(key: "test", value: "123ss");
             // var value = await DBManager.instance.keyValue.valueForKey("test");
             // assert(value == "123ss");

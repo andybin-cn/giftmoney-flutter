@@ -35,6 +35,12 @@ class MainActivity: FlutterActivity() {
                 } else {
                     result.error("-2", "参数 destinationPath 和 data 不能为空", null)
                 }
+            } else if (call.method == "shareFile") {
+                val filePath = call.argument<String>("filePath")
+                val subject = call.argument<String>("subject")
+                if (filePath != null && subject != null) {
+                    DocumentProvider.shareFile(filePath, subject, this)
+                }
             }
         }
     }
