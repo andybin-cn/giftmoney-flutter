@@ -10,4 +10,16 @@ class NativeUtils {
   static shareFile({String filePath, String subject}) async {
     return await platform.invokeMethod('shareFile', { "filePath": filePath, "subject": subject });
   }
+  static openFileManager({String filePath}) async {
+    return await platform.invokeMethod('openFileManager', { "filePath": filePath});
+  }
+  static Future<List<List<String>>> readExcel({String filePath}) async {
+    List<dynamic> result = await platform.invokeMethod('readExcel', { "filePath": filePath});
+    return result.map((row) {
+      var list = row as List<dynamic>;
+      return list.map((item) {
+        return item as String ?? "";
+      }).toList();
+    }).toList();
+  }
 }

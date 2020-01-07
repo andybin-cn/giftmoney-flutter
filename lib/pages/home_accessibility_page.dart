@@ -1,3 +1,6 @@
+import 'dart:io';
+
+import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:giftmoney/base/base_stateful_page.dart';
 import 'package:giftmoney/pages/export_records_page.dart';
@@ -94,7 +97,9 @@ class _State extends BasePageState<HomeAccessibilityPage> {
     NativeUtils.shareFile(filePath: path, subject: "");
   }
   void _onImportPress() async {
-    
+    File file = await FilePicker.getFile();
+    var result = await NativeUtils.readExcel(filePath: file.path);
+    print("_onImportPress result:${result}");
   }
   void _onHistoryPress() {
     Navigator.push(context,

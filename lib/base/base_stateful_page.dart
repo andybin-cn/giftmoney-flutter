@@ -32,6 +32,7 @@ class BasePageState<T extends BaseStatefulPage> extends BaseState<T> with RatioH
       extendBody: true,
       appBar: AppBar(
         title: Text(title),
+        actions: appBarActions(),
       ),
       body: GestureDetector(
         onTap: () {
@@ -40,6 +41,10 @@ class BasePageState<T extends BaseStatefulPage> extends BaseState<T> with RatioH
         child: this.buildSelfScrollBody(context) ?? _buildScrollView(context),
       )
     );
+  }
+
+  List<Widget> appBarActions() {
+    return null;
   }
 
   Widget _buildScrollView(BuildContext context) {

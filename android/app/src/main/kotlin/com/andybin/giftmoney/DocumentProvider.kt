@@ -1,5 +1,6 @@
 package com.andybin.giftmoney
 
+import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
@@ -17,5 +18,16 @@ object DocumentProvider {
         intent.putExtra(Intent.EXTRA_STREAM, uri)
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
         context.startActivity(Intent.createChooser(intent, ""))
+    }
+
+    fun openFileManager(path: String, context: Activity) {
+        val intent = Intent(Intent.ACTION_GET_CONTENT)
+        intent.addCategory(Intent.CATEGORY_OPENABLE)
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+        val uri = Uri.fromFile(File(path))
+//        val uri = FileProvider.getUriForFile(context,"com.andybin.giftmoney", File(path))
+        intent.setDataAndType(uri, "file/*")
+
+        context.startActivity(intent)
     }
 }

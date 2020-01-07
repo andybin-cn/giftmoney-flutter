@@ -96,4 +96,24 @@ class _ExportRecordsPageState extends BasePageState<ExportRecordsPage> {
       this.files = newFiles;
     });
   }
+
+
+  @override
+  List<Widget> appBarActions() {
+    return [
+      FlatButton(
+        child: Text("管理"),
+        textColor: Colors.white,
+        onPressed: () async {
+          if(files.length == 0) {
+            return;
+          }
+          print("appBarActions pressed");
+          // var path = await TradeService.instance.getRecodsPath();
+          NativeUtils.openFileManager(filePath: files[0].path);
+        },
+      )
+    ];
+  }
+
 }

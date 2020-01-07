@@ -130,7 +130,7 @@ class TradeService {
     }).toList();
     var excelData = [headers] + excelBody;
     var tempPath =  await getRecodsPath();
-    var destinationPath = tempPath + "/${DateTime.now().toIso8601String()}.xls";
+    var destinationPath = tempPath + "${DateTime.now().toIso8601String()}.xls";
     print("exportTradesToExcel destinationPath:${destinationPath}");
     await NativeUtils.exportToExcel(destinationPath, excelData);
     return destinationPath;
@@ -144,7 +144,7 @@ class TradeService {
       tempDir =  await getApplicationDocumentsDirectory();
     }
     // var tempDir =  await getApplicationSupportDirectory();
-    var path = tempDir.path + "/records";
+    var path = tempDir.path + "/records/";
     var dir = Directory(path);
     if(!await dir.exists()) {
       await dir.create(recursive: true);
