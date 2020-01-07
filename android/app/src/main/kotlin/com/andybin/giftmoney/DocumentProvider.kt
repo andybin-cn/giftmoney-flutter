@@ -9,7 +9,7 @@ import java.io.File
 object DocumentProvider {
     fun shareFile(path: String, subject: String, context: Context) {
         val intent = Intent(Intent.ACTION_SEND);
-        intent.setType("application/vnd.ms-excel");
+        intent.setType("application/octet-stream");
         intent.putExtra(Intent.EXTRA_SUBJECT, subject);
 //        intent.putExtra(Intent.EXTRA_TEXT, "I have successfully share my message through my app");
         val uri = FileProvider.getUriForFile(context,"com.andybin.giftmoney", File(path))

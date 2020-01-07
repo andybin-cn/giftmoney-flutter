@@ -7,7 +7,7 @@
          FlutterApplication and put your custom class here. -->
     <application
         android:name="com.andybin.giftmoney.MainApplication"
-        android:label="giftmoney_flutter"
+        android:label="@string/appName"
         android:icon="@mipmap/ic_launcher">
 
         <provider
