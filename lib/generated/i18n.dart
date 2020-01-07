@@ -44,6 +44,12 @@ class I18n implements WidgetsLocalizations {
   String get tab_accessibility => "辅助";
   /// "我的"
   String get tab_mine => "我的";
+  /// "导出至Excel"
+  String get accessibilityExoprt_button => "导出至Excel";
+  /// "从Excel导入数据"
+  String get accessibilityImport_button => "从Excel导入数据";
+  /// "历史记录（导出数据）"
+  String get accessibilityHistory_button => "历史记录（导出数据）";
   /// "已上传"
   String get bt_upload_success => "已上传";
   /// "未上传"
@@ -131,6 +137,15 @@ class _I18n_en_US extends I18n {
   /// "Mine"
   @override
   String get tab_mine => "Mine";
+  /// "Export Recods to Excel"
+  @override
+  String get accessibilityExoprt_button => "Export Recods to Excel";
+  /// "Import Recods from Excel"
+  @override
+  String get accessibilityImport_button => "Import Recods from Excel";
+  /// "Export Historys"
+  @override
+  String get accessibilityHistory_button => "Export Historys";
   /// "done"
   @override
   String get bt_upload_success => "done";
@@ -248,6 +263,9 @@ class _I18n_zh_TW extends _I18n_zh_CN {
   /// "記錄"
   @override
   String get tab_record => "記錄";
+  /// "所有記錄"
+  @override
+  String get tab_record_title => "所有記錄";
   /// "統計"
   @override
   String get tab_chart => "統計";
@@ -257,6 +275,15 @@ class _I18n_zh_TW extends _I18n_zh_CN {
   /// "我的"
   @override
   String get tab_mine => "我的";
+  /// "導出至Excel"
+  @override
+  String get accessibilityExoprt_button => "導出至Excel";
+  /// "從Excel導入數據"
+  @override
+  String get accessibilityImport_button => "從Excel導入數據";
+  /// "歷史記錄（導出數據）"
+  @override
+  String get accessibilityHistory_button => "歷史記錄（導出數據）";
   /// "已上傳"
   @override
   String get bt_upload_success => "已上傳";
@@ -367,6 +394,9 @@ class _I18n_zh_HK extends _I18n_zh_CN {
   /// "記錄"
   @override
   String get tab_record => "記錄";
+  /// "所有記錄"
+  @override
+  String get tab_record_title => "所有記錄";
   /// "統計"
   @override
   String get tab_chart => "統計";
@@ -376,6 +406,15 @@ class _I18n_zh_HK extends _I18n_zh_CN {
   /// "我的"
   @override
   String get tab_mine => "我的";
+  /// "導出至Excel"
+  @override
+  String get accessibilityExoprt_button => "導出至Excel";
+  /// "從Excel導入數據"
+  @override
+  String get accessibilityImport_button => "從Excel導入數據";
+  /// "歷史記錄（導出數據）"
+  @override
+  String get accessibilityHistory_button => "歷史記錄（導出數據）";
   /// "已上傳"
   @override
   String get bt_upload_success => "已上傳";

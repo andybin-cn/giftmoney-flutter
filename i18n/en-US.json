@@ -6,6 +6,12 @@
   "tab_accessibility": "Assist",
   "tab_mine": "Mine",
 
+  "accessibility": {
+    "exoprt_button": "Export Recods to Excel",
+    "import_button": "Import Recods from Excel",
+    "history_button": "Export Historys"
+  },
+
   "bt_upload_success": "done",
   "bt_upload_waiting": "waiting",
   "bt_upload_waring": "waring",

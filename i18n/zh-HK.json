@@ -1,9 +1,16 @@
 {
   "app_name": "禮金小助手",
   "tab_record": "記錄",
+  "tab_record_title": "所有記錄",
   "tab_chart": "統計",
   "tab_accessibility": "輔助",
   "tab_mine": "我的",
+
+  "accessibility": {
+    "exoprt_button": "導出至Excel",
+    "import_button": "從Excel導入數據",
+    "history_button": "歷史記錄（導出數據）"
+  },
 
   "bt_upload_success": "已上傳",
   "bt_upload_waiting": "未上傳",

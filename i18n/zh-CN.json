@@ -6,6 +6,12 @@
   "tab_accessibility": "辅助",
   "tab_mine": "我的",
 
+  "accessibility": {
+    "exoprt_button": "导出至Excel",
+    "import_button": "从Excel导入数据",
+    "history_button": "历史记录（导出数据）"
+  },
+
   "bt_upload_success": "已上传",
   "bt_upload_waiting": "未上传",
   "bt_upload_waring": "上传失败",

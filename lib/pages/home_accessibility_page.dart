@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:giftmoney/base/base_stateful_page.dart';
+import 'package:giftmoney/pages/export_records_page.dart';
 import 'package:giftmoney/service/trade_service.dart';
 import 'package:giftmoney/utils/native_utils.dart';
 
@@ -28,7 +29,7 @@ class _State extends BasePageState<HomeAccessibilityPage> {
                   Padding(padding: EdgeInsets.only(left: 15)),
                   Icon(Icons.import_export),
                   Padding(padding: EdgeInsets.only(left: 8)),
-                  Expanded(child: Text("Export")),
+                  Expanded(child: Text(i18n.accessibilityExoprt_button)),
                   Icon(Icons.arrow_forward_ios),
                   Padding(padding: EdgeInsets.only(left: 15)),
                 ],
@@ -49,7 +50,7 @@ class _State extends BasePageState<HomeAccessibilityPage> {
                   Padding(padding: EdgeInsets.only(left: 15)),
                   Icon(Icons.save_alt),
                   Padding(padding: EdgeInsets.only(left: 8)),
-                  Expanded(child: Text("Import")),
+                  Expanded(child: Text(i18n.accessibilityImport_button)),
                   Icon(Icons.arrow_forward_ios),
                   Padding(padding: EdgeInsets.only(left: 15)),
                 ],
@@ -70,7 +71,7 @@ class _State extends BasePageState<HomeAccessibilityPage> {
                   Padding(padding: EdgeInsets.only(left: 15)),
                   Icon(Icons.history),
                   Padding(padding: EdgeInsets.only(left: 8)),
-                  Expanded(child: Text("History")),
+                  Expanded(child: Text(i18n.accessibilityHistory_button)),
                   Icon(Icons.arrow_forward_ios),
                   Padding(padding: EdgeInsets.only(left: 15)),
                 ],
@@ -96,7 +97,11 @@ class _State extends BasePageState<HomeAccessibilityPage> {
     
   }
   void _onHistoryPress() {
-    
+    Navigator.push(context,
+        MaterialPageRoute(builder: (context) {
+            return ExportRecordsPage();
+        })
+      );
   }
   // @override
   // Widget build(BuildContext context) {

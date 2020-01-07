@@ -137,13 +137,19 @@ class TradeService {
   }
 
   Future<String> getRecodsPath() async {
+    Directory tempDir;
     if(Platform.isAndroid) {
-      var tempDir =  await getExternalStorageDirectory();
-      return tempDir.path + "/records";
+      tempDir =  await getExternalStorageDirectory();
     } else {
-      var tempDir =  await getApplicationDocumentsDirectory();
-      return tempDir.path + "/records";
+      tempDir =  await getApplicationDocumentsDirectory();
     }
+    // var tempDir =  await getApplicationSupportDirectory();
+    var path = tempDir.path + "/records";
+    var dir = Directory(path);
+    if(!await dir.exists()) {
+      await dir.create(recursive: true);
+    }
+    return path;
   }
 
 
