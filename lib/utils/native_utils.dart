@@ -8,6 +8,6 @@ class NativeUtils {
     return await platform.invokeMethod('exportExcel', { "destinationPath": destinationPath, "data": data });
   }
   static shareFile({String filePath, String subject}) async {
-    return await platform.invokeMethod('exportExcel', { "filePath": filePath, "subject": subject });
+    return await platform.invokeMethod('shareFile', { "filePath": filePath, "subject": subject });
   }
 }

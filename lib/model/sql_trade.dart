@@ -11,12 +11,12 @@ enum SQLTradeValueType {
   other
 }
 
-const SQLTradeTypeMap = {
+const Map<String, SQLTradeType> SQLTradeTypeMap = {
   'inAccount': SQLTradeType.inAccount,
   'outAccount': SQLTradeType.outAccount,
 };
 
-const SQLTradeValueTypeMap = {
+const Map<String, SQLTradeValueType> SQLTradeValueTypeMap = {
   'gift': SQLTradeValueType.gift,
   'money': SQLTradeValueType.money,
   'other': SQLTradeValueType.other,

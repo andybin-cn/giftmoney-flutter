@@ -1,20 +1,18 @@
-
-
 abstract class Mappable {
   Mappable.fromJSON(Map<String, dynamic> map);
   Map<String, dynamic> toJSON();
 
   T transformBasic<T>(dynamic jsonValue) {
-    if(jsonValue == null) {
+    if (jsonValue == null) {
       return null;
     }
-    if(jsonValue is T) {
+    if (jsonValue is T) {
       return jsonValue;
-    } else if(T == String) {
+    } else if (T == String) {
       return jsonValue.toString() as T;
-    } else if(T == DateTime) {
+    } else if (T == DateTime) {
       return DateTime.parse(jsonValue.toString()) as T;
-    } else if(jsonValue is String) {
+    } else if (jsonValue is String) {
       switch (T) {
         case int:
           return int.parse(jsonValue) as T;
@@ -35,7 +33,7 @@ abstract class Mappable {
   }
 
   String serializeEnum<T>(dynamic jsonValue, Map<String, T> maps) {
-    return maps.entries.singleWhere((e) => e.value == jsonValue).key;
+    return maps.entries.firstWhere((e) => e.value == jsonValue, orElse: () => null )?.key;
   }
 }
 
@@ -45,6 +43,6 @@ class EnumMappableUtil {
   }
 
   static String serializeEnum<T>(dynamic jsonValue, Map<String, T> maps) {
-    return maps.entries.singleWhere((e) => e.value == jsonValue).key;
+    return maps.entries.firstWhere((e) => e.value == jsonValue, orElse: () => null )?.key;
   }
 }

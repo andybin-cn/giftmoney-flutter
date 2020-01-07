@@ -31,7 +31,7 @@ class BasePageState<T extends BaseStatefulPage> extends BaseState<T> with RatioH
     return Scaffold(
       extendBody: true,
       appBar: AppBar(
-        title: Text(""),
+        title: Text(title),
       ),
       body: GestureDetector(
         onTap: () {

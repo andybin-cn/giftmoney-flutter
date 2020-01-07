@@ -1,5 +1,6 @@
 
 import 'dart:async';
+import 'dart:io';
 
 import 'package:giftmoney/data_center/db_manager.dart';
 import 'package:giftmoney/json_mapper/mappable.dart';
@@ -126,14 +127,26 @@ class TradeService {
         FormatHelper.dateToString(trade.createAt),
         FormatHelper.dateToString(trade.updateAt),
       ];
-    });
+    }).toList();
     var excelData = [headers] + excelBody;
-    var tempDir =  await getTemporaryDirectory();
-    var destinationPath = tempDir.path + "/records_${DateTime.now().toIso8601String()}.xls";
+    var tempPath =  await getRecodsPath();
+    var destinationPath = tempPath + "/${DateTime.now().toIso8601String()}.xls";
     print("exportTradesToExcel destinationPath:${destinationPath}");
     await NativeUtils.exportToExcel(destinationPath, excelData);
     return destinationPath;
   }
+
+  Future<String> getRecodsPath() async {
+    if(Platform.isAndroid) {
+      var tempDir =  await getExternalStorageDirectory();
+      return tempDir.path + "/records";
+    } else {
+      var tempDir =  await getApplicationDocumentsDirectory();
+      return tempDir.path + "/records";
+    }
+  }
+
+
   
 
 }
