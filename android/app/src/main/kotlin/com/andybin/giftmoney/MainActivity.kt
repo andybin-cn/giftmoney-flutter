@@ -31,9 +31,8 @@ class MainActivity: FlutterActivity() {
                             }
                         } catch (e: Exception) {
                             withContext(Dispatchers.Main) {
-                                result.error("-1", "导出失败", null)
+                                result.error("-1", e.localizedMessage, e)
                             }
-
                         }
                     }
                 } else {
@@ -61,7 +60,7 @@ class MainActivity: FlutterActivity() {
                             }
                         } catch (e: Exception) {
                             withContext(Dispatchers.Main) {
-                                result.error("-1", "导出失败", null)
+                                result.error("-1", e.localizedMessage, e)
                             }
                         }
                     }

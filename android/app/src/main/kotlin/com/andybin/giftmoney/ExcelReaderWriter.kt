@@ -11,7 +11,7 @@ import java.io.InputStream
 
 object ExcelReaderWriter {
     fun exportExcel(path: String, data: List<List<String>>) {
-        val workbook = HSSFWorkbook()
+        val workbook = XSSFWorkbook()
         val sheet = workbook.createSheet()
         data.forEachIndexed { rowIndex, list ->
             val row = sheet.createRow(rowIndex)

@@ -144,7 +144,7 @@ class TradeService {
     }).toList();
     var excelData = [headers] + excelBody;
     var tempPath =  await getRecodsPath();
-    var destinationPath = tempPath + "${DateTime.now().toIso8601String()}.xls";
+    var destinationPath = tempPath + "${DateTime.now().toIso8601String()}.xlsx";
     print("exportTradesToExcel destinationPath:${destinationPath}");
     await NativeUtils.exportToExcel(destinationPath, excelData);
     return destinationPath;
