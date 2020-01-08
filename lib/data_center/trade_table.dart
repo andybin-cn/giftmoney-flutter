@@ -12,7 +12,7 @@ class TradeTable extends SQLTable {
   @override
   Future onCreate(Database db, int version) async {
     return await db.execute("""CREATE TABLE SQLTrade (
-          id INTEGER PRIMARY KEY,
+          uuid TEXT PRIMARY KEY,
           eventID INTEGER,
           relationID INTEGER,
           personID INTEGER,
@@ -38,15 +38,14 @@ class TradeTable extends SQLTable {
 
 
   Future<SQLTrade> inserTrade(SQLTrade trade) async {
-    int id = await database.insert("SQLTrade", trade.toJSON());
-    trade.id = id;
+    await database.insert("SQLTrade", trade.toJSON());
     return trade;
   }
   Future<int> deleteTrade(SQLTrade trade) async {
-    return await database.delete("SQLTrade", where: "id = ?", whereArgs: [trade.id]);
+    return await database.delete("SQLTrade", where: "uuid = ?", whereArgs: [trade.uuid]);
   }
   Future<SQLTrade> updateTrade(SQLTrade trade) async {
-    await database.update("SQLTrade", trade.toJSON(), where: "id = ?", whereArgs: [trade.id]);
+    await database.update("SQLTrade", trade.toJSON(), where: "uuid = ?", whereArgs: [trade.uuid]);
     return trade;
   }
   Future<List<SQLTrade>> queryTrade({bool distinct = false,
@@ -62,6 +61,15 @@ class TradeTable extends SQLTable {
     return tradeRows.map((row) {
       return SQLTrade.fromJSON(row);
     }).toList();
+  }
+
+  Future<SQLTrade> queryTradeByUUID({uuid: String}) async {
+    var tradeRows = await database.query("SQLTrade", where: "uuid = ?", whereArgs: [uuid]);
+    if(tradeRows.length > 0) {
+      return SQLTrade.fromJSON(tradeRows.first);
+    } else {
+      return null;
+    }
   }
 
   Future<List<SQLEvent>> queryTradeGroupByEvent({bool distinct = false,

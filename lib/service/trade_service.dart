@@ -13,6 +13,7 @@ import 'package:giftmoney/utils/format_helper.dart';
 import 'package:giftmoney/utils/i18n_util.dart';
 import 'package:giftmoney/utils/native_utils.dart';
 import 'package:path_provider/path_provider.dart';
+import 'package:uuid/uuid.dart';
 
 class TradeService {
   // 工厂模式
@@ -33,12 +34,13 @@ class TradeService {
   StreamController<ObjectEvent<SQLTrade>> tradeStream;
 
   Future<SQLTrade> saveTrade(SQLTrade trade) async {
-    if(trade.id != null && trade.id > 0) {
+    if(trade.uuid != null && trade.uuid.trim().length > 0) {
       trade.updateAt = DateTime.now();
       var result = await DBManager.instance.tradeTable.updateTrade(trade);
       tradeStream.add(ObjectEvent<SQLTrade>(object: result, event: ObjectEventType.modify));
       return result;
     } else {
+      trade.uuid = Uuid().v4();
       trade.createAt = DateTime.now();
       trade.updateAt = DateTime.now();
       var result = await DBManager.instance.tradeTable.inserTrade(trade);
@@ -130,7 +132,7 @@ class TradeService {
     ];
     var excelBody = trades.map((trade) {
       return [
-        trade.id.toString(),
+        trade.uuid.toString(),
         trade.personName,
         trade.relationName,
         trade.eventName,
@@ -166,17 +168,32 @@ class TradeService {
     return path;
   }
 
-  Future<int> importTrades(List<List<String>> sheet) async {
+  Future<ImportTradeResult> importTrades(List<List<String>> sheet) async {
     var trades = XLSParseService.instance.parseXLSData(sheet);
-    var count = 0;
+    var result = ImportTradeResult();
     for (var trade in trades) {
       try {
-        await saveTrade(trade);
-        count++;
+        if(trade.uuid != null && trade.uuid.trim().length > 0) {
+          var oldTrade = await DBManager.instance.tradeTable.queryTradeByUUID(uuid: trade.uuid);
+          if(oldTrade != null) {
+            result.skipCount++;
+            continue;
+          }
+        }
+        await DBManager.instance.tradeTable.inserTrade(trade);
+        tradeStream.add(ObjectEvent<SQLTrade>(object: trade, event: ObjectEventType.add));
+        result.successCount++;
       } catch (e) {
+        result.errorCount++;
         print("importTrades saveTrade error:${e}");
       }
     }
-    return count;
+    return result;
   }
+}
+
+class ImportTradeResult {
+  var successCount = 0;
+  var errorCount = 0;
+  var skipCount = 0;
 }

@@ -30,7 +30,7 @@ enum TradeUploadState {
 }
 
 class SQLTrade extends Mappable {
-  int id;
+  String uuid;
   int eventID;
   int relationID;
   int personID;
@@ -51,7 +51,7 @@ class SQLTrade extends Mappable {
   SQLTrade() : super.fromJSON(null);
 
   SQLTrade.fromJSON(Map<String, dynamic> map) : super.fromJSON(null) {
-    id = transformBasic(map["id"]);
+    uuid = transformBasic(map["uuid"]);
     eventID = transformBasic(map["eventID"]);
     relationID = transformBasic(map["relationID"]);
     personID = transformBasic(map["personID"]);
@@ -73,7 +73,7 @@ class SQLTrade extends Mappable {
   @override
   Map<String, dynamic> toJSON() {
     return <String, dynamic>{
-      'id': id,
+      'uuid': uuid,
       'eventID': eventID,
       'relationID': relationID,
       'personID': personID,

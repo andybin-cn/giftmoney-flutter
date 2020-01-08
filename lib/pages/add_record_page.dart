@@ -119,8 +119,8 @@ class _AddRecordPageState extends BasePageState<AddRecordPage> {
     }
     _formKey.currentState.save();
     SQLTrade trade = SQLTrade.fromJSON(_formValues);
-    if(widget.trade?.id != null) {
-      trade.id = widget.trade?.id;
+    if(widget.trade?.uuid != null) {
+      trade.uuid = widget.trade?.uuid;
     }
     trade = await TradeService.instance.saveTrade(trade);
     return trade;

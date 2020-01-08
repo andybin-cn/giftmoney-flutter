@@ -32,6 +32,8 @@ dependencies:
   device_info: ^0.4.1
   image_picker: ^0.6.2
   file_picker: ^1.4.3
+  uuid: ^2.0.4
+  rflutter_alert: ^1.0.3
   advert_support:
     git:
       ref: master

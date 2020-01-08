@@ -142,7 +142,7 @@ class XLSParseService {
       try {
         var row = sheet[rowIndex];
         var trade = SQLTrade();
-        // trade.id = intValue(row, header.uuid);
+        trade.uuid = value(row, header.uuid);
         trade.personName = value(row, header.name);
         trade.relationName = value(row, header.relation);
         trade.type = EnumMappableUtil.transformEnum(value(row, header.type), SQLTradeTypeMap);

@@ -86,8 +86,12 @@ class I18n implements WidgetsLocalizations {
   String get hud_loading => "正在加载";
   /// "保存成功"
   String get hud_save_success => "保存成功";
-  /// "成功导入 ${count} 条记录"
-  String hud_import_success(String count) => "成功导入 ${count} 条记录";
+  /// "好的"
+  String get alertOk_button => "好的";
+  /// "导入完成"
+  String get alertImport_result_title => "导入完成";
+  /// "成功: ${success} 条记录\n忽略: ${skipped} 条记录\n失败: ${failed} 条记录"
+  String alertImport_result(String success, String skipped, String failed) => "成功: ${success} 条记录\n忽略: ${skipped} 条记录\n失败: ${failed} 条记录";
   /// "分组统计"
   String get statisticsTitle => "分组统计";
   /// "事件"
@@ -234,9 +238,15 @@ class _I18n_en_US extends I18n {
   /// "Success"
   @override
   String get hud_save_success => "Success";
-  /// "Success import ${count} records"
+  /// "OK"
   @override
-  String hud_import_success(String count) => "Success import ${count} records";
+  String get alertOk_button => "OK";
+  /// "improt finished"
+  @override
+  String get alertImport_result_title => "improt finished";
+  /// "Success: ${success} records\nIgnored: ${skipped} records\nFailed: ${failed} records"
+  @override
+  String alertImport_result(String success, String skipped, String failed) => "Success: ${success} records\nIgnored: ${skipped} records\nFailed: ${failed} records";
   /// "Grouping statistics"
   @override
   String get statisticsTitle => "Grouping statistics";
@@ -423,9 +433,15 @@ class _I18n_zh_TW extends _I18n_zh_CN {
   /// "保存成功"
   @override
   String get hud_save_success => "保存成功";
-  /// "成功導入 ${count} 條記錄"
+  /// "好的"
   @override
-  String hud_import_success(String count) => "成功導入 ${count} 條記錄";
+  String get alertOk_button => "好的";
+  /// "導入完成"
+  @override
+  String get alertImport_result_title => "導入完成";
+  /// "成功: ${success} 條記錄\n忽略: ${skipped} 條記錄\n失敗: ${failed} 條記錄"
+  @override
+  String alertImport_result(String success, String skipped, String failed) => "成功: ${success} 條記錄\n忽略: ${skipped} 條記錄\n失敗: ${failed} 條記錄";
   /// "分組統計"
   @override
   String get statisticsTitle => "分組統計";
@@ -557,9 +573,15 @@ class _I18n_zh_HK extends _I18n_zh_CN {
   /// "保存成功"
   @override
   String get hud_save_success => "保存成功";
-  /// "成功導入 ${count} 條記錄"
+  /// "好的"
   @override
-  String hud_import_success(String count) => "成功導入 ${count} 條記錄";
+  String get alertOk_button => "好的";
+  /// "導入完成"
+  @override
+  String get alertImport_result_title => "導入完成";
+  /// "成功: ${success} 條記錄\n忽略: ${skipped} 條記錄\n失敗: ${failed} 條記錄"
+  @override
+  String alertImport_result(String success, String skipped, String failed) => "成功: ${success} 條記錄\n忽略: ${skipped} 條記錄\n失敗: ${failed} 條記錄";
   /// "分組統計"
   @override
   String get statisticsTitle => "分組統計";
