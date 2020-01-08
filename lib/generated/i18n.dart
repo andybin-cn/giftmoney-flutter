@@ -114,6 +114,38 @@ class I18n implements WidgetsLocalizations {
   String get validationRelation => "请填写关系";
   /// "请填写事件名称"
   String get validationEvent_name => "请填写事件名称";
+  /// "ID"
+  String get excelHeaderId => "ID";
+  /// "事件ID"
+  String get excelHeaderEventID => "事件ID";
+  /// "关系ID"
+  String get excelHeaderRelationID => "关系ID";
+  /// "人物ID"
+  String get excelHeaderPersonID => "人物ID";
+  /// "创建时间"
+  String get excelHeaderCreateAt => "创建时间";
+  /// "修改时间"
+  String get excelHeaderUpdateAt => "修改时间";
+  /// "事件名称"
+  String get excelHeaderEventName => "事件名称";
+  /// "事件时间"
+  String get excelHeaderEventTime => "事件时间";
+  /// "关系"
+  String get excelHeaderRelationName => "关系";
+  /// "姓名"
+  String get excelHeaderPersonName => "姓名";
+  /// "类型"
+  String get excelHeaderType => "类型";
+  /// "数据类型"
+  String get excelHeaderValueType => "数据类型";
+  /// "金额"
+  String get excelHeaderValue => "金额";
+  /// "礼物名称"
+  String get excelHeaderGiftName => "礼物名称";
+  /// "单位"
+  String get excelHeaderUnit => "单位";
+  /// "备注"
+  String get excelHeaderRemark => "备注";
 }
 
 class _I18n_en_US extends I18n {
@@ -242,6 +274,54 @@ class _I18n_en_US extends I18n {
   /// "fill the Thing"
   @override
   String get validationEvent_name => "fill the Thing";
+  /// "ID"
+  @override
+  String get excelHeaderId => "ID";
+  /// "eventID"
+  @override
+  String get excelHeaderEventID => "eventID";
+  /// "relationID"
+  @override
+  String get excelHeaderRelationID => "relationID";
+  /// "personID"
+  @override
+  String get excelHeaderPersonID => "personID";
+  /// "createAt"
+  @override
+  String get excelHeaderCreateAt => "createAt";
+  /// "updateAt"
+  @override
+  String get excelHeaderUpdateAt => "updateAt";
+  /// "eventName"
+  @override
+  String get excelHeaderEventName => "eventName";
+  /// "eventTime"
+  @override
+  String get excelHeaderEventTime => "eventTime";
+  /// "relationName"
+  @override
+  String get excelHeaderRelationName => "relationName";
+  /// "personName"
+  @override
+  String get excelHeaderPersonName => "personName";
+  /// "type"
+  @override
+  String get excelHeaderType => "type";
+  /// "valueType"
+  @override
+  String get excelHeaderValueType => "valueType";
+  /// "value"
+  @override
+  String get excelHeaderValue => "value";
+  /// "giftName"
+  @override
+  String get excelHeaderGiftName => "giftName";
+  /// "unit"
+  @override
+  String get excelHeaderUnit => "unit";
+  /// "remark"
+  @override
+  String get excelHeaderRemark => "remark";
 
   @override
   TextDirection get textDirection => TextDirection.ltr;

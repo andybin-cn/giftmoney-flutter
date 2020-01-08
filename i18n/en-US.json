@@ -52,5 +52,25 @@
     "mobile": "fill a mobile",
     "relation": "select the relation with the User",
     "event_name": "fill the Thing"
+  },
+  "excel": {
+    "header": {
+      "id": "ID",
+      "eventID": "eventID",
+      "relationID": "relationID",
+      "personID": "personID",
+      "createAt": "createAt",
+      "updateAt": "updateAt",
+      "eventName": "eventName",
+      "eventTime": "eventTime",
+      "relationName": "relation",
+      "personName": "personName",
+      "type": "type",
+      "valueType": "valueType",
+      "value": "value",
+      "giftName": "giftName",
+      "unit": "unit",
+      "remark": "remark"
+    }
   }
 }

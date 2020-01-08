@@ -8,7 +8,9 @@ import 'package:giftmoney/model/sql_contact.dart';
 import 'package:giftmoney/model/sql_event.dart';
 import 'package:giftmoney/model/sql_relation.dart';
 import 'package:giftmoney/model/sql_trade.dart';
+import 'package:giftmoney/service/xls_parse_service.dart';
 import 'package:giftmoney/utils/format_helper.dart';
+import 'package:giftmoney/utils/i18n_util.dart';
 import 'package:giftmoney/utils/native_utils.dart';
 import 'package:path_provider/path_provider.dart';
 
@@ -113,7 +115,19 @@ class TradeService {
 
   Future<String> exportTradesToExcel() async {
     var trades = await queryAllTrades();
-    var headers = ["id", "姓名", "关系", "事件名称", "事件时间", "类型", "金额", "图片", "创建时间", "修改时间"];
+    var i18n = I18nUtil.shared;
+    var headers = [
+      i18n.excelHeaderId,
+      i18n.excelHeaderPersonName,
+      i18n.excelHeaderRelationName,
+      i18n.excelHeaderEventName,
+      i18n.excelHeaderEventTime,
+      i18n.excelHeaderType,
+      i18n.excelHeaderValue,
+      i18n.excelHeaderRemark,
+      i18n.excelHeaderCreateAt,
+      i18n.excelHeaderUpdateAt,
+    ];
     var excelBody = trades.map((trade) {
       return [
         trade.id.toString(),
@@ -123,7 +137,7 @@ class TradeService {
         FormatHelper.dateToString(trade.eventTime),
         EnumMappableUtil.serializeEnum(trade.type, SQLTradeTypeMap),
         trade.value.toString(),
-        "",
+        trade.remark,
         FormatHelper.dateToString(trade.createAt),
         FormatHelper.dateToString(trade.updateAt),
       ];
@@ -152,7 +166,17 @@ class TradeService {
     return path;
   }
 
-
-  
-
+  Future<int> importTrades(List<List<String>> sheet) async {
+    var trades = XLSParseService.instance.parseXLSData(sheet);
+    var count = 0;
+    for (var trade in trades) {
+      try {
+        await saveTrade(trade);
+        count++;
+      } catch (e) {
+        print("importTrades saveTrade error:${e}");
+      }
+    }
+    return count;
+  }
 }

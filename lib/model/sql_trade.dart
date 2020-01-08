@@ -48,6 +48,8 @@ class SQLTrade extends Mappable {
   SQLTradeType type;
   SQLTradeValueType valueType;
 
+  SQLTrade() : super.fromJSON(null);
+
   SQLTrade.fromJSON(Map<String, dynamic> map) : super.fromJSON(null) {
     id = transformBasic(map["id"]);
     eventID = transformBasic(map["eventID"]);

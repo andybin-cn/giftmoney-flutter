@@ -52,5 +52,25 @@
     "mobile": "请填写手机号",
     "relation": "请填写关系",
     "event_name": "请填写事件名称"
+  },
+  "excel": {
+    "header": {
+      "id": "ID",
+      "eventID": "事件ID",
+      "relationID": "关系ID",
+      "personID": "人物ID",
+      "createAt": "创建时间",
+      "updateAt": "修改时间",
+      "eventName": "事件名称",
+      "eventTime": "事件时间",
+      "relationName": "关系",
+      "personName": "姓名",
+      "type": "类型",
+      "valueType": "数据类型",
+      "value": "金额",
+      "giftName": "礼物名称",
+      "unit": "单位",
+      "remark": "备注"
+    }
   }
 }
