@@ -14,8 +14,8 @@ class _TradeCellState extends State<TradeCell> {
   @override
   Widget build(BuildContext context) {
     String relationName = widget.trade.relationName;
-    return Padding(
-      padding: EdgeInsets.only(left: 15, right: 15),
+    return Container(
+      padding: EdgeInsets.only(left: 15, right: 15, top: 5, bottom: 5),
       child: Row(
         children: <Widget>[
           //  TradeUploadStateComponent(state: TradeUploadState.notUpload),
@@ -34,7 +34,7 @@ class _TradeCellState extends State<TradeCell> {
             crossAxisAlignment: CrossAxisAlignment.end,
             children: <Widget>[
               Padding(
-                padding: EdgeInsets.only(bottom: 8),
+                padding: EdgeInsets.only(bottom: 4),
                 child: Text(widget.trade.formatValue, style: TextStyle(fontSize: 16, color: widget.trade.type == SQLTradeType.inAccount ? AppColor.secondaryAppColor : AppColor.mainAppColor))),
               Text(FormatHelper.dateToString(widget.trade.eventTime), style: AppTextStyle.secondaryText(12)),
             ],

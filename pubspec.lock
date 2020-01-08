@@ -326,6 +326,13 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "0.3.19"
+  left_scroll_actions:
+    dependency: "direct main"
+    description:
+      name: left_scroll_actions
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "1.2.1"
   logging:
     dependency: transitive
     description:
