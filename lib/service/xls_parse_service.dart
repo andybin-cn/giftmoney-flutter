@@ -32,7 +32,7 @@ class XLSHeader {
   ]);
   var typeCloums = HashSet.from(["类型", "类别", "收支", "類型", "類別", "type"]);
   var eventNameCloums = HashSet.from(["事件", "事件名称", "事件名稱", "eventName"]);
-  var eventTimeCloums = HashSet.from(["事件时间" "eventTime"]);
+  var eventTimeCloums = HashSet.from(["事件时间", "eventTime"]);
   var totoalMoneyCloums = HashSet.from([
     "金额",
     "红包",
@@ -129,7 +129,7 @@ class XLSParseService {
   }
 
   DateTime datetimeValue(List<String> row, int index) {
-    return DateTime.parse(value(row, index));
+    return FormatHelper.dateFromString(value(row, index));
   }
 
   List<SQLTrade> parseXLSData(List<List<String>> sheet) {
@@ -139,19 +139,23 @@ class XLSParseService {
     }
     var header = XLSHeader(sheet[0]);
     for(var rowIndex = 1; rowIndex < sheet.length; rowIndex++) {
-      var row = sheet[rowIndex];
-      var trade = SQLTrade();
-      // trade.id = intValue(row, header.uuid);
-      trade.personName = value(row, header.name);
-      trade.relationName = value(row, header.relation);
-      trade.type = EnumMappableUtil.transformEnum(value(row, header.type), SQLTradeTypeMap);
-      trade.eventName = value(row, header.eventName);
-      trade.eventTime = datetimeValue(row, header.eventTime);
-      trade.value = intValue(row, header.totoalMoney);
-      trade.remark = value(row, header.remark);
-      trade.createAt = datetimeValue(row, header.createTime);
-      trade.updateAt = datetimeValue(row, header.updateTime);
-      result.add(trade);
+      try {
+        var row = sheet[rowIndex];
+        var trade = SQLTrade();
+        // trade.id = intValue(row, header.uuid);
+        trade.personName = value(row, header.name);
+        trade.relationName = value(row, header.relation);
+        trade.type = EnumMappableUtil.transformEnum(value(row, header.type), SQLTradeTypeMap);
+        trade.eventName = value(row, header.eventName);
+        trade.eventTime = datetimeValue(row, header.eventTime);
+        trade.value = intValue(row, header.totoalMoney);
+        trade.remark = value(row, header.remark);
+        trade.createAt = datetimeValue(row, header.createTime);
+        trade.updateAt = datetimeValue(row, header.updateTime);
+        result.add(trade);
+      } catch(e) {
+        print("parseXLSData error index:${rowIndex} data:${sheet[rowIndex]}");
+      }
     }
     return result;
   }

@@ -33,6 +33,7 @@
   "hud_saving": "Saving",
   "hud_loading": "Loading",
   "hud_save_success": "Success",
+  "hud_import_success": "Success import {count} records",
 
   "statistics": {
     "title": "Grouping statistics",

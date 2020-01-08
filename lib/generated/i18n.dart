@@ -86,6 +86,8 @@ class I18n implements WidgetsLocalizations {
   String get hud_loading => "正在加载";
   /// "保存成功"
   String get hud_save_success => "保存成功";
+  /// "成功导入 ${count} 条记录"
+  String hud_import_success(String count) => "成功导入 ${count} 条记录";
   /// "分组统计"
   String get statisticsTitle => "分组统计";
   /// "事件"
@@ -232,6 +234,9 @@ class _I18n_en_US extends I18n {
   /// "Success"
   @override
   String get hud_save_success => "Success";
+  /// "Success import ${count} records"
+  @override
+  String hud_import_success(String count) => "Success import ${count} records";
   /// "Grouping statistics"
   @override
   String get statisticsTitle => "Grouping statistics";
@@ -298,9 +303,9 @@ class _I18n_en_US extends I18n {
   /// "eventTime"
   @override
   String get excelHeaderEventTime => "eventTime";
-  /// "relationName"
+  /// "relation"
   @override
-  String get excelHeaderRelationName => "relationName";
+  String get excelHeaderRelationName => "relation";
   /// "personName"
   @override
   String get excelHeaderPersonName => "personName";
@@ -418,6 +423,9 @@ class _I18n_zh_TW extends _I18n_zh_CN {
   /// "保存成功"
   @override
   String get hud_save_success => "保存成功";
+  /// "成功導入 ${count} 條記錄"
+  @override
+  String hud_import_success(String count) => "成功導入 ${count} 條記錄";
   /// "分組統計"
   @override
   String get statisticsTitle => "分組統計";
@@ -549,6 +557,9 @@ class _I18n_zh_HK extends _I18n_zh_CN {
   /// "保存成功"
   @override
   String get hud_save_success => "保存成功";
+  /// "成功導入 ${count} 條記錄"
+  @override
+  String hud_import_success(String count) => "成功導入 ${count} 條記錄";
   /// "分組統計"
   @override
   String get statisticsTitle => "分組統計";

@@ -16,6 +16,20 @@ class FormatHelper {
     var formatter = DateFormat('yyyy-MM-dd HH:mm:ss');
     return formatter.format(date);
   }
+  static DateTime dateFromString(String date) {
+    if(date == null) {
+      return null;
+    }
+    var formatter = DateFormat('yyyy-MM-dd');
+    return formatter.parse(date);
+  }
+  static DateTime datetimeFromString(String date) {
+    if(date == null) {
+      return null;
+    }
+    var formatter = DateFormat('yyyy-MM-dd HH:mm:ss');
+    return formatter.parse(date);
+  }
 
   static String formatSize(int size) {
     if(size == null) {

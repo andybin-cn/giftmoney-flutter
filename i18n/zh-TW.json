@@ -33,6 +33,7 @@
   "hud_saving": "正在保存",
   "hud_loading": "正在加載",
   "hud_save_success": "保存成功",
+  "hud_import_success": "成功導入 {count} 條記錄",
 
   "statistics": {
     "title": "分組統計",

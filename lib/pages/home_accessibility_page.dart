@@ -98,9 +98,12 @@ class _State extends BasePageState<HomeAccessibilityPage> {
   }
   void _onImportPress() async {
     File file = await FilePicker.getFile();
+    this.showLoading();
     var sheet = await NativeUtils.readExcel(filePath: file.path);
     print("_onImportPress readExcel result:${sheet}");
     var successCount = await TradeService.instance.importTrades(sheet);
+    this.hideLoading();
+    this.showHUD(i18n.hud_import_success(successCount.toString()));
     print("_onImportPress importTrades successCount:${successCount}");
   }
   void _onHistoryPress() {
