@@ -9,10 +9,11 @@ import 'form_input.dart';
 
 class FormDateInput extends FormField<DateTime> {
   final String label;
+  final DateTime initialValue;
   // final FormFieldValidator<DateTime> validator;
 
   FormDateInput({Key key,
-    DateTime initialValue,
+    this.initialValue,
     FormFieldSetter<DateTime> onSaved,
     FormFieldValidator<DateTime> validator,
     this.label
@@ -34,6 +35,14 @@ class _FormDateInputState extends FormFieldState<DateTime> {
   final _fieldController = TextEditingController();
   var time = DateTime.now();
 
+  @override
+  void initState() { 
+    super.initState();
+    time = widget.initialValue ?? DateTime.now();
+    if(widget.initialValue != null) {
+      _fieldController.text = FormatHelper.dateToString(widget.initialValue);
+    }
+  }
   _showDataPicker() async {
     print("_showDataPicker start");
     Locale myLocale = Localizations.localeOf(context);
@@ -58,15 +67,18 @@ class _FormDateInputState extends FormFieldState<DateTime> {
   FormDateInput get widget => super.widget;
 
   Widget buildBody() {
-    return FormInput(
-      focusNode: FocusNode(canRequestFocus: false),
-      controller: _fieldController,
-      label: widget.label,
-      validator: Validation.notEmpty,
-      onTap: () {
+    return FlatButton(
+      padding: EdgeInsets.zero,
+      onPressed: () {
         print("FormDateInput onTaped");
         _showDataPicker();
       },
+      child: FormInput(
+        controller: _fieldController,
+        label: widget.label,
+        validator: Validation.notEmpty,
+        enabled: false,
+      )
     );
   }
 }

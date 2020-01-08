@@ -1,7 +1,22 @@
 
-import 'package:giftmoney/model/sql_trade.dart';
+import 'package:giftmoney/data_center/key_value_table.dart';
+import 'package:giftmoney/data_center/trade_table.dart';
 import 'package:sqflite/sqflite.dart';
 import 'dart:core';
+
+enum ObjectEventType { add, modify, delete }
+class ObjectEvent<T> {
+  T object;
+  ObjectEventType event;
+  ObjectEvent({this.object, this.event}) {
+
+  }
+}
+
+abstract class SQLTable {
+  Future onCreate (Database db, int version);
+  Future onUpgrade (Database db, int oldVersion, int newVersion);
+}
 
 class DBManager {
   // 工厂模式
@@ -9,8 +24,9 @@ class DBManager {
   static DBManager get instance => _getInstance();
   static DBManager _instance;
   DBManager._internal() {
-    // 初始化
+
   }
+
   static DBManager _getInstance() {
     if (_instance == null) {
       _instance = new DBManager._internal();
@@ -19,6 +35,8 @@ class DBManager {
   }
 
   Database database;
+  TradeTable tradeTable;
+  KeyValueTable keyValue;
   Future<Null> initDB() async {
     var databasesPath = await getDatabasesPath();
     if(!databasesPath.endsWith("/")) {
@@ -29,51 +47,15 @@ class DBManager {
     database = await openDatabase(path, 
       version: 1,
       onCreate: (Database db, int version) async {
-        await db.execute("""CREATE TABLE SQLTrade (
-          id INTEGER PRIMARY KEY,
-          eventID INTEGER,
-          relationID INTEGER,
-          personID INTEGER,
-          createAt DateTime,
-          updateAt DateTime,
-          eventName TEXT,
-          eventTime DateTime,
-          relationName TEXT,
-          personName TEXT,
-          type INTEGER,
-          valueType INTEGER,
-          value TEXT,
-          giftName TEXT,
-          unit TEXT,
-          remark TEXT
-        )""");
+        await TradeTable(database: db).onCreate(db, version);
+        await KeyValueTable(database: db).onCreate(db, version);
       },
       onUpgrade: (Database db, int oldVersion, int newVersion) async {
-        //todo: 数据库升级
+        await TradeTable(database: db).onUpgrade(db, oldVersion, newVersion);
+        await KeyValueTable(database: db).onUpgrade(db, oldVersion, newVersion);
       }
     );
-  }
-
-  Future<SQLTrade> inserTrade(SQLTrade trade) async {
-    int id = await database.insert("SQLTrade", trade.toJson());
-    trade.id = id;
-    return trade;
-  }
-  Future<SQLTrade> updateTrade(SQLTrade trade) async {
-    await database.update("SQLTrade", trade.toJson());
-    return trade;
-  }
-  Future<List<SQLTrade>> queryTrade({bool distinct = false,
-      List<String> columns,
-      String where,
-      List<dynamic> whereArgs,
-      String groupBy,
-      String having,
-      String orderBy,
-      int limit = 100,
-      int offset = 0}) async {
-      var tradeRows = await database.query("SQLTrade",distinct: distinct, columns: columns, where: where, groupBy: groupBy, having: having, orderBy: orderBy, limit: limit, offset: offset);    return tradeRows.map((row) {
-      return SQLTrade.fromJson(row);
-    }).toList();
+    tradeTable = TradeTable(database: database);
+    keyValue = KeyValueTable(database: database);
   }
 }

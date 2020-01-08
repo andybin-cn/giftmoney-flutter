@@ -1,4 +1,5 @@
 import 'package:flutter/widgets.dart' show FormFieldValidator;
+import 'package:giftmoney/utils/i18n_util.dart';
 
 typedef FormFieldValidator<T> Validator<T>(T input);
 
@@ -45,20 +46,25 @@ class Validation {
 
 
   static FormFieldValidator<String> get notEmpty {
-    return Validation.validator(rule: "not_empty", errorMsg: "不能为空");
+    return Validation.validator(rule: "not_empty", errorMsg: I18nUtil.shared.validationNotEmpty);
   }
   static FormFieldValidator<DateTime> get date_notEmpty {
-    var validatorString = Validation.validator(rule: "not_empty", errorMsg: "不能为空");
+    var validatorString = Validation.validator(rule: "not_empty", errorMsg: I18nUtil.shared.validationDate_notEmpty);
     return (input) => validatorString(input.toString());
   }
   static FormFieldValidator<String> get userName {
-    return Validation.validator(rule: "name", errorMsg: "user name is not validate");
+    return Validation.validator(rule: "not_empty", errorMsg: I18nUtil.shared.validationUserName);
   }
   static FormFieldValidator<String> get mobile {
-    return Validation.validator(rule: "mobile", errorMsg: "Nomor Handphone tidak valid");
+    return Validation.validator(rule: "mobile", errorMsg: I18nUtil.shared.validationMobile);
   }
-
-  static FormFieldValidator<String> get password {
-    return Validation.validator(rule: "password", errorMsg: "Silahkan masukkan kata sandi atau PIN (6 Digit)");
+  static FormFieldValidator<String> get amount {
+    return Validation.validator(rule: "number", errorMsg: I18nUtil.shared.validationAmount);
+  }
+  static FormFieldValidator<String> get relation {
+    return Validation.validator(rule: "not_empty", errorMsg: I18nUtil.shared.validationRelation);
+  }
+  static FormFieldValidator<String> get eventName {
+    return Validation.validator(rule: "not_empty", errorMsg: I18nUtil.shared.validationEvent_name);
   }
 }

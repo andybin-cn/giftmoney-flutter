@@ -22,6 +22,7 @@ class FormPopupMenu<T> extends FormField<T> {
     this.values,
     FormPopupMenuValue initialValue,
     FormFieldSetter<T> onSaved,
+    FormFieldValidator<String> validator,
     this.initValue,
     this.label
   }) : 
@@ -71,7 +72,7 @@ class _FormPopupMenuState<T> extends FormFieldState<T> {
             FormInput(
               controller: _fieldController,
               label: widget.label,
-              validator: Validation.notEmpty,
+              validator: widget.validator ?? Validation.notEmpty,
               enabled: false,
             ),
             Positioned(child: Icon(Icons.arrow_drop_down_circle), right: RatioHelper.scalePx(15)),

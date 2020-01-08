@@ -14,6 +14,7 @@ abstract class BaseStatefulPage extends StatefulWidget with RatioHelper {
 
 class BasePageState<T extends BaseStatefulPage> extends BaseState<T> with RatioHelper {
   I18n i18n;
+  String title = "";
   @override
   void initState() {
     super.initState();
@@ -30,15 +31,20 @@ class BasePageState<T extends BaseStatefulPage> extends BaseState<T> with RatioH
     return Scaffold(
       extendBody: true,
       appBar: AppBar(
-        title: Text(""),
+        title: Text(title),
+        actions: appBarActions(),
       ),
-      body: InkWell(
+      body: GestureDetector(
         onTap: () {
           FocusScope.of(context).requestFocus(FocusNode());
         },
         child: this.buildSelfScrollBody(context) ?? _buildScrollView(context),
       )
     );
+  }
+
+  List<Widget> appBarActions() {
+    return null;
   }
 
   Widget _buildScrollView(BuildContext context) {

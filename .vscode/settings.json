@@ -1,0 +1,12 @@
+{
+  "command-runner.commands": {
+    "flutter log-android": "adb logcat *:S flutter:V",
+    "log-android-app": "adb logcat | grep --color=auto `adb shell ps | grep $com.andybin.giftmoney | awk '{print $2}'`"
+  },
+  "files.exclude": {
+    "**/.dart_tool": true,
+    "**/.idea": true,
+    "**/.flutter-plugins": true,
+    "**/.flutter-plugins-dependencies": true
+  }
+}

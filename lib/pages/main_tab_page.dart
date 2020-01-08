@@ -6,9 +6,9 @@ import 'package:giftmoney/pages/add_record_page.dart';
 import 'package:giftmoney/pages/home_accessibility_page.dart';
 import 'package:giftmoney/pages/home_chart_page.dart';
 import 'package:giftmoney/pages/home_mine_page.dart';
+import 'package:giftmoney/pages/home_record_page.dart';
+import 'package:giftmoney/utils/i18n_util.dart';
 import 'package:giftmoney/utils/screen_util.dart';
-
-import 'home_record_page.dart';
 
 
 class MainTabPage extends BaseStatefulPage {
@@ -37,6 +37,7 @@ class _MainTabPageState extends BasePageState<MainTabPage> {
   @override
   Widget buildContainer(BuildContext context) {
     ScreenUtil.init(context, 750, 1334);
+    I18nUtil.setContext(context);
     int index = currentIndex == 2 ? oldIndex : (currentIndex > 2 ? currentIndex - 1 : currentIndex);
     return Scaffold(
       body: IndexedStack(index: currentIndex > 2 ? currentIndex - 1 : currentIndex, children: controllers),
@@ -44,7 +45,7 @@ class _MainTabPageState extends BasePageState<MainTabPage> {
         direction: Axis.vertical,
         mainAxisSize: MainAxisSize.min,
         children: [Stack(
-          alignment: Alignment.bottomCenter,
+          alignment: Alignment.topCenter,
           overflow: Overflow.visible,
           children:[
             Align(
@@ -71,10 +72,8 @@ class _MainTabPageState extends BasePageState<MainTabPage> {
               )
             ),
             Align(
-              alignment: Alignment.bottomCenter,
-              child: Padding(
-                padding: const EdgeInsets.only(bottom: 20.0),
-                child: FlatButton(
+              alignment: Alignment.topCenter,
+              child: FlatButton(
                   child: Image.asset('assets/images/icons8-add.png', width: 50, height: 50,),
                   onPressed: () {
                     Navigator.push(context,
@@ -82,8 +81,7 @@ class _MainTabPageState extends BasePageState<MainTabPage> {
                           return AddRecordPage();
                       }));
                   },
-                ),
-              )
+                )
             ),
           ]
         )]
