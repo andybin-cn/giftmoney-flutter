@@ -26,6 +26,7 @@ class _ContactRecordPageState extends BasePageState<ContactRecordPage> {
   @override
   void initState() {
     super.initState();
+    title = widget.contact.contactName;
     TradeService.instance.tradeStream.stream.listen((event) {
       _refreshKey.currentState.show();
     });
@@ -39,7 +40,7 @@ class _ContactRecordPageState extends BasePageState<ContactRecordPage> {
       onRefresh: _onRefresh,
       child: ListView.separated(
         // physics: const AlwaysScrollableScrollPhysics(),
-        separatorBuilder: (BuildContext context, int index) => Divider(),
+        separatorBuilder: (BuildContext context, int index) => Divider(height: 0.5),
         itemBuilder: _renderRow,
         itemCount: trades.length,
       ),
@@ -55,7 +56,7 @@ class _ContactRecordPageState extends BasePageState<ContactRecordPage> {
       );
     }, buttons: <Widget>[
         LeftScrollItem(
-          text: 'delete',
+          text: i18n.bt_delete,
           color: Colors.red,
           onTap: () async {
             ClosableLeftScrollState.closeAll();

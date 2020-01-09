@@ -35,7 +35,7 @@ class _RelationsStatisticsPageState extends BasePageState<RelationsStatisticsPag
       onRefresh: _onRefresh,
       child: ListView.separated(
         // physics: const AlwaysScrollableScrollPhysics(),
-        separatorBuilder: (BuildContext context, int index) => Divider(),
+        separatorBuilder: (BuildContext context, int index) => Divider(height: 0.5),
         itemBuilder: _renderRow,
         itemCount: relations.length,
       ),

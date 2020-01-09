@@ -37,9 +37,9 @@ class _HomeChartPageState extends BasePageState<HomeChartPage> with SingleTicker
           isScrollable: false,
           controller: _tabController,
           tabs: <Widget>[
-            Text(i18n.statisticsEvent_group),
-            Text(i18n.statisticsRelation_group),
-            Text(i18n.statisticsContact_group),
+            Container(padding: EdgeInsets.all(5), child: Text(i18n.statisticsEvent_group)),
+            Container(padding: EdgeInsets.all(5), child: Text(i18n.statisticsRelation_group)),
+            Container(padding: EdgeInsets.all(5), child: Text(i18n.statisticsContact_group)),
           ],
         ),
       ),

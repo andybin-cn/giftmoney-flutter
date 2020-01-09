@@ -25,6 +25,7 @@ class _EventRecordPageState extends BasePageState<EventRecordPage> {
   @override
   void initState() {
     super.initState();
+    title = widget.event.eventName;
     TradeService.instance.tradeStream.stream.listen((event) {
       _refreshKey.currentState.show();
     });
@@ -38,7 +39,7 @@ class _EventRecordPageState extends BasePageState<EventRecordPage> {
       onRefresh: _onRefresh,
       child: ListView.separated(
         // physics: const AlwaysScrollableScrollPhysics(),
-        separatorBuilder: (BuildContext context, int index) => Divider(),
+        separatorBuilder: (BuildContext context, int index) => Divider(height: 0.5),
         itemBuilder: _renderRow,
         itemCount: trades.length,
       ),

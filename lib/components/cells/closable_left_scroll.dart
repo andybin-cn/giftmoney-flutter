@@ -59,10 +59,11 @@ class ClosableLeftScrollState extends State<ClosableLeftScroll>
     ClosableLeftScrollState._willOpenEvents.add(null);
   }
 
+  StreamSubscription subscription;
   @override
   void initState() {
     super.initState();
-    ClosableLeftScrollState._willOpenEvents.stream.listen((state) {
+    subscription = ClosableLeftScrollState._willOpenEvents.stream.listen((state) {
       if(state != this && !_isHold) {
         this.close();
       }
@@ -84,7 +85,11 @@ class ClosableLeftScrollState extends State<ClosableLeftScroll>
         GestureRecognizerFactoryWithHandlers<TapGestureRecognizer>(
       () => TapGestureRecognizer(debugOwner: this),
       (TapGestureRecognizer instance) {
-        instance..onTap = widget.onTap;
+        instance..onTap = () {
+          this.close();
+          ClosableLeftScrollState.closeAll();
+          widget.onTap?.call();
+        };
       },
     );
 
@@ -205,6 +210,7 @@ class ClosableLeftScrollState extends State<ClosableLeftScroll>
   @override
   void dispose() {
     animationController.dispose();
+    subscription?.cancel();
     super.dispose();
   }
 }
