@@ -4,13 +4,12 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:giftmoney/base/base_stateful_page.dart';
+import 'package:giftmoney/components/cells/closable_left_scroll.dart';
 import 'package:giftmoney/components/cells/trade_cell.dart';
 import 'package:giftmoney/model/sql_trade.dart';
 import 'package:giftmoney/pages/add_record_page.dart';
 import 'package:giftmoney/service/trade_service.dart';
 import 'package:giftmoney/utils/i18n_util.dart';
-import 'package:left_scroll_actions/left_scroll_actions.dart';
-import 'package:left_scroll_actions/left_scroll_list.dart';
 
 class HomeRecordPage extends BaseStatefulPage {
   HomeRecordPage({Key key}) : super(key: key);
@@ -38,31 +37,29 @@ class _HomeRecordPageState extends BasePageState<HomeRecordPage> {
     return RefreshIndicator(
       key: _refreshKey,
       onRefresh: _onRefresh,
-      child: LeftScrollList.builder(
+      child: ListView.separated(
         // physics: const AlwaysScrollableScrollPhysics(),
-        // separatorBuilder: (BuildContext context, int index) => Divider(),
-        builder: _renderRow,
-        count: trades.length,
+        separatorBuilder: (BuildContext context, int index) => Divider(height: 0.5,),
+        itemBuilder: _renderRow,
+        itemCount: trades.length,
       ),
     );
   }
 
-  LeftScrollListItem _renderRow(BuildContext context, int index) {
-    return LeftScrollListItem(
-      key: index.toString(),
-      child: Container(
-        color: Colors.white,
-        child: Column(children: <Widget>[
-            TradeCell(trade: trades[index]),
-            Divider(height: 0.5, color: Colors.grey[300],)
-          ],
-        ),
-      ),
-      buttons: [
+  Widget _renderRow(BuildContext context, int index) {
+    // LeftScrollListItem
+    return ClosableLeftScroll(child: TradeCell(trade: trades[index]), onTap: () {
+      Navigator.push(context,
+        MaterialPageRoute(builder: (context) {
+            return AddRecordPage(trade: trades[index]);
+        })
+      );
+    }, buttons: <Widget>[
         LeftScrollItem(
           text: 'delete',
           color: Colors.red,
           onTap: () async {
+            ClosableLeftScrollState.closeAll();
             this.showLoading();
             await TradeService.instance.deleteTrade(trades[index]);
             trades.removeAt(index);
@@ -70,16 +67,8 @@ class _HomeRecordPageState extends BasePageState<HomeRecordPage> {
             this.setState(() {});
           },
         ),
-      ],
-      onTap: () {
-        print('tap row');
-        Navigator.push(context,
-          MaterialPageRoute(builder: (context) {
-              return AddRecordPage(trade: trades[index]);
-          })
-        );
-      },
-    );
+
+    ],);
   }
 
   Future<Null> _onRefresh() async {

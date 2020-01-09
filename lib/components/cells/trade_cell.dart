@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:giftmoney/model/sql_trade.dart';
 import 'package:giftmoney/theme/theme.dart';
@@ -15,6 +16,7 @@ class _TradeCellState extends State<TradeCell> {
   Widget build(BuildContext context) {
     String relationName = widget.trade.relationName;
     return Container(
+      color: Colors.white,
       padding: EdgeInsets.only(left: 15, right: 15, top: 5, bottom: 5),
       child: Row(
         children: <Widget>[
