@@ -56,7 +56,7 @@ class _HomeRecordPageState extends BasePageState<HomeRecordPage> {
       );
     }, buttons: <Widget>[
         LeftScrollItem(
-          text: 'delete',
+          text: i18n.bt_delete,
           color: Colors.red,
           onTap: () async {
             ClosableLeftScrollState.closeAll();
@@ -67,8 +67,7 @@ class _HomeRecordPageState extends BasePageState<HomeRecordPage> {
             this.setState(() {});
           },
         ),
-
-    ],);
+    ]);
   }
 
   Future<Null> _onRefresh() async {

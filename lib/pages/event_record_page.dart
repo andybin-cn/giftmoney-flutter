@@ -4,6 +4,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:giftmoney/base/base_stateful_page.dart';
+import 'package:giftmoney/components/cells/closable_left_scroll.dart';
 import 'package:giftmoney/components/cells/trade_cell.dart';
 import 'package:giftmoney/model/sql_event.dart';
 import 'package:giftmoney/model/sql_trade.dart';
@@ -45,13 +46,26 @@ class _EventRecordPageState extends BasePageState<EventRecordPage> {
   }
 
   Widget _renderRow(BuildContext context, int index) {
-    return ListTile(title: TradeCell(trade: trades[index]), onTap: () {
+    return ClosableLeftScroll(child: TradeCell(trade: trades[index]), onTap: () {
       Navigator.push(context,
         MaterialPageRoute(builder: (context) {
             return AddRecordPage(trade: trades[index]);
         })
       );
-    });
+    }, buttons: <Widget>[
+        LeftScrollItem(
+          text: i18n.bt_delete,
+          color: Colors.red,
+          onTap: () async {
+            ClosableLeftScrollState.closeAll();
+            this.showLoading();
+            await TradeService.instance.deleteTrade(trades[index]);
+            trades.removeAt(index);
+            this.hideLoading();
+            this.setState(() {});
+          },
+        ),
+    ]);
   }
 
   Future<Null> _onRefresh() async {

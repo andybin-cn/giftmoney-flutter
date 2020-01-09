@@ -60,6 +60,8 @@ class I18n implements WidgetsLocalizations {
   String get bt_upload_uploading => "正在上传";
   /// "保存"
   String get bt_save => "保存";
+  /// "删除"
+  String get bt_delete => "删除";
   /// "姓名"
   String get form_person_name => "姓名";
   /// "关系"
@@ -199,6 +201,9 @@ class _I18n_en_US extends I18n {
   /// "Save"
   @override
   String get bt_save => "Save";
+  /// "Delete"
+  @override
+  String get bt_delete => "Delete";
   /// "Name"
   @override
   String get form_person_name => "Name";
@@ -394,6 +399,9 @@ class _I18n_zh_TW extends _I18n_zh_CN {
   /// "保存"
   @override
   String get bt_save => "保存";
+  /// "刪除"
+  @override
+  String get bt_delete => "刪除";
   /// "姓名"
   @override
   String get form_person_name => "姓名";
@@ -534,6 +542,9 @@ class _I18n_zh_HK extends _I18n_zh_CN {
   /// "保存"
   @override
   String get bt_save => "保存";
+  /// "刪除"
+  @override
+  String get bt_delete => "刪除";
   /// "姓名"
   @override
   String get form_person_name => "姓名";
