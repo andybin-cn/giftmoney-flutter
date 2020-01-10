@@ -50,6 +50,16 @@ class I18n implements WidgetsLocalizations {
   String get accessibilityImport_button => "从Excel导入数据";
   /// "历史记录（导出数据）"
   String get accessibilityHistory_button => "历史记录（导出数据）";
+  /// "设置"
+  String get mineSetting => "设置";
+  /// "关于我们"
+  String get mineAbout => "关于我们";
+  /// "意见反馈"
+  String get mineFeedback => "意见反馈";
+  /// "版本：${version}"
+  String mineAppVersion(String version) => "版本：${version}";
+  /// "这里是介绍"
+  String get mineAppDescription => "这里是介绍";
   /// "已上传"
   String get bt_upload_success => "已上传";
   /// "未上传"
@@ -186,6 +196,21 @@ class _I18n_en_US extends I18n {
   /// "Export Historys"
   @override
   String get accessibilityHistory_button => "Export Historys";
+  /// "Settings"
+  @override
+  String get mineSetting => "Settings";
+  /// "About Me"
+  @override
+  String get mineAbout => "About Me";
+  /// "Feedback"
+  @override
+  String get mineFeedback => "Feedback";
+  /// "Version:${version}"
+  @override
+  String mineAppVersion(String version) => "Version:${version}";
+  /// "this is discription about app"
+  @override
+  String get mineAppDescription => "this is discription about app";
   /// "done"
   @override
   String get bt_upload_success => "done";
@@ -384,6 +409,21 @@ class _I18n_zh_TW extends _I18n_zh_CN {
   /// "歷史記錄（導出數據）"
   @override
   String get accessibilityHistory_button => "歷史記錄（導出數據）";
+  /// "設置"
+  @override
+  String get mineSetting => "設置";
+  /// "關於我們"
+  @override
+  String get mineAbout => "關於我們";
+  /// "意見反饋"
+  @override
+  String get mineFeedback => "意見反饋";
+  /// "版本：${version}"
+  @override
+  String mineAppVersion(String version) => "版本：${version}";
+  /// "這裡是介紹"
+  @override
+  String get mineAppDescription => "這裡是介紹";
   /// "已上傳"
   @override
   String get bt_upload_success => "已上傳";
@@ -527,6 +567,21 @@ class _I18n_zh_HK extends _I18n_zh_CN {
   /// "歷史記錄（導出數據）"
   @override
   String get accessibilityHistory_button => "歷史記錄（導出數據）";
+  /// "設置"
+  @override
+  String get mineSetting => "設置";
+  /// "關於我們"
+  @override
+  String get mineAbout => "關於我們";
+  /// "意見反饋"
+  @override
+  String get mineFeedback => "意見反饋";
+  /// "版本：${version}"
+  @override
+  String mineAppVersion(String version) => "版本：${version}";
+  /// "這裡是介紹"
+  @override
+  String get mineAppDescription => "這裡是介紹";
   /// "已上傳"
   @override
   String get bt_upload_success => "已上傳";

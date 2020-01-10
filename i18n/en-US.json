@@ -12,6 +12,14 @@
     "history_button": "Export Historys"
   },
 
+  "mine": {
+    "setting": "Settings",
+    "about": "About Me",
+    "feedback": "Feedback",
+    "appVersion": "Version:${version}",
+    "appDescription": "this is discription about app"
+  },
+
   "bt_upload_success": "done",
   "bt_upload_waiting": "waiting",
   "bt_upload_waring": "waring",

@@ -12,6 +12,14 @@
     "history_button": "歷史記錄（導出數據）"
   },
 
+  "mine": {
+    "setting": "設置",
+    "about": "關於我們",
+    "feedback": "意見反饋",
+    "appVersion": "版本：${version}",
+    "appDescription": "這裡是介紹"
+  },
+
   "bt_upload_success": "已上傳",
   "bt_upload_waiting": "未上傳",
   "bt_upload_waring": "上傳失敗",
