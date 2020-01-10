@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:giftmoney/base/base_stateful_page.dart';
 import 'package:giftmoney/components/cells/setting_cell.dart';
+import 'package:giftmoney/components/small_parts/account_header.dart';
 
 class HomeMinePage extends BaseStatefulPage {
   HomeMinePage({Key key}) : super(key: key);
@@ -11,6 +12,25 @@ class HomeMinePage extends BaseStatefulPage {
 
 class _HomeMinePageState extends BasePageState<HomeMinePage> {
   
+  @override
+  Widget buildContainer(BuildContext context) {
+    
+    return Scaffold(
+      extendBody: true,
+      appBar: AccountHeader(),
+      // AppBar(
+      //   titleSpacing: 0,
+      //   title: AccountHeader(),
+      // ),
+      body: GestureDetector(
+        onTap: () {
+          FocusScope.of(context).requestFocus(FocusNode());
+        },
+        child: this.buildSelfScrollBody(context) ?? this.buildScrollView(context),
+      )
+    );
+  }
+
   @override
   Widget buildBody(BuildContext context) {
     return DecoratedBox(

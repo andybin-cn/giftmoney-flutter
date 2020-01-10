@@ -38,7 +38,7 @@ class BasePageState<T extends BaseStatefulPage> extends BaseState<T> with RatioH
         onTap: () {
           FocusScope.of(context).requestFocus(FocusNode());
         },
-        child: this.buildSelfScrollBody(context) ?? _buildScrollView(context),
+        child: this.buildSelfScrollBody(context) ?? this.buildScrollView(context),
       )
     );
   }
@@ -47,7 +47,7 @@ class BasePageState<T extends BaseStatefulPage> extends BaseState<T> with RatioH
     return null;
   }
 
-  Widget _buildScrollView(BuildContext context) {
+  Widget buildScrollView(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: <Widget>[
