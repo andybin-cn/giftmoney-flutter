@@ -11,6 +11,8 @@ class AppColor {
   static const Color underlineGray = const Color(0xffcccccc);
   static const Color dividerColor = const Color(0xffbbbbbb);
   static const Color errorMsgColor = const Color(0xffE63939);
+
+  static const Color goldColor = const Color(0xffFFCC00);
 }
 
 class Maudimen {

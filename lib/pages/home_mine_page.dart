@@ -18,10 +18,6 @@ class _HomeMinePageState extends BasePageState<HomeMinePage> {
     return Scaffold(
       extendBody: true,
       appBar: AccountHeader(),
-      // AppBar(
-      //   titleSpacing: 0,
-      //   title: AccountHeader(),
-      // ),
       body: GestureDetector(
         onTap: () {
           FocusScope.of(context).requestFocus(FocusNode());

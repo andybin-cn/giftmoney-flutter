@@ -11,12 +11,13 @@ class KeyValueTable extends SQLTable {
 
   @override
   Future onCreate(Database db, int version) async {
-    return await db.execute("""CREATE TABLE SQLKeyValue (
+    var result =  await db.execute("""CREATE TABLE SQLKeyValue (
           key TEXT PRIMARY KEY,
           value TEXT,
           createAt DateTime,
           updateAt DateTime
         )""");
+    return result;
   }
 
   @override

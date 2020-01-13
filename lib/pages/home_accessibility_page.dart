@@ -4,6 +4,7 @@ import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:giftmoney/base/base_stateful_page.dart';
 import 'package:giftmoney/components/cells/setting_cell.dart';
+import 'package:giftmoney/components/small_parts/account_header.dart';
 import 'package:giftmoney/pages/export_records_page.dart';
 import 'package:giftmoney/service/trade_service.dart';
 import 'package:giftmoney/utils/native_utils.dart';
@@ -17,6 +18,22 @@ class HomeAccessibilityPage extends BaseStatefulPage {
 }
 
 class _State extends BasePageState<HomeAccessibilityPage> {
+
+  @override
+  Widget buildContainer(BuildContext context) {
+    
+    return Scaffold(
+      extendBody: true,
+      appBar: AccountHeader(),
+      body: GestureDetector(
+        onTap: () {
+          FocusScope.of(context).requestFocus(FocusNode());
+        },
+        child: this.buildSelfScrollBody(context) ?? this.buildScrollView(context),
+      )
+    );
+  }
+  
   @override
   Widget buildBody(BuildContext context) {
     return DecoratedBox(
