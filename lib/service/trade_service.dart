@@ -8,6 +8,7 @@ import 'package:giftmoney/model/sql_contact.dart';
 import 'package:giftmoney/model/sql_event.dart';
 import 'package:giftmoney/model/sql_relation.dart';
 import 'package:giftmoney/model/sql_trade.dart';
+import 'package:giftmoney/service/account_service.dart';
 import 'package:giftmoney/service/xls_parse_service.dart';
 import 'package:giftmoney/utils/format_helper.dart';
 import 'package:giftmoney/utils/i18n_util.dart';
@@ -45,6 +46,7 @@ class TradeService {
       trade.updateAt = DateTime.now();
       var result = await DBManager.instance.tradeTable.inserTrade(trade);
       tradeStream.add(ObjectEvent<SQLTrade>(object: result, event: ObjectEventType.add));
+      AccountService.instance.consumeGold(AccountService.instance.amountFor(ChargeItem.insertTrade));
       return result;
     }
   }
@@ -149,6 +151,7 @@ class TradeService {
     var destinationPath = tempPath + "${DateTime.now().toIso8601String()}.xlsx";
     print("exportTradesToExcel destinationPath:${destinationPath}");
     await NativeUtils.exportToExcel(destinationPath, excelData);
+    AccountService.instance.consumeGold(AccountService.instance.amountFor(ChargeItem.exportToExcel));
     return destinationPath;
   }
 
@@ -188,6 +191,7 @@ class TradeService {
         print("importTrades saveTrade error:${e}");
       }
     }
+    AccountService.instance.consumeGold(AccountService.instance.amountFor(ChargeItem.importFromExcel));
     return result;
   }
 }
