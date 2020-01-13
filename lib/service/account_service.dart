@@ -84,7 +84,7 @@ class AccountService {
     }
   }
 
-  bool checkGoldFor(ChargeItem item) {
+  bool enoughGoldFor(ChargeItem item) {
     if (amountFor(item) <= balanceSubject.value) {
       return true;
     } else {
