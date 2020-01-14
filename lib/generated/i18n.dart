@@ -50,6 +50,8 @@ class I18n implements WidgetsLocalizations {
   String get accessibilityImport_button => "从Excel导入数据";
   /// "历史记录（导出数据）"
   String get accessibilityHistory_button => "历史记录（导出数据）";
+  /// "推荐给好友（赚金币）"
+  String get mineInvite => "推荐给好友（赚金币）";
   /// "设置"
   String get mineSetting => "设置";
   /// "关于我们"
@@ -196,6 +198,9 @@ class _I18n_en_US extends I18n {
   /// "Export Historys"
   @override
   String get accessibilityHistory_button => "Export Historys";
+  /// "Recommend to earn coins"
+  @override
+  String get mineInvite => "Recommend to earn coins";
   /// "Settings"
   @override
   String get mineSetting => "Settings";
@@ -409,6 +414,9 @@ class _I18n_zh_TW extends _I18n_zh_CN {
   /// "歷史記錄（導出數據）"
   @override
   String get accessibilityHistory_button => "歷史記錄（導出數據）";
+  /// "推薦給好友（賺金幣）"
+  @override
+  String get mineInvite => "推薦給好友（賺金幣）";
   /// "設置"
   @override
   String get mineSetting => "設置";
@@ -567,6 +575,9 @@ class _I18n_zh_HK extends _I18n_zh_CN {
   /// "歷史記錄（導出數據）"
   @override
   String get accessibilityHistory_button => "歷史記錄（導出數據）";
+  /// "推薦給好友（賺金幣）"
+  @override
+  String get mineInvite => "推薦給好友（賺金幣）";
   /// "設置"
   @override
   String get mineSetting => "設置";

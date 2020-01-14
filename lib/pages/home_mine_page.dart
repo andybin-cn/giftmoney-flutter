@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:giftmoney/base/base_stateful_page.dart';
 import 'package:giftmoney/components/cells/setting_cell.dart';
 import 'package:giftmoney/components/small_parts/account_header.dart';
+import 'package:giftmoney/pages/mine_about_page.dart';
 
 class HomeMinePage extends BaseStatefulPage {
   HomeMinePage({Key key}) : super(key: key);
@@ -31,25 +32,30 @@ class _HomeMinePageState extends BasePageState<HomeMinePage> {
   Widget buildBody(BuildContext context) {
     return DecoratedBox(
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
           Padding(padding: EdgeInsets.only(top: 20)),
           SettingCell(
-            icon: Icon(Icons.import_export),
-            label: Text(i18n.accessibilityExoprt_button),
+            icon: Icon(Icons.share),
+            label: Text(i18n.mineInvite),
             onPressed: () {
               
             },
           ),
           SettingCell(
-            icon: Icon(Icons.save_alt),
-            label: Text(i18n.accessibilityImport_button),
+            icon: Icon(Icons.info_outline),
+            label: Text(i18n.mineAbout),
             onPressed: () {
-              
+              Navigator.push(context,
+                MaterialPageRoute(builder: (context) {
+                    return MineAboutPage();
+                })
+              );
             },
           ),
           SettingCell(
-            icon: Icon(Icons.history),
-            label: Text(i18n.accessibilityHistory_button),
+            icon: Icon(Icons.feedback),
+            label: Text(i18n.mineFeedback),
             onPressed: () {
               
             },

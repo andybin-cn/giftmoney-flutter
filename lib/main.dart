@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:giftmoney/data_center/db_manager.dart';
+import 'package:giftmoney/environment/constant.dart';
 import 'package:giftmoney/generated/i18n.dart';
 import 'package:giftmoney/pages/main_tab_page.dart';
 
@@ -15,22 +16,34 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  bool isLoadingDB = true;
+  bool loadingApp = true;
 
   @override
   void initState() {
     super.initState();
-    DBManager.instance.initDB().whenComplete(() {
-      this.setState(() {
-        isLoadingDB = false;
+    initApp();
+  }
+
+  void initApp() async {
+    try {
+      await Constant.init();
+      DBManager.instance.initDB().whenComplete(() {
+        this.setState(() {
+          loadingApp = false;
+        });
       });
-    });
+    } catch (e) {
+      this.setState(() {
+        loadingApp = false;
+      });
+    }
+    
   }
 
   @override
   Widget build(BuildContext context) {
     // WidgetsBinding.instance.window.locales
-    if(isLoadingDB) {
+    if(loadingApp) {
       return CircularProgressIndicator();
     }
     return MaterialApp(

@@ -1,16 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:giftmoney/generated/i18n.dart';
 import 'package:giftmoney/utils/ratio_helper_mixin.dart';
 
 abstract class BaseStatelessPage extends StatelessWidget with RatioHelper {
-  I18n i18n;
   final bool hasAppbar;
   final String title;
   BaseStatelessPage({Key key, this.hasAppbar = true, this.title = ""}): super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    i18n = I18n.of(context);
     return Scaffold(
       appBar: this.buildAppBar(context),
       body: this.buildSelfScrollBody(context) ?? _buildScrollView(context),
