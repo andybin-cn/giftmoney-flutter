@@ -4,6 +4,7 @@ import 'package:giftmoney/data_center/db_manager.dart';
 import 'package:giftmoney/environment/constant.dart';
 import 'package:giftmoney/generated/i18n.dart';
 import 'package:giftmoney/pages/main_tab_page.dart';
+import 'package:sharesdk/sharesdk.dart';
 
 
 void main() => runApp(MyApp());
@@ -27,6 +28,20 @@ class _MyAppState extends State<MyApp> {
   void initApp() async {
     try {
       await Constant.init();
+      ShareSDKRegister register = ShareSDKRegister();
+      register.setupWechat(
+          "wx617c77c82218ea2c", "c7253e5289986cf4c4c74d1ccc185fb1");
+      register.setupSinaWeibo("568898243", "38a4f8204cc784f81f9f0daaf31e02e3",
+          "http://www.sharesdk.cn");
+      register.setupQQ("100371282", "aed9b0303e3ed1e27bae87c33761161d");
+      register.setupFacebook(
+          "1412473428822331", "a42f4f3f867dc947b9ed6020c2e93558", "shareSDK");
+      register.setupTwitter("viOnkeLpHBKs6KXV7MPpeGyzE",
+          "NJEglQUy2rqZ9Io9FcAU9p17omFqbORknUpRrCDOK46aAbIiey", "http://mob.com");
+
+      //注册
+      ShareSDK.regist(register);
+      
       DBManager.instance.initDB().whenComplete(() {
         this.setState(() {
           loadingApp = false;

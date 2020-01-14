@@ -466,6 +466,13 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "0.23.1"
+  sharesdk:
+    dependency: "direct main"
+    description:
+      name: sharesdk
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "1.1.8"
   shelf:
     dependency: transitive
     description:

@@ -1,4 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.andybin.giftmoney">
     <!-- io.flutter.app.FlutterApplication is an android.app.Application that
          calls FlutterMain.startInitialization(this); in its onCreate method.
@@ -8,6 +9,7 @@
     <application
         android:name="com.andybin.giftmoney.MainApplication"
         android:label="@string/appName"
+        tools:replace="android:name"
         android:icon="@mipmap/ic_launcher">
 
         <provider
