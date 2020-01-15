@@ -62,6 +62,20 @@ class I18n implements WidgetsLocalizations {
   String mineAppVersion(String version) => "版本：${version}";
   /// "这里是介绍"
   String get mineAppDescription => "这里是介绍";
+  /// "朋友圈"
+  String get shareWechatTimeline => "朋友圈";
+  /// "QQ空间"
+  String get shareQZone => "QQ空间";
+  /// "新浪微博"
+  String get shareSina => "新浪微博";
+  /// "豆瓣"
+  String get shareDouBan => "豆瓣";
+  /// "Facebook"
+  String get shareFacebook => "Facebook";
+  /// "推特"
+  String get shareTwitter => "推特";
+  /// "其他"
+  String get shareOther => "其他";
   /// "已上传"
   String get bt_upload_success => "已上传";
   /// "未上传"
@@ -216,6 +230,27 @@ class _I18n_en_US extends I18n {
   /// "this is discription about app"
   @override
   String get mineAppDescription => "this is discription about app";
+  /// "WeChat"
+  @override
+  String get shareWechatTimeline => "WeChat";
+  /// "QQZone"
+  @override
+  String get shareQZone => "QQZone";
+  /// "Sina"
+  @override
+  String get shareSina => "Sina";
+  /// "DouBan"
+  @override
+  String get shareDouBan => "DouBan";
+  /// "Facebook"
+  @override
+  String get shareFacebook => "Facebook";
+  /// "Twitter"
+  @override
+  String get shareTwitter => "Twitter";
+  /// "Other"
+  @override
+  String get shareOther => "Other";
   /// "done"
   @override
   String get bt_upload_success => "done";
@@ -432,6 +467,27 @@ class _I18n_zh_TW extends _I18n_zh_CN {
   /// "這裡是介紹"
   @override
   String get mineAppDescription => "這裡是介紹";
+  /// "朋友圈"
+  @override
+  String get shareWechatTimeline => "朋友圈";
+  /// "QQ空間"
+  @override
+  String get shareQZone => "QQ空間";
+  /// "新浪微博"
+  @override
+  String get shareSina => "新浪微博";
+  /// "豆瓣"
+  @override
+  String get shareDouBan => "豆瓣";
+  /// "Facebook"
+  @override
+  String get shareFacebook => "Facebook";
+  /// "推特"
+  @override
+  String get shareTwitter => "推特";
+  /// "其他"
+  @override
+  String get shareOther => "其他";
   /// "已上傳"
   @override
   String get bt_upload_success => "已上傳";
@@ -593,6 +649,27 @@ class _I18n_zh_HK extends _I18n_zh_CN {
   /// "這裡是介紹"
   @override
   String get mineAppDescription => "這裡是介紹";
+  /// "朋友圈"
+  @override
+  String get shareWechatTimeline => "朋友圈";
+  /// "QQ空間"
+  @override
+  String get shareQZone => "QQ空間";
+  /// "新浪微博"
+  @override
+  String get shareSina => "新浪微博";
+  /// "豆瓣"
+  @override
+  String get shareDouBan => "豆瓣";
+  /// "Facebook"
+  @override
+  String get shareFacebook => "Facebook";
+  /// "推特"
+  @override
+  String get shareTwitter => "推特";
+  /// "其他"
+  @override
+  String get shareOther => "其他";
   /// "已上傳"
   @override
   String get bt_upload_success => "已上傳";

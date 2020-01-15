@@ -3,6 +3,7 @@ import 'package:giftmoney/base/base_stateful_page.dart';
 import 'package:giftmoney/components/cells/setting_cell.dart';
 import 'package:giftmoney/components/small_parts/account_header.dart';
 import 'package:giftmoney/pages/mine_about_page.dart';
+import 'package:giftmoney/utils/share_util.dart';
 import 'package:sharesdk/sharesdk.dart';
 
 class HomeMinePage extends BaseStatefulPage {
@@ -40,13 +41,27 @@ class _HomeMinePageState extends BasePageState<HomeMinePage> {
             icon: Icon(Icons.share),
             label: Text(i18n.mineInvite),
             onPressed: () async {
-              var shareParams = SSDKMap();
-              shareParams.setGeneral("测试", "内容测试", null, null, null, "http://www.baidu.com", null, null, null, SSDKContentTypes.webpage);
-              var result = await ShareSDK.showMenu([ShareSDKPlatforms.wechatTimeline, ShareSDKPlatforms.qZone, ShareSDKPlatforms.sina, ShareSDKPlatforms.douBan], shareParams, 
+              var shareParams = SSDKMap()
+                ..setGeneral(
+                  "测试",
+                  "内容测试",
+                  [],
+                  null,
+                  null,
+                  "http://www.baidu.com",
+                  null,
+                  null,
+                  null,
+                  SSDKContentTypes.webpage
+                );
+              // await ShareSDK.showMenu(null, shareParams, 
+              //   (state, platform, info, detail, error) {
+              //     print("share state:${state} platform:${platform.name} info:${info.toString()} detail:${detail.toString()} error:${error.toString()}");
+              //   });
+              await ShareUtil.showMenu(context, shareParams, 
                 (state, platform, info, detail, error) {
-                  print("share state:${state} platform:${platform} info:${info} detail:${detail} error:${error}");
+                  print("share state:${state} platform:${platform.name} info:${info.toString()} detail:${detail.toString()} error:${error.toString()}");
                 });
-              print("showMenu result:${result}");
             },
           ),
           SettingCell(

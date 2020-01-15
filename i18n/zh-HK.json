@@ -21,6 +21,16 @@
     "appDescription": "這裡是介紹"
   },
 
+  "share": {
+    "wechatTimeline": "朋友圈",
+    "qZone": "QQ空間",
+    "sina": "新浪微博",
+    "douBan": "豆瓣",
+    "facebook": "Facebook",
+    "twitter": "推特",
+    "other": "其他"
+  },
+
   "bt_upload_success": "已上傳",
   "bt_upload_waiting": "未上傳",
   "bt_upload_waring": "上傳失敗",
