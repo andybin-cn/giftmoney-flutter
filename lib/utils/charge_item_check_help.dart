@@ -9,19 +9,12 @@ class ChargeItemCheckHelp {
       Alert(
         context: context,
         type: AlertType.error,
-        title: "",
-        desc: "",
+        title: "金币不足",
+        desc: "此操作需要${AccountService.instance.amountFor(item)}个金币",
         buttons: [
           DialogButton(
             child: Text(
-              I18n.of(context).alertOk_button,
-              style: TextStyle(color: Colors.white, fontSize: 14),
-            ),
-            onPressed: () => Navigator.pop(context)
-          ),
-          DialogButton(
-            child: Text(
-              I18n.of(context).alertOk_button,
+              "看广告赚金币",
               style: TextStyle(color: Colors.white, fontSize: 14),
             ),
             onPressed: () => Navigator.pop(context)
