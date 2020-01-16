@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_email_sender/flutter_email_sender.dart';
 import 'package:giftmoney/base/base_stateful_page.dart';
 import 'package:giftmoney/components/cells/setting_cell.dart';
 import 'package:giftmoney/components/small_parts/account_header.dart';
 import 'package:giftmoney/pages/mine_about_page.dart';
 import 'package:giftmoney/utils/share_util.dart';
+import 'package:rflutter_alert/rflutter_alert.dart';
 import 'package:sharesdk/sharesdk.dart';
 
 class HomeMinePage extends BaseStatefulPage {
@@ -78,8 +80,30 @@ class _HomeMinePageState extends BasePageState<HomeMinePage> {
           SettingCell(
             icon: Icon(Icons.feedback),
             label: Text(i18n.mineFeedback),
-            onPressed: () {
-              
+            onPressed: () async {
+              final Email email = Email(
+                body: '\n\n感谢您的宝贵意见，我们会尽快给您回复。谢谢！',
+                subject: '【礼金小助手App】意见反馈',
+                recipients: ['reciprocityApp@163.com'],
+                // cc: ['cc@example.com'],
+                // bcc: ['bcc@example.com'],
+                // attachmentPath: '/path/to/attachment.zip',
+                isHTML: false,
+              );
+              await FlutterEmailSender.send(email).catchError((error) {
+                this.showAlert(
+                  desc: "无法打开邮件，您可以发送邮件至 reciprocityApp@163.com 我们会尽快给您回复!",
+                  buttons: [
+                    DialogButton(child: Text("取消"), onPressed: () {
+
+                    }),
+                    DialogButton(child: Text("复制邮箱地址"), onPressed: () {
+
+                    }),
+                  ],
+                );
+                // 
+              });
             },
           )
         ],

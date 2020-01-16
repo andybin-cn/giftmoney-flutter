@@ -4,6 +4,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:giftmoney/base/base_stateful_page.dart';
+import 'package:giftmoney/components/cells/closable_left_scroll.dart';
 import 'package:giftmoney/service/trade_service.dart';
 import 'package:giftmoney/theme/theme.dart';
 import 'package:giftmoney/utils/format_helper.dart';
@@ -45,14 +46,16 @@ class _ExportRecordsPageState extends BasePageState<ExportRecordsPage> {
   Widget _renderRow(BuildContext context, int index) {
     var file = files[index];
     var fileName = file.path.substring(file.path.lastIndexOf("/") + 1, file.path.length);
-    return ListTile(
-      title: FutureBuilder<FileStat>(
+    return ClosableLeftScroll(
+      child: FutureBuilder<FileStat>(
         future: file.stat(),
         builder: (BuildContext context, AsyncSnapshot snapshot) {
           FileStat fileStat = snapshot.data;
           var createTime = fileStat?.changed;
           var size = fileStat?.size;
           return Container(
+            padding: EdgeInsets.only(left: 15, right: 15),
+            color: Colors.white,
             child: Row(
               children: <Widget>[
                 Expanded(
@@ -78,7 +81,22 @@ class _ExportRecordsPageState extends BasePageState<ExportRecordsPage> {
       onTap: () {
         var file = files[index];
         NativeUtils.shareFile(filePath: file.path, subject: "");
-      }
+      },
+      buttons: <Widget>[
+        LeftScrollItem(
+          text: i18n.bt_delete,
+          color: Colors.red,
+          onTap: () async {
+            ClosableLeftScrollState.closeAll();
+            this.showLoading();
+            var file = files[index];
+            await file.delete();
+            files.removeAt(index);
+            this.hideLoading();
+            this.setState(() {});
+          },
+        ),
+    ]
     );
   }
 
@@ -96,24 +114,4 @@ class _ExportRecordsPageState extends BasePageState<ExportRecordsPage> {
       this.files = newFiles;
     });
   }
-
-
-  @override
-  List<Widget> appBarActions() {
-    return [
-      FlatButton(
-        child: Text("管理"),
-        textColor: Colors.white,
-        onPressed: () async {
-          if(files.length == 0) {
-            return;
-          }
-          print("appBarActions pressed");
-          // var path = await TradeService.instance.getRecodsPath();
-          NativeUtils.openFileManager(filePath: files[0].path);
-        },
-      )
-    ];
-  }
-
 }

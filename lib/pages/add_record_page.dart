@@ -5,8 +5,10 @@ import 'package:giftmoney/components/form/form_date_input.dart';
 import 'package:giftmoney/components/form/form_input.dart';
 import 'package:giftmoney/components/form/form_popup_menu.dart';
 import 'package:giftmoney/model/sql_trade.dart';
+import 'package:giftmoney/service/account_service.dart';
 import 'package:giftmoney/service/trade_service.dart';
 import 'package:giftmoney/utils/CommonError.dart';
+import 'package:giftmoney/utils/charge_item_check_help.dart';
 import 'package:giftmoney/utils/screen_util.dart';
 import 'package:giftmoney/utils/validation.dart';
 
@@ -100,6 +102,9 @@ class _AddRecordPageState extends BasePageState<AddRecordPage> {
           Button(
             title: i18n.bt_save,
             onPressed: () async {
+              if(!ChargeItemCheckHelp.canChargeForItem(context, ChargeItem.insertTrade)) {
+                return;
+              }
               showLoading();
               saveForm().then((trade) {
                 this.showHUD(i18n.hud_save_success);

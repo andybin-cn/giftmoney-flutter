@@ -6,7 +6,9 @@ import 'package:giftmoney/base/base_stateful_page.dart';
 import 'package:giftmoney/components/cells/setting_cell.dart';
 import 'package:giftmoney/components/small_parts/account_header.dart';
 import 'package:giftmoney/pages/export_records_page.dart';
+import 'package:giftmoney/service/account_service.dart';
 import 'package:giftmoney/service/trade_service.dart';
+import 'package:giftmoney/utils/charge_item_check_help.dart';
 import 'package:giftmoney/utils/native_utils.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 
@@ -68,12 +70,18 @@ class _State extends BasePageState<HomeAccessibilityPage> {
   }
 
   void _onExportPress() async {
+    if(!ChargeItemCheckHelp.canChargeForItem(context, ChargeItem.exportToExcel)) {
+      return;
+    }
     showLoading();
     var path = await TradeService.instance.exportTradesToExcel();
     hideLoading();
     NativeUtils.shareFile(filePath: path, subject: "");
   }
   void _onImportPress() async {
+    if(!ChargeItemCheckHelp.canChargeForItem(context, ChargeItem.importFromExcel)) {
+      return;
+    }
     File file = await FilePicker.getFile();
     this.showLoading();
     var sheet = await NativeUtils.readExcel(filePath: file.path);
