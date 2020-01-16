@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:giftmoney/base/welcome_page.dart';
 import 'package:giftmoney/data_center/db_manager.dart';
 import 'package:giftmoney/environment/constant.dart';
 import 'package:giftmoney/generated/i18n.dart';
@@ -57,16 +58,12 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
-    // WidgetsBinding.instance.window.locales
-    if(loadingApp) {
-      return CircularProgressIndicator();
-    }
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MainTabPage(),
+      home: loadingApp ? WelcomePage() : MainTabPage(),
       localizationsDelegates: const [
         I18n.delegate,
         GlobalMaterialLocalizations.delegate,
