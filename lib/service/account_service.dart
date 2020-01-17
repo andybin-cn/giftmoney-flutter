@@ -62,7 +62,7 @@ class AccountService {
     DBManager.instance.keyValue.save(
         key: "AccountService_balance",
         value: this.balanceSubject.value.toString());
-    return balanceSubject.value;
+    return amount;
   }
 
   Future<int> consumeGold(amount) async {

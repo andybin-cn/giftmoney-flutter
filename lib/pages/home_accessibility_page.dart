@@ -6,6 +6,7 @@ import 'package:giftmoney/base/base_stateful_page.dart';
 import 'package:giftmoney/components/cells/setting_cell.dart';
 import 'package:giftmoney/components/small_parts/account_header.dart';
 import 'package:giftmoney/pages/export_records_page.dart';
+import 'package:giftmoney/pages/rules_for_gold_coins_page.dart';
 import 'package:giftmoney/service/account_service.dart';
 import 'package:giftmoney/service/trade_service.dart';
 import 'package:giftmoney/utils/charge_item_check_help.dart';
@@ -61,6 +62,17 @@ class _State extends BasePageState<HomeAccessibilityPage> {
             label: Text(i18n.accessibilityHistory_button),
             onPressed: () {
               _onHistoryPress();
+            },
+          ),
+          SettingCell(
+            icon: Icon(Icons.account_balance_wallet),
+            label: Text("金币使用规则"),
+            onPressed: () {
+              Navigator.push(context,
+                MaterialPageRoute(builder: (context) {
+                    return RulesForGoldCoinsPage();
+                })
+              );
             },
           )
         ],

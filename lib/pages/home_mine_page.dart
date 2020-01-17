@@ -4,6 +4,7 @@ import 'package:giftmoney/base/base_stateful_page.dart';
 import 'package:giftmoney/components/cells/setting_cell.dart';
 import 'package:giftmoney/components/small_parts/account_header.dart';
 import 'package:giftmoney/pages/mine_about_page.dart';
+import 'package:giftmoney/pages/rules_for_gold_coins_page.dart';
 import 'package:giftmoney/utils/share_util.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 import 'package:sharesdk/sharesdk.dart';
@@ -39,6 +40,17 @@ class _HomeMinePageState extends BasePageState<HomeMinePage> {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
           Padding(padding: EdgeInsets.only(top: 20)),
+          SettingCell(
+            icon: Icon(Icons.account_balance_wallet),
+            label: Text("金币使用规则"),
+            onPressed: () {
+              Navigator.push(context,
+                MaterialPageRoute(builder: (context) {
+                    return RulesForGoldCoinsPage();
+                })
+              );
+            },
+          ),
           SettingCell(
             icon: Icon(Icons.share),
             label: Text(i18n.mineInvite),

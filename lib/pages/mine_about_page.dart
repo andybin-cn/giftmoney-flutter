@@ -11,17 +11,26 @@ class MineAboutPage extends BaseStatelessPage {
   @override
   Widget buildBody(BuildContext context) {
     var i18n = I18n.of(context);
-    return Column(children: <Widget>[
-      Padding(padding: EdgeInsets.only(top: 15)),
-      Text(
-        i18n.mineAppDescription,
-        style: AppTextStyle.reminderText(13),
-      ),
-      Padding(padding: EdgeInsets.only(top: 15)),
-      Text(
-        i18n.mineAppVersion(Constant.packageInfo.version),
-        style: AppTextStyle.reminderText(13),
-      ),
-    ]);
+    return Container(
+      padding: EdgeInsets.only(left: 15, right: 15),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Padding(padding: EdgeInsets.only(top: 15)),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Text(i18n.mineAppDescription, style: AppTextStyle.mainText(15)),
+            ],
+          ),
+          Padding(padding: EdgeInsets.only(top: 20)),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Text(i18n.mineAppVersion(Constant.packageInfo.version), style: AppTextStyle.mainText(15)),
+            ],
+          )
+        ])
+    );
   }
 }

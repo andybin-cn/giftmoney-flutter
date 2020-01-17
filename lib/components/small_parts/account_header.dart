@@ -52,7 +52,8 @@ class _AccountHeaderState extends State<AccountHeader> {
               AccountService.instance.earnGold().catchError((error) {
                 print("catchError 无法显示广告");
                 ToastUtil.show("catchError 无法显示广告");
-              }).then((newBalence) {
+              }).then((amount) {
+                ToastUtil.show("成功赚取${amount}个金币");
                 this.setState((){});
               }, onError: (error) {
                 print("onError 无法显示广告");
