@@ -60,8 +60,8 @@ class I18n implements WidgetsLocalizations {
   String get mineFeedback => "意见反馈";
   /// "版本：${version}"
   String mineAppVersion(String version) => "版本：${version}";
-  /// "这里是介绍"
-  String get mineAppDescription => "这里是介绍";
+  /// "1.我们没有后台服务端，所以不会收集用户的任何数据，也无法查看您的数据记录。请放心使用！\n\n2.数据完全保存在本地，对数据进行了严格的加密保护，保证数据的安全可靠！\n\n\n\n如遇到任何问题，请发送邮件至：reciprocityApp@163.com\n我们会尽快与您联系"
+  String get mineAppDescription => "1.我们没有后台服务端，所以不会收集用户的任何数据，也无法查看您的数据记录。请放心使用！\n\n2.数据完全保存在本地，对数据进行了严格的加密保护，保证数据的安全可靠！\n\n\n\n如遇到任何问题，请发送邮件至：reciprocityApp@163.com\n我们会尽快与您联系";
   /// "朋友圈"
   String get shareWechatTimeline => "朋友圈";
   /// "QQ空间"
@@ -227,9 +227,9 @@ class _I18n_en_US extends I18n {
   /// "Version:${version}"
   @override
   String mineAppVersion(String version) => "Version:${version}";
-  /// "this is discription about app"
+  /// "1. We do not have a backend server, so we will not collect any data from users, and we will not be able to view your data records. Please rest assured! \n\n2. The data is completely saved locally, and the data is strictly encrypted to ensure the safety and reliability of the data! \n\n\n\nIf you encounter any problems, please send email to: reciprocityApp@163.com \nWe will contact you as soon as possible"
   @override
-  String get mineAppDescription => "this is discription about app";
+  String get mineAppDescription => "1. We do not have a backend server, so we will not collect any data from users, and we will not be able to view your data records. Please rest assured! \n\n2. The data is completely saved locally, and the data is strictly encrypted to ensure the safety and reliability of the data! \n\n\n\nIf you encounter any problems, please send email to: reciprocityApp@163.com \nWe will contact you as soon as possible";
   /// "WeChat"
   @override
   String get shareWechatTimeline => "WeChat";
@@ -464,9 +464,9 @@ class _I18n_zh_TW extends _I18n_zh_CN {
   /// "版本：${version}"
   @override
   String mineAppVersion(String version) => "版本：${version}";
-  /// "這裡是介紹"
+  /// "1.我們沒有後台服務端，所以不會收集用戶的任何數據，也無法查看您的數據記錄。請放心使用！ \n\n2.數據完全保存在本地，對數據進行了嚴格的加密保護，保證數據的安全可靠！ \n\n\n\n如遇到任何問題，請發送郵件至：reciprocityApp@163.com\n我們會盡快與您聯繫"
   @override
-  String get mineAppDescription => "這裡是介紹";
+  String get mineAppDescription => "1.我們沒有後台服務端，所以不會收集用戶的任何數據，也無法查看您的數據記錄。請放心使用！ \n\n2.數據完全保存在本地，對數據進行了嚴格的加密保護，保證數據的安全可靠！ \n\n\n\n如遇到任何問題，請發送郵件至：reciprocityApp@163.com\n我們會盡快與您聯繫";
   /// "朋友圈"
   @override
   String get shareWechatTimeline => "朋友圈";
@@ -646,9 +646,9 @@ class _I18n_zh_HK extends _I18n_zh_CN {
   /// "版本：${version}"
   @override
   String mineAppVersion(String version) => "版本：${version}";
-  /// "這裡是介紹"
+  /// "1.我們沒有後台服務端，所以不會收集用戶的任何數據，也無法查看您的數據記錄。請放心使用！ \n\n2.數據完全保存在本地，對數據進行了嚴格的加密保護，保證數據的安全可靠！ \n\n\n\n如遇到任何問題，請發送郵件至：reciprocityApp@163.com\n我們會盡快與您聯繫"
   @override
-  String get mineAppDescription => "這裡是介紹";
+  String get mineAppDescription => "1.我們沒有後台服務端，所以不會收集用戶的任何數據，也無法查看您的數據記錄。請放心使用！ \n\n2.數據完全保存在本地，對數據進行了嚴格的加密保護，保證數據的安全可靠！ \n\n\n\n如遇到任何問題，請發送郵件至：reciprocityApp@163.com\n我們會盡快與您聯繫";
   /// "朋友圈"
   @override
   String get shareWechatTimeline => "朋友圈";

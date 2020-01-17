@@ -17,12 +17,7 @@ class MineAboutPage extends BaseStatelessPage {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Padding(padding: EdgeInsets.only(top: 15)),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Text(i18n.mineAppDescription, style: AppTextStyle.mainText(15)),
-            ],
-          ),
+          Text(i18n.mineAppDescription, style: AppTextStyle.mainText(15)),
           Padding(padding: EdgeInsets.only(top: 20)),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,

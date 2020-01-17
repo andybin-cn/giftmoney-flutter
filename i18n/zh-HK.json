@@ -18,7 +18,7 @@
     "about": "關於我們",
     "feedback": "意見反饋",
     "appVersion": "版本：${version}",
-    "appDescription": "這裡是介紹"
+    "appDescription": "1.我們沒有後台服務端，所以不會收集用戶的任何數據，也無法查看您的數據記錄。請放心使用！ \n\n2.數據完全保存在本地，對數據進行了嚴格的加密保護，保證數據的安全可靠！ \n\n\n\n如遇到任何問題，請發送郵件至：reciprocityApp@163.com\n我們會盡快與您聯繫"
   },
 
   "share": {
