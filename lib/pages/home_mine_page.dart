@@ -4,6 +4,7 @@ import 'package:giftmoney/base/base_stateful_page.dart';
 import 'package:giftmoney/components/cells/setting_cell.dart';
 import 'package:giftmoney/components/small_parts/account_header.dart';
 import 'package:giftmoney/pages/mine_about_page.dart';
+import 'package:giftmoney/pages/privacy_policy_page.dart';
 import 'package:giftmoney/pages/rules_for_gold_coins_page.dart';
 import 'package:giftmoney/utils/share_util.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
@@ -42,7 +43,7 @@ class _HomeMinePageState extends BasePageState<HomeMinePage> {
           Padding(padding: EdgeInsets.only(top: 20)),
           SettingCell(
             icon: Icon(Icons.account_balance_wallet),
-            label: Text("金币使用规则"),
+            label: Text(i18n.mineCoin_rules),
             onPressed: () {
               Navigator.push(context,
                 MaterialPageRoute(builder: (context) {
@@ -57,12 +58,12 @@ class _HomeMinePageState extends BasePageState<HomeMinePage> {
             onPressed: () async {
               var shareParams = SSDKMap()
                 ..setGeneral(
-                  "测试",
-                  "内容测试",
+                  "轻松记录每一笔份子钱",
+                  "",
                   [],
                   null,
                   null,
-                  "http://www.baidu.com",
+                  "https://android.myapp.com/myapp/detail.htm?apkName=com.andybin.giftmoney",
                   null,
                   null,
                   null,
@@ -116,6 +117,16 @@ class _HomeMinePageState extends BasePageState<HomeMinePage> {
                 );
                 // 
               });
+            },
+          ),SettingCell(
+            icon: Icon(Icons.lock_outline),
+            label: Text(i18n.minePrivacy),
+            onPressed: () {
+              Navigator.push(context,
+                MaterialPageRoute(builder: (context) {
+                    return PrivacyPolicyPage();
+                })
+              );
             },
           )
         ],

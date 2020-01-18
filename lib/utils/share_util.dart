@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:giftmoney/generated/i18n.dart';
+import 'package:giftmoney/utils/loading_helper.dart';
 import 'package:giftmoney/utils/screen_util.dart';
 import 'package:sharesdk/sharesdk.dart';
 
@@ -13,7 +14,7 @@ class ShareUtil {
     ShareSDKPlatforms.douBan,
     ShareSDKPlatforms.facebook,
     ShareSDKPlatforms.twitter,
-    ShareSDKPlatforms.mail
+    // ShareSDKPlatforms.mail
   ];
   static Future<void> showMenu(
       BuildContext context,
@@ -74,25 +75,24 @@ class ShareUtil {
       title = I18n.of(context).shareTwitter;
     }
 
-    return FlatButton(
-      padding: EdgeInsets.zero,
-      child: Container(
+    return Container(
+      padding: EdgeInsets.only(top: 15),
+      width: (ScreenUtil.screenWidthDp - 60) / 3,
+      child: FlatButton(
         padding: EdgeInsets.zero,
-        margin: EdgeInsets.only(top: 15),
-        width: (ScreenUtil.screenWidthDp - 60) / 3,
         child: Column(
           children: <Widget>[
             icon,
             Text(title),
           ],
         ),
-      ),
-      onPressed: () async {
+        onPressed: () async {
         var shareResult = await ShareSDK.share(platform, params, (state, info, detail, error) {
           result(state, platform, info, detail, error);
         });
         print("shareResult:${shareResult}");
       },
+      ),
     );
   }
 

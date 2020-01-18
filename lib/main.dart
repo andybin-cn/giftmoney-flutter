@@ -5,6 +5,7 @@ import 'package:giftmoney/data_center/db_manager.dart';
 import 'package:giftmoney/environment/constant.dart';
 import 'package:giftmoney/generated/i18n.dart';
 import 'package:giftmoney/pages/main_tab_page.dart';
+import 'package:giftmoney/utils/i18n_util.dart';
 import 'package:sharesdk/sharesdk.dart';
 
 
@@ -59,7 +60,7 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: I18nUtil.shared != null ? I18nUtil.shared.app_name : "礼金小助手",
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),

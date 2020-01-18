@@ -17,10 +17,11 @@ class AccountService {
   static AccountService _instance;
   AccountService._internal() {
     if (Platform.isIOS) {
-      adUnitID = "ca-app-pub-3940256099942544/1712485313";
+      adUnitID = "ca-app-pub-3156075797045250/9070048309"; //product
+      // adUnitID = "ca-app-pub-3940256099942544/1712485313"; //test
     } else if (Platform.isAndroid) {
-      // ca-app-pub-3156075797045250/8254562602
-      adUnitID = "ca-app-pub-3940256099942544/5224354917";
+      adUnitID = "ca-app-pub-3156075797045250/8254562602"; //product
+      // adUnitID = "ca-app-pub-3940256099942544/5224354917"; //test
     }
     // 初始化
     initAccount();

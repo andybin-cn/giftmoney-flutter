@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:giftmoney/base/base_stateful_page.dart';
 import 'package:giftmoney/service/account_service.dart';
 import 'package:giftmoney/theme/theme.dart';
+import 'package:giftmoney/utils/i18n_util.dart';
 
 class RulesForGoldCoinsPage extends BaseStatefulPage {
   @override
@@ -13,7 +14,7 @@ class _RulesForGoldCoinsPageState extends BasePageState<RulesForGoldCoinsPage> {
   @override
   void initState() {
     super.initState();
-    this.title = "金币使用规则";
+    this.title = I18nUtil.shared.mineCoin_rules;
   }
 
   @override

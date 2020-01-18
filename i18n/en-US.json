@@ -16,6 +16,8 @@
     "invite": "Recommend to earn coins",
     "setting": "Settings",
     "about": "About Me",
+    "privacy": "Privacy Policy",
+    "coin_rules": "Rules for using gold coins",
     "feedback": "Feedback",
     "appVersion": "Version:${version}",
     "appDescription": "1. We do not have a backend server, so we will not collect any data from users, and we will not be able to view your data records. Please rest assured! \n\n2. The data is completely saved locally, and the data is strictly encrypted to ensure the safety and reliability of the data! \n\n\n\nIf you encounter any problems, please send email to: reciprocityApp@163.com \nWe will contact you as soon as possible"

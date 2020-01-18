@@ -56,6 +56,10 @@ class I18n implements WidgetsLocalizations {
   String get mineSetting => "设置";
   /// "关于我们"
   String get mineAbout => "关于我们";
+  /// "隐私协议"
+  String get minePrivacy => "隐私协议";
+  /// "金币使用规则"
+  String get mineCoin_rules => "金币使用规则";
   /// "意见反馈"
   String get mineFeedback => "意见反馈";
   /// "版本：${version}"
@@ -221,6 +225,12 @@ class _I18n_en_US extends I18n {
   /// "About Me"
   @override
   String get mineAbout => "About Me";
+  /// "Privacy Policy"
+  @override
+  String get minePrivacy => "Privacy Policy";
+  /// "Rules for using gold coins"
+  @override
+  String get mineCoin_rules => "Rules for using gold coins";
   /// "Feedback"
   @override
   String get mineFeedback => "Feedback";
@@ -458,6 +468,12 @@ class _I18n_zh_TW extends _I18n_zh_CN {
   /// "關於我們"
   @override
   String get mineAbout => "關於我們";
+  /// "隱私政策"
+  @override
+  String get minePrivacy => "隱私政策";
+  /// "金幣使用規則"
+  @override
+  String get mineCoin_rules => "金幣使用規則";
   /// "意見反饋"
   @override
   String get mineFeedback => "意見反饋";
@@ -640,6 +656,12 @@ class _I18n_zh_HK extends _I18n_zh_CN {
   /// "關於我們"
   @override
   String get mineAbout => "關於我們";
+  /// "隱私政策"
+  @override
+  String get minePrivacy => "隱私政策";
+  /// "金幣使用規則"
+  @override
+  String get mineCoin_rules => "金幣使用規則";
   /// "意見反饋"
   @override
   String get mineFeedback => "意見反饋";
