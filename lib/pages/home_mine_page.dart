@@ -59,7 +59,7 @@ class _HomeMinePageState extends BasePageState<HomeMinePage> {
               var shareParams = SSDKMap()
                 ..setGeneral(
                   "轻松记录每一笔份子钱",
-                  "",
+                  null,
                   [],
                   null,
                   null,
@@ -67,7 +67,7 @@ class _HomeMinePageState extends BasePageState<HomeMinePage> {
                   null,
                   null,
                   null,
-                  SSDKContentTypes.webpage
+                  SSDKContentTypes.app
                 );
               // await ShareSDK.showMenu(null, shareParams, 
               //   (state, platform, info, detail, error) {
