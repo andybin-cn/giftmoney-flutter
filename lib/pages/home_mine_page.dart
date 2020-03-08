@@ -8,7 +8,7 @@ import 'package:giftmoney/pages/privacy_policy_page.dart';
 import 'package:giftmoney/pages/rules_for_gold_coins_page.dart';
 import 'package:giftmoney/utils/share_util.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
-import 'package:sharesdk/sharesdk.dart';
+import 'package:sharesdk_plugin/sharesdk_plugin.dart';
 
 class HomeMinePage extends BaseStatefulPage {
   HomeMinePage({Key key}) : super(key: key);
@@ -64,6 +64,7 @@ class _HomeMinePageState extends BasePageState<HomeMinePage> {
                   null,
                   null,
                   "https://android.myapp.com/myapp/detail.htm?apkName=com.andybin.giftmoney",
+                  null,
                   null,
                   null,
                   null,

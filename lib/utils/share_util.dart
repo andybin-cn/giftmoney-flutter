@@ -2,9 +2,8 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:giftmoney/generated/i18n.dart';
-import 'package:giftmoney/utils/loading_helper.dart';
 import 'package:giftmoney/utils/screen_util.dart';
-import 'package:sharesdk/sharesdk.dart';
+import 'package:sharesdk_plugin/sharesdk_plugin.dart';
 
 class ShareUtil {
   static var platforms = [
@@ -25,7 +24,7 @@ class ShareUtil {
     if (Platform.isIOS) {
       for (var item in platforms) {
         try {
-          if (await ShareSDK.isClientInstalled(item)) {
+          if (await SharesdkPlugin.isClientInstalled(item)) {
             avalablePlatforms.add(item);
           }
         } catch (e) {
@@ -87,7 +86,7 @@ class ShareUtil {
           ],
         ),
         onPressed: () async {
-        var shareResult = await ShareSDK.share(platform, params, (state, info, detail, error) {
+        var shareResult = await SharesdkPlugin.share(platform, params, (state, info, detail, error) {
           result(state, platform, info, detail, error);
         });
         print("shareResult:${shareResult}");

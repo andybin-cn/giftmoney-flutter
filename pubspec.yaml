@@ -36,7 +36,7 @@ dependencies:
   rflutter_alert: ^1.0.3
   rxdart: ^0.23.1
   package_info: ^0.4.0
-  sharesdk: ^1.1.8
+  sharesdk_plugin: ^1.1.0
   flutter_email_sender: ^2.2.2
   advert_support:
     git:

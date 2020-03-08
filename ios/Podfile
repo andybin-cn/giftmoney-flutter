@@ -36,6 +36,11 @@ target 'Runner' do
   use_frameworks!
   use_modular_headers!
   
+  pod 'mob_sharesdk'
+  pod 'mob_sharesdk/ShareSDKPlatforms/QQ'
+  pod 'mob_sharesdk/ShareSDKPlatforms/SinaWeibo'
+  pod 'mob_sharesdk/ShareSDKPlatforms/WeChat'     #微信sdk不带支付的命令）
+  
   # Flutter Pod
 
   copied_flutter_dir = File.join(__dir__, 'Flutter')

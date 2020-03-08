@@ -60,8 +60,8 @@ abstract class BaseState<T extends StatefulWidget> extends State<T> with RatioHe
     }
   }
 
-  catchError(Error error) {
-    print(error.stackTrace);
+  catchError(Object error, [StackTrace stack]) {
+    print(stack);
     showHUD(error.toString());
   }
 }

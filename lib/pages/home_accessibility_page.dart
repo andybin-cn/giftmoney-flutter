@@ -86,22 +86,33 @@ class _State extends BasePageState<HomeAccessibilityPage> {
       return;
     }
     showLoading();
-    var path = await TradeService.instance.exportTradesToExcel();
-    hideLoading();
-    NativeUtils.shareFile(filePath: path, subject: "");
+    TradeService.instance.exportTradesToExcel().then((path) {
+      hideLoading();
+      NativeUtils.shareFile(filePath: path, subject: "");
+    }, onError: (Object error, StackTrace stack) {
+      this.catchError(error);
+    });
   }
   void _onImportPress() async {
     if(!ChargeItemCheckHelp.canChargeForItem(context, ChargeItem.importFromExcel)) {
       return;
     }
-    File file = await FilePicker.getFile();
-    this.showLoading();
-    var sheet = await NativeUtils.readExcel(filePath: file.path);
-    print("_onImportPress readExcel result:${sheet}");
-    var importResult = await TradeService.instance.importTrades(sheet);
-    this.hideLoading();
-    this.showAlert(type: AlertType.success, title: i18n.alertImport_result_title, desc: i18n.alertImport_result(importResult.successCount.toString(), importResult.skipCount.toString(), importResult.errorCount.toString()));
-    print("_onImportPress importResult:${importResult}");
+    try {
+      File file = await FilePicker.getFile();
+      if(file == null) {
+        return;
+      }
+      this.showLoading();
+      var sheet = await NativeUtils.readExcel(filePath: file.path);
+      print("_onImportPress readExcel result:${sheet}");
+      var importResult = await TradeService.instance.importTrades(sheet);
+      this.hideLoading();
+      this.showAlert(type: AlertType.success, title: i18n.alertImport_result_title, desc: i18n.alertImport_result(importResult.successCount.toString(), importResult.skipCount.toString(), importResult.errorCount.toString()));
+      print("_onImportPress importResult:${importResult}");
+    } catch (error) {
+      this.catchError(error);
+    }
+    
   }
   void _onHistoryPress() {
     Navigator.push(context,

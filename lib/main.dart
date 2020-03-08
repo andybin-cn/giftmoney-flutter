@@ -6,7 +6,7 @@ import 'package:giftmoney/environment/constant.dart';
 import 'package:giftmoney/generated/i18n.dart';
 import 'package:giftmoney/pages/main_tab_page.dart';
 import 'package:giftmoney/utils/i18n_util.dart';
-import 'package:sharesdk/sharesdk.dart';
+import 'package:sharesdk_plugin/sharesdk_plugin.dart';
 
 
 void main() => runApp(MyApp());
@@ -32,7 +32,7 @@ class _MyAppState extends State<MyApp> {
       await Constant.init();
       ShareSDKRegister register = ShareSDKRegister();
       register.setupWechat(
-          "wx617c77c82218ea2c", "c7253e5289986cf4c4c74d1ccc185fb1");
+          "wx617c77c82218ea2c", "c7253e5289986cf4c4c74d1ccc185fb1", "https://www.sandslee.com/");
       register.setupSinaWeibo("568898243", "38a4f8204cc784f81f9f0daaf31e02e3",
           "http://www.sharesdk.cn");
       register.setupQQ("100371282", "aed9b0303e3ed1e27bae87c33761161d");
@@ -42,7 +42,7 @@ class _MyAppState extends State<MyApp> {
           "NJEglQUy2rqZ9Io9FcAU9p17omFqbORknUpRrCDOK46aAbIiey", "http://mob.com");
 
       //注册
-      ShareSDK.regist(register);
+      SharesdkPlugin.regist(register);
       
       DBManager.instance.initDB().whenComplete(() {
         this.setState(() {
