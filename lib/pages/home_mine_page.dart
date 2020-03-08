@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_email_sender/flutter_email_sender.dart';
 import 'package:giftmoney/base/base_stateful_page.dart';
 import 'package:giftmoney/components/cells/setting_cell.dart';
@@ -109,10 +110,12 @@ class _HomeMinePageState extends BasePageState<HomeMinePage> {
                   desc: "无法打开邮件，您可以发送邮件至 reciprocityApp@163.com 我们会尽快给您回复!",
                   buttons: [
                     DialogButton(child: Text("取消"), onPressed: () {
-
+                      Navigator.pop(context);
                     }),
                     DialogButton(child: Text("复制邮箱地址"), onPressed: () {
-
+                      Clipboard.setData(new ClipboardData(text: "reciprocityApp@163.co"));
+                      showHUD("邮箱地址已复制");
+                      Navigator.pop(context);
                     }),
                   ],
                 );

@@ -21,7 +21,7 @@ abstract class BaseState<T extends StatefulWidget> extends State<T> with RatioHe
     LoadingHelper.showLoading(context, cancelToken, loadingCancelable: loadingCancelable);
   }
 
-  showAlert({String title, String desc, AlertType type = AlertType.info,
+  showAlert({String title = "", String desc = "", AlertType type = AlertType.info,
    List<DialogButton> buttons}) {
     Alert(
       context: context,
