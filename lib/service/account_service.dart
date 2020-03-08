@@ -75,6 +75,7 @@ class AccountService {
   }
 
   int amountFor(ChargeItem item) {
+    return 0;
     switch (item) {
       case ChargeItem.insertTrade:
         return 5;

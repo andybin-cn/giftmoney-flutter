@@ -8,7 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		1498D2341E8E89220040F4C2 /* GeneratedPluginRegistrant.m in Sources */ = {isa = PBXBuildFile; fileRef = 1498D2331E8E89220040F4C2 /* GeneratedPluginRegistrant.m */; };
+		36735845241531AE008411A8 /* libXlsxReaderWriter.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 36CC6CCF241529FC0003B0D1 /* libXlsxReaderWriter.a */; };
+		36735847241531D2008411A8 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 36735846241531C7008411A8 /* libz.tbd */; };
+		36735849241531E1008411A8 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 36735848241531D9008411A8 /* libsqlite3.tbd */; };
+		3673585024153DCD008411A8 /* TempExcelPreviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3673584F24153DCD008411A8 /* TempExcelPreviewVC.swift */; };
+		3673585424153E08008411A8 /* XLSXManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3673585224153E08008411A8 /* XLSXManager.swift */; };
+		3673585524153E08008411A8 /* empty.xlsx in Resources */ = {isa = PBXBuildFile; fileRef = 3673585324153E08008411A8 /* empty.xlsx */; };
 		36CC6CC02414DDBF0003B0D1 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36CC6CBF2414DDBE0003B0D1 /* MessageUI.framework */; };
+		36CC6CC22414F3FF0003B0D1 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36CC6CC12414F3FF0003B0D1 /* MainViewController.swift */; };
 		3856A98A23AA2B640049C131 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3856A98C23AA2B640049C131 /* InfoPlist.strings */; };
 		3B3967161E833CAA004F5970 /* AppFrameworkInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3B3967151E833CAA004F5970 /* AppFrameworkInfo.plist */; };
 		3B80C3941E831B6300D905FE /* App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B80C3931E831B6300D905FE /* App.framework */; };
@@ -21,6 +28,30 @@
 		97C147011CF9000F007C117D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97C146FF1CF9000F007C117D /* LaunchScreen.storyboard */; };
 		F797F37B79E40BC954B96F66 /* Pods_Runner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6CD01BD5A1A83386B149B8D /* Pods_Runner.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		367358412415312D008411A8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 36CC6CC8241529FC0003B0D1 /* XlsxReaderWriter.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 45B6E2391A148F7500288A78;
+			remoteInfo = XlsxReaderWriter;
+		};
+		36CC6CCE241529FC0003B0D1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 36CC6CC8241529FC0003B0D1 /* XlsxReaderWriter.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 45B6E23A1A148F7500288A78;
+			remoteInfo = XlsxReaderWriter;
+		};
+		36CC6CD0241529FC0003B0D1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 36CC6CC8241529FC0003B0D1 /* XlsxReaderWriter.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 22156D581C46B42500BB5779;
+			remoteInfo = "XlsxReaderWriter Mac";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		9705A1C41CF9048500538489 /* Embed Frameworks */ = {
@@ -41,7 +72,14 @@
 		09AB25C0B3F5B32AB937676D /* Pods-Runner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Runner.release.xcconfig"; path = "Target Support Files/Pods-Runner/Pods-Runner.release.xcconfig"; sourceTree = "<group>"; };
 		1498D2321E8E86230040F4C2 /* GeneratedPluginRegistrant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GeneratedPluginRegistrant.h; sourceTree = "<group>"; };
 		1498D2331E8E89220040F4C2 /* GeneratedPluginRegistrant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeneratedPluginRegistrant.m; sourceTree = "<group>"; };
+		36735846241531C7008411A8 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		36735848241531D9008411A8 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		3673584F24153DCD008411A8 /* TempExcelPreviewVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TempExcelPreviewVC.swift; sourceTree = "<group>"; };
+		3673585224153E08008411A8 /* XLSXManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XLSXManager.swift; sourceTree = "<group>"; };
+		3673585324153E08008411A8 /* empty.xlsx */ = {isa = PBXFileReference; lastKnownFileType = file; path = empty.xlsx; sourceTree = "<group>"; };
 		36CC6CBF2414DDBE0003B0D1 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		36CC6CC12414F3FF0003B0D1 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		36CC6CC8241529FC0003B0D1 /* XlsxReaderWriter.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = XlsxReaderWriter.xcodeproj; sourceTree = "<group>"; };
 		3856A98023AA2A7D0049C131 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Main.strings"; sourceTree = "<group>"; };
 		3856A98123AA2A7E0049C131 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		3856A98223AA2A830049C131 /* zh-HK */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-HK"; path = "zh-HK.lproj/Main.strings"; sourceTree = "<group>"; };
@@ -76,7 +114,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				9705A1C61CF904A100538489 /* Flutter.framework in Frameworks */,
+				36735847241531D2008411A8 /* libz.tbd in Frameworks */,
+				36735849241531E1008411A8 /* libsqlite3.tbd in Frameworks */,
 				3B80C3941E831B6300D905FE /* App.framework in Frameworks */,
+				36735845241531AE008411A8 /* libXlsxReaderWriter.a in Frameworks */,
 				36CC6CC02414DDBF0003B0D1 /* MessageUI.framework in Frameworks */,
 				F797F37B79E40BC954B96F66 /* Pods_Runner.framework in Frameworks */,
 			);
@@ -85,9 +126,53 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3673584E24153DBA008411A8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				3673584F24153DCD008411A8 /* TempExcelPreviewVC.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		3673585124153E08008411A8 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				3673585224153E08008411A8 /* XLSXManager.swift */,
+				3673585324153E08008411A8 /* empty.xlsx */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		36CC6CC6241529EA0003B0D1 /* Depends */ = {
+			isa = PBXGroup;
+			children = (
+				36CC6CC7241529EA0003B0D1 /* XlsxReaderWriter */,
+			);
+			path = Depends;
+			sourceTree = "<group>";
+		};
+		36CC6CC7241529EA0003B0D1 /* XlsxReaderWriter */ = {
+			isa = PBXGroup;
+			children = (
+				36CC6CC8241529FC0003B0D1 /* XlsxReaderWriter.xcodeproj */,
+			);
+			path = XlsxReaderWriter;
+			sourceTree = "<group>";
+		};
+		36CC6CC9241529FC0003B0D1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				36CC6CCF241529FC0003B0D1 /* libXlsxReaderWriter.a */,
+				36CC6CD1241529FC0003B0D1 /* XlsxReaderWriter.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		6F0D7697900BAEF9DDD868ED /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				36735848241531D9008411A8 /* libsqlite3.tbd */,
+				36735846241531C7008411A8 /* libz.tbd */,
 				36CC6CBF2414DDBE0003B0D1 /* MessageUI.framework */,
 				B6CD01BD5A1A83386B149B8D /* Pods_Runner.framework */,
 			);
@@ -120,6 +205,7 @@
 		97C146E51CF9000F007C117D = {
 			isa = PBXGroup;
 			children = (
+				36CC6CC6241529EA0003B0D1 /* Depends */,
 				9740EEB11CF90186004384FC /* Flutter */,
 				97C146F01CF9000F007C117D /* Runner */,
 				97C146EF1CF9000F007C117D /* Products */,
@@ -139,6 +225,8 @@
 		97C146F01CF9000F007C117D /* Runner */ = {
 			isa = PBXGroup;
 			children = (
+				3673585124153E08008411A8 /* Services */,
+				3673584E24153DBA008411A8 /* Views */,
 				97C146FA1CF9000F007C117D /* Main.storyboard */,
 				97C146FD1CF9000F007C117D /* Assets.xcassets */,
 				97C146FF1CF9000F007C117D /* LaunchScreen.storyboard */,
@@ -149,6 +237,7 @@
 				74858FAE1ED2DC5600515810 /* AppDelegate.swift */,
 				74858FAD1ED2DC5600515810 /* Runner-Bridging-Header.h */,
 				3856A98C23AA2B640049C131 /* InfoPlist.strings */,
+				36CC6CC12414F3FF0003B0D1 /* MainViewController.swift */,
 			);
 			path = Runner;
 			sourceTree = "<group>";
@@ -180,6 +269,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				367358422415312D008411A8 /* PBXTargetDependency */,
 			);
 			name = Runner;
 			productName = Runner;
@@ -217,12 +307,35 @@
 			mainGroup = 97C146E51CF9000F007C117D;
 			productRefGroup = 97C146EF1CF9000F007C117D /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 36CC6CC9241529FC0003B0D1 /* Products */;
+					ProjectRef = 36CC6CC8241529FC0003B0D1 /* XlsxReaderWriter.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				97C146ED1CF9000F007C117D /* Runner */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		36CC6CCF241529FC0003B0D1 /* libXlsxReaderWriter.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libXlsxReaderWriter.a;
+			remoteRef = 36CC6CCE241529FC0003B0D1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		36CC6CD1241529FC0003B0D1 /* XlsxReaderWriter.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = XlsxReaderWriter.framework;
+			remoteRef = 36CC6CD0241529FC0003B0D1 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		97C146EC1CF9000F007C117D /* Resources */ = {
@@ -233,6 +346,7 @@
 				3B3967161E833CAA004F5970 /* AppFrameworkInfo.plist in Resources */,
 				97C146FE1CF9000F007C117D /* Assets.xcassets in Resources */,
 				97C146FC1CF9000F007C117D /* Main.storyboard in Resources */,
+				3673585524153E08008411A8 /* empty.xlsx in Resources */,
 				3856A98A23AA2B640049C131 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -327,12 +441,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3673585424153E08008411A8 /* XLSXManager.swift in Sources */,
+				36CC6CC22414F3FF0003B0D1 /* MainViewController.swift in Sources */,
 				74858FAF1ED2DC5600515810 /* AppDelegate.swift in Sources */,
+				3673585024153DCD008411A8 /* TempExcelPreviewVC.swift in Sources */,
 				1498D2341E8E89220040F4C2 /* GeneratedPluginRegistrant.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		367358422415312D008411A8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = XlsxReaderWriter;
+			targetProxy = 367358412415312D008411A8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		3856A98C23AA2B640049C131 /* InfoPlist.strings */ = {
@@ -437,6 +562,26 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Flutter",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FMDB/FMDB.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/GoogleUtilities/GoogleUtilities.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/advert_support/advert_support.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/device_info/device_info.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/file_picker/file_picker.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/flutter_email_sender/flutter_email_sender.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/fluttertoast/fluttertoast.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/image_picker/image_picker.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/nanopb/nanopb.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/package_info/package_info.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/path_provider/path_provider.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/sharesdk_plugin/sharesdk_plugin.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/sqflite/sqflite.framework/Headers\"",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/mob_sharesdk\"",
+					"$(SRCROOT)/Depends/XlsxReaderWriter/XlsxReaderWriter",
+					"$(SRCROOT)/Depends/XlsxReaderWriter/ThirdParties/**",
 				);
 				INFOPLIST_FILE = Runner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -577,6 +722,26 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Flutter",
 				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FMDB/FMDB.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/GoogleUtilities/GoogleUtilities.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/advert_support/advert_support.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/device_info/device_info.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/file_picker/file_picker.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/flutter_email_sender/flutter_email_sender.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/fluttertoast/fluttertoast.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/image_picker/image_picker.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/nanopb/nanopb.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/package_info/package_info.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/path_provider/path_provider.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/sharesdk_plugin/sharesdk_plugin.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/sqflite/sqflite.framework/Headers\"",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/mob_sharesdk\"",
+					"$(SRCROOT)/Depends/XlsxReaderWriter/XlsxReaderWriter",
+					"$(SRCROOT)/Depends/XlsxReaderWriter/ThirdParties/**",
+				);
 				INFOPLIST_FILE = Runner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
@@ -607,6 +772,26 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Flutter",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FMDB/FMDB.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/GoogleUtilities/GoogleUtilities.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/advert_support/advert_support.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/device_info/device_info.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/file_picker/file_picker.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/flutter_email_sender/flutter_email_sender.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/fluttertoast/fluttertoast.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/image_picker/image_picker.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/nanopb/nanopb.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/package_info/package_info.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/path_provider/path_provider.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/sharesdk_plugin/sharesdk_plugin.framework/Headers\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/sqflite/sqflite.framework/Headers\"",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/mob_sharesdk\"",
+					"$(SRCROOT)/Depends/XlsxReaderWriter/XlsxReaderWriter",
+					"$(SRCROOT)/Depends/XlsxReaderWriter/ThirdParties/**",
 				);
 				INFOPLIST_FILE = Runner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
