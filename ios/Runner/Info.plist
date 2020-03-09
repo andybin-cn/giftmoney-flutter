@@ -112,9 +112,9 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>MOBAppKey</key>
-	<string></string>
+	<string>2e4ac3138d55e</string>
 	<key>MOBAppSecret</key>
-	<string></string>
+	<string>58645ee935bd04d4cf56d4191be22933</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
