@@ -7,12 +7,14 @@ import 'package:sharesdk_plugin/sharesdk_plugin.dart';
 
 class ShareUtil {
   static var platforms = [
+    ShareSDKPlatforms.wechatSession,
     ShareSDKPlatforms.wechatTimeline,
     ShareSDKPlatforms.qZone,
-    ShareSDKPlatforms.sina,
-    ShareSDKPlatforms.douBan,
-    ShareSDKPlatforms.facebook,
-    ShareSDKPlatforms.twitter,
+    ShareSDKPlatforms.qq,
+    // ShareSDKPlatforms.sina,
+    // ShareSDKPlatforms.douBan,
+    // ShareSDKPlatforms.facebook,
+    // ShareSDKPlatforms.twitter,
     // ShareSDKPlatforms.mail
   ];
   static Future<void> showMenu(

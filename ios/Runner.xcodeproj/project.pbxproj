@@ -79,6 +79,8 @@
 		36CC6CBF2414DDBE0003B0D1 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		36CC6CC12414F3FF0003B0D1 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		36CC6CC8241529FC0003B0D1 /* XlsxReaderWriter.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = XlsxReaderWriter.xcodeproj; sourceTree = "<group>"; };
+		38026A1F24161F1C00C37358 /* GiftMoneyDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GiftMoneyDebug.entitlements; sourceTree = "<group>"; };
+		38026A2024161FF300C37358 /* GiftMoney.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GiftMoney.entitlements; sourceTree = "<group>"; };
 		3856A98023AA2A7D0049C131 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Main.strings"; sourceTree = "<group>"; };
 		3856A98123AA2A7E0049C131 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		3856A98223AA2A830049C131 /* zh-HK */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-HK"; path = "zh-HK.lproj/Main.strings"; sourceTree = "<group>"; };
@@ -222,6 +224,8 @@
 		97C146F01CF9000F007C117D /* Runner */ = {
 			isa = PBXGroup;
 			children = (
+				38026A2024161FF300C37358 /* GiftMoney.entitlements */,
+				38026A1F24161F1C00C37358 /* GiftMoneyDebug.entitlements */,
 				3673585124153E08008411A8 /* Services */,
 				3673584E24153DBA008411A8 /* Views */,
 				97C146FA1CF9000F007C117D /* Main.storyboard */,
@@ -550,6 +554,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Runner/GiftMoney.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = "$(FLUTTER_BUILD_NUMBER)";
@@ -711,6 +716,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Runner/GiftMoneyDebug.entitlements;
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = "$(FLUTTER_BUILD_NUMBER)";
 				DEVELOPMENT_TEAM = EG49RAY3R6;
@@ -748,7 +754,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = andybin.giftmoney;
 				PRODUCT_NAME = GiftMoney;
-				PROVISIONING_PROFILE_SPECIFIER = All_DEV;
+				PROVISIONING_PROFILE_SPECIFIER = GiftMoney_DEV;
 				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -762,6 +768,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Runner/GiftMoney.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = "$(FLUTTER_BUILD_NUMBER)";

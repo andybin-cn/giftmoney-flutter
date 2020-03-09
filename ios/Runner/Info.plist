@@ -2,32 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>LSApplicationQueriesSchemes</key>
-	<array>
-		<string>twitterauth</string>
-		<string>fbapi20150629</string>
-		<string>fbapi20160328</string>
-		<string>fbshareextension</string>
-		<string>fbapi</string>
-		<string>fbapi20130214</string>
-		<string>fbauth</string>
-		<string>fbauth2</string>
-		<string>mqq</string>
-		<string>mqzone</string>
-		<string>mqqwpa</string>
-		<string>mqqapi</string>
-		<string>mqzoneopensdkapi</string>
-		<string>mqzoneopensdk</string>
-		<string>weixinULAPI</string>
-		<string>weixin</string>
-		<string>wechat</string>
-		<string>weibosdk2.5</string>
-		<string>weibosdk</string>
-		<string>sinaweibohdsso</string>
-		<string>sinaweibosso</string>
-		<string>sinaweibohd</string>
-		<string>sinaweibo</string>
-	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
@@ -59,7 +33,7 @@
 			<string>Weixin</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>wx617c77c82218ea2c</string>
+				<string>wxbd0173ae30cebc1c</string>
 			</array>
 		</dict>
 		<dict>
@@ -69,7 +43,7 @@
 			<string>QQ</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>QQ05FB8B52</string>
+				<string>QQ4224DB79</string>
 			</array>
 		</dict>
 		<dict>
@@ -79,7 +53,7 @@
 			<string>QQ</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>tencent100371282</string>
+				<string>tencent1109711737</string>
 			</array>
 		</dict>
 		<dict>
@@ -107,6 +81,32 @@
 	<string>$(FLUTTER_BUILD_NUMBER)</string>
 	<key>GADApplicationIdentifier</key>
 	<string>ca-app-pub-3156075797045250~8777871439</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>twitterauth</string>
+		<string>fbapi20150629</string>
+		<string>fbapi20160328</string>
+		<string>fbshareextension</string>
+		<string>fbapi</string>
+		<string>fbapi20130214</string>
+		<string>fbauth</string>
+		<string>fbauth2</string>
+		<string>mqq</string>
+		<string>mqzone</string>
+		<string>mqqwpa</string>
+		<string>mqqapi</string>
+		<string>mqzoneopensdkapi</string>
+		<string>mqzoneopensdk</string>
+		<string>weixinULAPI</string>
+		<string>weixin</string>
+		<string>wechat</string>
+		<string>weibosdk2.5</string>
+		<string>weibosdk</string>
+		<string>sinaweibohdsso</string>
+		<string>sinaweibosso</string>
+		<string>sinaweibohd</string>
+		<string>sinaweibo</string>
+	</array>
 	<key>LSHasLocalizedDisplayName</key>
 	<true/>
 	<key>LSRequiresIPhoneOS</key>
