@@ -2,6 +2,32 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>twitterauth</string>
+		<string>fbapi20150629</string>
+		<string>fbapi20160328</string>
+		<string>fbshareextension</string>
+		<string>fbapi</string>
+		<string>fbapi20130214</string>
+		<string>fbauth</string>
+		<string>fbauth2</string>
+		<string>mqq</string>
+		<string>mqzone</string>
+		<string>mqqwpa</string>
+		<string>mqqapi</string>
+		<string>mqzoneopensdkapi</string>
+		<string>mqzoneopensdk</string>
+		<string>weixinULAPI</string>
+		<string>weixin</string>
+		<string>wechat</string>
+		<string>weibosdk2.5</string>
+		<string>weibosdk</string>
+		<string>sinaweibohdsso</string>
+		<string>sinaweibosso</string>
+		<string>sinaweibohd</string>
+		<string>sinaweibo</string>
+	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
