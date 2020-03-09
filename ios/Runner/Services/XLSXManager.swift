@@ -17,32 +17,19 @@ class XLSXManager {
     }
     
     func save(data: Array<Array<String>>, filePath: String) -> String? {
-        let workPath = "\(NSTemporaryDirectory())excelExport"
-        guard let originFilePath = Bundle.main.path(forResource: "empty", ofType: "xlsx") else {
+        let file = NSString(format: "%@", filePath)
+        let workbook = workbook_new(file.fileSystemRepresentation)
+        guard let worksheet1 = workbook_add_worksheet(workbook, "sheet1") else {
             return nil
         }
-        let spreadsheet: BRAOfficeDocumentPackage = BRAOfficeDocumentPackage.open(originFilePath)
-        do {
-            if FileManager.default.fileExists(atPath: workPath) {
-                let contentsOfPath = try FileManager.default.contentsOfDirectory(atPath: workPath)
-                try contentsOfPath.forEach { (content) in
-                    try FileManager.default.removeItem(atPath: "\(workPath)/\(content)")
-                }
-            }
-            try FileManager.default.createDirectory(atPath: workPath, withIntermediateDirectories: true, attributes: nil)
-        } catch _ {
-            return nil
-        }
-        let worksheet: BRAWorksheet = spreadsheet.workbook.worksheets[0] as! BRAWorksheet
         data.enumerated().forEach { (arg0) in
             let (rowIndex, rowData) = arg0
             rowData.enumerated().forEach { (arg1) in
                 let (columIndex, value) = arg1
-                let cell = worksheet.cell(forCellReference: BRACell.cellReference(forColumnIndex: columIndex, andRowIndex: rowIndex), shouldCreate: true)
-                cell?.setStringValue(value)
+                worksheet_write_string(worksheet1, lxw_row_t(rowIndex), lxw_col_t(columIndex), value, nil)
             }
         }
-        spreadsheet.save(as: filePath)
+        workbook_close(workbook)
         return filePath
     }
     

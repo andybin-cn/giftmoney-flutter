@@ -1,5 +1,6 @@
 {
   "command-runner.commands": {
+    "flutter log-ios": "idevicesyslog | grep 'flutter\\|Flutter\\|GiftMoney['",
     "flutter log-android": "adb logcat *:S flutter:V",
     "log-android-app": "adb logcat | grep --color=auto `adb shell ps | grep $com.andybin.giftmoney | awk '{print $2}'`"
   },

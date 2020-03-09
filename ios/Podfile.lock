@@ -40,6 +40,7 @@ PODS:
     - GoogleUtilities/Logger
   - image_picker (0.0.1):
     - Flutter
+  - libxlsxwriter (0.8.9)
   - mob_sharesdk (4.3.6):
     - mob_sharesdk/ShareSDK (= 4.3.6)
     - MOBFoundation (>= 3.2.9)
@@ -110,10 +111,7 @@ DEPENDENCIES:
   - flutter_email_sender (from `.symlinks/plugins/flutter_email_sender/ios`)
   - fluttertoast (from `.symlinks/plugins/fluttertoast/ios`)
   - image_picker (from `.symlinks/plugins/image_picker/ios`)
-  - mob_sharesdk
-  - mob_sharesdk/ShareSDKPlatforms/QQ
-  - mob_sharesdk/ShareSDKPlatforms/SinaWeibo
-  - mob_sharesdk/ShareSDKPlatforms/WeChat
+  - libxlsxwriter (~> 0.8.7)
   - package_info (from `.symlinks/plugins/package_info/ios`)
   - path_provider (from `.symlinks/plugins/path_provider/ios`)
   - sharesdk_plugin (from `.symlinks/plugins/sharesdk_plugin/ios`)
@@ -125,6 +123,7 @@ SPEC REPOS:
     - Google-Mobile-Ads-SDK
     - GoogleAppMeasurement
     - GoogleUtilities
+    - libxlsxwriter
     - mob_sharesdk
     - MOBFoundation
     - nanopb
@@ -165,6 +164,7 @@ SPEC CHECKSUMS:
   GoogleAppMeasurement: dfe55efa543e899d906309eaaac6ca26d249862f
   GoogleUtilities: 547a86735c6f0ee30ad17e94df4fc21f616b71cb
   image_picker: e3eacd46b94694dde7cf2705955cece853aa1a8f
+  libxlsxwriter: e3bb38110b774ed2ef47d850689cef0a114e9cc6
   mob_sharesdk: c7c69b2a51d99949627fb2ea9f4f581528c012cc
   MOBFoundation: e224d709cca757a6a5a4220ed4c9c6280042c8ba
   nanopb: 18003b5e52dab79db540fe93fe9579f399bd1ccd
@@ -173,6 +173,6 @@ SPEC CHECKSUMS:
   sharesdk_plugin: d778833c2ca3af2f42a8c1516aedfc049a3bc309
   sqflite: 4001a31ff81d210346b500c55b17f4d6c7589dd0
 
-PODFILE CHECKSUM: 4d3a04d1d61ae1235d3525b26b0ec0ada0fab9d7
+PODFILE CHECKSUM: 162998431637cb8849107baff28d5f5af0ff6d77
 
 COCOAPODS: 1.9.0

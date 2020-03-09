@@ -1,5 +1,5 @@
 # Uncomment this line to define a global platform for your project
-# platform :ios, '9.0'
+ platform :ios, '9.0'
 
 # CocoaPods analytics sends network stats synchronously affecting flutter build latency.
 ENV['COCOAPODS_DISABLE_STATS'] = 'true'
@@ -36,10 +36,11 @@ target 'Runner' do
   use_frameworks!
   use_modular_headers!
   
-  pod 'mob_sharesdk'
-  pod 'mob_sharesdk/ShareSDKPlatforms/QQ'
-  pod 'mob_sharesdk/ShareSDKPlatforms/SinaWeibo'
-  pod 'mob_sharesdk/ShareSDKPlatforms/WeChat'     #微信sdk不带支付的命令）
+#  pod 'mob_sharesdk'
+#  pod 'mob_sharesdk/ShareSDKPlatforms/QQ'
+#  pod 'mob_sharesdk/ShareSDKPlatforms/SinaWeibo'
+#  pod 'mob_sharesdk/ShareSDKPlatforms/WeChat'     #微信sdk不带支付的命令）
+  pod 'libxlsxwriter', '~> 0.8.7'
   
   # Flutter Pod
 
