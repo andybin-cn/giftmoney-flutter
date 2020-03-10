@@ -58,8 +58,12 @@ class AccountService {
   Future<int> earnGold() async {
     var showResult = await AdvertSupport.showRewardVideoAD(adUnitId: adUnitID);
     print("earnGold result:${showResult}");
-    var amount = int.tryParse(showResult["amount"] ?? "0") ?? 0;
-    balanceSubject.add(balanceSubject.value + amount);
+    var amount = 0;
+    if(showResult["amount"] != null) {
+      amount = 20;
+    }
+    // var amount = int.tryParse(showResult["amount"] ?? "0") ?? 0;
+    balanceSubject.add(balanceSubject.value + 20);
     DBManager.instance.keyValue.save(
         key: "AccountService_balance",
         value: this.balanceSubject.value.toString());
@@ -75,12 +79,11 @@ class AccountService {
   }
 
   int amountFor(ChargeItem item) {
-    return 0;
     switch (item) {
       case ChargeItem.insertTrade:
-        return 5;
+        return 1;
       case ChargeItem.exportToExcel:
-        return 100;
+        return 50;
       case ChargeItem.importFromExcel:
         return 50;
     }
