@@ -24,12 +24,14 @@
   },
 
   "share": {
-    "wechatTimeline": "WeChat",
+    "wechatTimeline": "Moment",
     "qZone": "QQZone",
     "sina": "Sina",
     "douBan": "DouBan",
     "facebook": "Facebook",
     "twitter": "Twitter",
+    "qq": "QQ",
+    "wechat": "WeChat",
     "other": "Other"
   },
 

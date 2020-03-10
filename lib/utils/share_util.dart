@@ -74,6 +74,12 @@ class ShareUtil {
     } else if(platform == ShareSDKPlatforms.twitter) {
       icon = Image.asset('assets/images/Twitter_NEW.png', width: 50, height: 50);
       title = I18n.of(context).shareTwitter;
+    } else if(platform == ShareSDKPlatforms.qq) {
+      icon = Image.asset('assets/images/qq.png', width: 50, height: 50);
+      title = I18n.of(context).shareQq;
+    } else if(platform == ShareSDKPlatforms.wechatSession) {
+      icon = Image.asset('assets/images/wechat.png', width: 50, height: 50);
+      title = I18n.of(context).shareWechat;
     }
 
     return Container(

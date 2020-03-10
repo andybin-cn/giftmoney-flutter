@@ -35,7 +35,7 @@ class _MyAppState extends State<MyApp> {
           "wxbd0173ae30cebc1c", "6dfcfe44d9a2e8050bd4c93fffcbc5f3", "https://andybin.giftmoney/");
       register.setupSinaWeibo("568898243", "38a4f8204cc784f81f9f0daaf31e02e3",
           "https://andybin.giftmoney/");
-      register.setupQQ("1109711737", "bkBvA4RJee51VWur");
+      register.setupQQ("1109788892", "PPoe3Nv0wyfoQVEN");
       register.setupFacebook(
           "1412473428822331", "a42f4f3f867dc947b9ed6020c2e93558", "shareSDK");
       register.setupTwitter("viOnkeLpHBKs6KXV7MPpeGyzE",

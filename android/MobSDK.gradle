@@ -1,8 +1,8 @@
 apply plugin: 'com.mob.sdk'
 
 MobSDK {
-    appKey "moba6b6c6d6"
-    appSecret "b89d2427a3bc7ad1aea1e1e8c1d36bf3"
+    appKey "2e4ac3138d55e"
+    appSecret "58645ee935bd04d4cf56d4191be22933"
 
     ShareSDK {
 
@@ -30,8 +30,8 @@ MobSDK {
             QZone {
                 id 3
                 sortId 3
-                appId "1109711737"
-                appKey "bkBvA4RJee51VWur"
+                appId "1109788892"
+                appKey "PPoe3Nv0wyfoQVEN"
                 shareByAppClient true
                 bypassApproval false
                 enable true
@@ -48,24 +48,24 @@ MobSDK {
       审核的应用也可以执行分享，但是仅限于分享文字和图片，不能分享其他类型，
       默认值为false。此外，微信收藏不支持此字段。wx4868b35061f87885
       <!--要分享微信小应用程序时用userName,path-->*/
-//            Wechat {
-//                id 4
-//                sortId 4
-//                appId "wx4868b35061f87885"
-//                appSecret "64020361b8ec4c99936c0e3999a9f249"
-//                userName "gh_afb25ac019c9"
-//                path "pages/index/index.html?id=1"
-//                withShareTicket true
-//                miniprogramType 0
-//                bypassApproval false
-//                enable true
-//            }
+           Wechat {
+               id 4
+               sortId 4
+               appId "wxbd0173ae30cebc1c"
+               appSecret "6dfcfe44d9a2e8050bd4c93fffcbc5f3"
+              //  userName "gh_afb25ac019c9"
+              //  path "pages/index/index.html?id=1"
+               withShareTicket true
+               miniprogramType 0
+               bypassApproval false
+               enable true
+           }
 
             WechatMoments {
                 id 5
                 sortId 5
-                appId "wx4868b35061f87885"
-                appSecret "64020361b8ec4c99936c0e3999a9f249"
+                appId "wxbd0173ae30cebc1c"
+                appSecret "6dfcfe44d9a2e8050bd4c93fffcbc5f3"
                 bypassApproval false
                 enable true
             }
@@ -79,15 +79,15 @@ MobSDK {
 //                enable true
 //            }
 //
-//            QQ {
-//                id 7
-//                sortId 7
-//                appId "100371282"
-//                appKey "aed9b0303e3ed1e27bae87c33761161d"
-//                shareByAppClient true
-//                bypassApproval false
-//                enable true
-//            }
+           QQ {
+               id 7
+               sortId 7
+               appId "1109788892"
+               appKey "PPoe3Nv0wyfoQVEN"
+               shareByAppClient true
+               bypassApproval false
+               enable true
+           }
 
 //            QZone {
 //                id 3

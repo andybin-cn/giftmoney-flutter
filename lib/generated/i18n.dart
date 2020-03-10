@@ -56,8 +56,8 @@ class I18n implements WidgetsLocalizations {
   String get mineSetting => "设置";
   /// "关于我们"
   String get mineAbout => "关于我们";
-  /// "隐私协议"
-  String get minePrivacy => "隐私协议";
+  /// "《隐私政策》与《用户协议》"
+  String get minePrivacy => "《隐私政策》与《用户协议》";
   /// "金币使用规则"
   String get mineCoin_rules => "金币使用规则";
   /// "意见反馈"
@@ -78,6 +78,10 @@ class I18n implements WidgetsLocalizations {
   String get shareFacebook => "Facebook";
   /// "推特"
   String get shareTwitter => "推特";
+  /// "QQ好友"
+  String get shareQq => "QQ好友";
+  /// "微信好友"
+  String get shareWechat => "微信好友";
   /// "其他"
   String get shareOther => "其他";
   /// "已上传"
@@ -240,9 +244,9 @@ class _I18n_en_US extends I18n {
   /// "1. We do not have a backend server, so we will not collect any data from users, and we will not be able to view your data records. Please rest assured! \n\n2. The data is completely saved locally, and the data is strictly encrypted to ensure the safety and reliability of the data! \n\n\n\nIf you encounter any problems, please send email to: reciprocityApp@163.com \nWe will contact you as soon as possible"
   @override
   String get mineAppDescription => "1. We do not have a backend server, so we will not collect any data from users, and we will not be able to view your data records. Please rest assured! \n\n2. The data is completely saved locally, and the data is strictly encrypted to ensure the safety and reliability of the data! \n\n\n\nIf you encounter any problems, please send email to: reciprocityApp@163.com \nWe will contact you as soon as possible";
-  /// "WeChat"
+  /// "Moment"
   @override
-  String get shareWechatTimeline => "WeChat";
+  String get shareWechatTimeline => "Moment";
   /// "QQZone"
   @override
   String get shareQZone => "QQZone";
@@ -258,6 +262,12 @@ class _I18n_en_US extends I18n {
   /// "Twitter"
   @override
   String get shareTwitter => "Twitter";
+  /// "QQ"
+  @override
+  String get shareQq => "QQ";
+  /// "WeChat"
+  @override
+  String get shareWechat => "WeChat";
   /// "Other"
   @override
   String get shareOther => "Other";
@@ -468,9 +478,9 @@ class _I18n_zh_TW extends _I18n_zh_CN {
   /// "關於我們"
   @override
   String get mineAbout => "關於我們";
-  /// "隱私政策"
+  /// "《隐私政策》与《用户协议》"
   @override
-  String get minePrivacy => "隱私政策";
+  String get minePrivacy => "《隐私政策》与《用户协议》";
   /// "金幣使用規則"
   @override
   String get mineCoin_rules => "金幣使用規則";
@@ -501,6 +511,12 @@ class _I18n_zh_TW extends _I18n_zh_CN {
   /// "推特"
   @override
   String get shareTwitter => "推特";
+  /// "QQ好友"
+  @override
+  String get shareQq => "QQ好友";
+  /// "微信好友"
+  @override
+  String get shareWechat => "微信好友";
   /// "其他"
   @override
   String get shareOther => "其他";
@@ -656,9 +672,9 @@ class _I18n_zh_HK extends _I18n_zh_CN {
   /// "關於我們"
   @override
   String get mineAbout => "關於我們";
-  /// "隱私政策"
+  /// "《隐私政策》与《用户协议》"
   @override
-  String get minePrivacy => "隱私政策";
+  String get minePrivacy => "《隐私政策》与《用户协议》";
   /// "金幣使用規則"
   @override
   String get mineCoin_rules => "金幣使用規則";
