@@ -58,22 +58,28 @@ android {
         multiDexEnabled true
     }
 
+    signingConfigs {
+        signConfig {
+            keyAlias keystoreProperties['keyAlias']
+            keyPassword keystoreProperties['keyPassword']
+            storeFile file(keystoreProperties['storeFile'])
+            storePassword keystoreProperties['storePassword']
+        }
+   }
+
     buildTypes {
+        debug {
+            signingConfig signingConfigs.signConfig // 配置debug包的签名
+        }
+        profile {
+            signingConfig signingConfigs.signConfig // 配置debug包的签名
+        }
         release {
-            // TODO: Add your own signing config for the release build.
+            minifyEnabled true
             // Signing with the debug keys for now, so `flutter run --release` works.
-            signingConfig signingConfigs.debug
-//            signingConfig signingConfigs.release
-//            minifyEnabled true
+            signingConfig signingConfigs.signConfig
         }
     }
-//    signingConfig {
-//        keyAlias keystoreProperties['keyAlias']
-//        keyPassword keystoreProperties['keyPassword']
-//        storeFile file(keystoreProperties['storeFile'])
-//        storePassword keystoreProperties['storePassword']
-//    }
-
 }
 
 flutter {
