@@ -68,12 +68,12 @@ android {
    }
 
     buildTypes {
-        debug {
-            signingConfig signingConfigs.signConfig // 配置debug包的签名
-        }
-        profile {
-            signingConfig signingConfigs.signConfig // 配置debug包的签名
-        }
+        // debug {
+        //     signingConfig signingConfigs.signConfig // 配置debug包的签名
+        // }
+        // profile {
+        //     signingConfig signingConfigs.signConfig // 配置debug包的签名
+        // }
         release {
             minifyEnabled true
             // Signing with the debug keys for now, so `flutter run --release` works.
