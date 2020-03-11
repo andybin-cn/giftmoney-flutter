@@ -83,9 +83,9 @@ class AccountService {
       case ChargeItem.insertTrade:
         return 1;
       case ChargeItem.exportToExcel:
-        return 50;
+        return 60;
       case ChargeItem.importFromExcel:
-        return 50;
+        return 60;
     }
   }
 
