@@ -39,10 +39,10 @@ dependencies:
   sharesdk_plugin: ^1.1.0
   flutter_email_sender: ^2.2.2
   firebase_admob: ^0.9.3
-  advert_support:
-    git:
-      ref: master
-      url: git@github.com:jim-binea/advert_support.git
+  # advert_support:
+  #   git:
+  #     ref: master
+  #     url: git@github.com:jim-binea/advert_support.git
 
 dev_dependencies:
   flutter_test:

@@ -1,3 +1,4 @@
+import 'package:firebase_admob/firebase_admob.dart';
 import 'package:flutter/material.dart';
 import 'package:giftmoney/service/account_service.dart';
 import 'package:giftmoney/theme/theme.dart';
@@ -55,10 +56,14 @@ class _AccountHeaderState extends State<AccountHeader> {
                 ToastUtil.show('成功赚取${amount}个金币');
               }, onError: (error) {
                 LoadingHelper.hideLoading(context);
-                print('onError 无法显示广告');
-                ToastUtil.show('无法显示广告');
+                print('onError 无法显示广告:${error}');
+                if(error['event'] == RewardedVideoAdEvent.closed) {
+                  ToastUtil.show('用户取消操作');
+                } else {
+                  ToastUtil.show('无法显示广告');
+                }
               }).catchError((error) {
-                print('catchError 无法显示广告');
+                print('catchError 无法显示广告:${error}');
                 ToastUtil.show('无法显示广告');
                 LoadingHelper.hideLoading(context);
               });

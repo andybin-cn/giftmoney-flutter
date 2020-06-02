@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'dart:io';
 
-import 'package:advert_support/advert_support.dart';
+// import 'package:advert_support/advert_support.dart';
 import 'package:firebase_admob/firebase_admob.dart';
 import 'package:giftmoney/data_center/db_manager.dart';
 import 'package:rxdart/rxdart.dart';
@@ -36,7 +36,7 @@ class AccountService {
   }
 
   initAccount() async {
-    AdvertSupport.preLoadRewardVideo(adUnitId: adUnitID);
+    // AdvertSupport.preLoadRewardVideo(adUnitId: adUnitID);
     var isNotFirstLaunch = await DBManager.instance.keyValue
         .valueForKey('AccountService_isNotFirstLaunch');
     if (isNotFirstLaunch == null) {
@@ -71,13 +71,13 @@ class AccountService {
           break;
         case RewardedVideoAdEvent.failedToLoad:
           resultStream.addError({'event': RewardedVideoAdEvent.failedToLoad, 'meesage': 'failedToLoad'});
-          resultStream.close();
+          break;
+        case RewardedVideoAdEvent.closed:
+          if(!resultStream.isClosed) {
+            resultStream.addError({'event': RewardedVideoAdEvent.closed, 'meesage': 'canceld'});
+          }
           break;
         default:
-      }
-      if (event == RewardedVideoAdEvent.rewarded) {
-        resultStream.add(rewardAmount);
-        resultStream.close();
       }
     };
 
@@ -88,18 +88,11 @@ class AccountService {
     );
     RewardedVideoAd.instance.load(adUnitId: adUnitID, targetingInfo: targetingInfo);
     var rewardAmount = await resultStream.stream.first;
-    // var showResult = await AdvertSupport.showRewardVideoAD(adUnitId: adUnitID);
-    // print('earnGold result:${showResult}');
-    // var amount = 0;
-    // if(showResult['amount'] != null) {
-    //   amount = 20;
-    // }
-    var amount = int.tryParse(rewardAmount ?? '0') ?? 0;
-    balanceSubject.add(balanceSubject.value + amount);
+    balanceSubject.add(balanceSubject.value + rewardAmount);
     DBManager.instance.keyValue.save(
         key: 'AccountService_balance',
         value: this.balanceSubject.value.toString());
-    return amount;
+    return rewardAmount;
   }
 
   Future<int> consumeGold(amount) async {

@@ -1,3 +1,4 @@
+import 'package:firebase_admob/firebase_admob.dart';
 import 'package:flutter/material.dart';
 import 'package:giftmoney/generated/i18n.dart';
 import 'package:giftmoney/service/account_service.dart';
@@ -28,9 +29,13 @@ class ChargeItemCheckHelp {
               }, onError: (error) {
                 LoadingHelper.hideLoading(context);
                 print('onError 无法显示广告');
-                ToastUtil.show('无法显示广告');
+                if(error['event'] == RewardedVideoAdEvent.closed) {
+                  ToastUtil.show('用户取消操作');
+                } else {
+                  ToastUtil.show('无法显示广告');
+                }
               }).catchError((error) {
-                print('catchError 无法显示广告');
+                print('catchError 无法显示广告:${error}');
                 ToastUtil.show('无法显示广告');
                 LoadingHelper.hideLoading(context);
               });
