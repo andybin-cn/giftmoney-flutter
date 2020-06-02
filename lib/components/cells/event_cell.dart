@@ -27,7 +27,7 @@ class _EventCellState extends State<EventCell> {
             Padding(padding: EdgeInsets.only(top: 3)),
             Row(children: <Widget>[
               Text(FormatHelper.dateToString(widget.event.eventTime), style: AppTextStyle.secondaryText(11)),
-              Text("   (${I18n.of(context).statisticsRecordCount(widget.event.count.toString())})", style: AppTextStyle.reminderText(9))
+              Text('   (${I18n.of(context).statisticsRecordCount(widget.event.count.toString())})', style: AppTextStyle.reminderText(9))
             ],)
           ],
         ),
@@ -37,8 +37,8 @@ class _EventCellState extends State<EventCell> {
             crossAxisAlignment: CrossAxisAlignment.end,
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              Text("+ ${FormatHelper.formatCurrency(widget.event.incomeAmount)}", style: TextStyle(fontSize: 14, color: AppColor.secondaryAppColor)),
-              Text("- ${FormatHelper.formatCurrency(widget.event.expendAmount)}", style: TextStyle(fontSize: 14, color: AppColor.mainAppColor)),
+              Text('+ ${FormatHelper.formatCurrency(widget.event.incomeAmount)}', style: TextStyle(fontSize: 14, color: AppColor.secondaryAppColor)),
+              Text('- ${FormatHelper.formatCurrency(widget.event.expendAmount)}', style: TextStyle(fontSize: 14, color: AppColor.mainAppColor)),
             ],
         ))),
         Icon(Icons.keyboard_arrow_right),

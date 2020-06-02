@@ -24,9 +24,9 @@ class _RelationCellState extends State<RelationCell> {
           children: <Widget>[
             Text(widget.relation.relationName, style: AppTextStyle.mainText(13)),
             Padding(padding: EdgeInsets.only(top: 2)),
-            Text("👥  ${I18n.of(context).statisticsContactsCount(widget.relation.contactsCount.toString())}", style: AppTextStyle.reminderText(10)),
+            Text('👥  ${I18n.of(context).statisticsContactsCount(widget.relation.contactsCount.toString())}', style: AppTextStyle.reminderText(10)),
             Padding(padding: EdgeInsets.only(top: 2)),
-            Text("📝  ${I18n.of(context).statisticsRecordCount(widget.relation.recordsCount.toString())}", style: AppTextStyle.reminderText(10)),
+            Text('📝  ${I18n.of(context).statisticsRecordCount(widget.relation.recordsCount.toString())}', style: AppTextStyle.reminderText(10)),
           ],
         ),
         Expanded(child: Container(
@@ -35,8 +35,8 @@ class _RelationCellState extends State<RelationCell> {
             crossAxisAlignment: CrossAxisAlignment.end,
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              Text("+ ${FormatHelper.formatCurrency(widget.relation.incomeAmount)}", style: TextStyle(fontSize: 14, color: AppColor.secondaryAppColor)),
-              Text("- ${FormatHelper.formatCurrency(widget.relation.expendAmount)}", style: TextStyle(fontSize: 14, color: AppColor.mainAppColor)),
+              Text('+ ${FormatHelper.formatCurrency(widget.relation.incomeAmount)}', style: TextStyle(fontSize: 14, color: AppColor.secondaryAppColor)),
+              Text('- ${FormatHelper.formatCurrency(widget.relation.expendAmount)}', style: TextStyle(fontSize: 14, color: AppColor.mainAppColor)),
             ],
         ))),
         Icon(Icons.keyboard_arrow_right),

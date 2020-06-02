@@ -46,25 +46,25 @@ class Validation {
 
 
   static FormFieldValidator<String> get notEmpty {
-    return Validation.validator(rule: "not_empty", errorMsg: I18nUtil.shared.validationNotEmpty);
+    return Validation.validator(rule: 'not_empty', errorMsg: I18nUtil.shared.validationNotEmpty);
   }
   static FormFieldValidator<DateTime> get date_notEmpty {
-    var validatorString = Validation.validator(rule: "not_empty", errorMsg: I18nUtil.shared.validationDate_notEmpty);
+    var validatorString = Validation.validator(rule: 'not_empty', errorMsg: I18nUtil.shared.validationDate_notEmpty);
     return (input) => validatorString(input.toString());
   }
   static FormFieldValidator<String> get userName {
-    return Validation.validator(rule: "not_empty", errorMsg: I18nUtil.shared.validationUserName);
+    return Validation.validator(rule: 'not_empty', errorMsg: I18nUtil.shared.validationUserName);
   }
   static FormFieldValidator<String> get mobile {
-    return Validation.validator(rule: "mobile", errorMsg: I18nUtil.shared.validationMobile);
+    return Validation.validator(rule: 'mobile', errorMsg: I18nUtil.shared.validationMobile);
   }
   static FormFieldValidator<String> get amount {
-    return Validation.validator(rule: "number", errorMsg: I18nUtil.shared.validationAmount);
+    return Validation.validator(rule: 'number', errorMsg: I18nUtil.shared.validationAmount);
   }
   static FormFieldValidator<String> get relation {
-    return Validation.validator(rule: "not_empty", errorMsg: I18nUtil.shared.validationRelation);
+    return Validation.validator(rule: 'not_empty', errorMsg: I18nUtil.shared.validationRelation);
   }
   static FormFieldValidator<String> get eventName {
-    return Validation.validator(rule: "not_empty", errorMsg: I18nUtil.shared.validationEvent_name);
+    return Validation.validator(rule: 'not_empty', errorMsg: I18nUtil.shared.validationEvent_name);
   }
 }

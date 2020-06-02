@@ -26,7 +26,7 @@ class _TradeCellState extends State<TradeCell> {
             children: <Widget>[
               Padding( padding: EdgeInsets.only(top: 8, bottom: 4), child: Row(children: <Widget>[
                 Text(widget.trade.personName, style: AppTextStyle.mainText(15)),
-                Text("($relationName)", style: AppTextStyle.reminderText(12))
+                Text('($relationName)', style: AppTextStyle.reminderText(12))
               ])),
               Text(widget.trade.eventName,
                   style: AppTextStyle.secondaryText(14))

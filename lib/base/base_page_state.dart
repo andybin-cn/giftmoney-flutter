@@ -4,7 +4,7 @@ import 'package:giftmoney/generated/i18n.dart';
 import 'base_state.dart';
 
 abstract class BasePageState<T extends StatefulWidget> extends BaseState<T> with AutomaticKeepAliveClientMixin {
-  String title = "";
+  String title = '';
   bool hasAppbar = true;
   Color titleColor = Colors.black;
   Color backgroundColor = Colors.white;

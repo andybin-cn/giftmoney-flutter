@@ -39,11 +39,11 @@ class DBManager {
   KeyValueTable keyValue;
   Future<Null> initDB() async {
     var databasesPath = await getDatabasesPath();
-    if(!databasesPath.endsWith("/")) {
-      databasesPath += "/";
+    if(!databasesPath.endsWith('/')) {
+      databasesPath += '/';
     }
-    String path = databasesPath + "shared.sqlite";
-    print("databasesPath:"+path);
+    String path = databasesPath + 'shared.sqlite';
+    print('databasesPath:'+path);
     database = await openDatabase(path, 
       version: 1,
       onCreate: (Database db, int version) async {

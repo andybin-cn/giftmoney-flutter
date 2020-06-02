@@ -85,7 +85,7 @@ class _State extends State<FormInput> {
             color: AppColor.reminderText,
             fontSize: RatioHelper.scalePx(Maudimen.formFieldTextSizeRpx),
           ),
-          counterText: "",
+          counterText: '',
           contentPadding: EdgeInsets.only(
             left: RatioHelper.scalePx(0),
             top: RatioHelper.scalePx(Maudimen.formFieldVerPaddingRpx),

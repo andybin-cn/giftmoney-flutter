@@ -59,12 +59,12 @@ class _HomeMinePageState extends BasePageState<HomeMinePage> {
             onPressed: () async {
               var shareParams = SSDKMap()
                 ..setGeneral(
-                  "轻松记录每一笔份子钱",
+                  '轻松记录每一笔份子钱',
                   null,
                   [],
                   null,
                   null,
-                  "https://android.myapp.com/myapp/detail.htm?apkName=com.andybin.giftmoney",
+                  'https://android.myapp.com/myapp/detail.htm?apkName=com.andybin.giftmoney',
                   null,
                   null,
                   null,
@@ -73,11 +73,11 @@ class _HomeMinePageState extends BasePageState<HomeMinePage> {
                 );
               // await ShareSDK.showMenu(null, shareParams, 
               //   (state, platform, info, detail, error) {
-              //     print("share state:${state} platform:${platform.name} info:${info.toString()} detail:${detail.toString()} error:${error.toString()}");
+              //     print('share state:${state} platform:${platform.name} info:${info.toString()} detail:${detail.toString()} error:${error.toString()}');
               //   });
               await ShareUtil.showMenu(context, shareParams, 
                 (state, platform, info, detail, error) {
-                  print("share state:${state} platform:${platform.name} info:${info.toString()} detail:${detail.toString()} error:${error.toString()}");
+                  print('share state:${state} platform:${platform.name} info:${info.toString()} detail:${detail.toString()} error:${error.toString()}');
                 });
             },
           ),
@@ -107,14 +107,14 @@ class _HomeMinePageState extends BasePageState<HomeMinePage> {
               );
               await FlutterEmailSender.send(email).catchError((error) {
                 this.showAlert(
-                  desc: "无法打开邮件，您可以发送邮件至 reciprocityApp@163.com 我们会尽快给您回复!",
+                  desc: '无法打开邮件，您可以发送邮件至 reciprocityApp@163.com 我们会尽快给您回复!',
                   buttons: [
-                    DialogButton(child: Text("取消"), onPressed: () {
+                    DialogButton(child: Text('取消'), onPressed: () {
                       Navigator.pop(context);
                     }),
-                    DialogButton(child: Text("复制邮箱地址"), onPressed: () {
-                      Clipboard.setData(new ClipboardData(text: "reciprocityApp@163.co"));
-                      showHUD("邮箱地址已复制");
+                    DialogButton(child: Text('复制邮箱地址'), onPressed: () {
+                      Clipboard.setData(new ClipboardData(text: 'reciprocityApp@163.co'));
+                      showHUD('邮箱地址已复制');
                       Navigator.pop(context);
                     }),
                   ],

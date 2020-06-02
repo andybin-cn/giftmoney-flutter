@@ -66,7 +66,7 @@ class _State extends BasePageState<HomeAccessibilityPage> {
           ),
           SettingCell(
             icon: Icon(Icons.account_balance_wallet),
-            label: Text("金币使用规则"),
+            label: Text('金币使用规则'),
             onPressed: () {
               Navigator.push(context,
                 MaterialPageRoute(builder: (context) {
@@ -88,7 +88,7 @@ class _State extends BasePageState<HomeAccessibilityPage> {
     showLoading();
     TradeService.instance.exportTradesToExcel().then((path) {
       hideLoading();
-      NativeUtils.shareFile(filePath: path, subject: "");
+      NativeUtils.shareFile(filePath: path, subject: '');
     }, onError: (Object error, StackTrace stack) {
       this.catchError(error);
     });
@@ -104,11 +104,11 @@ class _State extends BasePageState<HomeAccessibilityPage> {
       }
       this.showLoading();
       var sheet = await NativeUtils.readExcel(filePath: file.path);
-      print("_onImportPress readExcel result:${sheet}");
+      print('_onImportPress readExcel result:${sheet}');
       var importResult = await TradeService.instance.importTrades(sheet);
       this.hideLoading();
       this.showAlert(type: AlertType.success, title: i18n.alertImport_result_title, desc: i18n.alertImport_result(importResult.successCount.toString(), importResult.skipCount.toString(), importResult.errorCount.toString()));
-      print("_onImportPress importResult:${importResult}");
+      print('_onImportPress importResult:${importResult}');
     } catch (error) {
       this.catchError(error);
     }

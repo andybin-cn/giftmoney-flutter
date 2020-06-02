@@ -39,9 +39,9 @@ class _MainTabPageState extends BasePageState<MainTabPage> {
   Widget buildContainer(BuildContext context) {
     ScreenUtil.init(context, 750, 1334);
     I18nUtil.setContext(context);
-    print("I18nUtil.locale:${I18nUtil.locale}");
-    print("I18nUtil.share.tab_record:${I18nUtil.shared.tab_record}");
-    print("I18n.of(context).tab_record:${I18n.of(context).tab_record}");
+    print('I18nUtil.locale:${I18nUtil.locale}');
+    print('I18nUtil.share.tab_record:${I18nUtil.shared.tab_record}');
+    print('I18n.of(context).tab_record:${I18n.of(context).tab_record}');
     
     int index = currentIndex == 2 ? oldIndex : (currentIndex > 2 ? currentIndex - 1 : currentIndex);
     return Scaffold(

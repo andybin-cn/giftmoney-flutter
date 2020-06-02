@@ -4,7 +4,7 @@ import 'package:giftmoney/utils/ratio_helper_mixin.dart';
 abstract class BaseStatelessPage extends StatelessWidget with RatioHelper {
   final bool hasAppbar;
   final String title;
-  BaseStatelessPage({Key key, this.hasAppbar = true, this.title = ""}): super(key: key);
+  BaseStatelessPage({Key key, this.hasAppbar = true, this.title = ''}): super(key: key);
 
   @override
   Widget build(BuildContext context) {

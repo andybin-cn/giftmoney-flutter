@@ -14,9 +14,9 @@ import 'package:giftmoney/main.dart';
 void main() {
   test('keyValue table test', () async {
     // await DBManager.instance.initDB();
-    // await DBManager.instance.keyValue.save(key: "test", value: "123");
-    // var value = await DBManager.instance.keyValue.valueForKey("test");
-    // assert(value == "123");
+    // await DBManager.instance.keyValue.save(key: 'test', value: '123');
+    // var value = await DBManager.instance.keyValue.valueForKey('test');
+    // assert(value == '123');
   });
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
     // Build our app and trigger a frame.

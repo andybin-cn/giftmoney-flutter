@@ -2,7 +2,7 @@
 import 'package:giftmoney/json_mapper/mappable.dart';
 
 class SQLRelation extends Mappable {
-  String relationName = "";
+  String relationName = '';
   int get contactsCount {
     return contacts.length;
   }
@@ -14,20 +14,20 @@ class SQLRelation extends Mappable {
   SQLRelation(this.relationName) : super.fromJSON(null);
 
   SQLRelation.fromJSON(Map<String, dynamic> map) : super.fromJSON(map) {
-    relationName = transformBasic(map["relationName"]);
-    recordsCount = transformBasic(map["recordsCount"]);
-    incomeAmount = transformBasic(map["incomeAmount"]);
-    expendAmount = transformBasic(map["expendAmount"]);
+    relationName = transformBasic(map['relationName']);
+    recordsCount = transformBasic(map['recordsCount']);
+    incomeAmount = transformBasic(map['incomeAmount']);
+    expendAmount = transformBasic(map['expendAmount']);
   }
 
   @override
   Map<String, dynamic> toJSON() {
     return <String, dynamic> {
-      "relationName": relationName,
-      "contactsCount": contactsCount,
-      "recordsCount": recordsCount,
-      "incomeAmount": incomeAmount,
-      "expendAmount": expendAmount,
+      'relationName': relationName,
+      'contactsCount': contactsCount,
+      'recordsCount': recordsCount,
+      'incomeAmount': incomeAmount,
+      'expendAmount': expendAmount,
     };
   }
 }

@@ -48,7 +48,7 @@ class _AddRecordPageState extends BasePageState<AddRecordPage> {
                   FormPopupMenuValue<SQLTradeType>(value: SQLTradeType.outAccount, title: i18n.form_out_account),
                 ],
                 onSaved: (SQLTradeType type) {
-                  _formValues["type"] = type.toString().split(".").last;
+                  _formValues['type'] = type.toString().split('.').last;
                 },
               )),
               SizedBox(width: ScreenUtil.screenWidthDp/2, child: FormInput(
@@ -57,7 +57,7 @@ class _AddRecordPageState extends BasePageState<AddRecordPage> {
                 validator: Validation.amount,
                 keyboardType: TextInputType.number,
                 onSaved: (String text) {
-                  _formValues["value"] = num.parse(text);
+                  _formValues['value'] = num.parse(text);
                 },
               )),
             ],
@@ -68,7 +68,7 @@ class _AddRecordPageState extends BasePageState<AddRecordPage> {
               initialValue: widget.trade?.eventName,
               validator: Validation.eventName,
               onSaved: (String text) {
-                _formValues["eventName"] = text;
+                _formValues['eventName'] = text;
               },
             )),
             SizedBox(width: ScreenUtil.screenWidthDp/2, child: FormDateInput(
@@ -76,7 +76,7 @@ class _AddRecordPageState extends BasePageState<AddRecordPage> {
               initialValue: widget.trade?.eventTime,
               validator: Validation.date_notEmpty,
               onSaved: (DateTime date) {
-                _formValues["eventTime"] = date.toString();
+                _formValues['eventTime'] = date.toString();
               },
             ))
           ]),
@@ -86,7 +86,7 @@ class _AddRecordPageState extends BasePageState<AddRecordPage> {
               initialValue: widget.trade?.relationName,
               validator: Validation.relation,
               onSaved: (String text) {
-                _formValues["relationName"] = text;
+                _formValues['relationName'] = text;
               },
             )),
             SizedBox(width: ScreenUtil.screenWidthDp/2, child: FormInput(
@@ -94,7 +94,7 @@ class _AddRecordPageState extends BasePageState<AddRecordPage> {
               initialValue: widget.trade?.personName,
               validator: Validation.userName,
               onSaved: (String text) {
-                _formValues["personName"] = text;
+                _formValues['personName'] = text;
               },
             )),
           ]),

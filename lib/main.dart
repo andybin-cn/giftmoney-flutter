@@ -32,14 +32,14 @@ class _MyAppState extends State<MyApp> {
       await Constant.init();
       ShareSDKRegister register = ShareSDKRegister();
       register.setupWechat(
-          "wxbd0173ae30cebc1c", "6dfcfe44d9a2e8050bd4c93fffcbc5f3", "https://andybin.giftmoney/");
-      register.setupSinaWeibo("568898243", "38a4f8204cc784f81f9f0daaf31e02e3",
-          "https://andybin.giftmoney/");
-      register.setupQQ("1109788892", "PPoe3Nv0wyfoQVEN");
+          'wxbd0173ae30cebc1c', '6dfcfe44d9a2e8050bd4c93fffcbc5f3', 'https://andybin.giftmoney/');
+      register.setupSinaWeibo('568898243', '38a4f8204cc784f81f9f0daaf31e02e3',
+          'https://andybin.giftmoney/');
+      register.setupQQ('1109788892', 'PPoe3Nv0wyfoQVEN');
       register.setupFacebook(
-          "1412473428822331", "a42f4f3f867dc947b9ed6020c2e93558", "shareSDK");
-      register.setupTwitter("viOnkeLpHBKs6KXV7MPpeGyzE",
-          "NJEglQUy2rqZ9Io9FcAU9p17omFqbORknUpRrCDOK46aAbIiey", "https://andybin.giftmoney/");
+          '1412473428822331', 'a42f4f3f867dc947b9ed6020c2e93558', 'shareSDK');
+      register.setupTwitter('viOnkeLpHBKs6KXV7MPpeGyzE',
+          'NJEglQUy2rqZ9Io9FcAU9p17omFqbORknUpRrCDOK46aAbIiey', 'https://andybin.giftmoney/');
 
       //注册
       SharesdkPlugin.regist(register);
@@ -60,7 +60,7 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: I18nUtil.shared != null ? I18nUtil.shared.app_name : "礼金小助手",
+      title: I18nUtil.shared != null ? I18nUtil.shared.app_name : '礼金小助手',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),

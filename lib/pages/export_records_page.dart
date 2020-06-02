@@ -45,7 +45,7 @@ class _ExportRecordsPageState extends BasePageState<ExportRecordsPage> {
 
   Widget _renderRow(BuildContext context, int index) {
     var file = files[index];
-    var fileName = file.path.substring(file.path.lastIndexOf("/") + 1, file.path.length);
+    var fileName = file.path.substring(file.path.lastIndexOf('/') + 1, file.path.length);
     return ClosableLeftScroll(
       child: FutureBuilder<FileStat>(
         future: file.stat(),
@@ -80,7 +80,7 @@ class _ExportRecordsPageState extends BasePageState<ExportRecordsPage> {
       ),
       onTap: () {
         var file = files[index];
-        NativeUtils.shareFile(filePath: file.path, subject: "");
+        NativeUtils.shareFile(filePath: file.path, subject: '');
       },
       buttons: <Widget>[
         LeftScrollItem(

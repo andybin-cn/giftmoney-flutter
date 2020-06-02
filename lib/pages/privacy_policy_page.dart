@@ -26,9 +26,9 @@ class _PrivacyPolicyPageState extends BasePageState<PrivacyPolicyPage> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Padding(padding: EdgeInsets.only(top: 15)),
-          Text("礼金小助手隐私政策", style: AppTextStyle.mainText(15)),
+          Text('礼金小助手隐私政策', style: AppTextStyle.mainText(15)),
           Padding(padding: EdgeInsets.only(top: 20)),
-          Text("""
+          Text('''
             
 礼金小助手对您发布在互联网上的隐私非常敏感，我们认为让您了解我们如何处理我们通过互联网获得的与您有关的信息非常重要。我们将尽力保护您的数据。
 
@@ -54,7 +54,7 @@ class _PrivacyPolicyPageState extends BasePageState<PrivacyPolicyPage> {
 当您有其他的投诉、建议、未成年人设备数据相关问题时，请发送邮件至reciprocityApp@163.com。 我们将尽快审核所涉问题，并在验证您的用户身份后的三十天内予以回复。
 
 《礼金小助手》工作室
-          """, style: AppTextStyle.mainText(15)),
+          ''', style: AppTextStyle.mainText(15)),
         ])
     );
   }

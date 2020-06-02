@@ -18,43 +18,43 @@ class XLSHeader {
   var tradeItems = -1;
   var tradeMedias = -1;
 
-  var idCloums = HashSet<String>.from(["ID", "UUID", "Id", "uuid", "id"]);
+  var idCloums = HashSet<String>.from(['ID', 'UUID', 'Id', 'uuid', 'id']);
   var nameCloums =
-      HashSet<String>.from(["姓名", "名字", "name", "Name", "NAME", "personName"]);
+      HashSet<String>.from(['姓名', '名字', 'name', 'Name', 'NAME', 'personName']);
   var relationCloums = HashSet.from([
-    "关系",
-    "關係",
-    "relation",
-    "Relation",
-    "RelationShip",
-    "relationship",
-    "Relationship"
+    '关系',
+    '關係',
+    'relation',
+    'Relation',
+    'RelationShip',
+    'relationship',
+    'Relationship'
   ]);
-  var typeCloums = HashSet.from(["类型", "类别", "收支", "類型", "類別", "type"]);
-  var eventNameCloums = HashSet.from(["事件", "事件名称", "事件名稱", "eventName"]);
-  var eventTimeCloums = HashSet.from(["事件时间", "eventTime"]);
+  var typeCloums = HashSet.from(['类型', '类别', '收支', '類型', '類別', 'type']);
+  var eventNameCloums = HashSet.from(['事件', '事件名称', '事件名稱', 'eventName']);
+  var eventTimeCloums = HashSet.from(['事件时间', 'eventTime']);
   var totoalMoneyCloums = HashSet.from([
-    "金额",
-    "红包",
-    "总金额(元)",
-    "总金额",
-    "数量",
-    "金額",
-    "紅包",
-    "總金額(元)",
-    "總金額",
-    "數量",
-    "value",
-    "amount"
+    '金额',
+    '红包',
+    '总金额(元)',
+    '总金额',
+    '数量',
+    '金額',
+    '紅包',
+    '總金額(元)',
+    '總金額',
+    '數量',
+    'value',
+    'amount'
   ]);
-  var remarkCloums = HashSet.from(["备注", "備註", "remark"]);
-  var createTimeCloums = HashSet.from(["创建时间", "創建時間", "createAt"]);
-  var updateTimeCloums = HashSet.from(["最近修改时间", "修改时间", "修改時間", "updateAt"]);
+  var remarkCloums = HashSet.from(['备注', '備註', 'remark']);
+  var createTimeCloums = HashSet.from(['创建时间', '創建時間', 'createAt']);
+  var updateTimeCloums = HashSet.from(['最近修改时间', '修改时间', '修改時間', 'updateAt']);
 
   XLSHeader(List<String> header) {
     for (var index = 0; index < header.length; index++) {
       var value = header[index];
-      if (value == null || value.trim() == "") {
+      if (value == null || value.trim() == '') {
         continue;
       }
       if (this.uuid < 0 && idCloums.contains(value)) {
@@ -120,7 +120,7 @@ class XLSParseService {
     if(index >= 0 && index < row.length) {
       return row[index];
     } else {
-      return "";
+      return '';
     }
   }
 
@@ -154,7 +154,7 @@ class XLSParseService {
         trade.updateAt = datetimeValue(row, header.updateTime);
         result.add(trade);
       } catch(e) {
-        print("parseXLSData error index:${rowIndex} data:${sheet[rowIndex]}");
+        print('parseXLSData error index:${rowIndex} data:${sheet[rowIndex]}');
       }
     }
     return result;

@@ -31,7 +31,7 @@ class ShareUtil {
           }
         } catch (e) {
           //ignore
-          print("isClientInstalled error:${e}");
+          print('isClientInstalled error:${e}');
         }
       }
     } else {
@@ -97,7 +97,7 @@ class ShareUtil {
         var shareResult = await SharesdkPlugin.share(platform, params, (state, info, detail, error) {
           result(state, platform, info, detail, error);
         });
-        print("shareResult:${shareResult}");
+        print('shareResult:${shareResult}');
       },
       ),
     );

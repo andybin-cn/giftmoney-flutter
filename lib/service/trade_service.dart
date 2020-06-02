@@ -60,31 +60,31 @@ class TradeService {
   }
 
   Future<List<SQLTrade>> queryAllTrades({SQLEvent event, SQLRelation relation, SQLContact contact}) {
-    var where = "";
+    var where = '';
     var whereArgs = [];
     if (relation != null) {
-      where += "relationName = ?";
+      where += 'relationName = ?';
       whereArgs.addAll([relation.relationName]);
     }
     if (contact != null) {
       if (where.length > 0) {
-        where += " AND ";
+        where += ' AND ';
       }
-      where += "personName = ?";
+      where += 'personName = ?';
       whereArgs.addAll([contact.contactName]);
     }
     if (event != null) {
       if (where.length > 0) {
-        where += " AND ";
+        where += ' AND ';
       }
-      where != "eventName = ? AND date(eventTime) = ?";
+      where != 'eventName = ? AND date(eventTime) = ?';
       whereArgs.addAll([event.eventName, FormatHelper.dateToString(event.eventTime)]);
     }
     if(where.length == 0) {
       where = null;
       whereArgs = null;
     }
-    return DBManager.instance.tradeTable.queryTrade(where: where, whereArgs: whereArgs, orderBy: "createAt desc");
+    return DBManager.instance.tradeTable.queryTrade(where: where, whereArgs: whereArgs, orderBy: 'createAt desc');
   }
 
   Future<List<SQLEvent>> queryTradeGroupByEvent() {
@@ -148,8 +148,8 @@ class TradeService {
     }).toList();
     var excelData = [headers] + excelBody;
     var tempPath =  await getRecodsPath();
-    var destinationPath = tempPath + "${DateTime.now().toIso8601String()}.xlsx";
-    print("exportTradesToExcel destinationPath:${destinationPath}");
+    var destinationPath = tempPath + '${DateTime.now().toIso8601String()}.xlsx';
+    print('exportTradesToExcel destinationPath:${destinationPath}');
     await NativeUtils.exportToExcel(destinationPath, excelData);
     AccountService.instance.consumeGold(AccountService.instance.amountFor(ChargeItem.exportToExcel));
     return destinationPath;
@@ -163,7 +163,7 @@ class TradeService {
       tempDir =  await getApplicationDocumentsDirectory();
     }
     // var tempDir =  await getApplicationSupportDirectory();
-    var path = tempDir.path + "/records/";
+    var path = tempDir.path + '/records/';
     var dir = Directory(path);
     if(!await dir.exists()) {
       await dir.create(recursive: true);
@@ -188,7 +188,7 @@ class TradeService {
         result.successCount++;
       } catch (e) {
         result.errorCount++;
-        print("importTrades saveTrade error:${e}");
+        print('importTrades saveTrade error:${e}');
       }
     }
     AccountService.instance.consumeGold(AccountService.instance.amountFor(ChargeItem.importFromExcel));

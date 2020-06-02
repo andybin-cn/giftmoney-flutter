@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<DevInfor>
+<SinaWeibo Id="1" SortId="1" AppKey="4029797477" AppSecret="8b6a38e6c5876935c80f4da1bc2c2c17" ShareByAppClient="true" Enable="true" RedirectUrl="http://www.sharesdk.cn" />
+<TencentWeibo Enable="false" />
+<Douban Id="16" SortId="16" Enable="true" ApiKey="031a96a3aa8b28af094fc3eaffa17a0d" Secret="2e675e730571b75d" RedirectUri="http://mob.com" />
+<QZone Id="3" SortId="3" AppId="1109788892" AppKey="PPoe3Nv0wyfoQVEN" ShareByAppClient="true" BypassApproval="false" Enable="true" />
+<Renren Enable="false" />
+<KaiXin Enable="false" />
+<Facebook Id="8" SortId="8" ShareByAppClient="true" Enable="true" ConsumerKey="1412473428822331" ConsumerSecret="a42f4f3f867dc947b9ed6020c2e93558" RedirectUrl="https://mob.com" />
+<Twitter Id="9" SortId="9" ShareByAppClient="true" Enable="true" ConsumerKey="viOnkeLpHBKs6KXV7MPpeGyzE" ConsumerSecret="NJEglQUy2rqZ9Io9FcAU9p17omFqbORknUpRrCDOK46aAbIiey" CallbackUrl="http://mob.com" />
+<Evernote Enable="false" />
+<FourSquare Enable="false" />
+<GooglePlus Id="21" SortId="21" ShareByAppClient="true" Enable="true" ClientID="236300675100-am5pm8km7md1memjevq8rl9pg5c4s4b8.apps.googleusercontent.com" RedirectUrl="http://localhost" />
+<Instagram Id="28" SortId="28" Enable="true" ClientId="ff68e3216b4f4f989121aa1c2962d058" ClientSecret="1b2e82f110264869b3505c3fe34e31a1" RedirectUri="http://sharesdk.cn" />
+<LinkedIn Id="20" SortId="20" ShareByAppClient="true" Enable="true" ApiKey="ejo5ibkye3vo" SecretKey="cC7B2jpxITqPLZ5M" RedirectUrl="http://sharesdk.cn" />
+<Tumblr Enable="false" />
+<Email Id="12" SortId="12" Enable="true" />
+<ShortMessage Enable="false" />
+<Wechat Id="4" SortId="4" AppId="wxbd0173ae30cebc1c" AppSecret="6dfcfe44d9a2e8050bd4c93fffcbc5f3" WithShareTicket="true" MiniprogramType="0" BypassApproval="false" Enable="true" />
+<WechatMoments Id="5" SortId="5" AppId="wxbd0173ae30cebc1c" AppSecret="6dfcfe44d9a2e8050bd4c93fffcbc5f3" BypassApproval="false" Enable="true" />
+<QQ Id="7" SortId="7" AppId="1109788892" AppKey="PPoe3Nv0wyfoQVEN" ShareByAppClient="true" BypassApproval="false" Enable="true" />
+<Instapaper Enable="false" />
+<Pocket Enable="false" />
+<YouDao Enable="false" />
+<Pinterest Enable="false" />
+<Flickr Enable="false" />
+<Dropbox Enable="false" />
+<VKontakte Enable="false" />
+<WechatFavorite Enable="false" />
+<Yixin Enable="false" />
+<YixinMoments Enable="false" />
+<Mingdao Enable="false" />
+<Line Enable="false" />
+<WhatsApp Enable="false" />
+<KakaoTalk Enable="false" />
+<KakaoStory Enable="false" />
+<FacebookMessenger Enable="false" />
+<Alipay Enable="false" />
+<AlipayMoments Enable="false" />
+<Dingding Enable="false" />
+<Youtube Enable="false" />
+<Meipai Enable="false" />
+<Telegram Enable="false" />
+<Cmcc Enable="false" />
+<Reddit Enable="false" />
+<Telecom Enable="false" />
+<Accountkit Enable="false" />
+<Douyin Enable="false" />
+<Wework Enable="false" />
+<HWAccount Enable="false" />
+<Oasis Enable="false" />
+<XMAccount Enable="false" />
+<SnapChat Enable="false" />
+<Kuaishou Enable="false" />
+<Littleredbook Enable="false" />
+<Watermelonvideo Enable="false" />
+</DevInfor>

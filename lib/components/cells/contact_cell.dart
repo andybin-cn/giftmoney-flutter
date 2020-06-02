@@ -24,7 +24,7 @@ class _ContactCellState extends State<ContactCell> {
           children: <Widget>[
             Text(widget.contact.contactName, style: AppTextStyle.mainText(13)),
             Padding(padding: EdgeInsets.only(top: 2)),
-            Text("📝  ${I18n.of(context).statisticsRecordCount(widget.contact.recordsCount.toString())}", style: AppTextStyle.reminderText(10)),
+            Text('📝  ${I18n.of(context).statisticsRecordCount(widget.contact.recordsCount.toString())}', style: AppTextStyle.reminderText(10)),
           ],
         ),
         Expanded(child: Container(
@@ -33,8 +33,8 @@ class _ContactCellState extends State<ContactCell> {
             crossAxisAlignment: CrossAxisAlignment.end,
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              Text("+ ${FormatHelper.formatCurrency(widget.contact.incomeAmount)}", style: TextStyle(fontSize: 14, color: AppColor.secondaryAppColor)),
-              Text("- ${FormatHelper.formatCurrency(widget.contact.expendAmount)}", style: TextStyle(fontSize: 14, color: AppColor.mainAppColor)),
+              Text('+ ${FormatHelper.formatCurrency(widget.contact.incomeAmount)}', style: TextStyle(fontSize: 14, color: AppColor.secondaryAppColor)),
+              Text('- ${FormatHelper.formatCurrency(widget.contact.expendAmount)}', style: TextStyle(fontSize: 14, color: AppColor.mainAppColor)),
             ],
         ))),
         Icon(Icons.keyboard_arrow_right),

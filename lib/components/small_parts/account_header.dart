@@ -33,7 +33,7 @@ class _AccountHeaderState extends State<AccountHeader> {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                Text("我的金币", style: TextStyle(fontSize: 16, color: AppColor.mainBlackText)),
+                Text('我的金币', style: TextStyle(fontSize: 16, color: AppColor.mainBlackText)),
                 StreamBuilder<int>(
                   stream: AccountService.instance.balanceSubject.stream,
                   builder: (context, snapshot) {
@@ -46,20 +46,20 @@ class _AccountHeaderState extends State<AccountHeader> {
           RaisedButton(
             color: AppColor.secondaryAppColor,
             textColor: Colors.white,
-            child: Text("看广告赚取金币"),
+            child: Text('看广告赚取金币'),
             onPressed: () async {
-              print("赚取金币 onPressed");
+              print('赚取金币 onPressed');
               LoadingHelper.showLoading(context, null, loadingCancelable: true);
               AccountService.instance.earnGold().then((amount) {
                 LoadingHelper.hideLoading(context);
-                ToastUtil.show("成功赚取${amount}个金币");
+                ToastUtil.show('成功赚取${amount}个金币');
               }, onError: (error) {
                 LoadingHelper.hideLoading(context);
-                print("onError 无法显示广告");
-                ToastUtil.show("无法显示广告");
+                print('onError 无法显示广告');
+                ToastUtil.show('无法显示广告');
               }).catchError((error) {
-                print("catchError 无法显示广告");
-                ToastUtil.show("无法显示广告");
+                print('catchError 无法显示广告');
+                ToastUtil.show('无法显示广告');
                 LoadingHelper.hideLoading(context);
               });
             },

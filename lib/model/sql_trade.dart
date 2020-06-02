@@ -51,23 +51,23 @@ class SQLTrade extends Mappable {
   SQLTrade() : super.fromJSON(null);
 
   SQLTrade.fromJSON(Map<String, dynamic> map) : super.fromJSON(null) {
-    uuid = transformBasic(map["uuid"]);
-    eventID = transformBasic(map["eventID"]);
-    relationID = transformBasic(map["relationID"]);
-    personID = transformBasic(map["personID"]);
-    createAt = transformBasic(map["createAt"]);
-    updateAt = transformBasic(map["updateAt"]);
-    eventName = transformBasic(map["eventName"]);
-    eventTime = transformBasic(map["eventTime"]);
-    relationName = transformBasic(map["relationName"]);
-    personName = transformBasic(map["personName"]);
-    value = transformBasic(map["value"]);
-    giftName = transformBasic(map["giftName"]);
-    unit = transformBasic(map["unit"]);
-    remark = transformBasic(map["remark"]);
+    uuid = transformBasic(map['uuid']);
+    eventID = transformBasic(map['eventID']);
+    relationID = transformBasic(map['relationID']);
+    personID = transformBasic(map['personID']);
+    createAt = transformBasic(map['createAt']);
+    updateAt = transformBasic(map['updateAt']);
+    eventName = transformBasic(map['eventName']);
+    eventTime = transformBasic(map['eventTime']);
+    relationName = transformBasic(map['relationName']);
+    personName = transformBasic(map['personName']);
+    value = transformBasic(map['value']);
+    giftName = transformBasic(map['giftName']);
+    unit = transformBasic(map['unit']);
+    remark = transformBasic(map['remark']);
 
-    type = transformEnum(map["type"], SQLTradeTypeMap);
-    valueType = transformEnum(map["valueType"], SQLTradeValueTypeMap);
+    type = transformEnum(map['type'], SQLTradeTypeMap);
+    valueType = transformEnum(map['valueType'], SQLTradeValueTypeMap);
   }
 
   @override
@@ -93,17 +93,17 @@ class SQLTrade extends Mappable {
   }
 
   String get formatValue {
-    String flag = type == SQLTradeType.inAccount ? "+" : "-";
+    String flag = type == SQLTradeType.inAccount ? '+' : '-';
     
     switch (valueType) {
       case SQLTradeValueType.money:
-        return "$flag ${FormatHelper.formatCurrency(value)}";
+        return '$flag ${FormatHelper.formatCurrency(value)}';
         break;
       case SQLTradeValueType.gift:
-        return "$giftName $flag $value $unit";
+        return '$giftName $flag $value $unit';
         break;
       default:
-        return "$flag ${FormatHelper.formatCurrency(value)}";
+        return '$flag ${FormatHelper.formatCurrency(value)}';
     }
   }
 }

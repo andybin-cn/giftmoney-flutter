@@ -44,7 +44,7 @@ class _FormDateInputState extends FormFieldState<DateTime> {
     }
   }
   _showDataPicker() async {
-    print("_showDataPicker start");
+    print('_showDataPicker start');
     Locale myLocale = Localizations.localeOf(context);
     var picker = await showDatePicker(
         context: context,
@@ -52,8 +52,8 @@ class _FormDateInputState extends FormFieldState<DateTime> {
         firstDate: DateTime(1900),
         lastDate: DateTime(2200),
         locale: myLocale);
-    print("_showDataPicker end");
-    print("_showDataPicker picker:$picker");
+    print('_showDataPicker end');
+    print('_showDataPicker picker:$picker');
     if (picker != null) {
       setState(() {
         time = picker;
@@ -70,7 +70,7 @@ class _FormDateInputState extends FormFieldState<DateTime> {
     return FlatButton(
       padding: EdgeInsets.zero,
       onPressed: () {
-        print("FormDateInput onTaped");
+        print('FormDateInput onTaped');
         _showDataPicker();
       },
       child: FormInput(
