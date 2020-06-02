@@ -69,16 +69,27 @@ class _HomeMinePageState extends BasePageState<HomeMinePage> {
                   null,
                   null,
                   null,
-                  SSDKContentTypes.app
+                  SSDKContentTypes.webpage
                 );
               // await ShareSDK.showMenu(null, shareParams, 
               //   (state, platform, info, detail, error) {
               //     print('share state:${state} platform:${platform.name} info:${info.toString()} detail:${detail.toString()} error:${error.toString()}');
               //   });
-              await ShareUtil.showMenu(context, shareParams, 
-                (state, platform, info, detail, error) {
-                  print('share state:${state} platform:${platform.name} info:${info.toString()} detail:${detail.toString()} error:${error.toString()}');
-                });
+              var platforms = [
+                ShareSDKPlatforms.wechatSession,
+                ShareSDKPlatforms.wechatTimeline,
+                ShareSDKPlatforms.qq,
+                ShareSDKPlatforms.qZone,
+                ShareSDKPlatforms.sina,
+                ShareSDKPlatforms.facebook,
+                ShareSDKPlatforms.twitter, ];
+              SharesdkPlugin.showMenu(platforms, shareParams, (SSDKResponseState state, ShareSDKPlatform platform, Map userData, Map contentEntity, SSDKError error) {
+                print('share state:${state} platform:${platform.name} info:${userData.toString()} detail:${contentEntity.toString()} error:${error.toString()}');
+              });
+              // await ShareUtil.showMenu(context, shareParams, 
+              //   (state, platform, info, detail, error) {
+              //     print('share state:${state} platform:${platform.name} info:${info.toString()} detail:${detail.toString()} error:${error.toString()}');
+              //   });
             },
           ),
           SettingCell(
