@@ -62,7 +62,22 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       title: I18nUtil.shared != null ? I18nUtil.shared.app_name : '礼金小助手',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        backgroundColor: Color(0xFFDFE0E1),
+        primarySwatch: MaterialColor(
+          0xFFE03636,
+          <int, Color>{
+            50: Color(0xFFFFEBEE),
+            100: Color(0xFFFFCDD2),
+            200: Color(0xFFFF534D),
+            300: Color(0xFFE53935),
+            400: Color(0xFFE53935),
+            500: Color(0xFFE03636),
+            600: Color(0xFFD32F2F),
+            700: Color(0xFFC62828),
+            800: Color(0xFFC62828),
+            900: Color(0xFFB71C1C),
+          },
+        ),
       ),
       home: loadingApp ? WelcomePage() : MainTabPage(),
       localizationsDelegates: const [

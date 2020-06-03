@@ -21,20 +21,10 @@ class HomeAccessibilityPage extends BaseStatefulPage {
 }
 
 class _State extends BasePageState<HomeAccessibilityPage> {
-
   @override
-  Widget buildContainer(BuildContext context) {
-    
-    return Scaffold(
-      extendBody: true,
-      appBar: AccountHeader(),
-      body: GestureDetector(
-        onTap: () {
-          FocusScope.of(context).requestFocus(FocusNode());
-        },
-        child: this.buildSelfScrollBody(context) ?? this.buildScrollView(context),
-      )
-    );
+  void initState() {
+    super.initState();
+    title = "辅助功能";
   }
   
   @override
@@ -42,7 +32,29 @@ class _State extends BasePageState<HomeAccessibilityPage> {
     return DecoratedBox(
       child: Column(
         children: <Widget>[
-          Padding(padding: EdgeInsets.only(top: 20)),
+          Padding(padding: EdgeInsets.only(top: 15)),
+          AccountHeader(),
+          Padding(padding: EdgeInsets.only(top: 0.5)),
+          SettingCell(
+            icon: Icon(Icons.account_balance_wallet),
+            label: Text(i18n.mineCoin_rules),
+            onPressed: () {
+              Navigator.push(context,
+                MaterialPageRoute(builder: (context) {
+                    return RulesForGoldCoinsPage();
+                })
+              );
+            },
+          ),
+          Padding(padding: EdgeInsets.only(top: 15)),
+          SettingCell(
+            icon: Icon(Icons.save_alt),
+            label: Text(i18n.accessibilityImport_button),
+            onPressed: () {
+              _onImportPress();
+            },
+          ),
+          Padding(padding: EdgeInsets.only(top: 15)),
           SettingCell(
             icon: Icon(Icons.import_export),
             label: Text(i18n.accessibilityExoprt_button),
@@ -51,28 +63,10 @@ class _State extends BasePageState<HomeAccessibilityPage> {
             },
           ),
           SettingCell(
-            icon: Icon(Icons.save_alt),
-            label: Text(i18n.accessibilityImport_button),
-            onPressed: () {
-              _onImportPress();
-            },
-          ),
-          SettingCell(
             icon: Icon(Icons.history),
             label: Text(i18n.accessibilityHistory_button),
             onPressed: () {
               _onHistoryPress();
-            },
-          ),
-          SettingCell(
-            icon: Icon(Icons.account_balance_wallet),
-            label: Text('金币使用规则'),
-            onPressed: () {
-              Navigator.push(context,
-                MaterialPageRoute(builder: (context) {
-                    return RulesForGoldCoinsPage();
-                })
-              );
             },
           )
         ],

@@ -34,6 +34,7 @@ class BasePageState<T extends BaseStatefulPage> extends BaseState<T> with RatioH
         title: Text(title),
         actions: appBarActions(),
       ),
+      backgroundColor: Color(0xFFDFE0E1),
       body: GestureDetector(
         onTap: () {
           FocusScope.of(context).requestFocus(FocusNode());

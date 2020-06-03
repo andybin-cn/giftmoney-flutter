@@ -79,7 +79,7 @@ class _MainTabPageState extends BasePageState<MainTabPage> {
             Align(
               alignment: Alignment.topCenter,
               child: FlatButton(
-                  child: Image.asset('assets/images/icons8-add.png', width: 50, height: 50,),
+                  child: Image.asset('assets/images/icons8-add_filled.png', width: 40, height: 40,),
                   onPressed: () {
                     Navigator.push(context,
                       MaterialPageRoute(builder: (context) {

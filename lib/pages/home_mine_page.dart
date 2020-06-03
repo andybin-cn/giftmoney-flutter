@@ -7,7 +7,6 @@ import 'package:giftmoney/components/small_parts/account_header.dart';
 import 'package:giftmoney/pages/mine_about_page.dart';
 import 'package:giftmoney/pages/privacy_policy_page.dart';
 import 'package:giftmoney/pages/rules_for_gold_coins_page.dart';
-import 'package:giftmoney/utils/share_util.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 import 'package:sharesdk_plugin/sharesdk_plugin.dart';
 
@@ -19,20 +18,10 @@ class HomeMinePage extends BaseStatefulPage {
 }
 
 class _HomeMinePageState extends BasePageState<HomeMinePage> {
-  
   @override
-  Widget buildContainer(BuildContext context) {
-    
-    return Scaffold(
-      extendBody: true,
-      appBar: AccountHeader(),
-      body: GestureDetector(
-        onTap: () {
-          FocusScope.of(context).requestFocus(FocusNode());
-        },
-        child: this.buildSelfScrollBody(context) ?? this.buildScrollView(context),
-      )
-    );
+  void initState() {
+    super.initState();
+    title = "我的";
   }
 
   @override
@@ -41,7 +30,9 @@ class _HomeMinePageState extends BasePageState<HomeMinePage> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
-          Padding(padding: EdgeInsets.only(top: 20)),
+          Padding(padding: EdgeInsets.only(top: 15)),
+          AccountHeader(),
+          Padding(padding: EdgeInsets.only(top: 0.5)),
           SettingCell(
             icon: Icon(Icons.account_balance_wallet),
             label: Text(i18n.mineCoin_rules),
@@ -53,6 +44,7 @@ class _HomeMinePageState extends BasePageState<HomeMinePage> {
               );
             },
           ),
+          Padding(padding: EdgeInsets.only(top: 15)),
           SettingCell(
             icon: Icon(Icons.share),
             label: Text(i18n.mineInvite),
@@ -146,7 +138,7 @@ class _HomeMinePageState extends BasePageState<HomeMinePage> {
           )
         ],
       ),
-      decoration: BoxDecoration(color: Colors.grey[200]),
+      decoration: BoxDecoration(color: Theme.of(context).backgroundColor),
     );
   }
 }
