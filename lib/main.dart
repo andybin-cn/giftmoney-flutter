@@ -5,6 +5,7 @@ import 'package:giftmoney/data_center/db_manager.dart';
 import 'package:giftmoney/environment/constant.dart';
 import 'package:giftmoney/generated/i18n.dart';
 import 'package:giftmoney/pages/main_tab_page.dart';
+import 'package:giftmoney/theme/theme.dart';
 import 'package:giftmoney/utils/i18n_util.dart';
 import 'package:sharesdk_plugin/sharesdk_plugin.dart';
 
@@ -62,7 +63,8 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       title: I18nUtil.shared != null ? I18nUtil.shared.app_name : '礼金小助手',
       theme: ThemeData(
-        backgroundColor: Color(0xFFDFE0E1),
+        backgroundColor: AppColor.grayBackground,
+        buttonColor: Color(0xFFEDD0BE),
         primarySwatch: MaterialColor(
           0xFFE03636,
           <int, Color>{

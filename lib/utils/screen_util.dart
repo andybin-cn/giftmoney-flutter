@@ -2,8 +2,8 @@ import 'package:flutter/widgets.dart';
 
 class ScreenUtil {
   //设计稿的尺寸
-  static int _designWidth = 750;
-  static int _designHeight = 1334;
+  static int designWidth = 750;
+  static int designHeight = 1334;
   static MediaQueryData _mediaQueryData;
   static double _screenWidth;
   static double _screenHeight;
@@ -18,8 +18,8 @@ class ScreenUtil {
   //在应用启动的地方调用初始化方法传入设计稿的 宽、高； ScreenUtil.init(context,750,1334);
 
   static void init(BuildContext context, int width, int height) {
-    _designWidth = width;
-    _designHeight = height;
+    designWidth = width;
+    designHeight = height;
     MediaQueryData mediaQuery = MediaQuery.of(context);
     _mediaQueryData = mediaQuery;
     _pixelRatio = mediaQuery.devicePixelRatio;
@@ -29,8 +29,8 @@ class ScreenUtil {
     _bottomBarHeight = _mediaQueryData.padding.bottom;
     _textScaleFactor = mediaQuery.textScaleFactor;
     //实际的dp与设计稿px的比例
-    heightScale = _screenHeight / _designHeight;
-    widthScale = _screenWidth / _designWidth;
+    heightScale = _screenHeight / designHeight;
+    widthScale = _screenWidth / designWidth;
   }
 
   static MediaQueryData get mediaQueryData => _mediaQueryData;

@@ -27,7 +27,8 @@ class TradeTable extends SQLTable {
           value NUMBER,
           giftName TEXT,
           unit TEXT,
-          remark TEXT
+          remark TEXT,
+          images TEXT
         )""");
   }
 

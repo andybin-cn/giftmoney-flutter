@@ -16,6 +16,8 @@ class FormInput extends StatefulWidget {
   final FormFieldValidator<String> validator;
   final GestureTapCallback onTap;
   final FocusNode focusNode;
+  final int maxLines;
+  final double height;
 
   FormInput(
       {this.context,
@@ -30,6 +32,8 @@ class FormInput extends StatefulWidget {
       this.onSaved,
       this.validator,
       this.onTap,
+      this.maxLines = 1,
+      this.height = 50,
       this.focusNode})
       : assert(initialValue == null || controller == null);
 
@@ -59,11 +63,16 @@ class _State extends State<FormInput> {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: EdgeInsets.only(
-        left: RatioHelper.scalePx(Maudimen.screenPaddingHorRpx),
-        right: RatioHelper.scalePx(Maudimen.screenPaddingHorRpx),
+    return Container(
+      foregroundDecoration: BoxDecoration(
+        border: Border.all(color: AppColor.dividerColor, width: 0.5),
+        borderRadius: new BorderRadius.circular(6),
       ),
+      padding: EdgeInsets.only(
+        left: RatioHelper.scalePx(10),
+        right: RatioHelper.scalePx(10),
+      ),
+      height: widget.height,
       child: TextFormField(
         key: widget.formFieldKey,
         controller: widget.controller,
@@ -73,7 +82,7 @@ class _State extends State<FormInput> {
         maxLength: widget.maxLength,
         initialValue: widget.initialValue,
         enabled: widget.enabled,
-        maxLines: 1,
+        maxLines: widget.maxLines,
         style: TextStyle(
           color: AppColor.mainBlackText,
           fontSize: RatioHelper.scalePx(Maudimen.formFieldTextSizeRpx),
@@ -82,9 +91,11 @@ class _State extends State<FormInput> {
         decoration: InputDecoration(
           labelText: widget.label,
           labelStyle: TextStyle(
-            color: AppColor.reminderText,
-            fontSize: RatioHelper.scalePx(Maudimen.formFieldTextSizeRpx),
+            color: AppColor.secondaryText,
+            fontSize: RatioHelper.scalePx(28),
           ),
+          errorStyle: TextStyle(fontSize: RatioHelper.scalePx(20)),
+          border: InputBorder.none,
           counterText: '',
           contentPadding: EdgeInsets.only(
             left: RatioHelper.scalePx(0),

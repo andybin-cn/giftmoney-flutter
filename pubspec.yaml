@@ -30,7 +30,7 @@ dependencies:
   sqflite: ^1.1.7+1
   json_annotation: ^2.0.0
   device_info: ^0.4.1
-  image_picker: ^0.6.2
+  image_picker: ^0.6.7
   file_picker: ^1.4.3
   uuid: ^2.0.4
   rflutter_alert: ^1.0.3
