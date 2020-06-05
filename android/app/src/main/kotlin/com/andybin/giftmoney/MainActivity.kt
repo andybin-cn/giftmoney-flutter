@@ -133,8 +133,10 @@ public class AndroidtoJs(result: MethodChannel.Result) {
     val result = result
     @JavascriptInterface
     fun handleFingerprint(msg: String) {
-        withContext(Dispatchers.Main) {
-            result.success(msg)
+        GlobalScope.async {
+            withContext(Dispatchers.Main) {
+                result.success(msg)
+            }
         }
     }
 }
