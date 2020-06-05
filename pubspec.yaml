@@ -39,6 +39,7 @@ dependencies:
   sharesdk_plugin: ^1.1.0
   flutter_email_sender: ^2.2.2
   firebase_admob: ^0.9.3
+  webview_flutter: ^0.3.22
   # advert_support:
   #   git:
   #     ref: master

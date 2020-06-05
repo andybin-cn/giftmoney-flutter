@@ -8,8 +8,10 @@ import 'package:giftmoney/components/cells/closable_left_scroll.dart';
 import 'package:giftmoney/components/cells/trade_cell.dart';
 import 'package:giftmoney/model/sql_trade.dart';
 import 'package:giftmoney/pages/add_record_page.dart';
+import 'package:giftmoney/pages/webview_test_page.dart';
 import 'package:giftmoney/service/trade_service.dart';
 import 'package:giftmoney/utils/i18n_util.dart';
+import 'package:giftmoney/utils/native_utils.dart';
 
 class HomeRecordPage extends BaseStatefulPage {
   HomeRecordPage({Key key}) : super(key: key);
@@ -48,12 +50,15 @@ class _HomeRecordPageState extends BasePageState<HomeRecordPage> {
 
   Widget _renderRow(BuildContext context, int index) {
     // LeftScrollListItem
-    return ClosableLeftScroll(child: TradeCell(trade: trades[index]), onTap: () {
-      Navigator.push(context,
-        MaterialPageRoute(builder: (context) {
-            return AddRecordPage(trade: trades[index]);
-        })
-      );
+    return ClosableLeftScroll(child: TradeCell(trade: trades[index]), onTap: () async {
+      dynamic result = await NativeUtils.startWebView(url: 'https://darling-secret.herokuapp.com/share/app');
+      print("startWebView result: ${result}");
+      // Navigator.push(context,
+      //   MaterialPageRoute(builder: (context) {
+      //     return WebViewTestPage();
+      //       // return AddRecordPage(trade: trades[index]);
+      //   })
+      // );
     }, buttons: <Widget>[
         LeftScrollItem(
           text: i18n.bt_delete,

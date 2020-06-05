@@ -161,10 +161,7 @@ class _AddRecordPageState extends BasePageState<AddRecordPage> {
                     },);
                 })
               );
-            },
-            onImageDeletePress: () {
-
-            },
+            }
           ),
           Container(
             width: ScreenUtil.screenWidthDp - spacing * 2,

@@ -1,5 +1,6 @@
 
 
+import 'dart:convert';
 import 'package:flutter/services.dart';
 
 class NativeUtils {
@@ -22,4 +23,11 @@ class NativeUtils {
       }).toList();
     }).toList();
   }
+
+  static startWebView({String url}) async {
+    String jsonString = await platform.invokeMethod('startWebView', { 'url': url});
+    Map<String, dynamic> user = JsonDecoder().convert(jsonString);
+    return user;
+  }
+  
 }
