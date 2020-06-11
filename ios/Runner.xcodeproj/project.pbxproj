@@ -15,6 +15,7 @@
 		3673585424153E08008411A8 /* XLSXManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3673585224153E08008411A8 /* XLSXManager.swift */; };
 		36CC6CC02414DDBF0003B0D1 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36CC6CBF2414DDBE0003B0D1 /* MessageUI.framework */; };
 		36CC6CC22414F3FF0003B0D1 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36CC6CC12414F3FF0003B0D1 /* MainViewController.swift */; };
+		380C45F12491CD1900B99E03 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 380C45F02491CD1900B99E03 /* GoogleService-Info.plist */; };
 		3856A98A23AA2B640049C131 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3856A98C23AA2B640049C131 /* InfoPlist.strings */; };
 		3B3967161E833CAA004F5970 /* AppFrameworkInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3B3967151E833CAA004F5970 /* AppFrameworkInfo.plist */; };
 		56D94AB36A0750CBFFFFE7A7 /* Pods_Runner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A640A096298A5A90DBD5BBD5 /* Pods_Runner.framework */; };
@@ -75,6 +76,7 @@
 		36CC6CC8241529FC0003B0D1 /* XlsxReaderWriter.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = XlsxReaderWriter.xcodeproj; sourceTree = "<group>"; };
 		38026A1F24161F1C00C37358 /* GiftMoneyDebug.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GiftMoneyDebug.entitlements; sourceTree = "<group>"; };
 		38026A2024161FF300C37358 /* GiftMoney.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GiftMoney.entitlements; sourceTree = "<group>"; };
+		380C45F02491CD1900B99E03 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		3856A98023AA2A7D0049C131 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Main.strings"; sourceTree = "<group>"; };
 		3856A98123AA2A7E0049C131 /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		3856A98223AA2A830049C131 /* zh-HK */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-HK"; path = "zh-HK.lproj/Main.strings"; sourceTree = "<group>"; };
@@ -212,6 +214,7 @@
 		97C146F01CF9000F007C117D /* Runner */ = {
 			isa = PBXGroup;
 			children = (
+				380C45F02491CD1900B99E03 /* GoogleService-Info.plist */,
 				38026A2024161FF300C37358 /* GiftMoney.entitlements */,
 				38026A1F24161F1C00C37358 /* GiftMoneyDebug.entitlements */,
 				3673585124153E08008411A8 /* Services */,
@@ -278,7 +281,7 @@
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = EG49RAY3R6;
 						LastSwiftMigration = 1100;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -336,6 +339,7 @@
 				97C146FE1CF9000F007C117D /* Assets.xcassets in Resources */,
 				97C146FC1CF9000F007C117D /* Main.storyboard in Resources */,
 				3856A98A23AA2B640049C131 /* InfoPlist.strings in Resources */,
+				380C45F12491CD1900B99E03 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -543,10 +547,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Runner/GiftMoney.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = "$(FLUTTER_BUILD_NUMBER)";
-				DEVELOPMENT_TEAM = EG49RAY3R6;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -579,9 +583,9 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Flutter",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = andybin.giftmoney;
+				PRODUCT_BUNDLE_IDENTIFIER = flutter.andybin.giftmoney;
 				PRODUCT_NAME = GiftMoney;
-				PROVISIONING_PROFILE_SPECIFIER = GiftMoney_AppStore;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -705,9 +709,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Runner/GiftMoneyDebug.entitlements;
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = "$(FLUTTER_BUILD_NUMBER)";
-				DEVELOPMENT_TEAM = EG49RAY3R6;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -740,9 +745,9 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Flutter",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = andybin.giftmoney;
+				PRODUCT_BUNDLE_IDENTIFIER = flutter.andybin.giftmoney;
 				PRODUCT_NAME = GiftMoney;
-				PROVISIONING_PROFILE_SPECIFIER = GiftMoney_DEV;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -757,10 +762,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = Runner/GiftMoney.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = "$(FLUTTER_BUILD_NUMBER)";
-				DEVELOPMENT_TEAM = EG49RAY3R6;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -793,9 +798,9 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Flutter",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = andybin.giftmoney;
+				PRODUCT_BUNDLE_IDENTIFIER = flutter.andybin.giftmoney;
 				PRODUCT_NAME = GiftMoney;
-				PROVISIONING_PROFILE_SPECIFIER = GiftMoney_AppStore;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";

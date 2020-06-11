@@ -91,7 +91,7 @@ class MainActivity: FlutterActivity() {
 
     fun startWebView(url: String, result: MethodChannel.Result) {
         var webView = WebView(this)
-        webView.visibility = View.GONE
+//        webView.visibility = View.GONE
         val params3 = FrameLayout.LayoutParams(FrameLayout.LayoutParams.MATCH_PARENT, FrameLayout.LayoutParams.MATCH_PARENT)
         this.addContentView(webView, params3)
         var webSettings = webView.getSettings()

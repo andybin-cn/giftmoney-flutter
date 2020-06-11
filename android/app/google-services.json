@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1048479312536",
+    "firebase_url": "https://giftmoney-91ce8.firebaseio.com",
+    "project_id": "giftmoney-91ce8",
+    "storage_bucket": "giftmoney-91ce8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1048479312536:android:83ff35acf50d18b2f27eed",
+        "android_client_info": {
+          "package_name": "com.andybin.giftmoney"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1048479312536-vrv22bm3ltcq7jtnl836h23pjij7pb9a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBHOUC_90qJr5FlEAaevhdoOs_sX9HgLGQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1048479312536-vrv22bm3ltcq7jtnl836h23pjij7pb9a.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1048479312536-o6qm0pt98c9p9p7gmvtie00pcp92835i.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "flutter.andybin.giftmoney"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

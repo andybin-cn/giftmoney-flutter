@@ -4,6 +4,7 @@ import 'dart:io';
 // import 'package:advert_support/advert_support.dart';
 import 'package:firebase_admob/firebase_admob.dart';
 import 'package:giftmoney/data_center/db_manager.dart';
+import 'package:giftmoney/model/account.dart';
 import 'package:rxdart/rxdart.dart';
 
 enum ChargeItem {
@@ -34,6 +35,24 @@ class AccountService {
     }
     return _instance;
   }
+
+  Account current = null;
+
+  // static Future<Account> initAccount() async {
+  //   if(current == null) {
+  //     var currentStr = await DBManager.instance.keyValue.valueForKey("Account_current");
+  //     try {
+  //       current = Account.fromJSON(JsonDecoder().convert(currentStr));
+  //     } catch(error) {
+  //       current = Account();
+  //       current.coin = 100;
+  //     }
+  //     // if(current.token != null) {
+  //     //   current = await ApiGraphQL.instance.refreshAccount(current);
+  //     // }
+  //   }
+  //   return current;
+  // }
 
   initAccount() async {
     // AdvertSupport.preLoadRewardVideo(adUnitId: adUnitID);

@@ -51,14 +51,14 @@ class _HomeRecordPageState extends BasePageState<HomeRecordPage> {
   Widget _renderRow(BuildContext context, int index) {
     // LeftScrollListItem
     return ClosableLeftScroll(child: TradeCell(trade: trades[index]), onTap: () async {
-      dynamic result = await NativeUtils.startWebView(url: 'https://darling-secret.herokuapp.com/share/app');
-      print("startWebView result: ${result}");
-      // Navigator.push(context,
-      //   MaterialPageRoute(builder: (context) {
-      //     return WebViewTestPage();
-      //       // return AddRecordPage(trade: trades[index]);
-      //   })
-      // );
+      // dynamic result = await NativeUtils.startWebView(url: 'https://darling-secret.herokuapp.com/share/app');
+      // print("startWebView result: ${result}");
+      Navigator.push(context,
+        MaterialPageRoute(builder: (context) {
+          // return WebViewTestPage();
+          return AddRecordPage(trade: trades[index]);
+        })
+      );
     }, buttons: <Widget>[
         LeftScrollItem(
           text: i18n.bt_delete,

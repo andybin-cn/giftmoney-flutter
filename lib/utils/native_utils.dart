@@ -24,10 +24,10 @@ class NativeUtils {
     }).toList();
   }
 
-  static startWebView({String url}) async {
+  static Future<Map<String, dynamic>> startWebView({String url}) async {
     String jsonString = await platform.invokeMethod('startWebView', { 'url': url});
-    Map<String, dynamic> user = JsonDecoder().convert(jsonString);
-    return user;
+    Map<String, dynamic> printfinger = JsonDecoder().convert(jsonString);
+    return printfinger;
   }
   
 }
