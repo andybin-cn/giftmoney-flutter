@@ -33,8 +33,8 @@ class _ContactCellState extends State<ContactCell> {
             crossAxisAlignment: CrossAxisAlignment.end,
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              Text('+ ${FormatHelper.formatCurrency(widget.contact.incomeAmount)}', style: TextStyle(fontSize: 14, color: AppColor.secondaryAppColor)),
-              Text('- ${FormatHelper.formatCurrency(widget.contact.expendAmount)}', style: TextStyle(fontSize: 14, color: AppColor.mainAppColor)),
+              Text('+ ${FormatHelper.formatCurrency(widget.contact.incomeAmount)}', style: TextStyle(fontSize: 14, color: AppColor.mainAppColor)),
+              Text('- ${FormatHelper.formatCurrency(widget.contact.expendAmount)}', style: TextStyle(fontSize: 14, color: AppColor.mainGreen)),
             ],
         ))),
         Icon(Icons.keyboard_arrow_right),

@@ -35,8 +35,8 @@ class _RelationCellState extends State<RelationCell> {
             crossAxisAlignment: CrossAxisAlignment.end,
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              Text('+ ${FormatHelper.formatCurrency(widget.relation.incomeAmount)}', style: TextStyle(fontSize: 14, color: AppColor.secondaryAppColor)),
-              Text('- ${FormatHelper.formatCurrency(widget.relation.expendAmount)}', style: TextStyle(fontSize: 14, color: AppColor.mainAppColor)),
+              Text('+ ${FormatHelper.formatCurrency(widget.relation.incomeAmount)}', style: TextStyle(fontSize: 14, color: AppColor.mainAppColor)),
+              Text('- ${FormatHelper.formatCurrency(widget.relation.expendAmount)}', style: TextStyle(fontSize: 14, color: AppColor.mainGreen)),
             ],
         ))),
         Icon(Icons.keyboard_arrow_right),

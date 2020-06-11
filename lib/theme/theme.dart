@@ -12,6 +12,11 @@ class AppColor {
   static const Color dividerColor = const Color(0xffbbbbbb);
   static const Color errorMsgColor = const Color(0xFF981C1F);
 
+  static const Color mainGreen = const Color(0xFF4CBF45);
+  static const Color secondaryGreen = const Color(0xFF4E8F4B);
+  static const Color lightGreen = const Color(0xFF95DF91);
+  
+
   static const Color goldColor = const Color(0xffFFCC00);
 }
 

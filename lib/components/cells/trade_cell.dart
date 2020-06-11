@@ -37,7 +37,7 @@ class _TradeCellState extends State<TradeCell> {
             children: <Widget>[
               Padding(
                 padding: EdgeInsets.only(bottom: 4),
-                child: Text(widget.trade.formatValue, style: TextStyle(fontSize: 16, color: widget.trade.type == SQLTradeType.inAccount ? AppColor.secondaryAppColor : AppColor.mainAppColor))),
+                child: Text(widget.trade.formatValue, style: TextStyle(fontSize: 16, color: widget.trade.type == SQLTradeType.inAccount ? AppColor.mainAppColor : AppColor.mainGreen))),
               Text(FormatHelper.dateToString(widget.trade.eventTime), style: AppTextStyle.secondaryText(12)),
             ],
           )),
