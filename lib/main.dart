@@ -66,6 +66,7 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       title: I18nUtil.shared != null ? I18nUtil.shared.app_name : '礼金小助手',
       theme: ThemeData(
+        platform: TargetPlatform.iOS,//启用右滑返回
         backgroundColor: AppColor.grayBackground,
         buttonColor: Color(0xFFEDD0BE),
         primarySwatch: MaterialColor(

@@ -35,7 +35,7 @@ class ClosableLeftScroll extends StatefulWidget {
     this.onTap,
     this.buttonWidth: 80.0,
     this.onScroll,
-    this.closeOnPop: true,
+    this.closeOnPop: false,
     this.onEnd,
     this.onTouch,
   }) : super(key: key);
