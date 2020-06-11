@@ -34,12 +34,14 @@ class _AddRecordPageState extends BasePageState<AddRecordPage> {
   void initState() { 
     super.initState();
     trade = widget.trade;
+    title = trade != null ? "修改记录" : "新增记录";
+    backgroundColor = Colors.white;
   }
 
   @override
   Widget buildBody(BuildContext context) {
     SQLTradeType initTradeType = trade?.type ?? SQLTradeType.inAccount;
-    double spacing = RatioHelper.scalePx(30);
+    double spacing = RatioHelper.scalePx(20);
     double formWidth = (ScreenUtil.screenWidthDp - spacing * 3) / 2;
     return Form(
       key: _formKey,

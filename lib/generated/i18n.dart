@@ -32,401 +32,401 @@ class I18n implements WidgetsLocalizations {
   @override
   TextDirection get textDirection => TextDirection.ltr;
 
-  /// '礼金小助手'
-  String get app_name => '礼金小助手';
-  /// '记录'
-  String get tab_record => '记录';
-  /// '所有记录'
-  String get tab_record_title => '所有记录';
-  /// '统计'
-  String get tab_chart => '统计';
-  /// '辅助'
-  String get tab_accessibility => '辅助';
-  /// '我的'
-  String get tab_mine => '我的';
-  /// '导出至Excel'
-  String get accessibilityExoprt_button => '导出至Excel';
-  /// '从Excel导入数据'
-  String get accessibilityImport_button => '从Excel导入数据';
-  /// '历史记录（导出数据）'
-  String get accessibilityHistory_button => '历史记录（导出数据）';
-  /// '推荐给好友（赚金币）'
-  String get mineInvite => '推荐给好友（赚金币）';
-  /// '设置'
-  String get mineSetting => '设置';
-  /// '关于我们'
-  String get mineAbout => '关于我们';
-  /// '《隐私政策》与《用户协议》'
-  String get minePrivacy => '《隐私政策》与《用户协议》';
-  /// '金币使用规则'
-  String get mineCoin_rules => '金币使用规则';
-  /// '意见反馈'
-  String get mineFeedback => '意见反馈';
-  /// '版本：${version}'
-  String mineAppVersion(String version) => '版本：${version}';
-  /// '1.我们没有后台服务端，所以不会收集用户的任何数据，也无法查看您的数据记录。请放心使用！\n\n2.数据完全保存在本地，对数据进行了严格的加密保护，保证数据的安全可靠！\n\n\n\n如遇到任何问题，请发送邮件至：reciprocityApp@163.com\n我们会尽快与您联系'
-  String get mineAppDescription => '1.我们没有后台服务端，所以不会收集用户的任何数据，也无法查看您的数据记录。请放心使用！\n\n2.数据完全保存在本地，对数据进行了严格的加密保护，保证数据的安全可靠！\n\n\n\n如遇到任何问题，请发送邮件至：reciprocityApp@163.com\n我们会尽快与您联系';
-  /// '朋友圈'
-  String get shareWechatTimeline => '朋友圈';
-  /// 'QQ空间'
-  String get shareQZone => 'QQ空间';
-  /// '新浪微博'
-  String get shareSina => '新浪微博';
-  /// '豆瓣'
-  String get shareDouBan => '豆瓣';
-  /// 'Facebook'
-  String get shareFacebook => 'Facebook';
-  /// '推特'
-  String get shareTwitter => '推特';
-  /// 'QQ好友'
-  String get shareQq => 'QQ好友';
-  /// '微信好友'
-  String get shareWechat => '微信好友';
-  /// '其他'
-  String get shareOther => '其他';
-  /// '已上传'
-  String get bt_upload_success => '已上传';
-  /// '未上传'
-  String get bt_upload_waiting => '未上传';
-  /// '上传失败'
-  String get bt_upload_waring => '上传失败';
-  /// '正在上传'
-  String get bt_upload_uploading => '正在上传';
-  /// '保存'
-  String get bt_save => '保存';
-  /// '删除'
-  String get bt_delete => '删除';
-  /// '姓名'
-  String get form_person_name => '姓名';
-  /// '关系'
-  String get form_relation => '关系';
-  /// '事件名称'
-  String get form_event_name => '事件名称';
-  /// '事件时间'
-  String get form_event_time => '事件时间';
-  /// '金额'
-  String get form_amount => '金额';
-  /// '礼物'
-  String get form_gift => '礼物';
-  /// '类型'
-  String get form_type => '类型';
-  /// '收份子'
-  String get form_in_account => '收份子';
-  /// '送份子'
-  String get form_out_account => '送份子';
-  /// '表单填写不正确'
-  String get form_error => '表单填写不正确';
-  /// '正在保存'
-  String get hud_saving => '正在保存';
-  /// '正在加载'
-  String get hud_loading => '正在加载';
-  /// '保存成功'
-  String get hud_save_success => '保存成功';
-  /// '好的'
-  String get alertOk_button => '好的';
-  /// '导入完成'
-  String get alertImport_result_title => '导入完成';
-  /// '成功: ${success} 条记录\n忽略: ${skipped} 条记录\n失败: ${failed} 条记录'
-  String alertImport_result(String success, String skipped, String failed) => '成功: ${success} 条记录\n忽略: ${skipped} 条记录\n失败: ${failed} 条记录';
-  /// '分组统计'
-  String get statisticsTitle => '分组统计';
-  /// '事件'
-  String get statisticsEvent_group => '事件';
-  /// '关系'
-  String get statisticsRelation_group => '关系';
-  /// '联系人'
-  String get statisticsContact_group => '联系人';
-  /// '${count}条记录'
-  String statisticsRecordCount(String count) => '${count}条记录';
-  /// '${count}个联系人'
-  String statisticsContactsCount(String count) => '${count}个联系人';
-  /// '不能为空'
-  String get validationNotEmpty => '不能为空';
-  /// '请填写金额'
-  String get validationAmount => '请填写金额';
-  /// '请填写数字'
-  String get validationNumber => '请填写数字';
-  /// '请选择日期'
-  String get validationDate_notEmpty => '请选择日期';
-  /// '请填写姓名'
-  String get validationUserName => '请填写姓名';
-  /// '请填写手机号'
-  String get validationMobile => '请填写手机号';
-  /// '请填写关系'
-  String get validationRelation => '请填写关系';
-  /// '请填写事件名称'
-  String get validationEvent_name => '请填写事件名称';
-  /// 'ID'
-  String get excelHeaderId => 'ID';
-  /// '事件ID'
-  String get excelHeaderEventID => '事件ID';
-  /// '关系ID'
-  String get excelHeaderRelationID => '关系ID';
-  /// '人物ID'
-  String get excelHeaderPersonID => '人物ID';
-  /// '创建时间'
-  String get excelHeaderCreateAt => '创建时间';
-  /// '修改时间'
-  String get excelHeaderUpdateAt => '修改时间';
-  /// '事件名称'
-  String get excelHeaderEventName => '事件名称';
-  /// '事件时间'
-  String get excelHeaderEventTime => '事件时间';
-  /// '关系'
-  String get excelHeaderRelationName => '关系';
-  /// '姓名'
-  String get excelHeaderPersonName => '姓名';
-  /// '类型'
-  String get excelHeaderType => '类型';
-  /// '数据类型'
-  String get excelHeaderValueType => '数据类型';
-  /// '金额'
-  String get excelHeaderValue => '金额';
-  /// '礼物名称'
-  String get excelHeaderGiftName => '礼物名称';
-  /// '单位'
-  String get excelHeaderUnit => '单位';
-  /// '备注'
-  String get excelHeaderRemark => '备注';
+  /// "礼金小助手"
+  String get app_name => "礼金小助手";
+  /// "记录"
+  String get tab_record => "记录";
+  /// "所有记录"
+  String get tab_record_title => "所有记录";
+  /// "统计"
+  String get tab_chart => "统计";
+  /// "辅助"
+  String get tab_accessibility => "辅助";
+  /// "我的"
+  String get tab_mine => "我的";
+  /// "导出至Excel"
+  String get accessibilityExoprt_button => "导出至Excel";
+  /// "从Excel导入数据"
+  String get accessibilityImport_button => "从Excel导入数据";
+  /// "历史记录（导出数据）"
+  String get accessibilityHistory_button => "历史记录（导出数据）";
+  /// "推荐给好友（赚金币）"
+  String get mineInvite => "推荐给好友（赚金币）";
+  /// "设置"
+  String get mineSetting => "设置";
+  /// "关于我们"
+  String get mineAbout => "关于我们";
+  /// "《隐私政策》与《用户协议》"
+  String get minePrivacy => "《隐私政策》与《用户协议》";
+  /// "金币使用规则"
+  String get mineCoin_rules => "金币使用规则";
+  /// "意见反馈"
+  String get mineFeedback => "意见反馈";
+  /// "版本：${version}"
+  String mineAppVersion(String version) => "版本：${version}";
+  /// "1.我们没有后台服务端，所以不会收集用户的任何数据，也无法查看您的数据记录。请放心使用！\n\n2.数据完全保存在本地，对数据进行了严格的加密保护，保证数据的安全可靠！\n\n\n\n如遇到任何问题，请发送邮件至：reciprocityApp@163.com\n我们会尽快与您联系"
+  String get mineAppDescription => "1.我们没有后台服务端，所以不会收集用户的任何数据，也无法查看您的数据记录。请放心使用！\n\n2.数据完全保存在本地，对数据进行了严格的加密保护，保证数据的安全可靠！\n\n\n\n如遇到任何问题，请发送邮件至：reciprocityApp@163.com\n我们会尽快与您联系";
+  /// "朋友圈"
+  String get shareWechatTimeline => "朋友圈";
+  /// "QQ空间"
+  String get shareQZone => "QQ空间";
+  /// "新浪微博"
+  String get shareSina => "新浪微博";
+  /// "豆瓣"
+  String get shareDouBan => "豆瓣";
+  /// "Facebook"
+  String get shareFacebook => "Facebook";
+  /// "推特"
+  String get shareTwitter => "推特";
+  /// "QQ好友"
+  String get shareQq => "QQ好友";
+  /// "微信好友"
+  String get shareWechat => "微信好友";
+  /// "其他"
+  String get shareOther => "其他";
+  /// "已上传"
+  String get bt_upload_success => "已上传";
+  /// "未上传"
+  String get bt_upload_waiting => "未上传";
+  /// "上传失败"
+  String get bt_upload_waring => "上传失败";
+  /// "正在上传"
+  String get bt_upload_uploading => "正在上传";
+  /// "保存"
+  String get bt_save => "保存";
+  /// "删除"
+  String get bt_delete => "删除";
+  /// "姓名"
+  String get form_person_name => "姓名";
+  /// "关系"
+  String get form_relation => "关系";
+  /// "事件名称"
+  String get form_event_name => "事件名称";
+  /// "事件时间"
+  String get form_event_time => "事件时间";
+  /// "金额"
+  String get form_amount => "金额";
+  /// "礼物"
+  String get form_gift => "礼物";
+  /// "类型"
+  String get form_type => "类型";
+  /// "收份子"
+  String get form_in_account => "收份子";
+  /// "送份子"
+  String get form_out_account => "送份子";
+  /// "表单填写不正确"
+  String get form_error => "表单填写不正确";
+  /// "正在保存"
+  String get hud_saving => "正在保存";
+  /// "正在加载"
+  String get hud_loading => "正在加载";
+  /// "保存成功"
+  String get hud_save_success => "保存成功";
+  /// "好的"
+  String get alertOk_button => "好的";
+  /// "导入完成"
+  String get alertImport_result_title => "导入完成";
+  /// "成功: ${success} 条记录\n忽略: ${skipped} 条记录\n失败: ${failed} 条记录"
+  String alertImport_result(String success, String skipped, String failed) => "成功: ${success} 条记录\n忽略: ${skipped} 条记录\n失败: ${failed} 条记录";
+  /// "分组统计"
+  String get statisticsTitle => "分组统计";
+  /// "事件"
+  String get statisticsEvent_group => "事件";
+  /// "关系"
+  String get statisticsRelation_group => "关系";
+  /// "联系人"
+  String get statisticsContact_group => "联系人";
+  /// "${count}条记录"
+  String statisticsRecordCount(String count) => "${count}条记录";
+  /// "${count}个联系人"
+  String statisticsContactsCount(String count) => "${count}个联系人";
+  /// "不能为空"
+  String get validationNotEmpty => "不能为空";
+  /// "请填写金额"
+  String get validationAmount => "请填写金额";
+  /// "请填写数字"
+  String get validationNumber => "请填写数字";
+  /// "请选择日期"
+  String get validationDate_notEmpty => "请选择日期";
+  /// "请填写姓名"
+  String get validationUserName => "请填写姓名";
+  /// "请填写手机号"
+  String get validationMobile => "请填写手机号";
+  /// "请填写关系"
+  String get validationRelation => "请填写关系";
+  /// "请填写事件名称"
+  String get validationEvent_name => "请填写事件名称";
+  /// "ID"
+  String get excelHeaderId => "ID";
+  /// "事件ID"
+  String get excelHeaderEventID => "事件ID";
+  /// "关系ID"
+  String get excelHeaderRelationID => "关系ID";
+  /// "人物ID"
+  String get excelHeaderPersonID => "人物ID";
+  /// "创建时间"
+  String get excelHeaderCreateAt => "创建时间";
+  /// "修改时间"
+  String get excelHeaderUpdateAt => "修改时间";
+  /// "事件名称"
+  String get excelHeaderEventName => "事件名称";
+  /// "事件时间"
+  String get excelHeaderEventTime => "事件时间";
+  /// "关系"
+  String get excelHeaderRelationName => "关系";
+  /// "姓名"
+  String get excelHeaderPersonName => "姓名";
+  /// "类型"
+  String get excelHeaderType => "类型";
+  /// "数据类型"
+  String get excelHeaderValueType => "数据类型";
+  /// "金额"
+  String get excelHeaderValue => "金额";
+  /// "礼物名称"
+  String get excelHeaderGiftName => "礼物名称";
+  /// "单位"
+  String get excelHeaderUnit => "单位";
+  /// "备注"
+  String get excelHeaderRemark => "备注";
 }
 
 class _I18n_en_US extends I18n {
   const _I18n_en_US();
 
-  /// 'GiftMoney'
+  /// "GiftMoney"
   @override
-  String get app_name => 'GiftMoney';
-  /// 'Record'
+  String get app_name => "GiftMoney";
+  /// "Record"
   @override
-  String get tab_record => 'Record';
-  /// 'All Record'
+  String get tab_record => "Record";
+  /// "All Record"
   @override
-  String get tab_record_title => 'All Record';
-  /// 'Statistics'
+  String get tab_record_title => "All Record";
+  /// "Statistics"
   @override
-  String get tab_chart => 'Statistics';
-  /// 'Assist'
+  String get tab_chart => "Statistics";
+  /// "Assist"
   @override
-  String get tab_accessibility => 'Assist';
-  /// 'Mine'
+  String get tab_accessibility => "Assist";
+  /// "Mine"
   @override
-  String get tab_mine => 'Mine';
-  /// 'Export Recods to Excel'
+  String get tab_mine => "Mine";
+  /// "Export Recods to Excel"
   @override
-  String get accessibilityExoprt_button => 'Export Recods to Excel';
-  /// 'Import Recods from Excel'
+  String get accessibilityExoprt_button => "Export Recods to Excel";
+  /// "Import Recods from Excel"
   @override
-  String get accessibilityImport_button => 'Import Recods from Excel';
-  /// 'Export Historys'
+  String get accessibilityImport_button => "Import Recods from Excel";
+  /// "Export Historys"
   @override
-  String get accessibilityHistory_button => 'Export Historys';
-  /// 'Recommend to earn coins'
+  String get accessibilityHistory_button => "Export Historys";
+  /// "Recommend to earn coins"
   @override
-  String get mineInvite => 'Recommend to earn coins';
-  /// 'Settings'
+  String get mineInvite => "Recommend to earn coins";
+  /// "Settings"
   @override
-  String get mineSetting => 'Settings';
-  /// 'About Me'
+  String get mineSetting => "Settings";
+  /// "About Me"
   @override
-  String get mineAbout => 'About Me';
-  /// 'Privacy Policy'
+  String get mineAbout => "About Me";
+  /// "Privacy Policy"
   @override
-  String get minePrivacy => 'Privacy Policy';
-  /// 'Rules for using gold coins'
+  String get minePrivacy => "Privacy Policy";
+  /// "Rules for using gold coins"
   @override
-  String get mineCoin_rules => 'Rules for using gold coins';
-  /// 'Feedback'
+  String get mineCoin_rules => "Rules for using gold coins";
+  /// "Feedback"
   @override
-  String get mineFeedback => 'Feedback';
-  /// 'Version:${version}'
+  String get mineFeedback => "Feedback";
+  /// "Version:${version}"
   @override
-  String mineAppVersion(String version) => 'Version:${version}';
-  /// '1. We do not have a backend server, so we will not collect any data from users, and we will not be able to view your data records. Please rest assured! \n\n2. The data is completely saved locally, and the data is strictly encrypted to ensure the safety and reliability of the data! \n\n\n\nIf you encounter any problems, please send email to: reciprocityApp@163.com \nWe will contact you as soon as possible'
+  String mineAppVersion(String version) => "Version:${version}";
+  /// "1. We do not have a backend server, so we will not collect any data from users, and we will not be able to view your data records. Please rest assured! \n\n2. The data is completely saved locally, and the data is strictly encrypted to ensure the safety and reliability of the data! \n\n\n\nIf you encounter any problems, please send email to: reciprocityApp@163.com \nWe will contact you as soon as possible"
   @override
-  String get mineAppDescription => '1. We do not have a backend server, so we will not collect any data from users, and we will not be able to view your data records. Please rest assured! \n\n2. The data is completely saved locally, and the data is strictly encrypted to ensure the safety and reliability of the data! \n\n\n\nIf you encounter any problems, please send email to: reciprocityApp@163.com \nWe will contact you as soon as possible';
-  /// 'Moment'
+  String get mineAppDescription => "1. We do not have a backend server, so we will not collect any data from users, and we will not be able to view your data records. Please rest assured! \n\n2. The data is completely saved locally, and the data is strictly encrypted to ensure the safety and reliability of the data! \n\n\n\nIf you encounter any problems, please send email to: reciprocityApp@163.com \nWe will contact you as soon as possible";
+  /// "Moment"
   @override
-  String get shareWechatTimeline => 'Moment';
-  /// 'QQZone'
+  String get shareWechatTimeline => "Moment";
+  /// "QQZone"
   @override
-  String get shareQZone => 'QQZone';
-  /// 'Sina'
+  String get shareQZone => "QQZone";
+  /// "Sina"
   @override
-  String get shareSina => 'Sina';
-  /// 'DouBan'
+  String get shareSina => "Sina";
+  /// "DouBan"
   @override
-  String get shareDouBan => 'DouBan';
-  /// 'Facebook'
+  String get shareDouBan => "DouBan";
+  /// "Facebook"
   @override
-  String get shareFacebook => 'Facebook';
-  /// 'Twitter'
+  String get shareFacebook => "Facebook";
+  /// "Twitter"
   @override
-  String get shareTwitter => 'Twitter';
-  /// 'QQ'
+  String get shareTwitter => "Twitter";
+  /// "QQ"
   @override
-  String get shareQq => 'QQ';
-  /// 'WeChat'
+  String get shareQq => "QQ";
+  /// "WeChat"
   @override
-  String get shareWechat => 'WeChat';
-  /// 'Other'
+  String get shareWechat => "WeChat";
+  /// "Other"
   @override
-  String get shareOther => 'Other';
-  /// 'done'
+  String get shareOther => "Other";
+  /// "done"
   @override
-  String get bt_upload_success => 'done';
-  /// 'waiting'
+  String get bt_upload_success => "done";
+  /// "waiting"
   @override
-  String get bt_upload_waiting => 'waiting';
-  /// 'waring'
+  String get bt_upload_waiting => "waiting";
+  /// "waring"
   @override
-  String get bt_upload_waring => 'waring';
-  /// 'doing'
+  String get bt_upload_waring => "waring";
+  /// "doing"
   @override
-  String get bt_upload_uploading => 'doing';
-  /// 'Save'
+  String get bt_upload_uploading => "doing";
+  /// "Save"
   @override
-  String get bt_save => 'Save';
-  /// 'Delete'
+  String get bt_save => "Save";
+  /// "Delete"
   @override
-  String get bt_delete => 'Delete';
-  /// 'Name'
+  String get bt_delete => "Delete";
+  /// "Name"
   @override
-  String get form_person_name => 'Name';
-  /// 'Relation'
+  String get form_person_name => "Name";
+  /// "Relation"
   @override
-  String get form_relation => 'Relation';
-  /// 'Thing'
+  String get form_relation => "Relation";
+  /// "Thing"
   @override
-  String get form_event_name => 'Thing';
-  /// 'When'
+  String get form_event_name => "Thing";
+  /// "When"
   @override
-  String get form_event_time => 'When';
-  /// 'Amount'
+  String get form_event_time => "When";
+  /// "Amount"
   @override
-  String get form_amount => 'Amount';
-  /// 'Gift'
+  String get form_amount => "Amount";
+  /// "Gift"
   @override
-  String get form_gift => 'Gift';
-  /// 'Money'
+  String get form_gift => "Gift";
+  /// "Money"
   @override
-  String get form_type => 'Money';
-  /// 'Income'
+  String get form_type => "Money";
+  /// "Income"
   @override
-  String get form_in_account => 'Income';
-  /// 'Give away'
+  String get form_in_account => "Income";
+  /// "Give away"
   @override
-  String get form_out_account => 'Give away';
-  /// 'The form was not filled out correctly'
+  String get form_out_account => "Give away";
+  /// "The form was not filled out correctly"
   @override
-  String get form_error => 'The form was not filled out correctly';
-  /// 'Saving'
+  String get form_error => "The form was not filled out correctly";
+  /// "Saving"
   @override
-  String get hud_saving => 'Saving';
-  /// 'Loading'
+  String get hud_saving => "Saving";
+  /// "Loading"
   @override
-  String get hud_loading => 'Loading';
-  /// 'Success'
+  String get hud_loading => "Loading";
+  /// "Success"
   @override
-  String get hud_save_success => 'Success';
-  /// 'OK'
+  String get hud_save_success => "Success";
+  /// "OK"
   @override
-  String get alertOk_button => 'OK';
-  /// 'improt finished'
+  String get alertOk_button => "OK";
+  /// "improt finished"
   @override
-  String get alertImport_result_title => 'improt finished';
-  /// 'Success: ${success} records\nIgnored: ${skipped} records\nFailed: ${failed} records'
+  String get alertImport_result_title => "improt finished";
+  /// "Success: ${success} records\nIgnored: ${skipped} records\nFailed: ${failed} records"
   @override
-  String alertImport_result(String success, String skipped, String failed) => 'Success: ${success} records\nIgnored: ${skipped} records\nFailed: ${failed} records';
-  /// 'Grouping statistics'
+  String alertImport_result(String success, String skipped, String failed) => "Success: ${success} records\nIgnored: ${skipped} records\nFailed: ${failed} records";
+  /// "Grouping statistics"
   @override
-  String get statisticsTitle => 'Grouping statistics';
-  /// 'Things'
+  String get statisticsTitle => "Grouping statistics";
+  /// "Things"
   @override
-  String get statisticsEvent_group => 'Things';
-  /// 'Relations'
+  String get statisticsEvent_group => "Things";
+  /// "Relations"
   @override
-  String get statisticsRelation_group => 'Relations';
-  /// 'Contacts'
+  String get statisticsRelation_group => "Relations";
+  /// "Contacts"
   @override
-  String get statisticsContact_group => 'Contacts';
-  /// '${count} Records'
+  String get statisticsContact_group => "Contacts";
+  /// "${count} Records"
   @override
-  String statisticsRecordCount(String count) => '${count} Records';
-  /// '${count} Contacts'
+  String statisticsRecordCount(String count) => "${count} Records";
+  /// "${count} Contacts"
   @override
-  String statisticsContactsCount(String count) => '${count} Contacts';
-  /// 'should not be empty'
+  String statisticsContactsCount(String count) => "${count} Contacts";
+  /// "should not be empty"
   @override
-  String get validationNotEmpty => 'should not be empty';
-  /// 'fill amount'
+  String get validationNotEmpty => "should not be empty";
+  /// "fill amount"
   @override
-  String get validationAmount => 'fill amount';
-  /// 'fill a number'
+  String get validationAmount => "fill amount";
+  /// "fill a number"
   @override
-  String get validationNumber => 'fill a number';
-  /// 'picker a Date'
+  String get validationNumber => "fill a number";
+  /// "picker a Date"
   @override
-  String get validationDate_notEmpty => 'picker a Date';
-  /// 'fill a Name'
+  String get validationDate_notEmpty => "picker a Date";
+  /// "fill a Name"
   @override
-  String get validationUserName => 'fill a Name';
-  /// 'fill a mobile'
+  String get validationUserName => "fill a Name";
+  /// "fill a mobile"
   @override
-  String get validationMobile => 'fill a mobile';
-  /// 'select the relation with the User'
+  String get validationMobile => "fill a mobile";
+  /// "select the relation with the User"
   @override
-  String get validationRelation => 'select the relation with the User';
-  /// 'fill the Thing'
+  String get validationRelation => "select the relation with the User";
+  /// "fill the Thing"
   @override
-  String get validationEvent_name => 'fill the Thing';
-  /// 'ID'
+  String get validationEvent_name => "fill the Thing";
+  /// "ID"
   @override
-  String get excelHeaderId => 'ID';
-  /// 'eventID'
+  String get excelHeaderId => "ID";
+  /// "eventID"
   @override
-  String get excelHeaderEventID => 'eventID';
-  /// 'relationID'
+  String get excelHeaderEventID => "eventID";
+  /// "relationID"
   @override
-  String get excelHeaderRelationID => 'relationID';
-  /// 'personID'
+  String get excelHeaderRelationID => "relationID";
+  /// "personID"
   @override
-  String get excelHeaderPersonID => 'personID';
-  /// 'createAt'
+  String get excelHeaderPersonID => "personID";
+  /// "createAt"
   @override
-  String get excelHeaderCreateAt => 'createAt';
-  /// 'updateAt'
+  String get excelHeaderCreateAt => "createAt";
+  /// "updateAt"
   @override
-  String get excelHeaderUpdateAt => 'updateAt';
-  /// 'eventName'
+  String get excelHeaderUpdateAt => "updateAt";
+  /// "eventName"
   @override
-  String get excelHeaderEventName => 'eventName';
-  /// 'eventTime'
+  String get excelHeaderEventName => "eventName";
+  /// "eventTime"
   @override
-  String get excelHeaderEventTime => 'eventTime';
-  /// 'relation'
+  String get excelHeaderEventTime => "eventTime";
+  /// "relation"
   @override
-  String get excelHeaderRelationName => 'relation';
-  /// 'personName'
+  String get excelHeaderRelationName => "relation";
+  /// "personName"
   @override
-  String get excelHeaderPersonName => 'personName';
-  /// 'type'
+  String get excelHeaderPersonName => "personName";
+  /// "type"
   @override
-  String get excelHeaderType => 'type';
-  /// 'valueType'
+  String get excelHeaderType => "type";
+  /// "valueType"
   @override
-  String get excelHeaderValueType => 'valueType';
-  /// 'value'
+  String get excelHeaderValueType => "valueType";
+  /// "value"
   @override
-  String get excelHeaderValue => 'value';
-  /// 'giftName'
+  String get excelHeaderValue => "value";
+  /// "giftName"
   @override
-  String get excelHeaderGiftName => 'giftName';
-  /// 'unit'
+  String get excelHeaderGiftName => "giftName";
+  /// "unit"
   @override
-  String get excelHeaderUnit => 'unit';
-  /// 'remark'
+  String get excelHeaderUnit => "unit";
+  /// "remark"
   @override
-  String get excelHeaderRemark => 'remark';
+  String get excelHeaderRemark => "remark";
 
   @override
   TextDirection get textDirection => TextDirection.ltr;
@@ -442,192 +442,192 @@ class _I18n_zh_CN extends I18n {
 class _I18n_zh_TW extends _I18n_zh_CN {
   const _I18n_zh_TW();
 
-  /// '禮金小助手'
+  /// "禮金小助手"
   @override
-  String get app_name => '禮金小助手';
-  /// '記錄'
+  String get app_name => "禮金小助手";
+  /// "記錄"
   @override
-  String get tab_record => '記錄';
-  /// '所有記錄'
+  String get tab_record => "記錄";
+  /// "所有記錄"
   @override
-  String get tab_record_title => '所有記錄';
-  /// '統計'
+  String get tab_record_title => "所有記錄";
+  /// "統計"
   @override
-  String get tab_chart => '統計';
-  /// '輔助'
+  String get tab_chart => "統計";
+  /// "輔助"
   @override
-  String get tab_accessibility => '輔助';
-  /// '我的'
+  String get tab_accessibility => "輔助";
+  /// "我的"
   @override
-  String get tab_mine => '我的';
-  /// '導出至Excel'
+  String get tab_mine => "我的";
+  /// "導出至Excel"
   @override
-  String get accessibilityExoprt_button => '導出至Excel';
-  /// '從Excel導入數據'
+  String get accessibilityExoprt_button => "導出至Excel";
+  /// "從Excel導入數據"
   @override
-  String get accessibilityImport_button => '從Excel導入數據';
-  /// '歷史記錄（導出數據）'
+  String get accessibilityImport_button => "從Excel導入數據";
+  /// "歷史記錄（導出數據）"
   @override
-  String get accessibilityHistory_button => '歷史記錄（導出數據）';
-  /// '推薦給好友（賺金幣）'
+  String get accessibilityHistory_button => "歷史記錄（導出數據）";
+  /// "推薦給好友（賺金幣）"
   @override
-  String get mineInvite => '推薦給好友（賺金幣）';
-  /// '設置'
+  String get mineInvite => "推薦給好友（賺金幣）";
+  /// "設置"
   @override
-  String get mineSetting => '設置';
-  /// '關於我們'
+  String get mineSetting => "設置";
+  /// "關於我們"
   @override
-  String get mineAbout => '關於我們';
-  /// '《隐私政策》与《用户协议》'
+  String get mineAbout => "關於我們";
+  /// "《隐私政策》与《用户协议》"
   @override
-  String get minePrivacy => '《隐私政策》与《用户协议》';
-  /// '金幣使用規則'
+  String get minePrivacy => "《隐私政策》与《用户协议》";
+  /// "金幣使用規則"
   @override
-  String get mineCoin_rules => '金幣使用規則';
-  /// '意見反饋'
+  String get mineCoin_rules => "金幣使用規則";
+  /// "意見反饋"
   @override
-  String get mineFeedback => '意見反饋';
-  /// '版本：${version}'
+  String get mineFeedback => "意見反饋";
+  /// "版本：${version}"
   @override
-  String mineAppVersion(String version) => '版本：${version}';
-  /// '1.我們沒有後台服務端，所以不會收集用戶的任何數據，也無法查看您的數據記錄。請放心使用！ \n\n2.數據完全保存在本地，對數據進行了嚴格的加密保護，保證數據的安全可靠！ \n\n\n\n如遇到任何問題，請發送郵件至：reciprocityApp@163.com\n我們會盡快與您聯繫'
+  String mineAppVersion(String version) => "版本：${version}";
+  /// "1.我們沒有後台服務端，所以不會收集用戶的任何數據，也無法查看您的數據記錄。請放心使用！ \n\n2.數據完全保存在本地，對數據進行了嚴格的加密保護，保證數據的安全可靠！ \n\n\n\n如遇到任何問題，請發送郵件至：reciprocityApp@163.com\n我們會盡快與您聯繫"
   @override
-  String get mineAppDescription => '1.我們沒有後台服務端，所以不會收集用戶的任何數據，也無法查看您的數據記錄。請放心使用！ \n\n2.數據完全保存在本地，對數據進行了嚴格的加密保護，保證數據的安全可靠！ \n\n\n\n如遇到任何問題，請發送郵件至：reciprocityApp@163.com\n我們會盡快與您聯繫';
-  /// '朋友圈'
+  String get mineAppDescription => "1.我們沒有後台服務端，所以不會收集用戶的任何數據，也無法查看您的數據記錄。請放心使用！ \n\n2.數據完全保存在本地，對數據進行了嚴格的加密保護，保證數據的安全可靠！ \n\n\n\n如遇到任何問題，請發送郵件至：reciprocityApp@163.com\n我們會盡快與您聯繫";
+  /// "朋友圈"
   @override
-  String get shareWechatTimeline => '朋友圈';
-  /// 'QQ空間'
+  String get shareWechatTimeline => "朋友圈";
+  /// "QQ空間"
   @override
-  String get shareQZone => 'QQ空間';
-  /// '新浪微博'
+  String get shareQZone => "QQ空間";
+  /// "新浪微博"
   @override
-  String get shareSina => '新浪微博';
-  /// '豆瓣'
+  String get shareSina => "新浪微博";
+  /// "豆瓣"
   @override
-  String get shareDouBan => '豆瓣';
-  /// 'Facebook'
+  String get shareDouBan => "豆瓣";
+  /// "Facebook"
   @override
-  String get shareFacebook => 'Facebook';
-  /// '推特'
+  String get shareFacebook => "Facebook";
+  /// "推特"
   @override
-  String get shareTwitter => '推特';
-  /// 'QQ好友'
+  String get shareTwitter => "推特";
+  /// "QQ好友"
   @override
-  String get shareQq => 'QQ好友';
-  /// '微信好友'
+  String get shareQq => "QQ好友";
+  /// "微信好友"
   @override
-  String get shareWechat => '微信好友';
-  /// '其他'
+  String get shareWechat => "微信好友";
+  /// "其他"
   @override
-  String get shareOther => '其他';
-  /// '已上傳'
+  String get shareOther => "其他";
+  /// "已上傳"
   @override
-  String get bt_upload_success => '已上傳';
-  /// '未上傳'
+  String get bt_upload_success => "已上傳";
+  /// "未上傳"
   @override
-  String get bt_upload_waiting => '未上傳';
-  /// '上傳失敗'
+  String get bt_upload_waiting => "未上傳";
+  /// "上傳失敗"
   @override
-  String get bt_upload_waring => '上傳失敗';
-  /// '正在上傳'
+  String get bt_upload_waring => "上傳失敗";
+  /// "正在上傳"
   @override
-  String get bt_upload_uploading => '正在上傳';
-  /// '保存'
+  String get bt_upload_uploading => "正在上傳";
+  /// "保存"
   @override
-  String get bt_save => '保存';
-  /// '刪除'
+  String get bt_save => "保存";
+  /// "刪除"
   @override
-  String get bt_delete => '刪除';
-  /// '姓名'
+  String get bt_delete => "刪除";
+  /// "姓名"
   @override
-  String get form_person_name => '姓名';
-  /// '關係'
+  String get form_person_name => "姓名";
+  /// "關係"
   @override
-  String get form_relation => '關係';
-  /// '事件名稱'
+  String get form_relation => "關係";
+  /// "事件名稱"
   @override
-  String get form_event_name => '事件名稱';
-  /// '事件時間'
+  String get form_event_name => "事件名稱";
+  /// "事件時間"
   @override
-  String get form_event_time => '事件時間';
-  /// '金額'
+  String get form_event_time => "事件時間";
+  /// "金額"
   @override
-  String get form_amount => '金額';
-  /// '禮物'
+  String get form_amount => "金額";
+  /// "禮物"
   @override
-  String get form_gift => '禮物';
-  /// '類型'
+  String get form_gift => "禮物";
+  /// "類型"
   @override
-  String get form_type => '類型';
-  /// '收份子'
+  String get form_type => "類型";
+  /// "收份子"
   @override
-  String get form_in_account => '收份子';
-  /// '送份子'
+  String get form_in_account => "收份子";
+  /// "送份子"
   @override
-  String get form_out_account => '送份子';
-  /// '表單填寫不正確'
+  String get form_out_account => "送份子";
+  /// "表單填寫不正確"
   @override
-  String get form_error => '表單填寫不正確';
-  /// '正在保存'
+  String get form_error => "表單填寫不正確";
+  /// "正在保存"
   @override
-  String get hud_saving => '正在保存';
-  /// '正在加載'
+  String get hud_saving => "正在保存";
+  /// "正在加載"
   @override
-  String get hud_loading => '正在加載';
-  /// '保存成功'
+  String get hud_loading => "正在加載";
+  /// "保存成功"
   @override
-  String get hud_save_success => '保存成功';
-  /// '好的'
+  String get hud_save_success => "保存成功";
+  /// "好的"
   @override
-  String get alertOk_button => '好的';
-  /// '導入完成'
+  String get alertOk_button => "好的";
+  /// "導入完成"
   @override
-  String get alertImport_result_title => '導入完成';
-  /// '成功: ${success} 條記錄\n忽略: ${skipped} 條記錄\n失敗: ${failed} 條記錄'
+  String get alertImport_result_title => "導入完成";
+  /// "成功: ${success} 條記錄\n忽略: ${skipped} 條記錄\n失敗: ${failed} 條記錄"
   @override
-  String alertImport_result(String success, String skipped, String failed) => '成功: ${success} 條記錄\n忽略: ${skipped} 條記錄\n失敗: ${failed} 條記錄';
-  /// '分組統計'
+  String alertImport_result(String success, String skipped, String failed) => "成功: ${success} 條記錄\n忽略: ${skipped} 條記錄\n失敗: ${failed} 條記錄";
+  /// "分組統計"
   @override
-  String get statisticsTitle => '分組統計';
-  /// '事件'
+  String get statisticsTitle => "分組統計";
+  /// "事件"
   @override
-  String get statisticsEvent_group => '事件';
-  /// '關係'
+  String get statisticsEvent_group => "事件";
+  /// "關係"
   @override
-  String get statisticsRelation_group => '關係';
-  /// '聯繫人'
+  String get statisticsRelation_group => "關係";
+  /// "聯繫人"
   @override
-  String get statisticsContact_group => '聯繫人';
-  /// '${count}條記錄'
+  String get statisticsContact_group => "聯繫人";
+  /// "${count}條記錄"
   @override
-  String statisticsRecordCount(String count) => '${count}條記錄';
-  /// '${count}個聯繫人'
+  String statisticsRecordCount(String count) => "${count}條記錄";
+  /// "${count}個聯繫人"
   @override
-  String statisticsContactsCount(String count) => '${count}個聯繫人';
-  /// '不能為空'
+  String statisticsContactsCount(String count) => "${count}個聯繫人";
+  /// "不能為空"
   @override
-  String get validationNotEmpty => '不能為空';
-  /// '請填寫金額'
+  String get validationNotEmpty => "不能為空";
+  /// "請填寫金額"
   @override
-  String get validationAmount => '請填寫金額';
-  /// '請填寫數字'
+  String get validationAmount => "請填寫金額";
+  /// "請填寫數字"
   @override
-  String get validationNumber => '請填寫數字';
-  /// '請選擇日期'
+  String get validationNumber => "請填寫數字";
+  /// "請選擇日期"
   @override
-  String get validationDate_notEmpty => '請選擇日期';
-  /// '請填寫姓名'
+  String get validationDate_notEmpty => "請選擇日期";
+  /// "請填寫姓名"
   @override
-  String get validationUserName => '請填寫姓名';
-  /// '請填寫手機號'
+  String get validationUserName => "請填寫姓名";
+  /// "請填寫手機號"
   @override
-  String get validationMobile => '請填寫手機號';
-  /// '請填寫關係'
+  String get validationMobile => "請填寫手機號";
+  /// "請填寫關係"
   @override
-  String get validationRelation => '請填寫關係';
-  /// '請填寫事件名稱'
+  String get validationRelation => "請填寫關係";
+  /// "請填寫事件名稱"
   @override
-  String get validationEvent_name => '請填寫事件名稱';
+  String get validationEvent_name => "請填寫事件名稱";
 
   @override
   TextDirection get textDirection => TextDirection.ltr;
@@ -636,186 +636,192 @@ class _I18n_zh_TW extends _I18n_zh_CN {
 class _I18n_zh_HK extends _I18n_zh_CN {
   const _I18n_zh_HK();
 
-  /// '禮金小助手'
+  /// "禮金小助手"
   @override
-  String get app_name => '禮金小助手';
-  /// '記錄'
+  String get app_name => "禮金小助手";
+  /// "記錄"
   @override
-  String get tab_record => '記錄';
-  /// '所有記錄'
+  String get tab_record => "記錄";
+  /// "所有記錄"
   @override
-  String get tab_record_title => '所有記錄';
-  /// '統計'
+  String get tab_record_title => "所有記錄";
+  /// "統計"
   @override
-  String get tab_chart => '統計';
-  /// '輔助'
+  String get tab_chart => "統計";
+  /// "輔助"
   @override
-  String get tab_accessibility => '輔助';
-  /// '我的'
+  String get tab_accessibility => "輔助";
+  /// "我的"
   @override
-  String get tab_mine => '我的';
-  /// '導出至Excel'
+  String get tab_mine => "我的";
+  /// "導出至Excel"
   @override
-  String get accessibilityExoprt_button => '導出至Excel';
-  /// '從Excel導入數據'
+  String get accessibilityExoprt_button => "導出至Excel";
+  /// "從Excel導入數據"
   @override
-  String get accessibilityImport_button => '從Excel導入數據';
-  /// '歷史記錄（導出數據）'
+  String get accessibilityImport_button => "從Excel導入數據";
+  /// "歷史記錄（導出數據）"
   @override
-  String get accessibilityHistory_button => '歷史記錄（導出數據）';
-  /// '推薦給好友（賺金幣）'
+  String get accessibilityHistory_button => "歷史記錄（導出數據）";
+  /// "推薦給好友（賺金幣）"
   @override
-  String get mineInvite => '推薦給好友（賺金幣）';
-  /// '設置'
+  String get mineInvite => "推薦給好友（賺金幣）";
+  /// "設置"
   @override
-  String get mineSetting => '設置';
-  /// '關於我們'
+  String get mineSetting => "設置";
+  /// "關於我們"
   @override
-  String get mineAbout => '關於我們';
-  /// '《隐私政策》与《用户协议》'
+  String get mineAbout => "關於我們";
+  /// "《隐私政策》与《用户协议》"
   @override
-  String get minePrivacy => '《隐私政策》与《用户协议》';
-  /// '金幣使用規則'
+  String get minePrivacy => "《隐私政策》与《用户协议》";
+  /// "金幣使用規則"
   @override
-  String get mineCoin_rules => '金幣使用規則';
-  /// '意見反饋'
+  String get mineCoin_rules => "金幣使用規則";
+  /// "意見反饋"
   @override
-  String get mineFeedback => '意見反饋';
-  /// '版本：${version}'
+  String get mineFeedback => "意見反饋";
+  /// "版本：${version}"
   @override
-  String mineAppVersion(String version) => '版本：${version}';
-  /// '1.我們沒有後台服務端，所以不會收集用戶的任何數據，也無法查看您的數據記錄。請放心使用！ \n\n2.數據完全保存在本地，對數據進行了嚴格的加密保護，保證數據的安全可靠！ \n\n\n\n如遇到任何問題，請發送郵件至：reciprocityApp@163.com\n我們會盡快與您聯繫'
+  String mineAppVersion(String version) => "版本：${version}";
+  /// "1.我們沒有後台服務端，所以不會收集用戶的任何數據，也無法查看您的數據記錄。請放心使用！ \n\n2.數據完全保存在本地，對數據進行了嚴格的加密保護，保證數據的安全可靠！ \n\n\n\n如遇到任何問題，請發送郵件至：reciprocityApp@163.com\n我們會盡快與您聯繫"
   @override
-  String get mineAppDescription => '1.我們沒有後台服務端，所以不會收集用戶的任何數據，也無法查看您的數據記錄。請放心使用！ \n\n2.數據完全保存在本地，對數據進行了嚴格的加密保護，保證數據的安全可靠！ \n\n\n\n如遇到任何問題，請發送郵件至：reciprocityApp@163.com\n我們會盡快與您聯繫';
-  /// '朋友圈'
+  String get mineAppDescription => "1.我們沒有後台服務端，所以不會收集用戶的任何數據，也無法查看您的數據記錄。請放心使用！ \n\n2.數據完全保存在本地，對數據進行了嚴格的加密保護，保證數據的安全可靠！ \n\n\n\n如遇到任何問題，請發送郵件至：reciprocityApp@163.com\n我們會盡快與您聯繫";
+  /// "朋友圈"
   @override
-  String get shareWechatTimeline => '朋友圈';
-  /// 'QQ空間'
+  String get shareWechatTimeline => "朋友圈";
+  /// "QQ空間"
   @override
-  String get shareQZone => 'QQ空間';
-  /// '新浪微博'
+  String get shareQZone => "QQ空間";
+  /// "新浪微博"
   @override
-  String get shareSina => '新浪微博';
-  /// '豆瓣'
+  String get shareSina => "新浪微博";
+  /// "豆瓣"
   @override
-  String get shareDouBan => '豆瓣';
-  /// 'Facebook'
+  String get shareDouBan => "豆瓣";
+  /// "Facebook"
   @override
-  String get shareFacebook => 'Facebook';
-  /// '推特'
+  String get shareFacebook => "Facebook";
+  /// "推特"
   @override
-  String get shareTwitter => '推特';
-  /// '其他'
+  String get shareTwitter => "推特";
+  /// "QQ好友"
   @override
-  String get shareOther => '其他';
-  /// '已上傳'
+  String get shareQq => "QQ好友";
+  /// "微信好友"
   @override
-  String get bt_upload_success => '已上傳';
-  /// '未上傳'
+  String get shareWechat => "微信好友";
+  /// "其他"
   @override
-  String get bt_upload_waiting => '未上傳';
-  /// '上傳失敗'
+  String get shareOther => "其他";
+  /// "已上傳"
   @override
-  String get bt_upload_waring => '上傳失敗';
-  /// '正在上傳'
+  String get bt_upload_success => "已上傳";
+  /// "未上傳"
   @override
-  String get bt_upload_uploading => '正在上傳';
-  /// '保存'
+  String get bt_upload_waiting => "未上傳";
+  /// "上傳失敗"
   @override
-  String get bt_save => '保存';
-  /// '刪除'
+  String get bt_upload_waring => "上傳失敗";
+  /// "正在上傳"
   @override
-  String get bt_delete => '刪除';
-  /// '姓名'
+  String get bt_upload_uploading => "正在上傳";
+  /// "保存"
   @override
-  String get form_person_name => '姓名';
-  /// '關係'
+  String get bt_save => "保存";
+  /// "刪除"
   @override
-  String get form_relation => '關係';
-  /// '事件名稱'
+  String get bt_delete => "刪除";
+  /// "姓名"
   @override
-  String get form_event_name => '事件名稱';
-  /// '事件時間'
+  String get form_person_name => "姓名";
+  /// "關係"
   @override
-  String get form_event_time => '事件時間';
-  /// '金額'
+  String get form_relation => "關係";
+  /// "事件名稱"
   @override
-  String get form_amount => '金額';
-  /// '禮物'
+  String get form_event_name => "事件名稱";
+  /// "事件時間"
   @override
-  String get form_gift => '禮物';
-  /// '類型'
+  String get form_event_time => "事件時間";
+  /// "金額"
   @override
-  String get form_type => '類型';
-  /// '收份子'
+  String get form_amount => "金額";
+  /// "禮物"
   @override
-  String get form_in_account => '收份子';
-  /// '送份子'
+  String get form_gift => "禮物";
+  /// "類型"
   @override
-  String get form_out_account => '送份子';
-  /// '表單填寫不正確'
+  String get form_type => "類型";
+  /// "收份子"
   @override
-  String get form_error => '表單填寫不正確';
-  /// '正在保存'
+  String get form_in_account => "收份子";
+  /// "送份子"
   @override
-  String get hud_saving => '正在保存';
-  /// '正在加載'
+  String get form_out_account => "送份子";
+  /// "表單填寫不正確"
   @override
-  String get hud_loading => '正在加載';
-  /// '保存成功'
+  String get form_error => "表單填寫不正確";
+  /// "正在保存"
   @override
-  String get hud_save_success => '保存成功';
-  /// '好的'
+  String get hud_saving => "正在保存";
+  /// "正在加載"
   @override
-  String get alertOk_button => '好的';
-  /// '導入完成'
+  String get hud_loading => "正在加載";
+  /// "保存成功"
   @override
-  String get alertImport_result_title => '導入完成';
-  /// '成功: ${success} 條記錄\n忽略: ${skipped} 條記錄\n失敗: ${failed} 條記錄'
+  String get hud_save_success => "保存成功";
+  /// "好的"
   @override
-  String alertImport_result(String success, String skipped, String failed) => '成功: ${success} 條記錄\n忽略: ${skipped} 條記錄\n失敗: ${failed} 條記錄';
-  /// '分組統計'
+  String get alertOk_button => "好的";
+  /// "導入完成"
   @override
-  String get statisticsTitle => '分組統計';
-  /// '事件'
+  String get alertImport_result_title => "導入完成";
+  /// "成功: ${success} 條記錄\n忽略: ${skipped} 條記錄\n失敗: ${failed} 條記錄"
   @override
-  String get statisticsEvent_group => '事件';
-  /// '關係'
+  String alertImport_result(String success, String skipped, String failed) => "成功: ${success} 條記錄\n忽略: ${skipped} 條記錄\n失敗: ${failed} 條記錄";
+  /// "分組統計"
   @override
-  String get statisticsRelation_group => '關係';
-  /// '聯繫人'
+  String get statisticsTitle => "分組統計";
+  /// "事件"
   @override
-  String get statisticsContact_group => '聯繫人';
-  /// '${count}條記錄'
+  String get statisticsEvent_group => "事件";
+  /// "關係"
   @override
-  String statisticsRecordCount(String count) => '${count}條記錄';
-  /// '${count}個聯繫人'
+  String get statisticsRelation_group => "關係";
+  /// "聯繫人"
   @override
-  String statisticsContactsCount(String count) => '${count}個聯繫人';
-  /// '不能為空'
+  String get statisticsContact_group => "聯繫人";
+  /// "${count}條記錄"
   @override
-  String get validationNotEmpty => '不能為空';
-  /// '請填寫金額'
+  String statisticsRecordCount(String count) => "${count}條記錄";
+  /// "${count}個聯繫人"
   @override
-  String get validationAmount => '請填寫金額';
-  /// '請填寫數字'
+  String statisticsContactsCount(String count) => "${count}個聯繫人";
+  /// "不能為空"
   @override
-  String get validationNumber => '請填寫數字';
-  /// '請選擇日期'
+  String get validationNotEmpty => "不能為空";
+  /// "請填寫金額"
   @override
-  String get validationDate_notEmpty => '請選擇日期';
-  /// '請填寫姓名'
+  String get validationAmount => "請填寫金額";
+  /// "請填寫數字"
   @override
-  String get validationUserName => '請填寫姓名';
-  /// '請填寫手機號'
+  String get validationNumber => "請填寫數字";
+  /// "請選擇日期"
   @override
-  String get validationMobile => '請填寫手機號';
-  /// '請填寫關係'
+  String get validationDate_notEmpty => "請選擇日期";
+  /// "請填寫姓名"
   @override
-  String get validationRelation => '請填寫關係';
-  /// '請填寫事件名稱'
+  String get validationUserName => "請填寫姓名";
+  /// "請填寫手機號"
   @override
-  String get validationEvent_name => '請填寫事件名稱';
+  String get validationMobile => "請填寫手機號";
+  /// "請填寫關係"
+  @override
+  String get validationRelation => "請填寫關係";
+  /// "請填寫事件名稱"
+  @override
+  String get validationEvent_name => "請填寫事件名稱";
 
   @override
   TextDirection get textDirection => TextDirection.ltr;
@@ -825,10 +831,10 @@ class GeneratedLocalizationsDelegate extends LocalizationsDelegate<WidgetsLocali
   const GeneratedLocalizationsDelegate();
   List<Locale> get supportedLocales {
     return const <Locale>[
-      Locale('en', 'US'),
-      Locale('zh', 'CN'),
-      Locale('zh', 'TW'),
-      Locale('zh', 'HK')
+      Locale("en", "US"),
+      Locale("zh", "CN"),
+      Locale("zh", "TW"),
+      Locale("zh", "HK")
     ];
   }
 
@@ -846,24 +852,24 @@ class GeneratedLocalizationsDelegate extends LocalizationsDelegate<WidgetsLocali
   Future<WidgetsLocalizations> load(Locale locale) {
     I18n._locale ??= locale;
     I18n._shouldReload = false;
-    final String lang = I18n._locale != null ? I18n._locale.toString() : '';
-    final String languageCode = I18n._locale != null ? I18n._locale.languageCode : '';
-    if ('en_US' == lang) {
+    final String lang = I18n._locale != null ? I18n._locale.toString() : "";
+    final String languageCode = I18n._locale != null ? I18n._locale.languageCode : "";
+    if ("en_US" == lang) {
       return SynchronousFuture<WidgetsLocalizations>(const _I18n_en_US());
     }
-    else if ('zh_CN' == lang) {
+    else if ("zh_CN" == lang) {
       return SynchronousFuture<WidgetsLocalizations>(const _I18n_zh_CN());
     }
-    else if ('zh_TW' == lang) {
+    else if ("zh_TW" == lang) {
       return SynchronousFuture<WidgetsLocalizations>(const _I18n_zh_TW());
     }
-    else if ('zh_HK' == lang) {
+    else if ("zh_HK" == lang) {
       return SynchronousFuture<WidgetsLocalizations>(const _I18n_zh_HK());
     }
-    else if ('en' == languageCode) {
+    else if ("en" == languageCode) {
       return SynchronousFuture<WidgetsLocalizations>(const _I18n_en_US());
     }
-    else if ('zh' == languageCode) {
+    else if ("zh" == languageCode) {
       return SynchronousFuture<WidgetsLocalizations>(const _I18n_zh_CN());
     }
 

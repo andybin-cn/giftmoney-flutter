@@ -43,7 +43,7 @@ class _ImageShowcaseState extends State<ImageShowcase> {
         borderRadius: BorderRadius.circular(6),
       ),
       width: ScreenUtil.screenWidth,
-      margin: EdgeInsets.all(RatioHelper.scalePx(30)),
+      margin: EdgeInsets.all(RatioHelper.scalePx(20)),
       padding: EdgeInsets.all(RatioHelper.scalePx(10)),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,

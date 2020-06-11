@@ -8,6 +8,7 @@ import 'package:giftmoney/pages/home_accessibility_page.dart';
 import 'package:giftmoney/pages/home_chart_page.dart';
 import 'package:giftmoney/pages/home_mine_page.dart';
 import 'package:giftmoney/pages/home_record_page.dart';
+import 'package:giftmoney/theme/theme.dart';
 import 'package:giftmoney/utils/i18n_util.dart';
 import 'package:giftmoney/utils/screen_util.dart';
 
@@ -79,7 +80,7 @@ class _MainTabPageState extends BasePageState<MainTabPage> {
             Align(
               alignment: Alignment.topCenter,
               child: FlatButton(
-                  child: Image.asset('assets/images/icons8-add_filled.png', width: 40, height: 40,),
+                  child: Image.asset('assets/images/icons8-add_filled.png', width: 40, height: 40),
                   onPressed: () {
                     Navigator.push(context,
                       MaterialPageRoute(builder: (context) {

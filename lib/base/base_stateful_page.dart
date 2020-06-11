@@ -15,6 +15,7 @@ abstract class BaseStatefulPage extends StatefulWidget with RatioHelper {
 class BasePageState<T extends BaseStatefulPage> extends BaseState<T> with RatioHelper {
   I18n i18n;
   String title = '';
+  Color backgroundColor = Color(0xFFDFE0E1);
   @override
   void initState() {
     super.initState();
@@ -24,7 +25,6 @@ class BasePageState<T extends BaseStatefulPage> extends BaseState<T> with RatioH
   Widget build(BuildContext context) {
     i18n = I18n.of(context);
     return buildContainer(context);
-    
   }
 
   Widget buildContainer(BuildContext context) {
@@ -34,7 +34,7 @@ class BasePageState<T extends BaseStatefulPage> extends BaseState<T> with RatioH
         title: Text(title),
         actions: appBarActions(),
       ),
-      backgroundColor: Color(0xFFDFE0E1),
+      backgroundColor: backgroundColor,
       body: GestureDetector(
         onTap: () {
           FocusScope.of(context).requestFocus(FocusNode());

@@ -60,24 +60,27 @@ class _MyAppState extends State<MyApp> {
 
   @override
   Widget build(BuildContext context) {
+    // if(loadingApp) {
+    //   return WelcomePage();
+    // }
     return MaterialApp(
       title: I18nUtil.shared != null ? I18nUtil.shared.app_name : '礼金小助手',
       theme: ThemeData(
         backgroundColor: AppColor.grayBackground,
         buttonColor: Color(0xFFEDD0BE),
         primarySwatch: MaterialColor(
-          0xFFE03636,
+          0xFFEA5557,
           <int, Color>{
             50: Color(0xFFFFEBEE),
-            100: Color(0xFFFFCDD2),
-            200: Color(0xFFFF534D),
-            300: Color(0xFFE53935),
-            400: Color(0xFFE53935),
-            500: Color(0xFFE03636),
-            600: Color(0xFFD32F2F),
-            700: Color(0xFFC62828),
-            800: Color(0xFFC62828),
-            900: Color(0xFFB71C1C),
+            100: Color(0xFFF49FA1),
+            200: Color(0xFFF49FA1),
+            300: Color(0xFFF48083),
+            400: Color(0xFFF48083),
+            500: Color(0xFFEA5557),
+            600: Color(0xFFB05C5E),
+            700: Color(0xFFB05C5E),
+            800: Color(0xFF981C1F),
+            900: Color(0xFF981C1F),
           },
         ),
       ),
