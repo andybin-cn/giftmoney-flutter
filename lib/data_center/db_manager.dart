@@ -1,5 +1,6 @@
 
 import 'package:giftmoney/data_center/key_value_table.dart';
+import 'package:giftmoney/data_center/trade_media_table.dart';
 import 'package:giftmoney/data_center/trade_table.dart';
 import 'package:sqflite/sqflite.dart';
 import 'dart:core';
@@ -36,6 +37,7 @@ class DBManager {
 
   Database database;
   TradeTable tradeTable;
+  TradeMediaTable tradeMediaTable;
   KeyValueTable keyValue;
   Future<Null> initDB() async {
     var databasesPath = await getDatabasesPath();
@@ -48,14 +50,17 @@ class DBManager {
       version: 1,
       onCreate: (Database db, int version) async {
         await TradeTable(database: db).onCreate(db, version);
+        await TradeMediaTable(database: db).onCreate(db, version);
         await KeyValueTable(database: db).onCreate(db, version);
       },
       onUpgrade: (Database db, int oldVersion, int newVersion) async {
         await TradeTable(database: db).onUpgrade(db, oldVersion, newVersion);
+        await TradeMediaTable(database: db).onUpgrade(db, oldVersion, newVersion);
         await KeyValueTable(database: db).onUpgrade(db, oldVersion, newVersion);
       }
     );
     tradeTable = TradeTable(database: database);
+    tradeMediaTable = TradeMediaTable(database: database);
     keyValue = KeyValueTable(database: database);
   }
 }

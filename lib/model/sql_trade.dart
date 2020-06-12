@@ -1,4 +1,7 @@
+import 'dart:convert';
+
 import 'package:giftmoney/json_mapper/mappable.dart';
+import 'package:giftmoney/model/sql_trade_media.dart';
 import 'package:giftmoney/utils/format_helper.dart';
 
 enum SQLTradeType {
@@ -44,9 +47,14 @@ class SQLTrade extends Mappable {
   String giftName;
   String unit;
   String remark;
+  List<SQLTradeMedia> medias;
 
   SQLTradeType type;
   SQLTradeValueType valueType;
+
+  List<String> get images {
+    return medias.map((e) => jsonEncode(e.toJSON())).toList();
+  }
 
   SQLTrade() : super.fromJSON(null);
 
@@ -65,6 +73,7 @@ class SQLTrade extends Mappable {
     giftName = transformBasic(map['giftName']);
     unit = transformBasic(map['unit']);
     remark = transformBasic(map['remark']);
+    // images = transformList(map['images']) ?? [];
 
     type = transformEnum(map['type'], SQLTradeTypeMap);
     valueType = transformEnum(map['valueType'], SQLTradeValueTypeMap);
@@ -88,7 +97,8 @@ class SQLTrade extends Mappable {
       'value': value,
       'giftName': giftName,
       'unit': unit,
-      'remark': remark
+      'remark': remark,
+      // 'images': jsonEncode(images)
     };
   }
 

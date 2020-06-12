@@ -2,6 +2,7 @@ import 'package:giftmoney/data_center/db_manager.dart';
 import 'package:giftmoney/model/sql_contact.dart';
 import 'package:giftmoney/model/sql_event.dart';
 import 'package:giftmoney/model/sql_trade.dart';
+import 'package:giftmoney/model/sql_trade_media.dart';
 import 'package:sqflite/sqflite.dart';
 
 class TradeTable extends SQLTable {
@@ -59,15 +60,21 @@ class TradeTable extends SQLTable {
       int limit = 100,
       int offset = 0}) async {
     var tradeRows = await database.query("SQLTrade",distinct: distinct, columns: columns, where: where, whereArgs: whereArgs, groupBy: groupBy, having: having, orderBy: orderBy, limit: limit, offset: offset);
-    return tradeRows.map((row) {
-      return SQLTrade.fromJSON(row);
-    }).toList();
+    var trades = [];
+    for (var row in tradeRows) {
+      var trade = SQLTrade.fromJSON(row);
+      trade.medias = await DBManager.instance.tradeMediaTable.queryTradeByUUID(tradeID: trade.uuid);
+      trades.add(trade);
+    }
+    return trades;
   }
 
   Future<SQLTrade> queryTradeByUUID({uuid: String}) async {
     var tradeRows = await database.query("SQLTrade", where: "uuid = ?", whereArgs: [uuid]);
     if(tradeRows.length > 0) {
-      return SQLTrade.fromJSON(tradeRows.first);
+      var trade = SQLTrade.fromJSON(tradeRows.first);
+      trade.medias = await DBManager.instance.tradeMediaTable.queryTradeByUUID(tradeID: trade.uuid);
+      return trade;
     } else {
       return null;
     }

@@ -8,6 +8,7 @@ import 'package:giftmoney/components/small_parts/image_showcase.dart';
 import 'package:giftmoney/model/sql_trade.dart';
 import 'package:giftmoney/pages/image_preview_page.dart';
 import 'package:giftmoney/service/account_service.dart';
+import 'package:giftmoney/service/image_service.dart';
 import 'package:giftmoney/service/trade_service.dart';
 import 'package:giftmoney/utils/CommonError.dart';
 import 'package:giftmoney/utils/charge_item_check_help.dart';
@@ -28,6 +29,8 @@ class _AddRecordPageState extends BasePageState<AddRecordPage> {
   final _formKey = GlobalKey<FormState>();
   SQLTrade trade;
   List<String> images = [];
+  List<String> needDelImages = [];
+  List<String> needSaveImages = [];
   final ImagePicker picker = ImagePicker();
 
   @override
@@ -35,6 +38,9 @@ class _AddRecordPageState extends BasePageState<AddRecordPage> {
     super.initState();
     trade = widget.trade;
     title = trade != null ? "修改记录" : "新增记录";
+    if(trade != null) {
+      images = trade.images ?? [];
+    }
     backgroundColor = Colors.white;
   }
 
@@ -130,9 +136,7 @@ class _AddRecordPageState extends BasePageState<AddRecordPage> {
                       onTap: () async {
                         Navigator.pop(context);
                         final pickedFile = await this.picker.getImage(source: ImageSource.camera);
-                        this.setState(() {
-                          images.add(pickedFile.path);
-                        });
+                        this.onImageAdded(pickedFile.path);
                       },
                     ),
                     new ListTile(
@@ -141,9 +145,7 @@ class _AddRecordPageState extends BasePageState<AddRecordPage> {
                       onTap: () async {
                         Navigator.pop(context);
                         final pickedFile = await this.picker.getImage(source: ImageSource.gallery);
-                        this.setState((){
-                          images.add(pickedFile.path);
-                        });
+                        this.onImageAdded(pickedFile.path);
                       },
                     ),
                   ],
@@ -156,10 +158,7 @@ class _AddRecordPageState extends BasePageState<AddRecordPage> {
                 MaterialPageRoute(builder: (context) {
                     return ImagePreviewPage(imagePath: imagePath, onDeletePress: () {
                       Navigator.pop(context);
-                      this.images.remove(imagePath);
-                      this.setState(() {
-                        this.images.remove(imagePath);
-                      });
+                      this.onImageDeleted(imagePath);
                     },);
                 })
               );
@@ -198,6 +197,24 @@ class _AddRecordPageState extends BasePageState<AddRecordPage> {
     );
   }
 
+  onImageAdded(imagePath) {
+    this.setState(() {
+      images.add(imagePath);
+      needSaveImages.add(imagePath);
+      needDelImages.remove(imagePath);
+    });
+  }
+  onImageDeleted(imagePath) {
+    this.setState(() {
+      if(needSaveImages.contains(imagePath)) {
+        needSaveImages.remove(imagePath);
+      } else {
+        needDelImages.add(imagePath);
+      }
+      images.remove(imagePath);
+    });
+  }
+
   Future<SQLTrade> saveForm() async {
     if (!_formKey.currentState.validate()) {
       throw CommonError(i18n.form_error);
@@ -207,6 +224,22 @@ class _AddRecordPageState extends BasePageState<AddRecordPage> {
     if(widget.trade?.uuid != null) {
       trade.uuid = widget.trade?.uuid;
     }
+    for (var path in needSaveImages) {
+      var newPath = await ImageService.instance.saveImage(path);
+      var index = images.indexOf(path);
+      if(index >= 0) {
+        images.removeAt(index);
+        images.insert(index, newPath);
+      } else {
+        images.add(newPath);
+      }
+    }
+    trade.images = images;
+    for (var path in needDelImages) {
+      await ImageService.instance.deleteImage(path);
+    }
+    needDelImages = [];
+    needSaveImages = [];
     trade = await TradeService.instance.saveTrade(trade);
     return trade;
   }

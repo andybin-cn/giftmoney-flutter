@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 abstract class Mappable {
   Mappable.fromJSON(Map<String, dynamic> map);
   Map<String, dynamic> toJSON();
@@ -34,6 +36,18 @@ abstract class Mappable {
 
   String serializeEnum<T>(dynamic jsonValue, Map<String, T> maps) {
     return maps.entries.firstWhere((e) => e.value == jsonValue, orElse: () => null )?.key;
+  }
+
+  List<T> transformList<T>(dynamic jsonValue) {
+    if(jsonValue is List) {
+      return jsonValue.map((e) => this.transformBasic<T>(e)).toList();
+    } else {
+      var listValue = JsonDecoder().convert(jsonValue.toString());
+      if(listValue is List) {
+        return listValue.map((e) => this.transformBasic<T>(e)).toList();
+      }
+    }
+    return null;
   }
 }
 

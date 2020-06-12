@@ -9,6 +9,7 @@ import 'package:giftmoney/model/sql_event.dart';
 import 'package:giftmoney/model/sql_relation.dart';
 import 'package:giftmoney/model/sql_trade.dart';
 import 'package:giftmoney/service/account_service.dart';
+import 'package:giftmoney/service/image_service.dart';
 import 'package:giftmoney/service/xls_parse_service.dart';
 import 'package:giftmoney/utils/format_helper.dart';
 import 'package:giftmoney/utils/i18n_util.dart';
@@ -52,6 +53,9 @@ class TradeService {
   }
 
   Future<int> deleteTrade(SQLTrade trade) async {
+    for (var imagePath in trade.images) {
+      await ImageService.instance.deleteImage(imagePath);
+    }
     var result = await DBManager.instance.tradeTable.deleteTrade(trade);
     if(result > 0) {
       tradeStream.add(ObjectEvent<SQLTrade>(object: trade, event: ObjectEventType.delete));
