@@ -1,4 +1,5 @@
 import 'package:giftmoney/model/account.dart';
+import 'package:giftmoney/model/author_anonymous_req.dart';
 import 'package:giftmoney/utils/CommonError.dart';
 import 'package:graphql/client.dart';
 
@@ -45,19 +46,35 @@ class ApiGraphQL {
     //todo
   }
 
-  Future<Map<String, dynamic>> matchInviteCode(Map<String, dynamic> fingerprint) async {
+  Future<Map<String, dynamic>> authorAndMatchInviteCode(AuthorAnonymousReq author, Map<String, dynamic> fingerprint) async {
     const String queryQL = r'''
-      query matchInviteCode($fingerprint: ShareFingerprint!) {
-        matchInviteCode(fingerprint: $fingerprint) {
-          id
-          inviteCode
+      query authorAndMatchInviteCode($author: AuthorAnonymous!, $fingerprint: ShareFingerprint!) {
+        authorAndMatchInviteCode(author: $author, fingerprint: $fingerprint) {
+          auth: {
+            token
+            user: {
+              id
+              anonymous_uuid
+            }
+          }
+          fingerResult: {
+            id
+            inviteCode
+          }
         }
       }
     ''';
     fingerprint["inviteCode"] = "";
     final QueryOptions options = QueryOptions(
       documentNode: gql(queryQL),
-      variables: { 'fingerprint': fingerprint },
+      variables: { 
+        'author': {
+          'uuid': author.uuid,
+          'timestamp': author.timestamp,
+          'accessToken': author.accessToken
+        },
+        'fingerprint': fingerprint
+      },
     );
     final QueryResult result = await _client.query(options);
     if(result.hasException) {
