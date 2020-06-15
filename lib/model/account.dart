@@ -2,6 +2,8 @@
 
 import 'package:giftmoney/json_mapper/mappable.dart';
 
+import 'author_anonymous_req.dart';
+
 enum AccountType { anonymity, mobile }
 
 class Account extends Mappable {
@@ -12,6 +14,7 @@ class Account extends Mappable {
   String token = null;
   String tokenExpiredTime = null;
   AccountType type = AccountType.anonymity;
+  AuthorAnonymousReq author = null;
   
   Account() : super.fromJSON(null);
 

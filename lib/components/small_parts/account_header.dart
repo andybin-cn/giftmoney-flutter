@@ -1,5 +1,6 @@
 import 'package:firebase_admob/firebase_admob.dart';
 import 'package:flutter/material.dart';
+import 'package:giftmoney/model/account.dart';
 import 'package:giftmoney/service/account_service.dart';
 import 'package:giftmoney/theme/theme.dart';
 import 'package:giftmoney/utils/loading_helper.dart';
@@ -37,10 +38,10 @@ class _AccountHeaderState extends State<AccountHeader> {
                         color: AppColor.mainBlackText,
                         fontWeight: FontWeight.bold)),
                 Padding(padding: EdgeInsets.only(left: 10)),
-                StreamBuilder<int>(
-                  stream: AccountService.instance.balanceSubject.stream,
+                StreamBuilder<Account>(
+                  stream: AccountService.instance.accountSubject.stream,
                   builder: (context, snapshot) {
-                    return Text(snapshot.data.toString(),
+                    return Text(snapshot.data.coin.toString(),
                         style: TextStyle(
                             fontSize: 30,
                             color: AppColor.goldColor,

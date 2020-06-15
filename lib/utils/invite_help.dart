@@ -20,7 +20,7 @@ class InviteHelp {
     }
     var fingerprint = await NativeUtils.startWebView(url: "https://darling-secret.herokuapp.com/share/app");
     await DBManager.instance.keyValue.save(key: "InviteHelp_fingerprint", value: jsonEncode(fingerprint));
-    var result = await ApiGraphQL.instance.authorAndMatchInviteCode(author, fingerprint);
+    var result = await ApiGraphQL.instance.matchInviteCode(fingerprint);
     await DBManager.instance.keyValue.save(key: "InviteHelp_info", value: jsonEncode(result));
     return result;
   }

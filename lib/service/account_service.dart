@@ -1,10 +1,14 @@
 import 'dart:async';
+import 'dart:convert';
 import 'dart:io';
 
 // import 'package:advert_support/advert_support.dart';
+import 'package:crypto/crypto.dart';
 import 'package:firebase_admob/firebase_admob.dart';
+import 'package:giftmoney/api/api_graphql.dart';
 import 'package:giftmoney/data_center/db_manager.dart';
 import 'package:giftmoney/model/account.dart';
+import 'package:giftmoney/model/author_anonymous_req.dart';
 import 'package:rxdart/rxdart.dart';
 
 enum ChargeItem {
@@ -36,45 +40,55 @@ class AccountService {
     return _instance;
   }
 
-  Account current = null;
-
-  // static Future<Account> initAccount() async {
-  //   if(current == null) {
-  //     var currentStr = await DBManager.instance.keyValue.valueForKey("Account_current");
-  //     try {
-  //       current = Account.fromJSON(JsonDecoder().convert(currentStr));
-  //     } catch(error) {
-  //       current = Account();
-  //       current.coin = 100;
-  //     }
-  //     // if(current.token != null) {
-  //     //   current = await ApiGraphQL.instance.refreshAccount(current);
-  //     // }
-  //   }
-  //   return current;
-  // }
-
+  String adUnitID = '';
+  var accountSubject = BehaviorSubject<Account>();
   initAccount() async {
-    // AdvertSupport.preLoadRewardVideo(adUnitId: adUnitID);
-    var isNotFirstLaunch = await DBManager.instance.keyValue
-        .valueForKey('AccountService_isNotFirstLaunch');
-    if (isNotFirstLaunch == null) {
-      this.balanceSubject.add(100);
-      DBManager.instance.keyValue
-          .save(key: 'AccountService_isNotFirstLaunch', value: 'true');
+    accountSubject.listen((value) {
       DBManager.instance.keyValue.save(
-          key: 'AccountService_balance',
-          value: this.balanceSubject.value.toString());
-    } else {
-      var value = await DBManager.instance.keyValue
-          .valueForKey('AccountService_balance');
-      var balance = int.tryParse(value ?? '0') ?? 0;
-      this.balanceSubject.add(balance);
+        key: 'AccountService_current',
+        value: jsonEncode(this.accountSubject.value));
+    });
+    var currentStr = await DBManager.instance.keyValue.valueForKey("AccountService_current");
+    try {
+      var current = Account.fromJSON(JsonDecoder().convert(currentStr));
+      accountSubject.add(current);
+    } catch(error) {
+      var current = Account();
+      current.coin = 100;
+      accountSubject.add(current);
     }
   }
 
-  String adUnitID = '';
-  var balanceSubject = BehaviorSubject<int>();
+  Future<Account> loginAnonymity() async {
+    AuthorAnonymousReq authorReq;
+    var authorReqStr = await DBManager.instance.keyValue.valueForKey("AccountService_authorReq");
+    try {
+      authorReq = AuthorAnonymousReq.fromJSON(JsonDecoder().convert(authorReqStr));
+      authorReq.timestamp = DateTime.now().toIso8601String();
+      var bytes = utf8.encode('gift+${authorReq.uuid}-money+${authorReq.timestamp}');
+      authorReq.accessToken = sha512.convert(bytes).toString();
+    } catch(error) {
+      authorReq = AuthorAnonymousReq();
+      authorReq.timestamp = DateTime.now().toIso8601String();
+      var bytes = utf8.encode('gift+-money+${authorReq.timestamp}');
+      authorReq.accessToken = sha512.convert(bytes).toString();
+    }
+    var result = await ApiGraphQL.instance.loginAnonymity(authorReq);
+    var account = accountSubject.value;
+    account.token = result['token'];
+    account.id = result['user']['id'];
+    accountSubject.add(account);
+
+    authorReq.uuid = result['user']['anonymous_uuid'];
+    var bytes = utf8.encode('gift+${authorReq.uuid}-money+${authorReq.timestamp}');
+    authorReq.accessToken = sha512.convert(bytes).toString();
+    await DBManager.instance.keyValue.save(key: 'AccountService_authorReq', value: jsonEncode(authorReq.toJSON()));
+    return account;
+  }
+
+  checkInviteFingerprint() async {
+    
+  }
 
   Future<int> earnGold() async {
     StreamController resultStream = StreamController<int>();
@@ -107,19 +121,18 @@ class AccountService {
     );
     RewardedVideoAd.instance.load(adUnitId: adUnitID, targetingInfo: targetingInfo);
     var rewardAmount = await resultStream.stream.first;
-    balanceSubject.add(balanceSubject.value + rewardAmount);
-    DBManager.instance.keyValue.save(
-        key: 'AccountService_balance',
-        value: this.balanceSubject.value.toString());
+    var account = accountSubject.value;
+    account.coin += rewardAmount;
+    accountSubject.add(account);
     return rewardAmount;
   }
 
   Future<int> consumeGold(amount) async {
-    balanceSubject.add(balanceSubject.value - amount);
-    DBManager.instance.keyValue.save(
-        key: 'AccountService_balance',
-        value: this.balanceSubject.value.toString());
-    return balanceSubject.value;
+    var account = accountSubject.value;
+    account.coin -= amount;
+    accountSubject.add(account);
+
+    return account.coin;
   }
 
   int amountFor(ChargeItem item) {
@@ -134,7 +147,7 @@ class AccountService {
   }
 
   bool enoughGoldFor(ChargeItem item) {
-    if (amountFor(item) <= balanceSubject.value) {
+    if (amountFor(item) <= accountSubject.value.coin) {
       return true;
     } else {
       return false;

@@ -30,9 +30,35 @@ class ApiGraphQL {
   Future<Account> login({String mobile, String password}) async {
     //todo
   }
-
-  Future<Account> loginAnonymity() async {
-    
+  
+  Future<Map<String, dynamic>> loginAnonymity(AuthorAnonymousReq author) async {
+    const String loginQL = r'''
+      mutation login($author: AuthorAnonymous!) {
+        loginAnonymous(author: $author) {
+          token
+          user {
+            id
+            anonymous_uuid
+          }
+        }
+      }
+    ''';
+    final QueryOptions options = QueryOptions(
+      documentNode: gql(loginQL),
+      variables: { 
+        'author': {
+          'uuid': author.uuid,
+          'timestamp': author.timestamp,
+          'accessToken': author.accessToken
+        }
+      },
+    );
+    final QueryResult result = await _client.query(options);
+    if(result.hasException) {
+      throw result.exception;
+    } else {
+      return result.data;
+    }
   }
 
   Future<Account> refreshAccount(Account account) async {
@@ -46,17 +72,10 @@ class ApiGraphQL {
     //todo
   }
 
-  Future<Map<String, dynamic>> authorAndMatchInviteCode(AuthorAnonymousReq author, Map<String, dynamic> fingerprint) async {
+  Future<Map<String, dynamic>> matchInviteCode(Map<String, dynamic> fingerprint) async {
     const String queryQL = r'''
       query authorAndMatchInviteCode($author: AuthorAnonymous!, $fingerprint: ShareFingerprint!) {
         authorAndMatchInviteCode(author: $author, fingerprint: $fingerprint) {
-          auth: {
-            token
-            user: {
-              id
-              anonymous_uuid
-            }
-          }
           fingerResult: {
             id
             inviteCode
@@ -68,11 +87,6 @@ class ApiGraphQL {
     final QueryOptions options = QueryOptions(
       documentNode: gql(queryQL),
       variables: { 
-        'author': {
-          'uuid': author.uuid,
-          'timestamp': author.timestamp,
-          'accessToken': author.accessToken
-        },
         'fingerprint': fingerprint
       },
     );

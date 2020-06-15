@@ -13,7 +13,7 @@ class ChargeItemCheckHelp {
         context: context,
         type: AlertType.error,
         title: '金币不足',
-        desc: '此操作需要${AccountService.instance.amountFor(item)}个金币\n当前剩余${AccountService.instance.balanceSubject.value}个金币',
+        desc: '此操作需要${AccountService.instance.amountFor(item)}个金币\n当前剩余${AccountService.instance.accountSubject.value.coin}个金币',
         buttons: [
           DialogButton(
             child: Text(
