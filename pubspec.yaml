@@ -41,7 +41,7 @@ dependencies:
   firebase_admob: ^0.9.3
   webview_flutter: ^0.3.22
   graphql: ^3.0.0
-  crypto: ^2.1.5
+  crypto: ^2.1.4
   # advert_support:
   #   git:
   #     ref: master

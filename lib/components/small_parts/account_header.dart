@@ -41,7 +41,7 @@ class _AccountHeaderState extends State<AccountHeader> {
                 StreamBuilder<Account>(
                   stream: AccountService.instance.accountSubject.stream,
                   builder: (context, snapshot) {
-                    return Text(snapshot.data.coin.toString(),
+                    return Text(snapshot.data?.coin.toString() ?? '0',
                         style: TextStyle(
                             fontSize: 30,
                             color: AppColor.goldColor,

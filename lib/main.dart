@@ -34,7 +34,6 @@ class _MyAppState extends State<MyApp> {
   void initApp() async {
     try {
       await Constant.init();
-      await ApiGraphQL.instance.session.initSession();
       ShareSDKRegister register = ShareSDKRegister();
       register.setupWechat(
           'wxbd0173ae30cebc1c', '6dfcfe44d9a2e8050bd4c93fffcbc5f3', 'https://andybin.giftmoney/');
@@ -49,18 +48,20 @@ class _MyAppState extends State<MyApp> {
       //注册
       SharesdkPlugin.regist(register);
       
-      DBManager.instance.initDB().whenComplete(() {
-        this.setState(() {
-          loadingApp = false;
-        });
-      });
+      await DBManager.instance.initDB();
+      await ApiGraphQL.instance.session.initSession();
       await AccountService.instance.checkInviteFingerprint();
+      this.setState(() {
+        loadingApp = false;
+      });
     } catch (e) {
       this.setState(() {
         loadingApp = false;
       });
     }
+
   }
+
 
   @override
   Widget build(BuildContext context) {

@@ -4,11 +4,8 @@ class GraphqlConstant {
   static const String loginQL = r'''
     mutation login($author: AuthorAnonymous!) {
       loginAnonymous(author: $author) {
-        token
-        user {
-          id
-          anonymous_uuid
-        }
+        id
+        anonymous_uuid
       }
     }
   ''';

@@ -41,6 +41,9 @@ class CacheableCookie {
     parseCookie(cookie);
   }
   parseCookie(String cookie) {
+    if(cookie == null) {
+      return;
+    }
     var cookies = cookie.split(';');
     cookies.forEach((element) {
       var item = element.split('=');

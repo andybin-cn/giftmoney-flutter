@@ -31,6 +31,7 @@ class AccountService {
       adUnitID = 'ca-app-pub-3156075797045250/8254562602'; //product
       // adUnitID = 'ca-app-pub-3940256099942544/5224354917'; //test
     }
+    accountSubject.add(Account());
     // 初始化
     initAccount();
   }
@@ -66,7 +67,9 @@ class AccountService {
     try {
       authorReq = AuthorAnonymousReq.fromJSON(JsonDecoder().convert(authorReqStr));
       authorReq.timestamp = DateTime.now().toIso8601String();
-      var bytes = utf8.encode('gift+${authorReq.uuid}-money+${authorReq.timestamp}');
+      var uuid = authorReq.uuid ?? "";
+      var timestamp = authorReq.timestamp ?? "";
+      var bytes = utf8.encode('gift+${uuid}-money+${timestamp}');
       authorReq.accessToken = sha512.convert(bytes).toString();
     } catch(error) {
       authorReq = AuthorAnonymousReq();
@@ -76,11 +79,10 @@ class AccountService {
     }
     var result = await ApiGraphQL.instance.loginAnonymity(authorReq);
     var account = accountSubject.value;
-    account.token = result['token'];
-    account.id = result['user']['id'];
+    account.id = result['id'];
     accountSubject.add(account);
 
-    authorReq.uuid = result['user']['anonymous_uuid'];
+    authorReq.uuid = result['anonymous_uuid'];
     var bytes = utf8.encode('gift+${authorReq.uuid}-money+${authorReq.timestamp}');
     authorReq.accessToken = sha512.convert(bytes).toString();
     await DBManager.instance.keyValue.save(key: 'AccountService_authorReq', value: jsonEncode(authorReq.toJSON()));
