@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:giftmoney/api/api_graphql.dart';
 import 'package:giftmoney/base/welcome_page.dart';
 import 'package:giftmoney/data_center/db_manager.dart';
 import 'package:giftmoney/environment/constant.dart';
 import 'package:giftmoney/generated/i18n.dart';
+import 'package:giftmoney/model/account.dart';
 import 'package:giftmoney/pages/main_tab_page.dart';
+import 'package:giftmoney/service/account_service.dart';
 import 'package:giftmoney/theme/theme.dart';
 import 'package:giftmoney/utils/i18n_util.dart';
 import 'package:sharesdk_plugin/sharesdk_plugin.dart';
@@ -31,6 +34,7 @@ class _MyAppState extends State<MyApp> {
   void initApp() async {
     try {
       await Constant.init();
+      await ApiGraphQL.instance.session.initSession();
       ShareSDKRegister register = ShareSDKRegister();
       register.setupWechat(
           'wxbd0173ae30cebc1c', '6dfcfe44d9a2e8050bd4c93fffcbc5f3', 'https://andybin.giftmoney/');
@@ -50,12 +54,12 @@ class _MyAppState extends State<MyApp> {
           loadingApp = false;
         });
       });
+      await AccountService.instance.checkInviteFingerprint();
     } catch (e) {
       this.setState(() {
         loadingApp = false;
       });
     }
-    
   }
 
   @override

@@ -9,6 +9,7 @@ import 'package:giftmoney/api/api_graphql.dart';
 import 'package:giftmoney/data_center/db_manager.dart';
 import 'package:giftmoney/model/account.dart';
 import 'package:giftmoney/model/author_anonymous_req.dart';
+import 'package:giftmoney/utils/invite_help.dart';
 import 'package:rxdart/rxdart.dart';
 
 enum ChargeItem {
@@ -87,7 +88,11 @@ class AccountService {
   }
 
   checkInviteFingerprint() async {
-    
+    if(!ApiGraphQL.instance.session.isLogin) {
+      await loginAnonymity();
+    }
+    var result = await InviteHelp.fetchMatchedInviteCode();
+    print('checkInviteFingerprint: ${result}');
   }
 
   Future<int> earnGold() async {

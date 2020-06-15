@@ -1,7 +1,7 @@
+import 'package:giftmoney/api/graphql_constant.dart';
+import 'package:giftmoney/api/session.dart';
 import 'package:giftmoney/model/account.dart';
 import 'package:giftmoney/model/author_anonymous_req.dart';
-import 'package:giftmoney/utils/CommonError.dart';
-import 'package:graphql/client.dart';
 
 class ApiGraphQL {
   // 工厂模式
@@ -9,14 +9,7 @@ class ApiGraphQL {
   static ApiGraphQL get instance => _getInstance();
   static ApiGraphQL _instance;
   ApiGraphQL._internal() {
-    // 初始化
-    final HttpLink _httpLink = HttpLink(
-      uri: 'https://darling-secret.herokuapp.com/graphql',
-    );
-    _client = GraphQLClient(
-      cache: InMemoryCache(),
-      link: _httpLink,
-    );
+    session = Session();
   }
   static ApiGraphQL _getInstance() {
     if (_instance == null) {
@@ -25,40 +18,20 @@ class ApiGraphQL {
     return _instance;
   }
 
-  GraphQLClient _client;
+  Session session;
 
   Future<Account> login({String mobile, String password}) async {
     //todo
   }
   
   Future<Map<String, dynamic>> loginAnonymity(AuthorAnonymousReq author) async {
-    const String loginQL = r'''
-      mutation login($author: AuthorAnonymous!) {
-        loginAnonymous(author: $author) {
-          token
-          user {
-            id
-            anonymous_uuid
-          }
-        }
+    return session.request(gqlStr: GraphqlConstant.loginQL, variables: { 
+      'author': {
+        'uuid': author.uuid,
+        'timestamp': author.timestamp,
+        'accessToken': author.accessToken
       }
-    ''';
-    final QueryOptions options = QueryOptions(
-      documentNode: gql(loginQL),
-      variables: { 
-        'author': {
-          'uuid': author.uuid,
-          'timestamp': author.timestamp,
-          'accessToken': author.accessToken
-        }
-      },
-    );
-    final QueryResult result = await _client.query(options);
-    if(result.hasException) {
-      throw result.exception;
-    } else {
-      return result.data;
-    }
+    });
   }
 
   Future<Account> refreshAccount(Account account) async {
@@ -73,28 +46,6 @@ class ApiGraphQL {
   }
 
   Future<Map<String, dynamic>> matchInviteCode(Map<String, dynamic> fingerprint) async {
-    const String queryQL = r'''
-      query authorAndMatchInviteCode($author: AuthorAnonymous!, $fingerprint: ShareFingerprint!) {
-        authorAndMatchInviteCode(author: $author, fingerprint: $fingerprint) {
-          fingerResult: {
-            id
-            inviteCode
-          }
-        }
-      }
-    ''';
-    fingerprint["inviteCode"] = "";
-    final QueryOptions options = QueryOptions(
-      documentNode: gql(queryQL),
-      variables: { 
-        'fingerprint': fingerprint
-      },
-    );
-    final QueryResult result = await _client.query(options);
-    if(result.hasException) {
-      throw result.exception;
-    } else {
-      return result.data;
-    }
+    return session.request(gqlStr: GraphqlConstant.matchInviteCodeQL, variables: { 'fingerprint': fingerprint });
   }
 }

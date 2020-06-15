@@ -8,10 +8,9 @@ import 'package:giftmoney/model/author_anonymous_req.dart';
 import 'package:giftmoney/utils/native_utils.dart';
 
 class InviteHelp {
-  static Future<Map<String, dynamic>> fetchMatchedInviteCode(AuthorAnonymousReq author) async {
-    var fingerprintStr = await DBManager.instance.keyValue.valueForKey('InviteHelp_fingerprint');
-    if(fingerprintStr != null) {
-      var inviteInfo = await DBManager.instance.keyValue.valueForKey('InviteHelp_info');
+  static Future<Map<String, dynamic>> fetchMatchedInviteCode() async {
+    var inviteInfo = await DBManager.instance.keyValue.valueForKey('InviteHelp_info');
+    if(inviteInfo != null) {
       try {
         return JsonDecoder().convert(inviteInfo);
       } catch(error) {
