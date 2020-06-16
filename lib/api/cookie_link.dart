@@ -46,18 +46,19 @@ class CacheableCookie {
     }
     var cookies = cookie.split(';');
     cookies.forEach((element) {
-      var item = element.split('=');
-      if(item.length != 2) {
+      var firstSpilIndex = element.indexOf('=');
+      if(firstSpilIndex <= 0 || firstSpilIndex >= element.length - 1) {
         return;
       }
-      var name = item[0].toLowerCase();
+      var name = element.substring(0, firstSpilIndex).trim();
+      var value = element.substring(firstSpilIndex+1).trim();
       if(name == 'expires'
         || name == 'samesite'
         || name == 'path'
       ) {
         return;
       }
-      this.cookies[item[0]] = item[1];
+      this.cookies[name] = value;
     });
   }
   String get cookieString {
@@ -68,7 +69,11 @@ class CacheableCookie {
     return str;
   }
   saveCookie() async {
-    await DBManager.instance.keyValue.save(key: 'CacheableCookie_cookies', value: cookieString);
+    if(cookies['EGG_SESS'] == null) {
+      return;
+    }
+    var session_str = 'EGG_SESS=${cookies['EGG_SESS']}; ';
+    await DBManager.instance.keyValue.save(key: 'CacheableCookie_cookies', value: session_str);
   }
 }
 

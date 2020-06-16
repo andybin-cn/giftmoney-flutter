@@ -45,11 +45,6 @@ class AccountService {
   String adUnitID = '';
   var accountSubject = BehaviorSubject<Account>();
   initAccount() async {
-    accountSubject.listen((value) {
-      DBManager.instance.keyValue.save(
-        key: 'AccountService_current',
-        value: jsonEncode(this.accountSubject.value));
-    });
     var currentStr = await DBManager.instance.keyValue.valueForKey("AccountService_current");
     try {
       var current = Account.fromJSON(JsonDecoder().convert(currentStr));
@@ -59,6 +54,14 @@ class AccountService {
       current.coin = 100;
       accountSubject.add(current);
     }
+    accountSubject.listen((value) {
+      if(value == null) {
+        return;
+      }
+      DBManager.instance.keyValue.save(
+        key: 'AccountService_current',
+        value: jsonEncode(value.toJSON()));
+    });
   }
 
   Future<Account> loginAnonymity() async {

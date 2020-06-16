@@ -11,12 +11,10 @@ class GraphqlConstant {
   ''';
 
   static const String matchInviteCodeQL = r'''
-    query authorAndMatchInviteCode($author: AuthorAnonymous!, $fingerprint: ShareFingerprint!) {
-      authorAndMatchInviteCode(author: $author, fingerprint: $fingerprint) {
-        fingerResult: {
-          id
-          inviteCode
-        }
+    query matchInviteCode($fingerprint: ShareFingerprint!) {
+      matchInviteCode(fingerprint: $fingerprint) {
+        id
+        inviteCode
       }
     }
   ''';

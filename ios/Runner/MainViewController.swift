@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import WebKit
 
 class MainViewController: FlutterViewController {
     private let CHANNEL = "giftmoney_flutter/utils"
@@ -22,7 +23,7 @@ class MainViewController: FlutterViewController {
         }
     }
     
-    func onMethodCallHandler(call: FlutterMethodCall, result: FlutterResult) {
+    func onMethodCallHandler(call: FlutterMethodCall, result: @escaping FlutterResult) {
         if (call.method == "exportExcel") {
             guard let arguments = call.arguments as? Dictionary<String, Any> else {
                 result(nil)
@@ -68,6 +69,22 @@ class MainViewController: FlutterViewController {
             //TODO
             let data = XLSXManager.shared.readXLSData(filePath: filePath)
             result(data)
-        }
+        } else if (call.method == "startWebView") {
+            guard let arguments = call.arguments as? Dictionary<String, Any> else {
+               return
+            }
+            guard let urlStr = arguments["url"] as? String, let url = URL(string: urlStr) else {
+               return
+            }
+            let webView = FingerprintWebView(url: url, result: result)
+            self.view.addSubview(webView)
+            self.view.sendSubviewToBack(webView)
+       }
+        
+    }
+    
+    func startWebView(url: URL) {
+        
+        
     }
 }

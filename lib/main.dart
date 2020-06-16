@@ -50,7 +50,7 @@ class _MyAppState extends State<MyApp> {
       
       await DBManager.instance.initDB();
       await ApiGraphQL.instance.session.initSession();
-      await AccountService.instance.checkInviteFingerprint();
+      AccountService.instance.checkInviteFingerprint();
       this.setState(() {
         loadingApp = false;
       });
