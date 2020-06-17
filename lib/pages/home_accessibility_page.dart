@@ -37,7 +37,7 @@ class _State extends BasePageState<HomeAccessibilityPage> {
           Padding(padding: EdgeInsets.only(top: 0.5)),
           SettingCell(
             icon: Icon(Icons.account_balance_wallet),
-            label: Text(i18n.mineCoin_rules),
+            label: Text(i18n.mine_coin_rules),
             onPressed: () {
               Navigator.push(context,
                 MaterialPageRoute(builder: (context) {
@@ -49,7 +49,7 @@ class _State extends BasePageState<HomeAccessibilityPage> {
           Padding(padding: EdgeInsets.only(top: 15)),
           SettingCell(
             icon: Icon(Icons.save_alt),
-            label: Text(i18n.accessibilityImport_button),
+            label: Text(i18n.accessibility_import_button),
             onPressed: () {
               _onImportPress();
             },
@@ -57,14 +57,14 @@ class _State extends BasePageState<HomeAccessibilityPage> {
           Padding(padding: EdgeInsets.only(top: 15)),
           SettingCell(
             icon: Icon(Icons.import_export),
-            label: Text(i18n.accessibilityExoprt_button),
+            label: Text(i18n.accessibility_exoprt_button),
             onPressed: () {
               _onExportPress();
             },
           ),
           SettingCell(
             icon: Icon(Icons.history),
-            label: Text(i18n.accessibilityHistory_button),
+            label: Text(i18n.accessibility_history_button),
             onPressed: () {
               _onHistoryPress();
             },
@@ -101,7 +101,7 @@ class _State extends BasePageState<HomeAccessibilityPage> {
       print('_onImportPress readExcel result:${sheet}');
       var importResult = await TradeService.instance.importTrades(sheet);
       this.hideLoading();
-      this.showAlert(type: AlertType.success, title: i18n.alertImport_result_title, desc: i18n.alertImport_result(importResult.successCount.toString(), importResult.skipCount.toString(), importResult.errorCount.toString()));
+      this.showAlert(type: AlertType.success, title: i18n.alert_import_result_title, desc: i18n.alert_import_result(importResult.successCount.toString(), importResult.skipCount.toString(), importResult.errorCount.toString()));
       print('_onImportPress importResult:${importResult}');
     } catch (error) {
       this.catchError(error);

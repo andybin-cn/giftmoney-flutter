@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:giftmoney/generated/i18n.dart';
+import 'package:giftmoney/generated/l10n.dart';
 import 'package:giftmoney/utils/ratio_helper_mixin.dart';
 
 import 'base_state.dart';
@@ -13,7 +13,7 @@ abstract class BaseStatefulPage extends StatefulWidget with RatioHelper {
 }
 
 class BasePageState<T extends BaseStatefulPage> extends BaseState<T> with RatioHelper {
-  I18n i18n;
+  S i18n;
   String title = '';
   Color backgroundColor = Color(0xFFDFE0E1);
   @override
@@ -23,7 +23,7 @@ class BasePageState<T extends BaseStatefulPage> extends BaseState<T> with RatioH
 
   @override
   Widget build(BuildContext context) {
-    i18n = I18n.of(context);
+    i18n = S.of(context);
     return buildContainer(context);
   }
 

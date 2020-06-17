@@ -4,13 +4,13 @@ import 'package:giftmoney/api/api_graphql.dart';
 import 'package:giftmoney/base/welcome_page.dart';
 import 'package:giftmoney/data_center/db_manager.dart';
 import 'package:giftmoney/environment/constant.dart';
-import 'package:giftmoney/generated/i18n.dart';
-import 'package:giftmoney/model/account.dart';
 import 'package:giftmoney/pages/main_tab_page.dart';
 import 'package:giftmoney/service/account_service.dart';
 import 'package:giftmoney/theme/theme.dart';
 import 'package:giftmoney/utils/i18n_util.dart';
 import 'package:sharesdk_plugin/sharesdk_plugin.dart';
+
+import 'generated/l10n.dart';
 
 
 void main() => runApp(MyApp());
@@ -92,11 +92,11 @@ class _MyAppState extends State<MyApp> {
       ),
       home: loadingApp ? WelcomePage() : MainTabPage(),
       localizationsDelegates: const [
-        I18n.delegate,
+        S.delegate,
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate
       ],
-      supportedLocales: I18n.delegate.supportedLocales,
+      supportedLocales: S.delegate.supportedLocales,
       // localeResolutionCallback: I18n.delegate.resolution(fallback: const Locale('en', '')), //指定语言
     );
   }

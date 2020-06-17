@@ -14,7 +14,7 @@ class _RulesForGoldCoinsPageState extends BasePageState<RulesForGoldCoinsPage> {
   @override
   void initState() {
     super.initState();
-    this.title = I18nUtil.shared.mineCoin_rules;
+    this.title = I18nUtil.shared.mine_coin_rules;
   }
 
   @override

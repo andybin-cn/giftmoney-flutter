@@ -121,16 +121,16 @@ class TradeService {
     var trades = await queryAllTrades();
     var i18n = I18nUtil.shared;
     var headers = [
-      i18n.excelHeaderId,
-      i18n.excelHeaderPersonName,
-      i18n.excelHeaderRelationName,
-      i18n.excelHeaderEventName,
-      i18n.excelHeaderEventTime,
-      i18n.excelHeaderType,
-      i18n.excelHeaderValue,
-      i18n.excelHeaderRemark,
-      i18n.excelHeaderCreateAt,
-      i18n.excelHeaderUpdateAt,
+      i18n.excel_header_id,
+      i18n.excel_header_personName,
+      i18n.excel_header_relationName,
+      i18n.excel_header_eventName,
+      i18n.excel_header_eventTime,
+      i18n.excel_header_type,
+      i18n.excel_header_value,
+      i18n.excel_header_remark,
+      i18n.excel_header_createAt,
+      i18n.excel_header_updateAt,
     ];
     var excelBody = trades.map((trade) {
       return [

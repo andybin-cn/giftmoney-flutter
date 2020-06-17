@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:giftmoney/generated/i18n.dart';
+import 'package:giftmoney/generated/l10n.dart';
 import 'package:giftmoney/model/sql_contact.dart';
 import 'package:giftmoney/theme/theme.dart';
 import 'package:giftmoney/utils/format_helper.dart';
@@ -24,7 +24,7 @@ class _ContactCellState extends State<ContactCell> {
           children: <Widget>[
             Text(widget.contact.contactName, style: AppTextStyle.mainText(13)),
             Padding(padding: EdgeInsets.only(top: 2)),
-            Text('📝  ${I18n.of(context).statisticsRecordCount(widget.contact.recordsCount.toString())}', style: AppTextStyle.reminderText(10)),
+            Text('📝  ${S.of(context).statistics_contactsCount(widget.contact.recordsCount.toString())}', style: AppTextStyle.reminderText(10)),
           ],
         ),
         Expanded(child: Container(

@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:giftmoney/generated/i18n.dart';
+import 'package:giftmoney/generated/l10n.dart';
 
 import 'base_state.dart';
 
 abstract class BaseWidgetState<T extends StatefulWidget> extends BaseState<T> {
-  I18n i18n;
+  S i18n;
 
   @override
   Widget build(BuildContext context) {
-    i18n = I18n.of(context);
+    i18n = S.of(context);
     return this.buildBody(context);
   }
 

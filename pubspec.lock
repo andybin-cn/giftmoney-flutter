@@ -357,6 +357,20 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "0.16.1"
+  intl_translation:
+    dependency: transitive
+    description:
+      name: intl_translation
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "0.17.9"
+  intl_utils:
+    dependency: "direct dev"
+    description:
+      name: intl_utils
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "1.6.0"
   io:
     dependency: transitive
     description:

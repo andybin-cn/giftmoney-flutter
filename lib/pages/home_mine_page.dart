@@ -35,7 +35,7 @@ class _HomeMinePageState extends BasePageState<HomeMinePage> {
           Padding(padding: EdgeInsets.only(top: 0.5)),
           SettingCell(
             icon: Icon(Icons.account_balance_wallet),
-            label: Text(i18n.mineCoin_rules),
+            label: Text(i18n.mine_coin_rules),
             onPressed: () {
               Navigator.push(context,
                 MaterialPageRoute(builder: (context) {
@@ -47,7 +47,7 @@ class _HomeMinePageState extends BasePageState<HomeMinePage> {
           Padding(padding: EdgeInsets.only(top: 15)),
           SettingCell(
             icon: Icon(Icons.share),
-            label: Text(i18n.mineInvite),
+            label: Text(i18n.mine_invite),
             onPressed: () async {
               var shareParams = SSDKMap()
                 ..setGeneral(
@@ -86,7 +86,7 @@ class _HomeMinePageState extends BasePageState<HomeMinePage> {
           ),
           SettingCell(
             icon: Icon(Icons.info_outline),
-            label: Text(i18n.mineAbout),
+            label: Text(i18n.mine_about),
             onPressed: () {
               Navigator.push(context,
                 MaterialPageRoute(builder: (context) {
@@ -97,7 +97,7 @@ class _HomeMinePageState extends BasePageState<HomeMinePage> {
           ),
           SettingCell(
             icon: Icon(Icons.feedback),
-            label: Text(i18n.mineFeedback),
+            label: Text(i18n.mine_feedback),
             onPressed: () async {
               final Email email = Email(
                 body: '\n\n感谢您的宝贵意见，我们会尽快给您回复。谢谢！',
@@ -127,7 +127,7 @@ class _HomeMinePageState extends BasePageState<HomeMinePage> {
             },
           ),SettingCell(
             icon: Icon(Icons.lock_outline),
-            label: Text(i18n.minePrivacy),
+            label: Text(i18n.mine_privacy),
             onPressed: () {
               Navigator.push(context,
                 MaterialPageRoute(builder: (context) {

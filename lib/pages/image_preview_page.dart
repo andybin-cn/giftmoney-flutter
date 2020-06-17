@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:giftmoney/base/base_stateless_page.dart';
-import 'package:giftmoney/generated/i18n.dart';
+import 'package:giftmoney/generated/l10n.dart';
 
 class ImagePreviewPage extends BaseStatelessPage {
   final String imagePath;
@@ -25,7 +25,7 @@ class ImagePreviewPage extends BaseStatelessPage {
 
   @override
   Widget buildBody(BuildContext context) {
-    var i18n = I18n.of(context);
+    var i18n = S.of(context);
     return Container(
       child: Image.asset(this.imagePath)
     );

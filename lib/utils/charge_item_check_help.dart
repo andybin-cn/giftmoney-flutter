@@ -1,6 +1,5 @@
 import 'package:firebase_admob/firebase_admob.dart';
 import 'package:flutter/material.dart';
-import 'package:giftmoney/generated/i18n.dart';
 import 'package:giftmoney/service/account_service.dart';
 import 'package:giftmoney/utils/loading_helper.dart';
 import 'package:giftmoney/utils/toast_util.dart';

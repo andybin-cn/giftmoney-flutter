@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:giftmoney/generated/i18n.dart';
+import 'package:giftmoney/generated/l10n.dart';
 import 'base_state.dart';
 
 abstract class BasePageState<T extends StatefulWidget> extends BaseState<T> with AutomaticKeepAliveClientMixin {
@@ -10,7 +10,7 @@ abstract class BasePageState<T extends StatefulWidget> extends BaseState<T> with
   Color backgroundColor = Colors.white;
   Color appBarBackgroundColor = Colors.white;
   Color appBarIconColor = Colors.black;
-  I18n i18n;
+  S i18n;
   List<Widget> actions = [];
 
   @override
@@ -20,7 +20,7 @@ abstract class BasePageState<T extends StatefulWidget> extends BaseState<T> with
   Widget build(BuildContext context) {
     super.build(context);
     debugPrint('${this.toString()} build call');
-    i18n = I18n.of(context);
+    i18n = S.of(context);
     return WillPopScope(
       onWillPop: onWillPop,
       child: Scaffold(

@@ -25,7 +25,7 @@ class _ExportRecordsPageState extends BasePageState<ExportRecordsPage> {
   @override
   void initState() {
     super.initState();
-    title = I18nUtil.shared.accessibilityHistory_button;
+    title = I18nUtil.shared.accessibility_history_button;
     Timer(Duration(milliseconds: 100), () => _refreshKey.currentState.show());
   }
 

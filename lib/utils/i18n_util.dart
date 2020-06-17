@@ -1,11 +1,15 @@
 import 'package:flutter/widgets.dart';
-import 'package:giftmoney/generated/i18n.dart';
+import 'package:giftmoney/generated/l10n.dart';
 
 class I18nUtil {
-  static I18n shared;
+  static S shared;
   static Locale locale;
   static setContext(BuildContext context) {
-    shared = I18n.of(context);
+    shared = S.of(context);
     locale = Localizations.localeOf(context);
+  }
+  
+  static S of(BuildContext context) {
+    return S.of(context);
   }
 }

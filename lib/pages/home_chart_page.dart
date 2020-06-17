@@ -32,14 +32,14 @@ class _HomeChartPageState extends BasePageState<HomeChartPage> with SingleTicker
     return Scaffold(
       extendBody: true,
       appBar: AppBar(
-        title: Text(i18n.statisticsTitle),
+        title: Text(i18n.statistics_title),
         bottom: MyTabBar(
           isScrollable: false,
           controller: _tabController,
           tabs: <Widget>[
-            Container(padding: EdgeInsets.all(5), child: Text(i18n.statisticsEvent_group)),
-            Container(padding: EdgeInsets.all(5), child: Text(i18n.statisticsRelation_group)),
-            Container(padding: EdgeInsets.all(5), child: Text(i18n.statisticsContact_group)),
+            Container(padding: EdgeInsets.all(5), child: Text(i18n.statistics_event_group)),
+            Container(padding: EdgeInsets.all(5), child: Text(i18n.statistics_relation_group)),
+            Container(padding: EdgeInsets.all(5), child: Text(i18n.statistics_contact_group)),
           ],
         ),
       ),

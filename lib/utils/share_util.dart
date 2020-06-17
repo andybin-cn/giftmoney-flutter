@@ -1,7 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:giftmoney/generated/i18n.dart';
+import 'package:giftmoney/generated/l10n.dart';
 import 'package:giftmoney/utils/screen_util.dart';
 import 'package:sharesdk_plugin/sharesdk_plugin.dart';
 
@@ -55,31 +55,31 @@ class ShareUtil {
 
   static Widget widgetForItem(ShareSDKPlatform platform, BuildContext context, SSDKMap params, Function(SSDKResponseState, ShareSDKPlatform, Map, Map, SSDKError) result) {
     Image icon = Image.asset('assets/images/share.jpeg', width: 50, height: 50);
-    var title = I18n.of(context).shareOther;
+    var title = S.of(context).share_other;
     if(platform == ShareSDKPlatforms.wechatTimeline) {
       icon = Image.asset('assets/images/wechatTimeline.jpeg', width: 50, height: 50);
-      title = I18n.of(context).shareWechatTimeline;
+      title = S.of(context).share_wechatTimeline;
     } else if(platform == ShareSDKPlatforms.qZone) {
       icon = Image.asset('assets/images/qZone.jpg', width: 50, height: 50);
-      title = I18n.of(context).shareQZone;
+      title = S.of(context).share_qZone;
     } else if(platform == ShareSDKPlatforms.sina) {
       icon = Image.asset('assets/images/sina-icon.png', width: 50, height: 50);
-      title = I18n.of(context).shareSina;
+      title = S.of(context).share_sina;
     } else if(platform == ShareSDKPlatforms.douBan) {
       icon = Image.asset('assets/images/doeban.jpeg', width: 50, height: 50);
-      title = I18n.of(context).shareDouBan;
+      title = S.of(context).share_douBan;
     } else if(platform == ShareSDKPlatforms.facebook) {
       icon = Image.asset('assets/images/Facebook_icon.png', width: 50, height: 50);
-      title = I18n.of(context).shareFacebook;
+      title = S.of(context).share_facebook;
     } else if(platform == ShareSDKPlatforms.twitter) {
       icon = Image.asset('assets/images/Twitter_NEW.png', width: 50, height: 50);
-      title = I18n.of(context).shareTwitter;
+      title = S.of(context).share_twitter;
     } else if(platform == ShareSDKPlatforms.qq) {
       icon = Image.asset('assets/images/qq.png', width: 50, height: 50);
-      title = I18n.of(context).shareQq;
+      title = S.of(context).share_qq;
     } else if(platform == ShareSDKPlatforms.wechatSession) {
       icon = Image.asset('assets/images/wechat.png', width: 50, height: 50);
-      title = I18n.of(context).shareWechat;
+      title = S.of(context).share_wechat;
     }
 
     return Container(

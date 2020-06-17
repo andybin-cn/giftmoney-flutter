@@ -16,7 +16,7 @@ class _PrivacyPolicyPageState extends BasePageState<PrivacyPolicyPage> {
   @override
   void initState() {
     super.initState();
-    title = I18nUtil.shared.minePrivacy;
+    title = I18nUtil.shared.mine_privacy;
   }
   @override
   Widget buildBody(BuildContext context) {

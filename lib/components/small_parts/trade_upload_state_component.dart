@@ -1,7 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:giftmoney/generated/i18n.dart';
+import 'package:giftmoney/generated/l10n.dart';
 import 'package:giftmoney/model/sql_trade.dart';
 import 'package:giftmoney/theme/theme.dart';
 
@@ -18,23 +18,23 @@ class TradeUploadStateComponent extends StatelessWidget {
     switch (state) {
       case TradeUploadState.notUpload:
         image = Image.asset('assets/images/cloud_upload_wating.png', width: width, height: height);
-        text = I18n.of(context).bt_upload_waiting;
+        text = S.of(context).bt_upload_waiting;
         break;
       case TradeUploadState.uploading:
         image = Image.asset('assets/images/cloud_upload_uploading.png', width: width, height: height);
-        text = I18n.of(context).bt_upload_uploading;
+        text = S.of(context).bt_upload_uploading;
         break;
       case TradeUploadState.success:
         image = Image.asset('assets/images/cloud_upload_success.png', width: width, height: height);
-        text = I18n.of(context).bt_upload_success;
+        text = S.of(context).bt_upload_success;
         break;
       case TradeUploadState.warning:
         image = Image.asset('assets/images/cloud_upload_warning.png', width: width, height: height);
-        text = I18n.of(context).bt_upload_waring;
+        text = S.of(context).bt_upload_waring;
         break;
       default:
         image = Image.asset('assets/images/cloud_upload_wating.png', width: width, height: height);
-        text = I18n.of(context).bt_upload_waiting;
+        text = S.of(context).bt_upload_waiting;
     }
     return ClipOval(child: Container(
       width: 50,

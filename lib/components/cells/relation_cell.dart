@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:giftmoney/generated/i18n.dart';
+import 'package:giftmoney/generated/l10n.dart';
 import 'package:giftmoney/model/sql_relation.dart';
 import 'package:giftmoney/theme/theme.dart';
 import 'package:giftmoney/utils/format_helper.dart';
@@ -24,9 +24,9 @@ class _RelationCellState extends State<RelationCell> {
           children: <Widget>[
             Text(widget.relation.relationName, style: AppTextStyle.mainText(13)),
             Padding(padding: EdgeInsets.only(top: 2)),
-            Text('👥  ${I18n.of(context).statisticsContactsCount(widget.relation.contactsCount.toString())}', style: AppTextStyle.reminderText(10)),
+            Text('👥  ${S.of(context).statistics_contactsCount(widget.relation.contactsCount.toString())}', style: AppTextStyle.reminderText(10)),
             Padding(padding: EdgeInsets.only(top: 2)),
-            Text('📝  ${I18n.of(context).statisticsRecordCount(widget.relation.recordsCount.toString())}', style: AppTextStyle.reminderText(10)),
+            Text('📝  ${S.of(context).statistics_recordCount(widget.relation.recordsCount.toString())}', style: AppTextStyle.reminderText(10)),
           ],
         ),
         Expanded(child: Container(

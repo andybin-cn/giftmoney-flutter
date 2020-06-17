@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:giftmoney/generated/i18n.dart';
+import 'package:giftmoney/generated/l10n.dart';
 import 'package:giftmoney/utils/loading_helper.dart';
 import 'package:giftmoney/utils/ratio_helper_mixin.dart';
 import 'package:giftmoney/utils/toast_util.dart';
@@ -30,7 +30,7 @@ abstract class BaseState<T extends StatefulWidget> extends State<T> with RatioHe
       desc: desc,
       buttons: buttons ?? [
         DialogButton(child: Text(
-          I18n.of(context).alertOk_button,
+          S.of(context).alert_ok_button,
           style: TextStyle(color: Colors.white, fontSize: 14),
         ),
         onPressed: () => Navigator.pop(context))
