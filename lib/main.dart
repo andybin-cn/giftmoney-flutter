@@ -94,7 +94,8 @@ class _MyAppState extends State<MyApp> {
       localizationsDelegates: const [
         S.delegate,
         GlobalMaterialLocalizations.delegate,
-        GlobalWidgetsLocalizations.delegate
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
       ],
       supportedLocales: S.delegate.supportedLocales,
       // localeResolutionCallback: I18n.delegate.resolution(fallback: const Locale('en', '')), //指定语言
