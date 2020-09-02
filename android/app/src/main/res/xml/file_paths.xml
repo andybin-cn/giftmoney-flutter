@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resource xmlns:android="http://schemas.android.com/apk/res/android">
-    <!--    <files-path name="records" path="records" />-->
-    <external-files-path name="records" path="records" />
+    <!-- <files-path name="files" path="files" /> -->
+    <!-- <external-path name="external_files" path="./files/records/"/> -->
+    <!-- <external-files-path name="records" path="./records/" />
+    <external-cache-path name="cache-records" path="./records/" /> -->
+    <external-path
+        path="Android/data/${applicationId}/"
+        name="files_root" />
+    <external-path
+        path="."
+        name="external_storage_root" />
 </resource>

@@ -1,8 +1,8 @@
-
 import 'dart:async';
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_share/flutter_share.dart';
 import 'package:giftmoney/base/base_stateful_page.dart';
 import 'package:giftmoney/components/cells/closable_left_scroll.dart';
 import 'package:giftmoney/service/trade_service.dart';
@@ -36,7 +36,8 @@ class _ExportRecordsPageState extends BasePageState<ExportRecordsPage> {
       onRefresh: _onRefresh,
       child: ListView.separated(
         // physics: const AlwaysScrollableScrollPhysics(),
-        separatorBuilder: (BuildContext context, int index) => Divider(height: 0.5),
+        separatorBuilder: (BuildContext context, int index) =>
+            Divider(height: 0.5),
         itemBuilder: _renderRow,
         itemCount: files.length,
       ),
@@ -45,59 +46,68 @@ class _ExportRecordsPageState extends BasePageState<ExportRecordsPage> {
 
   Widget _renderRow(BuildContext context, int index) {
     var file = files[index];
-    var fileName = file.path.substring(file.path.lastIndexOf('/') + 1, file.path.length);
+    var fileName =
+        file.path.substring(file.path.lastIndexOf('/') + 1, file.path.length);
     return ClosableLeftScroll(
-      child: FutureBuilder<FileStat>(
-        future: file.stat(),
-        builder: (BuildContext context, AsyncSnapshot snapshot) {
-          FileStat fileStat = snapshot.data;
-          var createTime = fileStat?.changed;
-          var size = fileStat?.size;
-          return Container(
-            padding: EdgeInsets.only(left: 15, right: 15),
-            color: Colors.white,
-            child: Row(
-              children: <Widget>[
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      Padding(padding: EdgeInsets.only(top: 15)),
-                      Text(fileName, style: AppTextStyle.mainText(13)),
-                      Padding(padding: EdgeInsets.only(top: 4)),
-                      Text(FormatHelper.datetimeToString(createTime), style: AppTextStyle.secondaryText(10)),
-                      Padding(padding: EdgeInsets.only(top: 15)),
-                    ],
+        child: FutureBuilder<FileStat>(
+          future: file.stat(),
+          builder: (BuildContext context, AsyncSnapshot snapshot) {
+            FileStat fileStat = snapshot.data;
+            var createTime = fileStat?.changed;
+            var size = fileStat?.size;
+            return Container(
+              padding: EdgeInsets.only(left: 15, right: 15),
+              color: Colors.white,
+              child: Row(
+                children: <Widget>[
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        Padding(padding: EdgeInsets.only(top: 15)),
+                        Text(fileName, style: AppTextStyle.mainText(13)),
+                        Padding(padding: EdgeInsets.only(top: 4)),
+                        Text(FormatHelper.datetimeToString(createTime),
+                            style: AppTextStyle.secondaryText(10)),
+                        Padding(padding: EdgeInsets.only(top: 15)),
+                      ],
+                    ),
                   ),
-                ),
-                Text(FormatHelper.formatSize(size), style: AppTextStyle.secondaryText(13)),
-                Padding(padding: EdgeInsets.only(right: 5)),
-                Icon(Icons.share, color: Colors.grey),
-              ],
-            ),
-          );
-        },
-      ),
-      onTap: () {
-        var file = files[index];
-        NativeUtils.shareFile(filePath: file.path, subject: '');
-      },
-      buttons: <Widget>[
-        LeftScrollItem(
-          text: i18n.bt_delete,
-          color: Colors.red,
-          onTap: () async {
-            ClosableLeftScrollState.closeAll();
-            this.showLoading();
-            var file = files[index];
-            await file.delete();
-            files.removeAt(index);
-            this.hideLoading();
-            this.setState(() {});
+                  Text(FormatHelper.formatSize(size),
+                      style: AppTextStyle.secondaryText(13)),
+                  Padding(padding: EdgeInsets.only(right: 5)),
+                  Icon(Icons.share, color: Colors.grey),
+                ],
+              ),
+            );
           },
         ),
-    ]
-    );
+        onTap: () async {
+          var file = files[index];
+          try {
+            print('Share.shareFiles path: ${file.path}');
+            var result = await FlutterShare.shareFile(
+                title: 'title', filePath: file.path);
+            print('Share.shareFiles success: ${result}');
+          } catch (e) {
+            print('Share.shareFiles error: ${e}');
+          }
+        },
+        buttons: <Widget>[
+          LeftScrollItem(
+            text: i18n.bt_delete,
+            color: Colors.red,
+            onTap: () async {
+              ClosableLeftScrollState.closeAll();
+              this.showLoading();
+              var file = files[index];
+              await file.delete();
+              files.removeAt(index);
+              this.hideLoading();
+              this.setState(() {});
+            },
+          ),
+        ]);
   }
 
   Future<Null> _onRefresh() async {
@@ -105,8 +115,8 @@ class _ExportRecordsPageState extends BasePageState<ExportRecordsPage> {
     var directory = Directory(path);
     Stream<FileSystemEntity> entityList = directory.list(followLinks: false);
     var newFiles = List<FileSystemEntity>();
-    await for(FileSystemEntity entity in entityList) {
-      if(await FileSystemEntity.isFile(entity.path)) {
+    await for (FileSystemEntity entity in entityList) {
+      if (await FileSystemEntity.isFile(entity.path)) {
         newFiles.add(entity);
       }
     }
