@@ -1,4 +1,3 @@
-
 import 'dart:async';
 import 'dart:io';
 
@@ -18,7 +17,7 @@ import 'package:uuid/uuid.dart';
 
 class TradeService {
   // 工厂模式
-  factory TradeService() =>_getInstance();
+  factory TradeService() => _getInstance();
   static TradeService get instance => _getInstance();
   static TradeService _instance;
   TradeService._internal() {
@@ -35,31 +34,36 @@ class TradeService {
   StreamController<ObjectEvent<SQLTrade>> tradeStream;
 
   Future<SQLTrade> saveTrade(SQLTrade trade) async {
-    if(trade.uuid != null && trade.uuid.trim().length > 0) {
+    if (trade.uuid != null && trade.uuid.trim().length > 0) {
       trade.updateAt = DateTime.now();
       var result = await DBManager.instance.tradeTable.updateTrade(trade);
-      tradeStream.add(ObjectEvent<SQLTrade>(object: result, event: ObjectEventType.modify));
+      tradeStream.add(
+          ObjectEvent<SQLTrade>(object: result, event: ObjectEventType.modify));
       return result;
     } else {
       trade.uuid = Uuid().v4();
       trade.createAt = DateTime.now();
       trade.updateAt = DateTime.now();
       var result = await DBManager.instance.tradeTable.inserTrade(trade);
-      tradeStream.add(ObjectEvent<SQLTrade>(object: result, event: ObjectEventType.add));
-      AccountService.instance.consumeGold(AccountService.instance.amountFor(ChargeItem.insertTrade));
+      tradeStream.add(
+          ObjectEvent<SQLTrade>(object: result, event: ObjectEventType.add));
+      AccountService.instance.consumeGold(
+          AccountService.instance.amountFor(ChargeItem.insertTrade));
       return result;
     }
   }
 
   Future<int> deleteTrade(SQLTrade trade) async {
     var result = await DBManager.instance.tradeTable.deleteTrade(trade);
-    if(result > 0) {
-      tradeStream.add(ObjectEvent<SQLTrade>(object: trade, event: ObjectEventType.delete));
+    if (result > 0) {
+      tradeStream.add(
+          ObjectEvent<SQLTrade>(object: trade, event: ObjectEventType.delete));
     }
     return result;
   }
 
-  Future<List<SQLTrade>> queryAllTrades({SQLEvent event, SQLRelation relation, SQLContact contact}) {
+  Future<List<SQLTrade>> queryAllTrades(
+      {SQLEvent event, SQLRelation relation, SQLContact contact}) {
     var where = '';
     var whereArgs = [];
     if (relation != null) {
@@ -77,14 +81,16 @@ class TradeService {
       if (where.length > 0) {
         where += ' AND ';
       }
-      where != 'eventName = ? AND date(eventTime) = ?';
-      whereArgs.addAll([event.eventName, FormatHelper.dateToString(event.eventTime)]);
+      where += 'eventName = ? AND date(eventTime) = ?';
+      whereArgs.addAll(
+          [event.eventName, FormatHelper.dateToString(event.eventTime)]);
     }
-    if(where.length == 0) {
+    if (where.length == 0) {
       where = null;
       whereArgs = null;
     }
-    return DBManager.instance.tradeTable.queryTrade(where: where, whereArgs: whereArgs, orderBy: 'createAt desc');
+    return DBManager.instance.tradeTable.queryTrade(
+        where: where, whereArgs: whereArgs, orderBy: 'createAt desc');
   }
 
   Future<List<SQLEvent>> queryTradeGroupByEvent() {
@@ -96,11 +102,11 @@ class TradeService {
     var trades = await DBManager.instance.tradeTable.queryTrade(limit: 1000000);
     trades.forEach((trade) {
       var relation = relationMap[trade.relationName];
-      if(relation == null) {
+      if (relation == null) {
         relation = SQLRelation(trade.relationName);
         relationMap[trade.relationName] = relation;
       }
-      if(trade.type == SQLTradeType.inAccount) {
+      if (trade.type == SQLTradeType.inAccount) {
         relation.incomeAmount += trade.value;
       } else {
         relation.expendAmount += trade.value;
@@ -109,7 +115,8 @@ class TradeService {
       relation.contacts.add(trade.personName);
     });
     var result = relationMap.values.toList();
-    result.sort((a, b) => b.expendAmount + b.incomeAmount - a.expendAmount - a.incomeAmount );
+    result.sort((a, b) =>
+        b.expendAmount + b.incomeAmount - a.expendAmount - a.incomeAmount);
     return result;
   }
 
@@ -147,25 +154,26 @@ class TradeService {
       ];
     }).toList();
     var excelData = [headers] + excelBody;
-    var tempPath =  await getRecodsPath();
+    var tempPath = await getRecodsPath();
     var destinationPath = tempPath + '${DateTime.now().toIso8601String()}.xlsx';
     print('exportTradesToExcel destinationPath:${destinationPath}');
     await NativeUtils.exportToExcel(destinationPath, excelData);
-    AccountService.instance.consumeGold(AccountService.instance.amountFor(ChargeItem.exportToExcel));
+    AccountService.instance.consumeGold(
+        AccountService.instance.amountFor(ChargeItem.exportToExcel));
     return destinationPath;
   }
 
   Future<String> getRecodsPath() async {
     Directory tempDir;
-    if(Platform.isAndroid) {
-      tempDir =  await getExternalStorageDirectory();
+    if (Platform.isAndroid) {
+      tempDir = await getExternalStorageDirectory();
     } else {
-      tempDir =  await getApplicationDocumentsDirectory();
+      tempDir = await getApplicationDocumentsDirectory();
     }
     // var tempDir =  await getApplicationSupportDirectory();
     var path = tempDir.path + '/records/';
     var dir = Directory(path);
-    if(!await dir.exists()) {
+    if (!await dir.exists()) {
       await dir.create(recursive: true);
     }
     return path;
@@ -176,22 +184,25 @@ class TradeService {
     var result = ImportTradeResult();
     for (var trade in trades) {
       try {
-        if(trade.uuid != null && trade.uuid.trim().length > 0) {
-          var oldTrade = await DBManager.instance.tradeTable.queryTradeByUUID(uuid: trade.uuid);
-          if(oldTrade != null) {
+        if (trade.uuid != null && trade.uuid.trim().length > 0) {
+          var oldTrade = await DBManager.instance.tradeTable
+              .queryTradeByUUID(uuid: trade.uuid);
+          if (oldTrade != null) {
             result.skipCount++;
             continue;
           }
         }
         await DBManager.instance.tradeTable.inserTrade(trade);
-        tradeStream.add(ObjectEvent<SQLTrade>(object: trade, event: ObjectEventType.add));
+        tradeStream.add(
+            ObjectEvent<SQLTrade>(object: trade, event: ObjectEventType.add));
         result.successCount++;
       } catch (e) {
         result.errorCount++;
         print('importTrades saveTrade error:${e}');
       }
     }
-    AccountService.instance.consumeGold(AccountService.instance.amountFor(ChargeItem.importFromExcel));
+    AccountService.instance.consumeGold(
+        AccountService.instance.amountFor(ChargeItem.importFromExcel));
     return result;
   }
 }
