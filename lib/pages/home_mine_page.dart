@@ -81,6 +81,39 @@ class _HomeMinePageState extends BasePageState<HomeMinePage> {
     }));
   }
 
+  void _onFeedbackPress() async {
+    final Email email = Email(
+      body: '\n\n感谢您的宝贵意见，我们会尽快给您回复。谢谢！',
+      subject: '【礼金小助手App】意见反馈',
+      recipients: ['reciprocityApp@163.com'],
+      // cc: ['cc@example.com'],
+      // bcc: ['bcc@example.com'],
+      // attachmentPath: '/path/to/attachment.zip',
+      isHTML: false,
+    );
+    await FlutterEmailSender.send(email).catchError((error) {
+      this.showAlert(
+        desc: '无法打开邮件，您可以发送邮件至 reciprocityApp@163.com 我们会尽快给您回复!',
+        buttons: [
+          DialogButton(
+              child: Text('取消'),
+              onPressed: () {
+                Navigator.pop(context);
+              }),
+          DialogButton(
+              child: Text('复制邮箱地址'),
+              onPressed: () {
+                Clipboard.setData(
+                    new ClipboardData(text: 'reciprocityApp@163.co'));
+                showHUD('邮箱地址已复制');
+                Navigator.pop(context);
+              }),
+        ],
+      );
+      //
+    });
+  }
+
   @override
   Widget buildBody(BuildContext context) {
     return DecoratedBox(
@@ -126,44 +159,7 @@ class _HomeMinePageState extends BasePageState<HomeMinePage> {
           SettingCell(
             icon: Icon(Icons.share),
             label: Text(i18n.mine_invite),
-            onPressed: () async {
-              var shareParams = SSDKMap()
-                ..setGeneral(
-                    '轻松记录每一笔份子钱',
-                    null,
-                    [],
-                    null,
-                    null,
-                    'https://android.myapp.com/myapp/detail.htm?apkName=com.andybin.giftmoney',
-                    null,
-                    null,
-                    null,
-                    null,
-                    SSDKContentTypes.webpage);
-              // await ShareSDK.showMenu(null, shareParams,
-              //   (state, platform, info, detail, error) {
-              //     print('share state:${state} platform:${platform.name} info:${info.toString()} detail:${detail.toString()} error:${error.toString()}');
-              //   });
-              var platforms = [
-                ShareSDKPlatforms.wechatSession,
-                ShareSDKPlatforms.wechatTimeline,
-                ShareSDKPlatforms.qq,
-                ShareSDKPlatforms.qZone,
-                ShareSDKPlatforms.sina,
-                ShareSDKPlatforms.facebook,
-                ShareSDKPlatforms.twitter,
-              ];
-              SharesdkPlugin.showMenu(platforms, shareParams,
-                  (SSDKResponseState state, ShareSDKPlatform platform,
-                      Map userData, Map contentEntity, SSDKError error) {
-                print(
-                    'share state:${state} platform:${platform.name} info:${userData.toString()} detail:${contentEntity.toString()} error:${error.toString()}');
-              });
-              // await ShareUtil.showMenu(context, shareParams,
-              //   (state, platform, info, detail, error) {
-              //     print('share state:${state} platform:${platform.name} info:${info.toString()} detail:${detail.toString()} error:${error.toString()}');
-              //   });
-            },
+            onPressed: () async {},
           ),
           SettingCell(
             icon: Icon(Icons.info_outline),
@@ -177,48 +173,17 @@ class _HomeMinePageState extends BasePageState<HomeMinePage> {
           SettingCell(
             icon: Icon(Icons.feedback),
             label: Text(i18n.mine_feedback),
-            onPressed: () async {
-              final Email email = Email(
-                body: '\n\n感谢您的宝贵意见，我们会尽快给您回复。谢谢！',
-                subject: '【礼金小助手App】意见反馈',
-                recipients: ['reciprocityApp@163.com'],
-                // cc: ['cc@example.com'],
-                // bcc: ['bcc@example.com'],
-                // attachmentPath: '/path/to/attachment.zip',
-                isHTML: false,
-              );
-              await FlutterEmailSender.send(email).catchError((error) {
-                this.showAlert(
-                  desc: '无法打开邮件，您可以发送邮件至 reciprocityApp@163.com 我们会尽快给您回复!',
-                  buttons: [
-                    DialogButton(
-                        child: Text('取消'),
-                        onPressed: () {
-                          Navigator.pop(context);
-                        }),
-                    DialogButton(
-                        child: Text('复制邮箱地址'),
-                        onPressed: () {
-                          Clipboard.setData(
-                              new ClipboardData(text: 'reciprocityApp@163.co'));
-                          showHUD('邮箱地址已复制');
-                          Navigator.pop(context);
-                        }),
-                  ],
-                );
-                //
-              });
-            },
+            onPressed: _onFeedbackPress,
           ),
-          SettingCell(
-            icon: Icon(Icons.lock_outline),
-            label: Text(i18n.mine_privacy),
-            onPressed: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) {
-                return PrivacyPolicyPage();
-              }));
-            },
-          )
+          // SettingCell(
+          //   icon: Icon(Icons.lock_outline),
+          //   label: Text(i18n.mine_privacy),
+          //   onPressed: () {
+          //     Navigator.push(context, MaterialPageRoute(builder: (context) {
+          //       return PrivacyPolicyPage();
+          //     }));
+          //   },
+          // )
         ],
       ),
       decoration: BoxDecoration(color: Theme.of(context).backgroundColor),

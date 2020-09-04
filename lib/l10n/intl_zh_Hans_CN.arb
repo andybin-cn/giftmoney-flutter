@@ -17,7 +17,7 @@
   "mine_coin_rules": "金币使用规则",
   "mine_feedback": "意见反馈",
   "mine_appVersion": "版本：{version}",
-  "mine_appDescription": "1.我们没有后台服务端，所以不会收集用户的任何数据，也无法查看您的数据记录。请放心使用！\n\n2.数据完全保存在本地，对数据进行了严格的加密保护，保证数据的安全可靠！\n\n\n\n如遇到任何问题，请发送邮件至：reciprocityApp@163.com\n我们会尽快与您联系",
+  "mine_appDescription": "1.我们是个人开发爱好者，希望我们的App能够帮助你解决一些实际问题，给你的生活带来便利。\n\n2.我们会对你的数据进行加密保护，可以放心使用。\n\n\n\n如遇到任何问题，请发送邮件至：reciprocityApp@163.com\n我们会尽快与您联系",
 
   "share_wechatTimeline": "朋友圈",
   "share_qZone": "QQ空间",
