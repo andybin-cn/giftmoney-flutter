@@ -72,7 +72,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "hud_save_success" : MessageLookupByLibrary.simpleMessage("保存成功"),
     "hud_saving" : MessageLookupByLibrary.simpleMessage("正在保存"),
     "mine_about" : MessageLookupByLibrary.simpleMessage("關於我們"),
-    "mine_appDescription" : MessageLookupByLibrary.simpleMessage("1.我們是個人開發愛好者，希望我們的App能夠幫助你解決一些實際問題，給你的生活帶來便利。 \n\n2.我們會對你的數據進行加密保護，可以放心使用。 \n\n\n\n如遇到任何問題，請發送郵件至：reciprocityApp@163.com\n我們會盡快與您聯繫"),
+    "mine_appDescription" : MessageLookupByLibrary.simpleMessage("1.我們是個人開發愛好者，希望我們的App能夠幫助你解決一些實際問題，給你的生活帶來便利。 \n\n2.數據完全保存在本地，對數據進行了嚴格的加密保護，保證數據的安全可靠！ \n\n\n\n如遇到任何問題，請發送郵件至：reciprocityApp@163.com\n我們會盡快與您聯繫"),
     "mine_appVersion" : m1,
     "mine_coin_rules" : MessageLookupByLibrary.simpleMessage("金幣使用規則"),
     "mine_feedback" : MessageLookupByLibrary.simpleMessage("意見反饋"),

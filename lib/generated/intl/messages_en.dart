@@ -72,7 +72,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "hud_save_success" : MessageLookupByLibrary.simpleMessage("Success"),
     "hud_saving" : MessageLookupByLibrary.simpleMessage("Saving"),
     "mine_about" : MessageLookupByLibrary.simpleMessage("About Me"),
-    "mine_appDescription" : MessageLookupByLibrary.simpleMessage("1. We are personal development enthusiasts. We hope our App can help you solve some practical problems and bring convenience to your life. \n\n2. We will encrypt and protect your data, so you can use it with confidence. \n\n\n\nIf you encounter any problems, please send email to: reciprocityApp@163.com \nWe will contact you as soon as possible"),
+    "mine_appDescription" : MessageLookupByLibrary.simpleMessage("1. We are personal development enthusiasts. We hope our App can help you solve some practical problems and bring convenience to your life. \n\n2. The data is completely saved locally, and the data is strictly encrypted to ensure the safety and reliability of the data! \n\n\n\nIf you encounter any problems, please send email to: reciprocityApp@163.com \nWe will contact you as soon as possible"),
     "mine_appVersion" : m1,
     "mine_coin_rules" : MessageLookupByLibrary.simpleMessage("Rules for using gold coins"),
     "mine_feedback" : MessageLookupByLibrary.simpleMessage("Feedback"),
